@@ -33,14 +33,14 @@
 },
 "BuxomMod:MeasurementTime": {
         "NAME": "Measurement Time",
-        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases each time your lehmanamod:Buxom increases."]
+        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases each time your buxommod:Buxom increases."]
 },
 "BuxomMod:ShockPower": {
         "NAME": "Omega Shock",
-        "DESCRIPTIONS": ["At the end of your turn, if you have a Status card in your hand, deal damage equal to your lehmanamod:Buxom to a random enemy."]
+        "DESCRIPTIONS": ["At the end of your turn, if you have a Status card in your hand, deal damage equal to your buxommod:Buxom to a random enemy."]
 },
 "BuxomMod:TCupPower": {
         "NAME": "T-Cup Bra",
-        "DESCRIPTIONS": ["lehmanamod:Capacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases. If this bra breaks, lose all your Dexterity."]
+        "DESCRIPTIONS": ["buxommod:Capacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases. If this bra breaks, lose all your Dexterity."]
 }
 }

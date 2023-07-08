@@ -9,16 +9,16 @@
   },
   "BuxomMod:DefaultCommonPower": {
     "NAME": "Pop, Pop, Pop!",
-    "DESCRIPTION": "Gain 1 lehmanamod:Buxom !M! times. NL Draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Gain 1 lehmanamod:Buxom !M! times. NL Draw !M! cards."
+    "DESCRIPTION": "Gain 1 buxommod:Buxom !M! times. NL Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Gain 1 buxommod:Buxom !M! times. NL Draw !M! cards."
   },
   "BuxomMod:DefaultUncommonAttack": {
     "NAME": "Bouncy Exercise",
-    "DESCRIPTION": "Lose 1 lehmanamod:Buxom. NL Deal !D! damage, then deal damage equal to your current lehmanamod:Buxom. NL Add 1 *Bounce to your hand."
+    "DESCRIPTION": "Lose 1 buxommod:Buxom. NL Deal !D! damage, then deal damage equal to your current buxommod:Buxom. NL Add 1 *Bounce to your hand."
   },
   "BuxomMod:DefaultUncommonSkill": {
     "NAME": "Expansive Wall",
-    "DESCRIPTION": "Gain !M! lehmanamod:Buxom. NL Gain !B! block."
+    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !B! block."
   },
   "BuxomMod:DefaultUncommonPower": {
     "NAME": "Chibis!",
@@ -31,12 +31,12 @@
   },
   "BuxomMod:HeavyLactation": {
     "NAME": "Heavy Lactation",
-    "DESCRIPTION": "Gain Temp. Hitpoints equal to your Buxom. NL Lose half your lehmanamod:Buxom. Heal equal to that amount. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your Buxom. NL Lose half your lehmanamod:Buxom. Heal equal to that amount. NL Exhaust."
+    "DESCRIPTION": "Gain Temp. Hitpoints equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust."
   },
   "BuxomMod:BovineForm": {
     "NAME": "Bovine Form",
-    "DESCRIPTION": "Gain !M! lehmanamod:Buxom. NL Gain !M! Regeneration."
+    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !M! Regeneration."
   },
   "BuxomMod:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
@@ -60,15 +60,15 @@
   },
   "BuxomMod:Omegabsorption": {
     "NAME": "Omegabsorption",
-    "DESCRIPTION": "Exhaust a card. NL Gain !M! lehmanamod:Buxom. NL Draw !M! cards."
+    "DESCRIPTION": "Exhaust a card. NL Gain !M! buxommod:Buxom. NL Draw !M! cards."
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
-    "DESCRIPTION": "lehmanamod:Capacity 0-5. NL Gain 2 Strength. Gain !M! Block at the end of your turn."
+    "DESCRIPTION": "buxommod:Capacity 0-5. NL Gain 2 Strength. Gain !M! Block at the end of your turn."
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 5-10. NL draw !M! additional cards at the start of your turn, and gain block equal to half your lehmanamod:Buxom."
+    "DESCRIPTION": "BuxomMod:Capacity 5-10. NL draw !M! additional cards at the start of your turn, and gain block equal to half your buxommod:Buxom."
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
