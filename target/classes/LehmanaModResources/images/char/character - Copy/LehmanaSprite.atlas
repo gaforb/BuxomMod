@@ -1,0 +1,125 @@
+
+LehmanaSprite.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lehmana sprite/Layer_37
+  rotate: false
+  xy: 190, 135
+  size: 25, 36
+  orig: 25, 36
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_35
+  rotate: false
+  xy: 1, 1
+  size: 84, 119
+  orig: 84, 119
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_36
+  rotate: false
+  xy: 1, 122
+  size: 74, 129
+  orig: 74, 129
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_20
+  rotate: false
+  xy: 137, 183
+  size: 64, 44
+  orig: 64, 44
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_42
+  rotate: false
+  xy: 222, 183
+  size: 19, 60
+  orig: 19, 60
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_41
+  rotate: false
+  xy: 228, 1
+  size: 21, 64
+  orig: 21, 64
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_39
+  rotate: false
+  xy: 190, 1
+  size: 36, 67
+  orig: 36, 67
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_40
+  rotate: false
+  xy: 190, 70
+  size: 30, 63
+  orig: 30, 63
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_16
+  rotate: false
+  xy: 203, 173
+  size: 16, 44
+  orig: 16, 44
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_46
+  rotate: false
+  xy: 87, 1
+  size: 20, 52
+  orig: 20, 52
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_47
+  rotate: false
+  xy: 203, 219
+  size: 17, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1
+lehmana sprite chest
+  rotate: false
+  xy: 77, 122
+  size: 58, 88
+  orig: 70, 88
+  offset: 4, 0
+  index: -1
+lehmana sprite/Layer_7_Copy
+  rotate: false
+  xy: 137, 122
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_13
+  rotate: false
+  xy: 222, 125
+  size: 23, 56
+  orig: 23, 56
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_14
+  rotate: false
+  xy: 222, 70
+  size: 27, 53
+  orig: 27, 53
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_15
+  rotate: false
+  xy: 131, 229
+  size: 20, 24
+  orig: 20, 24
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_28
+  rotate: false
+  xy: 77, 212
+  size: 52, 41
+  orig: 52, 41
+  offset: 0, 0
+  index: -1
