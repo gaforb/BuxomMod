@@ -28,8 +28,8 @@ public class TCupPower extends TwoAmountPower implements CloneablePowerInterface
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("LehmanaModResources/images/powers/TCup84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("LehmanaModResources/images/powers/TCup32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/TCup84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/TCup32.png");
 
     public TCupPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;

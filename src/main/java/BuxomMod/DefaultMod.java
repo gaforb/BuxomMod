@@ -108,35 +108,35 @@ public class DefaultMod implements
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
 
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "LehmanaModResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "LehmanaModResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "LehmanaModResources/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_DEFAULT_GRAY = "BuxomModResources/images/512/bg_attack_default_gray.png";
+    private static final String SKILL_DEFAULT_GRAY = "BuxomModResources/images/512/bg_skill_default_gray.png";
+    private static final String POWER_DEFAULT_GRAY = "BuxomModResources/images/512/bg_power_default_gray.png";
 
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "LehmanaModResources/images/512/card_default_gray_orb.png";
-    private static final String CARD_ENERGY_ORB = "LehmanaModResources/images/512/card_small_orb.png";
+    private static final String ENERGY_ORB_DEFAULT_GRAY = "BuxomModResources/images/512/card_default_gray_orb.png";
+    private static final String CARD_ENERGY_ORB = "BuxomModResources/images/512/card_small_orb.png";
 
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "LehmanaModResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "LehmanaModResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "LehmanaModResources/images/1024/bg_power_default_gray.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "LehmanaModResources/images/1024/card_default_gray_orb.png";
+    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "BuxomModResources/images/1024/bg_attack_default_gray.png";
+    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "BuxomModResources/images/1024/bg_skill_default_gray.png";
+    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "BuxomModResources/images/1024/bg_power_default_gray.png";
+    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "BuxomModResources/images/1024/card_default_gray_orb.png";
 
     // Character assets
-    private static final String THE_DEFAULT_BUTTON = "LehmanaModResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "LehmanaModResources/images/charSelect/DefaultCharacterPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "LehmanaModResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "LehmanaModResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "LehmanaModResources/images/char/defaultCharacter/corpse.png";
+    private static final String THE_DEFAULT_BUTTON = "BuxomModResources/images/charSelect/DefaultCharacterButton.png";
+    private static final String THE_DEFAULT_PORTRAIT = "BuxomModResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    public static final String THE_DEFAULT_SHOULDER_1 = "BuxomModResources/images/char/defaultCharacter/shoulder.png";
+    public static final String THE_DEFAULT_SHOULDER_2 = "BuxomModResources/images/char/defaultCharacter/shoulder2.png";
+    public static final String THE_DEFAULT_CORPSE = "BuxomModResources/images/char/defaultCharacter/corpse.png";
 
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
-    public static final String BADGE_IMAGE = "LehmanaModResources/images/Badge.png";
+    public static final String BADGE_IMAGE = "BuxomModResources/images/Badge.png";
 
     // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "LehmanaModResources/images/char/character/skeleton2.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "LehmanaModResources/images/char/character/skeleton2_Armaturelehmana sprite.json";
+    public static final String THE_DEFAULT_SKELETON_ATLAS = "BuxomModResources/images/char/character/skeleton2.atlas";
+    public static final String THE_DEFAULT_SKELETON_JSON = "BuxomModResources/images/char/character/skeleton2_Armaturelehmana sprite.json";
 
     //VFX
 
-    public static final String EXPAND_EFFECT = "LehmanaModResources/images/vfx/expand_effect.png";
+    public static final String EXPAND_EFFECT = "BuxomModResources/images/vfx/expand_effect.png";
 
 
     // =============== MAKE IMAGE PATHS =================

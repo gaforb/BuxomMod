@@ -27,8 +27,8 @@ public class KCupPower_old extends AbstractPower implements CloneablePowerInterf
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("LehmanaModResources/images/powers/KCup84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("LehmanaModResources/images/powers/KCup32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/KCup84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/KCup32.png");
 
     public KCupPower_old(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;

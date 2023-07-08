@@ -24,8 +24,8 @@ public class ShockPower extends AbstractPower implements CloneablePowerInterface
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("LehmanaModResources/images/powers/ShockPower84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("LehmanaModResources/images/powers/ShockPower32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/ShockPower84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/ShockPower32.png");
 
     public ShockPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;

@@ -84,17 +84,17 @@ public class TheDefault extends CustomPlayer {
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
     public static final String[] orbTextures = {
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer1.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer2.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer3.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer4.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer5.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer6.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer1d.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer2d.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer3d.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer4d.png",
-            "LehmanaModResources/images/char/defaultCharacter/orb/layer5d.png",};
+            "BuxomModResources/images/char/defaultCharacter/orb/layer1.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer2.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer3.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer4.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer5.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer6.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer1d.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer2d.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer3d.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer4d.png",
+            "BuxomModResources/images/char/defaultCharacter/orb/layer5d.png",};
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
@@ -102,9 +102,9 @@ public class TheDefault extends CustomPlayer {
 
     public TheDefault(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
-                "LehmanaModResources/images/char/defaultCharacter/orb/vfx.png", null,
+                "BuxomModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpineAnimation(
-                        "LehmanaModResources/images/char/character/skeleton2.atlas", "LehmanaModResources/images/char/character/skeleton2_Armature.json", 0.3f));
+                        "BuxomModResources/images/char/character/skeleton2.atlas", "BuxomModResources/images/char/character/skeleton2_Armature.json", 0.3f));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  

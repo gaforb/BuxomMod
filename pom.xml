@@ -3,8 +3,8 @@
 
     <!--Hello! You'll basically should only need to change these names and the steam path (just below)-->
     <!--The author name(s) as they appear in MTS and any other comments are in your ModTheSpire.json-->
-    <groupId>lehmanamod</groupId>
-    <artifactId>LehmanaMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
+    <groupId>buxommod</groupId>
+    <artifactId>BuxomMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>BuxomMod</name>
     <version>0.0.3</version>
     <description>A default base to start your own mod from.</description>

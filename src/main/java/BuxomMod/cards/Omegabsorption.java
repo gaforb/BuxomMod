@@ -73,7 +73,7 @@ public Omegabsorption() { // public ${NAME}() - This one and the one right under
         }
 
 /*private AbstractGameEffect buildVfx(float startX, Hitbox hb) {
-    return new VfxBuilder(TextureLoader.getTexture("LehmanaModResources/images/vfx/expand_effect.png"), Settings.ACTION_DUR_MED)
+    return new VfxBuilder(TextureLoader.getTexture("BuxomModResources/images/vfx/expand_effect.png"), Settings.ACTION_DUR_MED)
 
             .fadeIn(0.25f)
             .fadeOut(0.25f)
@@ -83,7 +83,7 @@ public Omegabsorption() { // public ${NAME}() - This one and the one right under
 }*/
 // Actions the card should do.
 /*private AbstractGameEffect vfx2(float x, float y) {
-    return new VfxBuilder(TextureLoader.getTexture("LehmanaModResources/images/vfx/library_effect_2.png"), 2.0f)
+    return new VfxBuilder(TextureLoader.getTexture("BuxomModResources/images/vfx/library_effect_2.png"), 2.0f)
             .setX(x)
             .setY(y)
             .playSoundAt(0f, DefaultMod.makeID("RIP_MEDIUM"))
@@ -93,7 +93,7 @@ public Omegabsorption() { // public ${NAME}() - This one and the one right under
             .build();
 }
 private AbstractGameEffect vfx(float x, float y) {
-    return new VfxBuilder(TextureLoader.getTexture("LehmanaModResources/images/vfx/library_effect.png"), 1.0f)
+    return new VfxBuilder(TextureLoader.getTexture("BuxomModResources/images/vfx/library_effect.png"), 1.0f)
             .setX(x)
             .setY(y)
             .playSoundAt(0.75f, DefaultMod.makeID("SUDDEN_GASP"))
@@ -104,7 +104,7 @@ private AbstractGameEffect vfx(float x, float y) {
             .build();
 }*/
 private AbstractGameEffect vfx(float x, float y) {
-    return new VfxBuilder(TextureLoader.getTexture("LehmanaModResources/images/vfx/expand_effect.png"), 1.0f)
+    return new VfxBuilder(TextureLoader.getTexture("BuxomModResources/images/vfx/expand_effect.png"), 1.0f)
             .setX(x)
             .setY(y)
             .playSoundAt(0.35f, DefaultMod.makeID("HEARTBEAT"))
