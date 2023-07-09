@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 import BuxomMod.cards.*;
 import BuxomMod.characters.TheDefault;
 import BuxomMod.events.IdentityCrisisEvent;
-import BuxomMod.potions.PlaceholderPotion;
+import BuxomMod.potions.FlatteningPotion;
 import BuxomMod.relics.BottledPlaceholderRelic;
 import BuxomMod.relics.DwarfBoobsRelic;
 import BuxomMod.relics.WashboardRelic;
@@ -374,7 +374,7 @@ public class DefaultMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addPotion(FlatteningPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, FlatteningPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
 
         logger.info("Done editing potions");
     }

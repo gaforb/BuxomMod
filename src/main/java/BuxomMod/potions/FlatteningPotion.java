@@ -11,15 +11,15 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.abstracts.CustomPotion;
 
-public class PlaceholderPotion extends CustomPotion {
+public class FlatteningPotion extends CustomPotion {
 
-    public static final String POTION_ID = BuxomMod.DefaultMod.makeID("PlaceholderPotion");
+    public static final String POTION_ID = BuxomMod.DefaultMod.makeID("FlatteningPotion");
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
     
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
-    public PlaceholderPotion() {
+    public FlatteningPotion() {
         // The bottle shape and inside is determined by potion size and color. The actual colors are the main DefaultMod.java
         super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.M, PotionColor.SMOKE);
         
@@ -52,9 +52,10 @@ public class PlaceholderPotion extends CustomPotion {
 
     @Override
     public void use(AbstractCreature target) {
-        int removal = target.getPower("BuxomMod:CommonPower").amount;
-        removal--;
+        target = AbstractDungeon.player;
         if (target.hasPower("BuxomMod:CommonPower")) {
+            int removal = target.getPower("BuxomMod:CommonPower").amount;
+            removal--;
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
                 AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(target, target, target.getPower("BuxomMod:CommonPower"), removal));
         }
@@ -64,7 +65,7 @@ public class PlaceholderPotion extends CustomPotion {
     
     @Override
     public AbstractPotion makeCopy() {
-        return new PlaceholderPotion();
+        return new FlatteningPotion();
     }
 
     // This is your potency.

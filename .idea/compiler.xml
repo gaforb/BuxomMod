@@ -7,10 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DefaultMod" />
+        <module name="BuxomMod" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="BuxomMod" target="1.8" />
+      <module name="LehmanaMod" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
