@@ -85,16 +85,15 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
         }
     }
 
+    //TODO: Gain an orb slot for every 5 Buxom
    public void stackPower(int stackAmount) {
        super.stackPower(stackAmount);
        for (AbstractPower pow : this.owner.powers) {
-           if (pow.ID.contains("CupPower")) {
-               if (this.amount > ((BraPower) pow).amount2) {
-                   ((BraPower) pow).broken();
-                   }
-               }
+           if (pow instanceof BraPower) {
+               ((BraPower) pow).breakCheck();
            }
        }
+   }
 
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         Random rand = new Random();

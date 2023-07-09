@@ -4,8 +4,7 @@ import basemod.interfaces.*;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,10 +15,8 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import BuxomMod.DefaultMod;
 import BuxomMod.cards.BrokenBraT;
 import BuxomMod.util.TextureLoader;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 
-public class TCupPower extends TwoAmountPower implements CloneablePowerInterface {
+public class TCupPower extends BraPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = DefaultMod.makeID("TCupPower");
@@ -59,18 +56,13 @@ public class TCupPower extends TwoAmountPower implements CloneablePowerInterface
                 AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
             }
         }
-        if (power instanceof CommonPower) {
-            if ((target.getPower("BuxomMod:CommonPower") != null) && (target.getPower("BuxomMod:CommonPower").amount > this.amount2)) {
-                flash();
-                AbstractDungeon.actionManager.addToBottom(
-                        new ReducePowerAction(owner, owner, this, this.amount));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard)new BrokenBraT(), 1, true, true));
-                if (AbstractDungeon.player.hasPower("DexterityPower")) {
-                    AbstractDungeon.actionManager.addToBottom(
-                            new ReducePowerAction(owner, owner, AbstractDungeon.player.getPower("DexterityPower"), AbstractDungeon.player.getPower("DexterityPower").amount));
-                }
-            }
-        }
+    }
+
+    public void broken(){
+        flash();
+        AbstractDungeon.actionManager.addToTop(new ReducePowerAction(owner, owner, this, this.amount));
+        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard)new BrokenBraT(), 1, true, true));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "DexterityPower"));
     }
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         for (AbstractPower power : AbstractDungeon.player.powers) {

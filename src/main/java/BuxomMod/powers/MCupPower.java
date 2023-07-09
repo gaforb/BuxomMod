@@ -66,7 +66,7 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
                 new ReducePowerAction(owner, owner, this, this.amount));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraM(), 1, true, true));
     }
-    
+
     /*public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) { // At the end of your turn
         if (power instanceof CommonPower) {
             if ((target.getPower("BuxomMod:CommonPower") != null) && (target.getPower("BuxomMod:CommonPower").amount > this.amount2)) {
