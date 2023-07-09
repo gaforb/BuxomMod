@@ -123,8 +123,8 @@ public class DefaultMod implements
     // Character assets
     private static final String THE_DEFAULT_BUTTON = "BuxomModResources/images/charSelect/DefaultCharacterButton.png";
     private static final String THE_DEFAULT_PORTRAIT = "BuxomModResources/images/charSelect/DefaultCharacterPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "BuxomModResources/images/char/character/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "BuxomModResources/images/char/character/shoulder2.png";
+    public static final String THE_DEFAULT_SHOULDER_1 = "BuxomModResources/images/char/defaultCharacter/shoulder.png";
+    public static final String THE_DEFAULT_SHOULDER_2 = "BuxomModResources/images/char/defaultCharacter/shoulder2.png";
     public static final String THE_DEFAULT_CORPSE = "BuxomModResources/images/char/defaultCharacter/corpse.png";
 
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
