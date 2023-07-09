@@ -6,8 +6,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -50,18 +52,18 @@ public class KCupPower extends TwoAmountPower implements CloneablePowerInterface
         updateDescription();
     }
 
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) { // At the end of your turn
-        if (power instanceof CommonPower) {
-            if ((target.getPower("BuxomMod:CommonPower") != null) && (target.getPower("BuxomMod:CommonPower").amount >= this.amount2)) {
-                flash();
-                AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(owner, owner, new StrengthPower(owner, -2), -2));
-                AbstractDungeon.actionManager.addToBottom(
-                        new ReducePowerAction(owner, owner, this, this.amount));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
-            }
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        AbstractPlayer p = AbstractDungeon.player;// At the end of your turn
+        if ((p.getPower("BuxomMod:CommonPower") != null) && (p.getPower("BuxomMod:CommonPower").amount >= this.amount2)) {
+            flash();
+            AbstractDungeon.actionManager.addToBottom(
+                    new ApplyPowerAction(owner, owner, new StrengthPower(owner, -2), -2));
+            AbstractDungeon.actionManager.addToBottom(
+                    new ReducePowerAction(owner, owner, this, this.amount));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
         }
     }
+
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, this.amount));
     }

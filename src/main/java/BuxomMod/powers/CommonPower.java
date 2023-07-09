@@ -4,6 +4,7 @@ import basemod.interfaces.*;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,6 +15,7 @@ import BuxomMod.DefaultMod;
 import BuxomMod.util.TextureLoader;
 import BuxomMod.cards.BuxomStatus;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 
 import static BuxomMod.DefaultMod.makePowerPath;
 
@@ -82,6 +84,19 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BuxomStatus(), 1, true, true));
         }
     }
+
+   public void stackPower(int stackAmount) {
+
+       super.stackPower(stackAmount);
+       for (AbstractPower pow : this.owner.powers) {
+           if (pow.ID.contains("CupPower")) {
+               if (this.amount > ((TwoAmountPower) pow).amount2) {
+                   switch (pow.ID) {
+                   }
+               }
+           }
+       }
+   }
 
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         Random rand = new Random();
