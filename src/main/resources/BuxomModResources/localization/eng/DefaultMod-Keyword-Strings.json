@@ -49,13 +49,5 @@
       "defensive"
     ],
     "DESCRIPTION": "Gain block at the start of your turn. Gain more block when evoked."
-  },
-  {
-    "PROPER_NAME": "Temporary HP",
-    "NAMES": [
-      "Temporary_HP",
-      "temporary_hp"
-    ],
-    "DESCRIPTION": "Gain block at the start of your turn. Gain more block when evoked."
   }
 ]

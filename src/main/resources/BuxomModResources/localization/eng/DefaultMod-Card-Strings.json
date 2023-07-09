@@ -31,7 +31,7 @@
   },
   "BuxomMod:HeavyLactation": {
     "NAME": "Heavy Lactation",
-    "DESCRIPTION": "Gain Temp. Hitpoints equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust.",
+    "DESCRIPTION": "Gain stslib:Temporary_HP equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust."
   },
   "BuxomMod:BovineForm": {

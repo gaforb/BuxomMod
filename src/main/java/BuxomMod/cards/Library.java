@@ -43,6 +43,7 @@ public class Library extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         this.exhaust = true;
+        this.cardsToPreview = new OmegaLibrary();
     }
 
     // Actions the card should do.
