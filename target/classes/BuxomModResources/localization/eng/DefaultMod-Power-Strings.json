@@ -31,7 +31,7 @@
         "NAME": "Relief",
         "DESCRIPTIONS": ["Gain #b", " Block whenever you Exhaust a card."]
 },
-"BuxomMod:MeasurementTime": {
+"BuxomMod:MeasurementPower": {
         "NAME": "Measurement Time",
         "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases each time your buxommod:Buxom increases."]
 },
