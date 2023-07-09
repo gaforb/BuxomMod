@@ -36,6 +36,7 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
         this.amount = amount;
         this.amount2 = 15;
         this.source = source;
+        this.minCapacity = 10;
 
         type = PowerType.BUFF;
         isTurnBased = false;

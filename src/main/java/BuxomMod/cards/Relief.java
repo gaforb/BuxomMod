@@ -51,9 +51,9 @@ public class Relief extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 1;  // COST = ${COST}
+    private static final int COST = 2;  // COST = ${COST}
 
-    private static final int MAGIC = 4;    // DAMAGE = ${DAMAGE}
+    private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 0;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
@@ -62,7 +62,6 @@ public class Relief extends AbstractDynamicCard {
     public Relief() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        this.isInnate = false;
     }
 
 
@@ -79,7 +78,7 @@ public class Relief extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isInnate = true;
+            upgradeBaseCost(1);
             rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();

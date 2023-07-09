@@ -97,7 +97,7 @@
   "BuxomMod:Relief": {
     "NAME": "Relief",
     "DESCRIPTION": "Gain !M! Block whenever you Exhaust a card.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Block whenever you Exhaust a card."
+    "UPGRADE_DESCRIPTION": "Gain !M! Block whenever you Exhaust a card."
   },
   "BuxomMod:ToplessStatus": {
     "NAME": "Topless",
@@ -159,7 +159,8 @@
   },
   "BuxomMod:OmegaFlare": {
     "NAME": "Omega Flare",
-    "DESCRIPTION": "If you're within the BuxomMod:Capacity of your bra, gain !M! Strength."
+    "DESCRIPTION": "If you're within the BuxomMod:Capacity of your bra, gain !M! Strength.",
+    "CANT_USE_MESSAGE": "I'm not within my bra's capacity!"
   },
   "BuxomMod:ChibiAttraction": {
     "NAME": "Chibi Attraction",
