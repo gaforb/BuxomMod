@@ -1,0 +1,46 @@
+{
+"BuxomMod:CommonPower": {
+        "NAME": "Buxom",
+        "DESCRIPTIONS": ["Breast size increased. Used for various effects. 5% chance to gain a random status card per stack."]
+},
+"BuxomMod:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"BuxomMod:KCupPower": {
+        "NAME": "K-Cup Bra",
+        "DESCRIPTIONS": ["Capacity 0-5. At the end of your turn, gain #b", " block."]
+},
+"BuxomMod:KCupPower2": {
+        "NAME": "K-Cup Bra",
+        "DESCRIPTIONS": ["Capacity 0-5. At the end of your turn, gain #b", " block."]
+},
+"BuxomMod:MCupPower": {
+        "NAME": "M-Cup Bra",
+        "DESCRIPTIONS": ["Capacity 5-10. At the end of your turn, gain #b", " Block."]
+},
+"BuxomMod:ChibiPower": {
+        "NAME": "Chibi",
+        "DESCRIPTIONS": ["Whenever you play a skill, gain an effect at random equal to its cost: NL gain Buxom, gain Chibi, deal damage to one enemy equal to your Chibi."]
+},
+"BuxomMod:ButtonHazardPower": {
+        "NAME": "Button Hazard",
+        "DESCRIPTIONS": ["Deal #b", " to a random enemy whenever you gain Buxom."]
+},
+"BuxomMod:ReliefPower": {
+        "NAME": "Relief",
+        "DESCRIPTIONS": ["Gain #b", " Block whenever you Exhaust a card."]
+},
+"BuxomMod:MeasurementTime": {
+        "NAME": "Measurement Time",
+        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases each time your buxommod:Buxom increases."]
+},
+"BuxomMod:ShockPower": {
+        "NAME": "Omega Shock",
+        "DESCRIPTIONS": ["At the end of your turn, if you have a Status card in your hand, deal damage equal to your buxommod:Buxom to a random enemy."]
+},
+"BuxomMod:TCupPower": {
+        "NAME": "T-Cup Bra",
+        "DESCRIPTIONS": ["buxommod:Capacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases. If this bra breaks, lose all your Dexterity."]
+}
+}

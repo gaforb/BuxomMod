@@ -1,0 +1,125 @@
+
+skeleton.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lehmana sprite/Layer_37
+  rotate: false
+  xy: 878, 325
+  size: 62, 90
+  orig: 62, 90
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_35
+  rotate: false
+  xy: 1, 1
+  size: 209, 297
+  orig: 209, 297
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_36
+  rotate: false
+  xy: 212, 1
+  size: 185, 322
+  orig: 185, 322
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_20
+  rotate: false
+  xy: 130, 325
+  size: 161, 110
+  orig: 161, 110
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_42
+  rotate: false
+  xy: 778, 325
+  size: 47, 150
+  orig: 47, 150
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_41
+  rotate: false
+  xy: 664, 325
+  size: 52, 161
+  orig: 52, 161
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_39
+  rotate: false
+  xy: 293, 325
+  size: 90, 167
+  orig: 90, 167
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_40
+  rotate: false
+  xy: 516, 325
+  size: 76, 157
+  orig: 76, 157
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_16
+  rotate: false
+  xy: 942, 325
+  size: 40, 110
+  orig: 40, 110
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_46
+  rotate: false
+  xy: 827, 325
+  size: 49, 129
+  orig: 49, 129
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_47
+  rotate: false
+  xy: 931, 437
+  size: 42, 63
+  orig: 42, 63
+  offset: 0, 0
+  index: -1
+lehmana sprite chest
+  rotate: false
+  xy: 399, 1
+  size: 144, 220
+  orig: 174, 221
+  offset: 9, 1
+  index: -1
+lehmana sprite/Layer_7_Copy
+  rotate: false
+  xy: 1, 300
+  size: 127, 148
+  orig: 127, 148
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_13
+  rotate: false
+  xy: 718, 325
+  size: 58, 140
+  orig: 58, 140
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_14
+  rotate: false
+  xy: 594, 325
+  size: 68, 132
+  orig: 68, 132
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_15
+  rotate: false
+  xy: 878, 417
+  size: 51, 60
+  orig: 51, 60
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_28
+  rotate: false
+  xy: 385, 325
+  size: 129, 102
+  orig: 129, 102
+  offset: 0, 0
+  index: -1
