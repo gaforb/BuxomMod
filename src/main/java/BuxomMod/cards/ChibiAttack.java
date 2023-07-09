@@ -52,7 +52,6 @@ public class ChibiAttack extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-        this.exhaust = true;
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
