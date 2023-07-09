@@ -26,7 +26,7 @@ public class ChibiSummon extends AbstractDynamicCard {
     // TEXT DECLARATION 
 
     public static final String ID = DefaultMod.makeID(ChibiSummon.class.getSimpleName());
-    public static final String IMG = makeCardPath("ChibiSummon.png");
+    public static final String IMG = makeCardPath("ChibiSummonSkill.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -37,7 +37,7 @@ public class ChibiSummon extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 2;
@@ -82,7 +82,7 @@ public class ChibiSummon extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }
