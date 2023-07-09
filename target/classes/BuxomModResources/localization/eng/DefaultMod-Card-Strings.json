@@ -14,7 +14,7 @@
   },
   "BuxomMod:DefaultUncommonAttack": {
     "NAME": "Bouncy Exercise",
-    "DESCRIPTION": "Lose 1 buxommod:Buxom. NL Deal !D! damage, then deal damage equal to your current buxommod:Buxom. NL Add 1 *Bounce to your hand."
+    "DESCRIPTION": "Lose 1 buxommod:Buxom. NL Deal !D! damage, then deal damage equal to your current buxommod:Buxom."
   },
   "BuxomMod:DefaultUncommonSkill": {
     "NAME": "Expansive Wall",
@@ -31,7 +31,7 @@
   },
   "BuxomMod:HeavyLactation": {
     "NAME": "Heavy Lactation",
-    "DESCRIPTION": "Gain Temp. Hitpoints equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust.",
+    "DESCRIPTION": "Gain stslib:Temporary_HP equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust."
   },
   "BuxomMod:BovineForm": {
@@ -80,7 +80,7 @@
   },
   "BuxomMod:ChibiSummon": {
     "NAME": "Chibi Summon",
-    "DESCRIPTION": "Lose 2 BuxomMod:Buxom. NL Gain !M! BuxomMod:Chibi."
+    "DESCRIPTION": "Lose 2 BuxomMod:Buxom. NL Channel 1 BuxomMod:Defensive Chibi."
   },
   "BuxomMod:ButtonPop": {
     "NAME": "Button Pop",

@@ -60,6 +60,7 @@ public class MCupBra extends AbstractDynamicCard {
     public MCupBra() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        this.cardsToPreview = new BrokenBraM();
     }
 
 

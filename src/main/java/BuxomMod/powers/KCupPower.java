@@ -53,7 +53,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
         updateDescription();
     }
 
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+    /*public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         AbstractPlayer p = AbstractDungeon.player;// At the end of your turn
         if ((p.getPower("BuxomMod:CommonPower") != null) && (p.getPower("BuxomMod:CommonPower").amount >= this.amount2)) {
             flash();
@@ -63,7 +63,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
                     new ReducePowerAction(owner, owner, this, this.amount));
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
         }
-    }
+    }*/
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, this.amount));

@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 
-public class MCupPower extends TwoAmountPower implements CloneablePowerInterface {
+public class MCupPower extends BraPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = DefaultMod.makeID("MCupPower");
@@ -59,7 +59,15 @@ public class MCupPower extends TwoAmountPower implements CloneablePowerInterface
             }
         }
     }
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) { // At the end of your turn
+
+    public void broken(){
+        flash();
+        AbstractDungeon.actionManager.addToBottom(
+                new ReducePowerAction(owner, owner, this, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraM(), 1, true, true));
+    }
+    
+    /*public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) { // At the end of your turn
         if (power instanceof CommonPower) {
             if ((target.getPower("BuxomMod:CommonPower") != null) && (target.getPower("BuxomMod:CommonPower").amount > this.amount2)) {
                 flash();
@@ -68,7 +76,7 @@ public class MCupPower extends TwoAmountPower implements CloneablePowerInterface
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraM(), 1, true, true));
             }
         }
-    }
+    }*/
 
     @Override
     public void updateDescription() {
