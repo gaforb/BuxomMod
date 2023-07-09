@@ -1,7 +1,7 @@
 {
 "BuxomMod:CommonPower": {
         "NAME": "Buxom",
-        "DESCRIPTIONS": ["Breast size increased. Generate status cards each turn for every 5 Buxom, cumulatively. Cannot go below 1."]
+        "DESCRIPTIONS": ["Breast size increased. Generate status cards each turn for every 5 Buxom, cumulatively."]
 },
 "BuxomMod:RarePower": {
         "NAME": "Placeholder Power",

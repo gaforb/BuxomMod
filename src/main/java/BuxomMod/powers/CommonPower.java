@@ -94,17 +94,6 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
            }
        }
    }
-    @Override
-    public void reducePower(int reduceAmount) {
-        if (this.amount - reduceAmount <= 1) {
-            this.fontScale = 8.0F;
-            this.amount = 1;
-        } else {
-            this.fontScale = 8.0F;
-            this.amount -= reduceAmount;
-        }
-    }
-
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         Random rand = new Random();
         int r = rand.nextInt(10);
