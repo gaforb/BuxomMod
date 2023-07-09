@@ -17,11 +17,12 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import BuxomMod.DefaultMod;
 import BuxomMod.cards.BrokenBraK;
+import BuxomMod.powers.BraPower;
 import BuxomMod.util.TextureLoader;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 
-public class KCupPower extends TwoAmountPower implements CloneablePowerInterface {
+public class KCupPower extends BraPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = DefaultMod.makeID("KCupPower");
@@ -68,7 +69,7 @@ public class KCupPower extends TwoAmountPower implements CloneablePowerInterface
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, this.amount));
     }
 
-    public void update() {
+    /*public void update() {
         if ((this.owner.getPower("BuxomMod:CommonPower") != null) && (this.owner.getPower("BuxomMod:CommonPower").amount >= this.amount2)) {
                 flash();
                 AbstractDungeon.actionManager.addToBottom(
@@ -77,7 +78,16 @@ public class KCupPower extends TwoAmountPower implements CloneablePowerInterface
                         new ReducePowerAction(owner, owner, this, this.amount));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
             }
-        }
+        }*/
+    @Override
+    public void broken() {
+        flash();
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(owner, owner, new StrengthPower(owner, -2), -2));
+        AbstractDungeon.actionManager.addToBottom(
+                new ReducePowerAction(owner, owner, this, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
+    }
 
     @Override
     public void updateDescription() {

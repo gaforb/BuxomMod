@@ -86,17 +86,15 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     }
 
    public void stackPower(int stackAmount) {
-
        super.stackPower(stackAmount);
        for (AbstractPower pow : this.owner.powers) {
            if (pow.ID.contains("CupPower")) {
-               if (this.amount > ((TwoAmountPower) pow).amount2) {
-                   switch (pow.ID) {
+               if (this.amount > ((BraPower) pow).amount2) {
+                   ((BraPower) pow).broken();
                    }
                }
            }
        }
-   }
 
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         Random rand = new Random();
