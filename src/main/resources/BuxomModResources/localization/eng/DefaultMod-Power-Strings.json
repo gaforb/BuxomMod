@@ -17,7 +17,7 @@
 },
 "BuxomMod:MCupPower": {
         "NAME": "M-Cup Bra",
-        "DESCRIPTIONS": ["Capacity 5-10. At the end of your turn, gain #b", " Block."]
+        "DESCRIPTIONS": ["Capacity 5-10. At the start of your turn, draw #b", " cards and gain twice that much block."]
 },
 "BuxomMod:ChibiPower": {
         "NAME": "Chibi",

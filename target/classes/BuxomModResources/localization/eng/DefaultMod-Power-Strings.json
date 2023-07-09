@@ -17,7 +17,7 @@
 },
 "BuxomMod:MCupPower": {
         "NAME": "M-Cup Bra",
-        "DESCRIPTIONS": ["Capacity 5-10. At the end of your turn, gain #b", " Block."]
+        "DESCRIPTIONS": ["Capacity 5-10. At the start of your turn, draw #b", " cards and gain twice that much block."]
 },
 "BuxomMod:ChibiPower": {
         "NAME": "Chibi",
@@ -33,7 +33,7 @@
 },
 "BuxomMod:MeasurementPower": {
         "NAME": "Measurement Time",
-        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases each time your buxommod:Buxom increases."]
+        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases by 4 each time your buxommod:Buxom increases."]
 },
 "BuxomMod:ShockPower": {
         "NAME": "Omega Shock",

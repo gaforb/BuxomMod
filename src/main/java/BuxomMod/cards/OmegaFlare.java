@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.BraPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -70,20 +71,15 @@ public boolean canUse(AbstractPlayer p, AbstractMonster m) {
     canUse = false;
     this.cantUseMessage = "Not wearing a bra!";
     for (AbstractPower pow : p.powers) {
-        if (p.getPower("BuxomMod:CommonPower") != null) {
-            if ((pow.ID.contains("KCupPower")) && (p.getPower("BuxomMod:CommonPower").amount > 0)) {
-                canUse = true;
-            }
-            if ((pow.ID.contains("MCupPower")) && (p.getPower("BuxomMod:CommonPower").amount >= 5)) {
-                canUse = true;
-            }
-            if ((pow.ID.contains("TCupPower")) && (p.getPower("BuxomMod:CommonPower").amount >= 10)) {
-                canUse = true;
+        if (pow instanceof BraPower) {
+            if (((BraPower) pow).inCapacity() == true) {
+                return true;
             }
         }
     }
-    return canUse;
+    return false;
 }
+
 
 // Actions the card should do.
     @Override

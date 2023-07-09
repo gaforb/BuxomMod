@@ -49,7 +49,7 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
 
 
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) { // At the end of your turn
-        if ((target.hasPower("BuxomMod:CommonPower")) && (target.getPower("BuxomMod:CommonPower").amount >= 10)) {
+        if (this.inCapacity() == true) {
             if (power instanceof CommonPower) {
                 flash();
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new DexterityPower(this.source, this.amount), this.amount));

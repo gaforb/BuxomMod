@@ -51,12 +51,10 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
 
 
     public void atStartOfTurn() {
-        for (AbstractPower power : AbstractDungeon.player.powers) {
-            if ((power instanceof CommonPower) && (power.amount >= 5)) {
-                flash();
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.amount));
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, power.amount/2));
-            }
+        if (this.inCapacity() == true) {
+            flash();
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, this.amount));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, this.amount * 2));
         }
     }
 

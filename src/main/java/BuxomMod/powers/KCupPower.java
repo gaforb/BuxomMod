@@ -42,6 +42,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
         this.amount = amount;
         this.amount2 = 5;
         this.source = source;
+        this.minCapacity = 0;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -65,8 +66,10 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
         }
     }*/
 
-    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, this.amount));
+    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
+        if (this.inCapacity() == true) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, this.amount));
+        }
     }
 
     /*public void update() {
