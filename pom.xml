@@ -6,7 +6,7 @@
     <groupId>buxommod</groupId>
     <artifactId>BuxomMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>BuxomMod</name>
-    <version>0.0.3</version>
+    <version>0.1.4</version>
     <description>A default base to start your own mod from.</description>
 
     <properties>
