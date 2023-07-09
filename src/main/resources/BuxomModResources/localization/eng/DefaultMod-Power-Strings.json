@@ -1,7 +1,7 @@
 {
 "BuxomMod:CommonPower": {
         "NAME": "Buxom",
-        "DESCRIPTIONS": ["Breast size increased. Used for various effects. 5% chance to gain a random status card per stack."]
+        "DESCRIPTIONS": ["Increased breast size. Used for various effects. Every turn, generate a status card for every 5 Buxom stacks (cumulative)."]
 },
 "BuxomMod:RarePower": {
         "NAME": "Placeholder Power",

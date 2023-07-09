@@ -1,0 +1,30 @@
+{
+  "BuxomMod:AttackChibi": {
+    "NAME": "Offensive Chibi",
+    "DESCRIPTION": [
+      "#yPassive: At the start of your turn, deal #b",
+      " damage.",
+      " NL #yEvoke: Deal #b",
+      " damage to all enemies."
+    ]
+  },
+  "BuxomMod:DeviousChibi": {
+    "NAME": "Devious Chibi",
+    "DESCRIPTION": [
+      "#yPassive: At the start of your turn, gain #b",
+      " #yBuxom.",
+      " NL #yEvoke: Gain #b",
+      " energy and draw #b",
+      " cards."
+    ]
+  },
+  "BuxomMod:DefenseChibi": {
+    "NAME": "Defensive Chibi",
+    "DESCRIPTION": [
+      "#yPassive: At the end of your turn, gain #b",
+      " #yBlock.",
+      " NL #yEvoke: Gain #b",
+      " block."
+    ]
+  }
+}
