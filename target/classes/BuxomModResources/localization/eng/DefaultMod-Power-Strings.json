@@ -42,5 +42,9 @@
 "BuxomMod:TCupPower": {
         "NAME": "T-Cup Bra",
         "DESCRIPTIONS": ["buxommod:Capacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases. If this bra breaks, lose all your Dexterity."]
+},
+"BuxomMod:MilkPower": {
+        "NAME": "Milk",
+        "DESCRIPTIONS": ["Turns into stslib:Temporary_HP at the end of your turn. Can be spent by Chibis and cards for effects."]
 }
 }

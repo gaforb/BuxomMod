@@ -33,6 +33,7 @@ BuxomMod\cards\DefaultSecondMagicNumberSkill.class
 BuxomMod\cards\ChibiBlock.class
 BuxomMod\powers\RarePower.class
 BuxomMod\cards\AbstractDefaultCard.class
+BuxomMod\powers\MilkPower.class
 BuxomMod\cards\OmegaDeflection.class
 BuxomMod\cards\ChibiSummon.class
 BuxomMod\cards\MCupBra.class
@@ -63,6 +64,7 @@ BuxomMod\cards\Paizuri.class
 BuxomMod\relics\PlaceholderRelic2.class
 BuxomMod\cards\Phew.class
 BuxomMod\actions\UncommonSkillAction.class
+BuxomMod\powers\LactatingPower.class
 BuxomMod\powers\MCupPower.class
 BuxomMod\cards\ButtonPop.class
 BuxomMod\powers\MeasurementPower.class

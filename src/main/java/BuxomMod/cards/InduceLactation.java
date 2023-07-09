@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -71,8 +72,8 @@ public class InduceLactation extends AbstractDynamicCard {
                 new CommonPower(p, p, 6), 6));
         }
         AbstractDungeon.actionManager.addToBottom(
-                new AddTemporaryHPAction(p, p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
+                new ApplyPowerAction(p, p,
+                        new MilkPower(p, p, 3), 3));
         }
 
     //Upgraded stats.
