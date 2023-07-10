@@ -55,17 +55,6 @@ public class ChibiAttack extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = MAGIC;
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) {
-            return false;
-        }
-        if (p.getPower(CommonPower.POWER_ID) != null && p.getPower(CommonPower.POWER_ID).amount < 5) {
-            canUse = false;
-            this.cantUseMessage = "My breasts aren't big enough!";
-        }
-        return canUse;
-    }
 
     // Actions the card should do.
     @Override

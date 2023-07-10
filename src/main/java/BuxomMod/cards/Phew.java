@@ -69,11 +69,9 @@ public class Phew extends AbstractDynamicCard {
             return false;
         }
         this.cantUseMessage = "My breasts aren't big enough!";
-        if (p.hasPower(CommonPower.POWER_ID) == true) {
-            if (p.getPower("BuxomMod:CommonPower").amount >= 1) {
+            if (DefaultMod.getPwrAmt(p, CommonPower.POWER_ID) >= 1) {
                 canUse = true;
             }
-        }
         else canUse = false;
         return canUse;
     }
@@ -105,7 +103,7 @@ public class Phew extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            upgradeMagicNumber(UPGRADE_PLUS_BLOCK);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

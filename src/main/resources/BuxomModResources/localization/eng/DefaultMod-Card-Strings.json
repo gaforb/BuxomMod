@@ -151,7 +151,7 @@
   },
   "BuxomMod:ChibiAttack": {
     "NAME": "Chibi Attack",
-    "DESCRIPTION": "If you have at least 5 BuxomMod:Buxom, deal damage equal to your BuxomMod:Buxom and channel !M! BuxomMod:Offensive Chibi."
+    "DESCRIPTION": "Deal damage equal to your BuxomMod:Buxom. NL Channel !M! BuxomMod:Offensive Chibi."
   },
   "BuxomMod:ChibiBlock": {
     "NAME": "Chibi Block",
