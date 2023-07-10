@@ -28,8 +28,8 @@ public class DefenseChibi extends CustomOrb {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
-    private static final int PASSIVE_AMOUNT = 6;
-    private static final int EVOKE_AMOUNT = 12;
+    private static final int PASSIVE_AMOUNT = 4;
+    private static final int EVOKE_AMOUNT = 8;
 
     // Animation Rendering Numbers - You can leave these at default, or play around with them and see what they change.
     private float vfxTimer = 1.0f;

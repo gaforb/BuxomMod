@@ -68,7 +68,7 @@
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 5-10. NL draw !M! additional cards at the start of your turn, and gain block equal to half your buxommod:Buxom."
+    "DESCRIPTION": "BuxomMod:Capacity 5-10. NL draw !M! additional cards at the start of your turn, and gain double that amount of block."
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
@@ -108,12 +108,12 @@
     "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, gain 1 BuxomMod:Buxom."
   },
   "BuxomMod:Library": {
-    "NAME": "Lehmana's Library",
-    "DESCRIPTION": "Draw !M! cards. NL Add *Omega *Library to your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Add *Omega *Library to your draw pile. NL Exhaust."
+    "NAME": "Omega Library",
+    "DESCRIPTION": "Draw !M! cards. NL Add *OMEGA *Library to your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Add *OMEGA *Library to your draw pile. NL Exhaust."
   },
   "BuxomMod:OmegaLibrary": {
-    "NAME": "Lehmana's Library",
+    "NAME": "OMEGA Library",
     "DESCRIPTION": "Draw !M! cards. NL Add *Library to your draw pile. NL Exhaust."
   },
   "BuxomMod:MeasurementTime": {
