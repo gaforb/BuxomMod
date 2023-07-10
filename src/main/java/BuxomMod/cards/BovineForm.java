@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.powers.LactatingPower;
+import BuxomMod.powers.MilkPower;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -61,6 +62,7 @@ public class BovineForm extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
             new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LactatingPower(p, p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MilkPower(p, p, magicNumber), magicNumber));
     }
 
     //Upgraded stats.

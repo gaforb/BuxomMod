@@ -1,5 +1,6 @@
 package BuxomMod.powers;
 
+import BuxomMod.DefaultMod;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,19 +15,14 @@ public abstract class BraPower extends TwoAmountPower {
     public void broken() {}
 
     public boolean inCapacity() {
-        for (AbstractPower pow : this.owner.powers) {
-            if (pow instanceof CommonPower) {
-                if (pow.amount > this.amount2) {
-                    return false;
-                } else if (pow.amount < this.minCapacity) {
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }
+        if (DefaultMod.getPwrAmt(this.owner, CommonPower.POWER_ID) > this.amount2) {
+            return false;
+        } else if (DefaultMod.getPwrAmt(this.owner, CommonPower.POWER_ID) < this.minCapacity) {
+            return false;
         }
-        return false;
+        else {
+            return true;
+        }
     }
     public void breakCheck() {
         for (AbstractPower pow : this.owner.powers) {

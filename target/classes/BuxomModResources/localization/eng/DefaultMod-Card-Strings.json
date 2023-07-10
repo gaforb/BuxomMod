@@ -36,7 +36,7 @@
   },
   "BuxomMod:BovineForm": {
     "NAME": "Bovine Form",
-    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !M! buxommod:Lactating."
+    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !M! buxommod:Lactating. NL Gain !M! buxommod:Milk."
   },
   "BuxomMod:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
@@ -88,7 +88,7 @@
   },
   "BuxomMod:ButtonHazard": {
     "NAME": "Button Hazard",
-    "DESCRIPTION": "Deal !M! damage to a random enemy whenever you gain BuxomMod:Buxom."
+    "DESCRIPTION": "Deal !M! damage to a random enemy whenever you gain BuxomMod:Buxom. NL BuxomMod:Milking 2: Deal !BuxomMod:SecondMagic! additional damage."
   },
   "BuxomMod:LeanneAssist": {
     "NAME": "Leanne Assist",
@@ -168,12 +168,12 @@
   },
   "BuxomMod:InduceLactation": {
     "NAME": "Induce Lactation",
-    "DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain up to 6 BuxomMod:Buxom. NL Gain !M! BuxomMod:Milk.",
-    "UPGRADE_DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain BuxomMod:Buxom up to 6. NL Gain !M! BuxomMod:Milk."
+    "DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain up to 6 BuxomMod:Buxom. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
+    "UPGRADE_DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain BuxomMod:Buxom up to 6. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk."
   },
   "BuxomMod:Paizuri": {
     "NAME": "Paizuri",
-    "DESCRIPTION": "If the enemy intends to attack, inflict !M! Weak and draw !M! cards."
+    "DESCRIPTION": "If the enemy intends to attack, inflict !M! Weak and draw !M! cards. NL BuxomMod:Milking 2: Also inflict !M! Vulnerable."
   },
   "BuxomMod:OmegaBeatdown": {
     "NAME": "Omega Beatdown",

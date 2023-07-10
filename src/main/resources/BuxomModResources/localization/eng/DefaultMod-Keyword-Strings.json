@@ -66,6 +66,14 @@
       "Milk",
       "milk"
     ],
-    "DESCRIPTION": "Converts into #yTemporary #yHP at the end of your turn. NL (#bCOMING #bSOON: Can be spent by Chibis and cards for effects.)"
+    "DESCRIPTION": "Converts into #yTemporary #yHP at the end of your turn. NL Can be spent by #bOrbs and cards for effects."
+  },
+  {
+    "PROPER_NAME": "Milking",
+    "NAMES": [
+      "Milking",
+      "milking"
+    ],
+    "DESCRIPTION": "When used, consumes this much #yMilk for an extra effect."
   }
 ]

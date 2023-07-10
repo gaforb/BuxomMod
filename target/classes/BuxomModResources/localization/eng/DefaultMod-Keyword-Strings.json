@@ -32,7 +32,7 @@
       "Devious",
       "devious"
     ],
-    "DESCRIPTION": "Gain 1 #yBuxom every turn. Gives #yEnergy and draws cards when evoked."
+    "DESCRIPTION": "Orb: Gain 1 #yBuxom every turn. Gives #yEnergy and draws cards when evoked."
   },
   {
     "PROPER_NAME": "Offensive",
@@ -40,7 +40,7 @@
       "Offensive",
       "offensive"
     ],
-    "DESCRIPTION": "Deals damage to a random enemy at the start of your turn. Damages all enemies when evoked."
+    "DESCRIPTION": "Orb: Deals damage to a random enemy at the start of your turn. Damages all enemies when evoked."
   },
   {
     "PROPER_NAME": "Defensive",
@@ -48,7 +48,7 @@
       "Defensive",
       "defensive"
     ],
-    "DESCRIPTION": "Gain block at the start of your turn. Gain more block when evoked."
+    "DESCRIPTION": "Orb: Gain block at the start of your turn. Gain more block when evoked."
   },
   {
     "PROPER_NAME": "Lactation",
@@ -66,6 +66,14 @@
       "Milk",
       "milk"
     ],
-    "DESCRIPTION": "Converts into #yTemporary #yHP at the end of your turn. NL (#bCOMING #bSOON: Can be spent by Chibis and cards for effects.)"
+    "DESCRIPTION": "Converts into #yTemporary #yHP at the end of your turn. NL Can be spent by #bOrbs and cards for effects."
+  },
+  {
+    "PROPER_NAME": "Milking",
+    "NAMES": [
+      "Milking",
+      "milking"
+    ],
+    "DESCRIPTION": "When used, consumes this much #yMilk for an extra effect."
   }
 ]

@@ -52,6 +52,8 @@ public class ButtonHazard extends AbstractDynamicCard {
 
     private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 2;
+    private static final int MILKBONUS = 2;
+    private static final int MILKCOST = 2;
 
     // /STAT DECLARATION/
 
@@ -59,12 +61,17 @@ public class ButtonHazard extends AbstractDynamicCard {
     public ButtonHazard() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = MILKBONUS;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (DefaultMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                    new ButtonHazardPower(p, p, defaultBaseSecondMagicNumber), defaultBaseSecondMagicNumber));
+        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new ButtonHazardPower(p, p, magicNumber), magicNumber));
     }

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import BuxomMod.DefaultMod;
 import BuxomMod.characters.TheDefault;
@@ -39,6 +40,7 @@ public class Paizuri extends AbstractDynamicCard {
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int MILKCOST = 2;
 
     // /STAT DECLARATION/
 
@@ -61,9 +63,12 @@ public class Paizuri extends AbstractDynamicCard {
         if (m != null && m.getIntentBaseDmg() >= 0) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
+            if (DefaultMod.payMilkCost(p, MILKCOST)) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+            }
         }
         else {
-            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[0], true));
+            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, "Enemy does not intend to attack!", true));
         }
     }
 
