@@ -3,7 +3,6 @@ package BuxomMod.cards;
 import BuxomMod.powers.LactatingPower;
 import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,11 +12,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import BuxomMod.DefaultMod;
 import BuxomMod.characters.TheDefault;
 import BuxomMod.powers.CommonPower;
-import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 
 import static BuxomMod.DefaultMod.makeCardPath;
 
-public class InduceLactation extends AbstractDynamicCard {
+public class SteadyLactation extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -27,7 +25,7 @@ public class InduceLactation extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(InduceLactation.class.getSimpleName());
+    public static final String ID = DefaultMod.makeID(SteadyLactation.class.getSimpleName());
     public static final String IMG = makeCardPath("InduceLactation.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -51,7 +49,7 @@ public class InduceLactation extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
     
-    public InduceLactation() {
+    public SteadyLactation() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         this.isInnate = false;

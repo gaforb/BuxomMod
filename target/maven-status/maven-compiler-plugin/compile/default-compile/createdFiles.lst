@@ -28,6 +28,7 @@ BuxomMod\powers\ShockPower.class
 BuxomMod\orbs\DefenseChibi.class
 BuxomMod\cards\ExposureStatus.class
 BuxomMod\cards\Omegabsorption.class
+BuxomMod\cards\SteadyLactation.class
 BuxomMod\util\TextureLoader.class
 BuxomMod\cards\DefaultSecondMagicNumberSkill.class
 BuxomMod\cards\ChibiBlock.class
@@ -51,6 +52,7 @@ BuxomMod\cards\BigBounceStatus.class
 BuxomMod\cards\DefaultCommonPower.class
 BuxomMod\potions\FlatteningPotion.class
 BuxomMod\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
+BuxomMod\cards\InducedLactation.class
 BuxomMod\cards\LeanneAssist.class
 BuxomMod\orbs\DeviousChibi.class
 BuxomMod\util\IDCheckDontTouchPls.class
@@ -75,7 +77,6 @@ BuxomMod\relics\ToplessArtifact.class
 BuxomMod\cards\MeasurementTime.class
 BuxomMod\cards\OmegaBeatdown.class
 BuxomMod\cards\Relief.class
-BuxomMod\cards\InduceLactation.class
 BuxomMod\cards\KCupBra.class
 BuxomMod\powers\BraPower.class
 BuxomMod\cards\ExpandMind.class

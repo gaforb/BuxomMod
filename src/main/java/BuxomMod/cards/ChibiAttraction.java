@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.powers.CommonPower;
+import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -42,6 +43,7 @@ public class ChibiAttraction extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int MILKCOST = 2;
 
 
     // /STAT DECLARATION/
@@ -55,12 +57,13 @@ public class ChibiAttraction extends AbstractDynamicCard {
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
-        if (!canUse) {
-            return false;
+        this.cantUseMessage = "Not enough milk!";
+        if (DefaultMod.isMilkEffect(MILKCOST)) {
+            canUse = true;
+            return canUse;
         }
-        if (p.getPower(CommonPower.POWER_ID) != null && p.getPower(CommonPower.POWER_ID).amount < 6) {
+        else {
             canUse = false;
-            this.cantUseMessage = "My breasts aren't big enough!";
         }
         return canUse;
     }

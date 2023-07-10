@@ -92,7 +92,7 @@
   },
   "BuxomMod:LeanneAssist": {
     "NAME": "Leanne Assist",
-    "DESCRIPTION": "Lose 1 BuxomMod:Buxom. NL Deal !D! damage to all enemies, then again equal to your BuxomMod:Buxom."
+    "DESCRIPTION": "Lose 1 BuxomMod:Buxom. NL Deal !D! damage to all enemies. NL BuxomMod:Milking 1: Deal !D! damage to all enemies again."
   },
   "BuxomMod:Relief": {
     "NAME": "Relief",
@@ -151,7 +151,7 @@
   },
   "BuxomMod:ChibiAttack": {
     "NAME": "Chibi Attack",
-    "DESCRIPTION": "If you have at least 5 BuxomMod:Buxom, deal damage equal to your BuxomMod:Buxom and channel !M! BuxomMod:Offensive Chibi."
+    "DESCRIPTION": "Deal damage equal to your BuxomMod:Buxom. NL Channel !M! BuxomMod:Offensive Chibi."
   },
   "BuxomMod:ChibiBlock": {
     "NAME": "Chibi Block",
@@ -164,10 +164,10 @@
   },
   "BuxomMod:ChibiAttraction": {
     "NAME": "Chibi Attraction",
-    "DESCRIPTION": "If you have at least 6 BuxomMod:Buxom, channel !M! BuxomMod:Devious Chibi."
+    "DESCRIPTION": "BuxomMod:Milking 2: Channel !M! BuxomMod:Devious Chibi."
   },
-  "BuxomMod:InduceLactation": {
-    "NAME": "Induce Lactation",
+  "BuxomMod:SteadyLactation": {
+    "NAME": "Steady Lactation",
     "DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain up to 6 BuxomMod:Buxom. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
     "UPGRADE_DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain BuxomMod:Buxom up to 6. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk."
   },
@@ -183,7 +183,11 @@
     "NAME": "Expand Mind",
     "DESCRIPTION": "Retain your hand this turn. NL Draw !M! card. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain your hand this turn. NL Draw !M! cards."
+  },
+  "BuxomMod:InducedLactation": {
+    "NAME": "Induced Lactation",
+    "DESCRIPTION": "Gain !M! BuxomMod:Milk.",
+    "UPGRADE_DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Shuffle this card into your draw pile."
   }
-
 }
 
