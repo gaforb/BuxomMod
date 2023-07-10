@@ -11,6 +11,8 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -540,5 +542,17 @@ public class DefaultMod implements
         BaseMod.addAudio(makeID("RIP_MEDIUM"), getModID() + "Resources/audio/rip2.ogg");
         BaseMod.addAudio(makeID("RIP_LONG"), getModID() + "Resources/audio/riplong.ogg");
         logger.info("Added Audio");
+    }
+
+    //utility
+
+    //from the Packmaster
+
+    public static int getPwrAmt(AbstractCreature check, String ID) {
+        AbstractPower found = check.getPower(ID);
+        if (found != null) {
+            return found.amount;
+        }
+        return 0;
     }
 }
