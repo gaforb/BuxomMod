@@ -31,8 +31,8 @@
   },
   "BuxomMod:HeavyLactation": {
     "NAME": "Heavy Lactation",
-    "DESCRIPTION": "Gain StSLib:Temporary_HP equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. Gain StSLib:Temporary_HP equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust."
+    "DESCRIPTION": "Gain buxommod:Milk equal to your buxommod:Buxom. Heal equal to half your buxommod:Buxom. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Gain buxommod:Milk equal to your Buxom. Heal equal to half your buxommod:Buxom. NL Exhaust."
   },
   "BuxomMod:BovineForm": {
     "NAME": "Bovine Form",
@@ -168,8 +168,8 @@
   },
   "BuxomMod:InduceLactation": {
     "NAME": "Induce Lactation",
-    "DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain up to 6 BuxomMod:Buxom. NL Gain !M! BuxomMod:Milk. NL Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Innate. If you have less than 6 BuxomMod:Buxom, gain BuxomMod:Buxom up to 6. NL Gain !M! BuxomMod:Milk. NL Draw 1 card."
+    "DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain up to 6 BuxomMod:Buxom. NL Gain !M! BuxomMod:Milk.",
+    "UPGRADE_DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain BuxomMod:Buxom up to 6. NL Gain !M! BuxomMod:Milk."
   },
   "BuxomMod:Paizuri": {
     "NAME": "Paizuri",

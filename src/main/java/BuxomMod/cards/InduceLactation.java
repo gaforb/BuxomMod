@@ -44,7 +44,7 @@ public class InduceLactation extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private int MAGIC = 6;
+    private int MAGIC = 4;
     private final int UPGRADE_PLUS_MAGIC = 2;
 
     // /STAT DECLARATION/
@@ -69,11 +69,11 @@ public class InduceLactation extends AbstractDynamicCard {
             }
         }
         else { AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new CommonPower(p, p, 6), 6));
+                new CommonPower(p, p, magicNumber), magicNumber));
         }
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
-                        new MilkPower(p, p, 3), 3));
+                        new MilkPower(p, p, magicNumber), magicNumber));
         }
 
     //Upgraded stats.
@@ -81,10 +81,8 @@ public class InduceLactation extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
-            this.isInnate = true;
         }
     }
 }
