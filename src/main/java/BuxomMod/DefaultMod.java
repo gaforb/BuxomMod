@@ -1,5 +1,6 @@
 package BuxomMod;
 
+import BuxomMod.powers.MilkPower;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
@@ -11,6 +12,9 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
@@ -554,5 +558,30 @@ public class DefaultMod implements
             return found.amount;
         }
         return 0;
+    }
+
+    public static boolean isMilkEffect(int milkCost) {
+        AbstractPlayer p = AbstractDungeon.player;
+        logger.info(getPwrAmt(AbstractDungeon.player, MilkPower.POWER_ID));
+        logger.info(" milk found");
+        logger.info(milkCost);
+        logger.info(" milk required");
+        if (getPwrAmt(AbstractDungeon.player, MilkPower.POWER_ID) >= milkCost) {
+            logger.info("Enough milk found");
+            return true;
+        }
+        logger.info("Not enough milk found");
+        return false;
+    }
+    public static boolean payMilkCost(AbstractPlayer p, int milkCost) {
+        if (isMilkEffect(milkCost)) {
+            logger.info("Paying milk cost...");
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, MilkPower.POWER_ID, milkCost));
+            return true;
+        }
+        else {
+            logger.info("Not enough milk to pay.");
+            return false;
+        }
     }
 }

@@ -73,10 +73,12 @@ BuxomMod\cards\OmegaShock.class
 BuxomMod\relics\PlaceholderRelic.class
 BuxomMod\relics\ToplessArtifact.class
 BuxomMod\cards\MeasurementTime.class
+BuxomMod\cards\OmegaBeatdown.class
 BuxomMod\cards\Relief.class
 BuxomMod\cards\InduceLactation.class
 BuxomMod\cards\KCupBra.class
 BuxomMod\powers\BraPower.class
+BuxomMod\cards\ExpandMind.class
 BuxomMod\cards\DefaultCommonSkill.class
 BuxomMod\cards\DefaultUncommonAttack.class
 BuxomMod\patches\relics\BottledPlaceholderField.class

@@ -178,6 +178,12 @@
   "BuxomMod:OmegaBeatdown": {
     "NAME": "Omega Beatdown",
     "DESCRIPTION": "Deal damage equal to your BuxomMod:Buxom !M! time(s), then again for every channeled orb."
+  },
+  "BuxomMod:ExpandMind": {
+    "NAME": "Expand Mind",
+    "DESCRIPTION": "Retain your hand this turn. NL Draw !M! card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain your hand this turn. NL Draw !M! cards."
   }
+
 }
 

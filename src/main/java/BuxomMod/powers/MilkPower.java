@@ -56,7 +56,7 @@ public class MilkPower extends TwoAmountPower implements CloneablePowerInterface
         /* 30 */     CardCrawlGame.sound.play(DefaultMod.makeID("HEARTBEAT"), 0.5F);
         /*    */   }
 
-    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
+    public void atEndOfTurn(boolean isPlayer) { // At the end of your turn
         addToBot(new AddTemporaryHPAction(this.owner, this.owner, this.amount));
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
