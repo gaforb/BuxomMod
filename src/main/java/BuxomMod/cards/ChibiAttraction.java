@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -57,7 +58,7 @@ public class ChibiAttraction extends AbstractDynamicCard {
         if (!canUse) {
             return false;
         }
-        if (p.getPower("BuxomMod:CommonPower") != null && p.getPower("BuxomMod:CommonPower").amount < 6) {
+        if (p.getPower(CommonPower.POWER_ID) != null && p.getPower(CommonPower.POWER_ID).amount < 6) {
             canUse = false;
             this.cantUseMessage = "My breasts aren't big enough!";
         }

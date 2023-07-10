@@ -59,7 +59,7 @@ public class InduceLactation extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
 
         if (b != null) {
             if (b.amount < 6) {

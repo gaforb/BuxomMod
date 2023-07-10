@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -50,7 +51,7 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
     }
 
     /*public void applyPowers() {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         if (b != null) {
             this.baseDamage += b.amount;
         }
@@ -61,7 +62,7 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         if (b != null) {
             this.baseDamage += b.amount;
         }
@@ -85,7 +86,7 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         AbstractDungeon.actionManager.addToBottom( // The action managed queues all the actions a card should do.
         // addToTop - first
         // addToBottom - last
@@ -100,7 +101,7 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (b != null) {
             AbstractDungeon.actionManager.addToBottom(
-                    new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), 1));
+                    new ReducePowerAction(p, p, p.getPower(CommonPower.POWER_ID), 1));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, b.amount, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         }

@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -59,7 +60,7 @@ public class ChibiAttack extends AbstractDynamicCard {
         if (!canUse) {
             return false;
         }
-        if (p.getPower("BuxomMod:CommonPower") != null && p.getPower("BuxomMod:CommonPower").amount < 5) {
+        if (p.getPower(CommonPower.POWER_ID) != null && p.getPower(CommonPower.POWER_ID).amount < 5) {
             canUse = false;
             this.cantUseMessage = "My breasts aren't big enough!";
         }
@@ -69,7 +70,7 @@ public class ChibiAttack extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractPower b = p.getPower("BuxomMod:CommonPower");
+        AbstractPower b = p.getPower(CommonPower.POWER_ID);
         if (b != null) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, b.amount, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }

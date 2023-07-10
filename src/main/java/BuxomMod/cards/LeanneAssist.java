@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -92,13 +93,13 @@ public class LeanneAssist extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         AbstractDungeon.actionManager.addToBottom( // The action managed queues all the actions a card should do.
         new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
         AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         if (b != null) {
             AbstractDungeon.actionManager.addToBottom(
-                    new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), 1));
+                    new ReducePowerAction(p, p, p.getPower(CommonPower.POWER_ID), 1));
             AbstractDungeon.actionManager.addToBottom(
                     new DamageAllEnemiesAction(p, b.amount, this.damageTypeForTurn,
                             AbstractGameAction.AttackEffect.BLUNT_HEAVY));

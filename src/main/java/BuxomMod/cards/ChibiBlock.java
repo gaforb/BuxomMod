@@ -53,7 +53,7 @@ public class ChibiBlock extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractPower b = p.getPower("BuxomMod:CommonPower");
+        AbstractPower b = p.getPower(CommonPower.POWER_ID);
         if (b != null) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, b.amount));
         }

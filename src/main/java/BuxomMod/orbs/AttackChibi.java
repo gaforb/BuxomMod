@@ -81,7 +81,7 @@ public class AttackChibi extends CustomOrb {
     }
 
     @Override
-    public void onStartOfTurn() {// 1.At the start of your turn.
+    public void onEndOfTurn() {
         AbstractDungeon.actionManager.addToBottom(// 2.This orb will have a flare effect
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
 

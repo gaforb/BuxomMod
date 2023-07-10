@@ -2,7 +2,7 @@
   "BuxomMod:AttackChibi": {
     "NAME": "Offensive Chibi",
     "DESCRIPTION": [
-      "#yPassive: At the start of your turn, deal #b",
+      "#yPassive: At the end of your turn, deal #b",
       " damage.",
       " NL #yEvoke: Deal #b",
       " damage to all enemies."

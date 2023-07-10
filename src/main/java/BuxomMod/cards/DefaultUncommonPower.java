@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -53,7 +54,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (p.hasPower("BuxomMod:CommonPower") == true) {
+        if (p.hasPower(CommonPower.POWER_ID) == true) {
             addToBot((AbstractGameAction)new ChannelAction((AbstractOrb)new DefenseChibi()));
             }
         }

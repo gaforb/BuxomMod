@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -60,8 +61,8 @@ public class ChibiSummon extends AbstractDynamicCard {
             return false;
         }
         this.cantUseMessage = "My breasts aren't big enough!";
-        if (p.hasPower("BuxomMod:CommonPower") == true) {
-            if (p.getPower("BuxomMod:CommonPower").amount >= 2) {
+        if (p.hasPower(CommonPower.POWER_ID) == true) {
+            if (p.getPower(CommonPower.POWER_ID).amount >= 2) {
                 canUse = true;
             }
         }
@@ -73,7 +74,7 @@ public class ChibiSummon extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
-                new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), 2));
+                new ReducePowerAction(p, p, p.getPower(CommonPower.POWER_ID), 2));
         addToBot((AbstractGameAction)new ChannelAction((AbstractOrb)new DefenseChibi()));
     }
 

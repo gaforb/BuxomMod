@@ -68,7 +68,7 @@ public class Phew extends AbstractDynamicCard {
             return false;
         }
         this.cantUseMessage = "My breasts aren't big enough!";
-        if (p.hasPower("BuxomMod:CommonPower") == true) {
+        if (p.hasPower(CommonPower.POWER_ID) == true) {
             if (p.getPower("BuxomMod:CommonPower").amount >= 1) {
                 canUse = true;
             }

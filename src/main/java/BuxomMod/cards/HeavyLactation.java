@@ -1,5 +1,8 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
+import BuxomMod.powers.MilkPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -55,10 +58,22 @@ public class HeavyLactation extends AbstractDynamicCard {
         this.exhaust = true;
     }
 
-    // Actions the card should do.
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
+        if (b != null) {
+            int bdiv = b.amount;
+            AbstractDungeon.actionManager.addToBottom(
+                    new ApplyPowerAction(p, p, new MilkPower(p, p, bdiv), bdiv));
+            bdiv = b.amount/2;
+            AbstractDungeon.actionManager.addToBottom(
+                    new HealAction(p, p, bdiv));
+        }
+    }
+
+    /*@Override
+
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         if (b != null) {
             int bdiv = b.amount;
             AbstractDungeon.actionManager.addToBottom(
@@ -69,7 +84,7 @@ public class HeavyLactation extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(
                     new HealAction(p, p, bdiv));
         }
-    }
+    }*/
 
     //Upgraded stats.
     @Override

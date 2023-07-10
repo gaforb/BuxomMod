@@ -52,7 +52,7 @@ public class OmegaArc extends AbstractDynamicCard {
     }
 
     /*public void applyPowers() {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         if (b != null) {
             this.baseDamage += b.amount;
         }
@@ -63,7 +63,7 @@ public class OmegaArc extends AbstractDynamicCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         if (b != null) {
             this.baseDamage += b.amount;
         }
@@ -87,7 +87,7 @@ public class OmegaArc extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower("BuxomMod:CommonPower");
+        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
 
         if (((b != null) && (b.amount <= 6)) || b == null) {
             for (int i = 0; i < magicNumber; i++) {
