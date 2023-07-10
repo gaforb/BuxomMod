@@ -59,8 +59,9 @@ public class LeanneAssist extends CustomCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int MILKCOST = 1;
 
     // Hey want a second damage/magic/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and TheDefault.variable.DefaultCustomVariable
@@ -100,8 +101,10 @@ public class LeanneAssist extends CustomCard {
         if (b != null) {
             AbstractDungeon.actionManager.addToBottom(
                     new ReducePowerAction(p, p, p.getPower(CommonPower.POWER_ID), 1));
+        }
+        if (DefaultMod.payMilkCost(p, MILKCOST)) {
             AbstractDungeon.actionManager.addToBottom(
-                    new DamageAllEnemiesAction(p, b.amount, this.damageTypeForTurn,
+                    new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
                             AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }
