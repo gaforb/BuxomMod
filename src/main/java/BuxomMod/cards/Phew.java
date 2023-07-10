@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

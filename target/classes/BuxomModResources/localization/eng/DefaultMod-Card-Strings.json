@@ -31,12 +31,12 @@
   },
   "BuxomMod:HeavyLactation": {
     "NAME": "Heavy Lactation",
-    "DESCRIPTION": "Gain stslib:Temporary_HP equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust."
+    "DESCRIPTION": "Gain StSLib:Temporary_HP equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Gain StSLib:Temporary_HP equal to your Buxom. NL Lose half your buxommod:Buxom. Heal equal to that amount. NL Exhaust."
   },
   "BuxomMod:BovineForm": {
     "NAME": "Bovine Form",
-    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !M! Regeneration."
+    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !M! buxommod:Lactating."
   },
   "BuxomMod:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
@@ -168,8 +168,8 @@
   },
   "BuxomMod:InduceLactation": {
     "NAME": "Induce Lactation",
-    "DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain up to 6 BuxomMod:Buxom. NL Gain !M! Temp. Hitpoints. NL Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "Innate. If you have less than 6 BuxomMod:Buxom, gain BuxomMod:Buxom up to 6. NL Gain !M! Temp. Hitpoints. NL Draw 1 card."
+    "DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain up to 6 BuxomMod:Buxom. NL Gain !M! BuxomMod:Milk. NL Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Innate. If you have less than 6 BuxomMod:Buxom, gain BuxomMod:Buxom up to 6. NL Gain !M! BuxomMod:Milk. NL Draw 1 card."
   },
   "BuxomMod:Paizuri": {
     "NAME": "Paizuri",

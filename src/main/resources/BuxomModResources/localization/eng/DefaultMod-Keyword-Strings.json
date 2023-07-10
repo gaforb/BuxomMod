@@ -5,7 +5,7 @@
       "Buxom",
       "buxom"
     ],
-    "DESCRIPTION": "Increased breast size. Increases chance of receiving a random status card at end of turn."
+    "DESCRIPTION": "Increased breast size. Generates status cards at end of turn."
   },
   {
     "PROPER_NAME": "Capacity",
@@ -49,5 +49,23 @@
       "defensive"
     ],
     "DESCRIPTION": "Gain block at the start of your turn. Gain more block when evoked."
+  },
+  {
+    "PROPER_NAME": "Lactation",
+    "NAMES": [
+      "Lactating",
+      "lactating",
+      "lactation",
+      "Lactation"
+    ],
+    "DESCRIPTION": "Gain #yMilk at the start of your turn. Decreases by 2 each turn."
+  },
+  {
+    "PROPER_NAME": "Milk",
+    "NAMES": [
+      "Milk",
+      "milk"
+    ],
+    "DESCRIPTION": "Converts into #yTemporary #yHP at the end of your turn. NL #bCOMING SOON: Can be spent by Chibis and cards for effects."
   }
 ]

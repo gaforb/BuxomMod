@@ -48,7 +48,6 @@ BuxomMod\cards\OmegaFlare.class
 BuxomMod\relics\JCupRelic.class
 BuxomMod\cards\DefaultRareAttack.class
 BuxomMod\cards\BigBounceStatus.class
-BuxomMod\orbs\AbstractChibi.class
 BuxomMod\cards\DefaultCommonPower.class
 BuxomMod\potions\FlatteningPotion.class
 BuxomMod\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class

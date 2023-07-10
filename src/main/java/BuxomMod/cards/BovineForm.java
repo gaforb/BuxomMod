@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.LactatingPower;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -40,6 +41,7 @@ public class BovineForm extends AbstractDynamicCard {
     private static final int UPGRADE_COST = 2;
 
     private static final int MAGIC = 10;
+    private static final int UPGRADE_PLUS_MAGIC = 5;
 
     // /STAT DECLARATION/
 
@@ -60,7 +62,7 @@ public class BovineForm extends AbstractDynamicCard {
             new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber), magicNumber));
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if (power instanceof CommonPower) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber), magicNumber));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LactatingPower(p, p, magicNumber), magicNumber));
             }
         }
     }
@@ -70,7 +72,7 @@ public class BovineForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

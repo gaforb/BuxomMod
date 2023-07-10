@@ -51,18 +51,14 @@ public class LactatingPower extends TwoAmountPower implements CloneablePowerInte
         updateDescription();
     }
 
-    public void atStartOfTurn(boolean isPlayer) { // At the end of your turn
+    public void atStartOfTurn() { // At the end of your turn
         addToBot(new ApplyPowerAction(this.owner, this.owner, new MilkPower(this.owner, this.owner, this.amount), this.amount));
         addToBot(new ReducePowerAction(this.owner, this.owner, this, 2));
     }
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0];
-        }   else if (amount > 1) {
-            description = DESCRIPTIONS[0];
-        }
+        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     public AbstractPower makeCopy() {

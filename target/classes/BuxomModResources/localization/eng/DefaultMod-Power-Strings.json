@@ -9,15 +9,15 @@
 },
 "BuxomMod:KCupPower": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["Capacity 0-5. At the end of your turn, gain #b", " block."]
+        "DESCRIPTIONS": ["#yCapacity 0-5. At the end of your turn, gain #b", " block."]
 },
 "BuxomMod:KCupPower2": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["Capacity 0-5. At the end of your turn, gain #b", " block."]
+        "DESCRIPTIONS": ["#yCapacity 0-5. At the end of your turn, gain #b", " block."]
 },
 "BuxomMod:MCupPower": {
         "NAME": "M-Cup Bra",
-        "DESCRIPTIONS": ["Capacity 5-10. At the start of your turn, draw #b", " cards and gain twice that much block."]
+        "DESCRIPTIONS": ["#yCapacity 5-10. At the start of your turn, draw #b", " cards and gain twice that much block."]
 },
 "BuxomMod:ChibiPower": {
         "NAME": "Chibi",
@@ -41,10 +41,14 @@
 },
 "BuxomMod:TCupPower": {
         "NAME": "T-Cup Bra",
-        "DESCRIPTIONS": ["buxommod:Capacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases. If this bra breaks, lose all your Dexterity."]
+        "DESCRIPTIONS": ["#yCapacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases. If this bra breaks, lose all your Dexterity."]
 },
 "BuxomMod:MilkPower": {
         "NAME": "Milk",
-        "DESCRIPTIONS": ["Turns into stslib:Temporary_HP at the end of your turn. Can be spent by Chibis and cards for effects."]
+        "DESCRIPTIONS": ["Converts into #yTemporary #yHP at the end of your turn. NL #bCOMING SOON: Can be spent by Chibis and cards for effects."]
+},
+"BuxomMod:LactatingPower": {
+        "NAME": "Lactating",
+        "DESCRIPTIONS": ["Gain #b", " #yMilk at the start of your turn. Decreases by 2 each turn."]
 }
 }

@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
