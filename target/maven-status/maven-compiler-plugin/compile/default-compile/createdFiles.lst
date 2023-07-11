@@ -18,6 +18,7 @@ BuxomMod\cards\TCupBra.class
 BuxomMod\cards\HeavyLactation.class
 BuxomMod\orbs\DefaultOrb.class
 BuxomMod\cards\DefaultUncommonPower.class
+BuxomMod\cards\BraBreaker.class
 BuxomMod\relics\DwarfBoobsRelic.class
 BuxomMod\vfx\ExpandEffect.class
 BuxomMod\characters\TheDefault.class
@@ -85,6 +86,7 @@ BuxomMod\cards\DefaultUncommonAttack.class
 BuxomMod\patches\relics\BottledPlaceholderField.class
 BuxomMod\powers\KCupPower.class
 BuxomMod\relics\WashboardRelic.class
+BuxomMod\powers\BraBreakerPower.class
 BuxomMod\cards\SwellingTight.class
 BuxomMod\events\ToplessEvent.class
 BuxomMod\cards\BrokenBraT.class

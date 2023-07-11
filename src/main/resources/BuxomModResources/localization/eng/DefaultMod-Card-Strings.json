@@ -188,6 +188,10 @@
     "NAME": "Induced Lactation",
     "DESCRIPTION": "Gain !M! BuxomMod:Milk.",
     "UPGRADE_DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Shuffle this card into your draw pile."
+  },
+  "BuxomMod:BraBreaker": {
+    "NAME": "Bra Breaker",
+    "DESCRIPTION": "If wearing a #yBra: Gain enough BuxomMod:Buxom to break it. NL Permanently increase your starting BuxomMod:Buxom by 2. Gain !M! BuxomMod:Breaker. NL If not: Add a random Broken Bra into your hand."
   }
 }
 

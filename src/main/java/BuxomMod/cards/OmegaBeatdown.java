@@ -90,14 +90,16 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int b = DefaultMod.getPwrAmt(p, CommonPower.POWER_ID);
-        for (int i = 0; i < this.magicNumber; ++i) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, b),
-                            AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, b),
+                        AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        if (this.upgraded) {
+            addToBot(new DamageAction(m, new DamageInfo(p, b),
+                    AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
-        for (int i = 0; i < AbstractDungeon.player.orbs.size(); ++i) {
+        for (int i = 0; i < AbstractDungeon.player.orbs.size(); i++) {
             if (!(AbstractDungeon.player.orbs.get(i) instanceof EmptyOrbSlot)) {
-                this.addToTop(new DamageAction(m, new DamageInfo(p, b),
+                addToBot(new DamageAction(m, new DamageInfo(p, b),
                         AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             }
         }

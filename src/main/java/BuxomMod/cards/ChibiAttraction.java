@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
 import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.DefaultMod.payMilkCost;
 
 public class ChibiAttraction extends AbstractDynamicCard {
 
@@ -60,7 +61,6 @@ public class ChibiAttraction extends AbstractDynamicCard {
         this.cantUseMessage = "Not enough milk!";
         if (DefaultMod.isMilkEffect(MILKCOST)) {
             canUse = true;
-            return canUse;
         }
         else {
             canUse = false;
@@ -71,7 +71,16 @@ public class ChibiAttraction extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        addToBot((AbstractGameAction)new ChannelAction((AbstractOrb)new DeviousChibi()));
+        if (!upgraded) {
+            if (payMilkCost(p, MILKCOST)) {
+                addToBot(new ChannelAction(new DeviousChibi()));
+            }
+        } else {
+            if (payMilkCost(p, MILKCOST)) {
+                addToBot(new ChannelAction(new DeviousChibi()));
+                addToBot(new ChannelAction(new DeviousChibi()));
+            }
+        }
     }
 
     //Upgraded stats.

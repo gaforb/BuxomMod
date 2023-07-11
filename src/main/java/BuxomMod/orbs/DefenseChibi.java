@@ -20,6 +20,7 @@ import basemod.abstracts.CustomOrb;
 import BuxomMod.DefaultMod;
 
 import static BuxomMod.DefaultMod.makeOrbPath;
+import static BuxomMod.DefaultMod.payMilkCost;
 
 public class DefenseChibi extends CustomOrb {
 
@@ -37,6 +38,7 @@ public class DefenseChibi extends CustomOrb {
     private float vfxIntervalMax = 0.4f;
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
+    private static final int MILKCOST = 1;
 
     public DefenseChibi() {
         // The passive/evoke description we pass in here, specifically, don't matter
@@ -80,6 +82,9 @@ public class DefenseChibi extends CustomOrb {
         AbstractDungeon.actionManager.addToBottom(// 2.This orb will have a flare effect
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
 
+        if (DefaultMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
+            onEvoke();
+        }
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, passiveAmount));
     }
 

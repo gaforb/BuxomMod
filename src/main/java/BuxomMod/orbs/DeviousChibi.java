@@ -32,7 +32,7 @@ public class DeviousChibi extends CustomOrb {
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
     private static final int PASSIVE_AMOUNT = 1;
-    private static final int EVOKE_AMOUNT = 3;
+    private static final int EVOKE_AMOUNT = 2;
 
     // Animation Rendering Numbers - You can leave these at default, or play around with them and see what they change.
     private float vfxTimer = 1.0f;
@@ -58,7 +58,7 @@ public class DeviousChibi extends CustomOrb {
     @Override
     public void updateDescription() { // Set the on-hover description of the orb
         applyFocus(); // Apply Focus (Look at the next method)
-            description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1] + DESCRIPTIONS[2] + evokeAmount + DESCRIPTIONS[3] + evokeAmount + DESCRIPTIONS[4];
+            description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1] + DESCRIPTIONS[2] + evokeAmount + DESCRIPTIONS[3] + passiveAmount + DESCRIPTIONS[4];
     }
 
     @Override
@@ -71,7 +71,7 @@ public class DeviousChibi extends CustomOrb {
     public void onEvoke() { // 1.On Orb Evoke
 
                 AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(evokeAmount));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(evokeAmount));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(passiveAmount));
         // The damage matrix is how orb damage all enemies actions have to be assigned. For regular cards that do damage to everyone, check out cleave or whirlwind - they are a bit simpler.
 
 

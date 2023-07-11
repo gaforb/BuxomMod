@@ -40,7 +40,7 @@ public class AttackChibi extends CustomOrb {
     private float vfxIntervalMax = 0.4f;
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
-    private static final int milkCost = 1;
+    private static final int MILKCOST = 1;
 
     public AttackChibi() {
         // The passive/evoke description we pass in here, specifically, don't matter
@@ -85,7 +85,7 @@ public class AttackChibi extends CustomOrb {
     public void onEndOfTurn() {
         AbstractDungeon.actionManager.addToTop(// 2.This orb will have a flare effect
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
-        if (DefaultMod.payMilkCost(AbstractDungeon.player, this.milkCost)) {
+        if (DefaultMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
             onEvoke();
         }
         else {
