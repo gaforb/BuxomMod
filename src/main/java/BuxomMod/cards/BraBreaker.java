@@ -13,9 +13,12 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
+import java.util.Iterator;
 import java.util.Random;
 
 import static BuxomMod.DefaultMod.getPwrAmt;
@@ -42,13 +45,14 @@ public class BraBreaker extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
-    private static final int COST = 0;
+    private static final int COST = 2;
 
-    private static final int MAGIC = 5;
-    private static final int UPGRADE_PLUS_MAGIC = 3;
+    private static final int MAGIC = 2;
+    private static final int DAMAGE = 0;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/
 
@@ -56,12 +60,13 @@ public class BraBreaker extends AbstractDynamicCard {
     public BraBreaker() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        baseDamage = damage = DAMAGE;
     }
 
 
     // Actions the card should do.
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    /*public void use(AbstractPlayer p, AbstractMonster m) {
         boolean bra = false;
         for (AbstractPower pow : p.powers) { //if wearing a bra
             if (pow instanceof BraPower) {
@@ -87,8 +92,32 @@ public class BraBreaker extends AbstractDynamicCard {
             }
             addToBot(new MakeTempCardInHandAction(braID));
         }
-    }
+    }*/
 
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        for (AbstractPower pow : p.powers) { //if wearing a bra
+            if (pow instanceof BraPower) {
+                ((BraPower) pow).growToBreak();
+            }
+        }
+        int statusCount = 0;
+        Iterator var4 = AbstractDungeon.actionManager.cardsPlayedThisCombat.iterator();
+
+        while (var4.hasNext()) {
+            AbstractCard card = (AbstractCard) var4.next();
+            if (card.type == CardType.STATUS) {
+                ++statusCount;
+                if (card.cardID == BigBounceStatus.ID) {
+                    ++statusCount;
+                } else if (card.cardID.contains("BrokenBra")) {
+                    statusCount += 2;
+                }
+            }
+        }
+        this.baseDamage = statusCount * this.magicNumber;
+        this.calculateCardDamage((AbstractMonster) null);
+        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE, false));
+    }
     //Upgraded stats.
     @Override
     public void upgrade() {

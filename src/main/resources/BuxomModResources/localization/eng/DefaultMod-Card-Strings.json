@@ -191,7 +191,16 @@
   },
   "BuxomMod:BraBreaker": {
     "NAME": "Bra Breaker",
-    "DESCRIPTION": "If wearing a #yBra: Gain enough BuxomMod:Buxom to break it. NL Permanently increase your starting BuxomMod:Buxom by 2. Gain !M! BuxomMod:Breaker. NL If not: Add a random Broken Bra into your hand."
+    "DESCRIPTION": "If wearing a *Bra: Gain enough BuxomMod:Buxom to break it. NL Deal !M! damage for each Status card used this combat. Big Bounces count double, and Broken Bras count triple. NL (Deals !D! damage.)"
+  },
+  "BuxomMod:BigBouncePowerCard": {
+    "NAME": "Big Bounce",
+    "DESCRIPTION": "Gain !M! Buxom. NL Generate half as many *Bounces at the end of your turn, and change them to *Big *Bounces.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Buxom. NL Generate half as many *Bounces at the end of your turn, and change them to *Big *Bounces."
+  },
+  "BuxomMod:BigBounceStatus": {
+    "NAME": "Big Bounce",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, deal damage to a random enemy equal to half your Buxom."
   }
 }
 

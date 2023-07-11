@@ -1,5 +1,7 @@
 package BuxomMod.powers;
 
+import BuxomMod.cards.BigBounceStatus;
+import BuxomMod.cards.DefaultCommonAttack;
 import BuxomMod.characters.TheDefault;
 import basemod.interfaces.*;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
@@ -17,6 +19,8 @@ import BuxomMod.util.TextureLoader;
 import BuxomMod.cards.BuxomStatus;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
+
+import java.util.ArrayList;
 
 import static BuxomMod.DefaultMod.makePowerPath;
 
@@ -77,13 +81,22 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
             }
         }
     }*/
-
-    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
+    public void createStatusCards() {
         this.amount2 += this.amount;
-        while (this.amount2 >= 5) {
-            this.amount2 -= 5;
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BuxomStatus(), 1, true, true));
+        if (this.owner.hasPower(BigBouncePower.POWER_ID)) {
+            while (this.amount2 >= 10) {
+                this.amount2 -= 10;
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BigBounceStatus(), 1, true, true));
+            }
+        } else {
+            while (this.amount2 >= 5) {
+                this.amount2 -= 5;
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BuxomStatus(), 1, true, true));
+            }
         }
+    }
+    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
+        createStatusCards();
     }
 
     //TODO: Gain an orb slot for every 5 Buxom

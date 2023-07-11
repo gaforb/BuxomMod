@@ -1,9 +1,17 @@
 package BuxomMod.cards;
 
 import BuxomMod.DefaultMod;
+import BuxomMod.powers.CommonPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import static BuxomMod.DefaultMod.getPwrAmt;
 import static BuxomMod.DefaultMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
@@ -63,6 +71,18 @@ public class BigBounceStatus extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int bdiv = getPwrAmt(p, CommonPower.POWER_ID);
+        bdiv /= 2;
+        if (this.dontTriggerOnUseCard) {
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, bdiv, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+        }
+    }
+
+    public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
+
+    public void triggerOnEndOfTurnForPlayingCard() {
+        this.dontTriggerOnUseCard = true;
+        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
 
     // Upgraded stats.
