@@ -6,9 +6,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -20,14 +18,14 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class BraBreakerPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("ButtonHazardPower");
+    public static final String POWER_ID = DefaultMod.makeID("Breaker");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/ButtonHazardPower84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/ButtonHazardPower32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/BraBreaker84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/BraBreaker32.png");
 
     public BraBreakerPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -54,6 +52,7 @@ public class BraBreakerPower extends AbstractPower implements CloneablePowerInte
                 addToBot(new DrawCardAction(1));
                 AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player,
                         DefaultMod.getPwrAmt(this.owner, CommonPower.POWER_ID), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
             }
             flash();
             AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));

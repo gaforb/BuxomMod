@@ -18,7 +18,7 @@ public abstract class BraPower extends TwoAmountPower {
     public void broken() {}
 
     public void growToBreak() {
-        int bdiff = (this.amount2 - getPwrAmt(this.owner, CommonPower.POWER_ID));
+        int bdiff = (this.amount2 - getPwrAmt(this.owner, CommonPower.POWER_ID)) + 1;
         addToBot(new ApplyPowerAction(this.owner, this.owner, new CommonPower(this.owner, this.owner, bdiff), bdiff));
     }
 

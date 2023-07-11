@@ -51,7 +51,7 @@
         "NAME": "Lactating",
         "DESCRIPTIONS": ["Gain #b", " #yMilk at the start of your turn. Decreases by 2 each turn."]
 },
-"BuxomMod:Breaker": {
+"BuxomMod:BraBreakerPower": {
         "NAME": "Breaker",
         "DESCRIPTIONS": ["Whenever you draw a Status card, deal #b", " damage to a random enemy. NL Whenever you draw a #yBroken #yBra, gain [E], draw 1 card, and deal damage to a random enemy equal to your #yBuxom."]
 }

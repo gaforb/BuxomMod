@@ -1,5 +1,6 @@
 package BuxomMod.powers;
 
+import BuxomMod.characters.TheDefault;
 import basemod.interfaces.*;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.badlogic.gdx.graphics.Texture;

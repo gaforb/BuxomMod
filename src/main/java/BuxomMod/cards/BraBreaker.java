@@ -41,8 +41,8 @@ public class BraBreaker extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 0;
@@ -55,7 +55,7 @@ public class BraBreaker extends AbstractDynamicCard {
 
     public BraBreaker() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = MAGIC;
+        baseMagicNumber = magicNumber = MAGIC;
     }
 
 
@@ -73,7 +73,7 @@ public class BraBreaker extends AbstractDynamicCard {
                 addToBot(new ApplyPowerAction(p, p, new BraBreakerPower(p, p, this.magicNumber), this.magicNumber));
             }
         }
-        if (bra = true) {
+        if (bra == false) {
             Random randInt = new Random();
             int randomBra = randInt.nextInt(2);
             AbstractCard braID = null;
