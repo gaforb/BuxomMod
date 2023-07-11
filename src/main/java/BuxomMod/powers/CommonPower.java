@@ -7,6 +7,7 @@ import basemod.interfaces.*;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -86,12 +87,12 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
         if (this.owner.hasPower(BigBouncePower.POWER_ID)) {
             while (this.amount2 >= 10) {
                 this.amount2 -= 10;
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BigBounceStatus(), 1, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BigBounceStatus(), 1));
             }
         } else {
             while (this.amount2 >= 5) {
                 this.amount2 -= 5;
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BuxomStatus(), 1, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BuxomStatus(), 1));
             }
         }
     }
