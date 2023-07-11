@@ -12,6 +12,7 @@ BuxomMod\cards\CardTemplate.class
 BuxomMod\variables\DefaultSecondMagicNumber.class
 BuxomMod\characters\TheDefault$Enums.class
 BuxomMod\powers\ReliefPower.class
+BuxomMod\powers\BigBouncePower.class
 BuxomMod\cards\DefaultUncommonSkill.class
 BuxomMod\cards\BrokenBraK.class
 BuxomMod\cards\TCupBra.class
@@ -41,6 +42,7 @@ BuxomMod\cards\ChibiSummon.class
 BuxomMod\cards\MCupBra.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\cards\ButtonHazard.class
+BuxomMod\cards\BigBouncePowerCard.class
 BuxomMod\cards\OmegaLibrary.class
 BuxomMod\actions\UncommonPowerAction.class
 BuxomMod\patches\DefaultInsertPatch$Locator.class
@@ -49,6 +51,7 @@ BuxomMod\cards\AbstractDynamicCard.class
 BuxomMod\cards\OmegaFlare.class
 BuxomMod\relics\JCupRelic.class
 BuxomMod\cards\DefaultRareAttack.class
+BuxomMod\actions\CreateBuxomStatusAction.class
 BuxomMod\cards\BigBounceStatus.class
 BuxomMod\cards\DefaultCommonPower.class
 BuxomMod\potions\FlatteningPotion.class

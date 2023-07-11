@@ -191,7 +191,7 @@
   },
   "BuxomMod:BraBreaker": {
     "NAME": "Bra Breaker",
-    "DESCRIPTION": "If wearing a *Bra: Gain enough BuxomMod:Buxom to break it. NL Deal !M! damage for each Status card used this combat. Big Bounces count double, and Broken Bras count triple. NL (Deals !D! damage.)"
+    "DESCRIPTION": "If wearing a *Bra: Gain enough BuxomMod:Buxom to break it. NL Deal !M! damage for each Status card in your hand, draw pile, and discard pile. Big Bounces count double, and Broken Bras count triple. NL (Deals !D! damage.)"
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",

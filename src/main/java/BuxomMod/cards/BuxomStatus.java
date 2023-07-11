@@ -57,6 +57,7 @@ public class BuxomStatus extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.exhaust = true;
+        this.isEthereal = true;
     }
 
 
