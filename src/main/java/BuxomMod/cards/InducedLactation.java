@@ -6,6 +6,7 @@ import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.LactatingPower;
 import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -43,8 +44,7 @@ public class InducedLactation extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private int MAGIC = 4;
-    private final int UPGRADE_PLUS_MAGIC = 2;
+    private int MAGIC = 2;
 
     // /STAT DECLARATION/
 
@@ -53,6 +53,7 @@ public class InducedLactation extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         this.shuffleBackIntoDrawPile = false;
+        this.cardsToPreview = new AftershockStatus();
     }
 
     // Actions the card should do.
@@ -61,6 +62,7 @@ public class InducedLactation extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
                         new MilkPower(p, p, magicNumber), magicNumber));
+        addToBot(new MakeTempCardInDrawPileAction(new AftershockStatus(), 1, true, true));
         }
 
     //Upgraded stats.
@@ -68,7 +70,6 @@ public class InducedLactation extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.shuffleBackIntoDrawPile = true;

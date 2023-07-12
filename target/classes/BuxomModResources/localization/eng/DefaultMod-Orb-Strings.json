@@ -22,7 +22,7 @@
     "NAME": "Defensive Chibi",
     "DESCRIPTION": [
       "#yPassive: At the end of your turn, gain #b",
-      " #yBlock.",
+      " #yBlock. NL #yMilking 1: Use evoke effect instead.",
       " NL #yEvoke: Gain #b",
       " block."
     ]

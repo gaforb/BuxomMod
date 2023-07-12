@@ -9,7 +9,9 @@ import BuxomMod.powers.MilkPower;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static BuxomMod.DefaultMod.makeCardPath;
@@ -26,6 +28,8 @@ public class BigBouncePowerCard extends AbstractDynamicCard {
 
     public static final String ID = DefaultMod.makeID(BigBouncePowerCard.class.getSimpleName());
     public static final String IMG = makeCardPath("BigBouncePower.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -66,6 +70,7 @@ public class BigBouncePowerCard extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.isInnate = true;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

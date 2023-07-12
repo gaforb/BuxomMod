@@ -4,6 +4,8 @@ import BuxomMod.cards.BigBounceStatus;
 import BuxomMod.cards.DefaultCommonAttack;
 import BuxomMod.characters.TheDefault;
 import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -12,7 +14,9 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import BuxomMod.DefaultMod;
@@ -55,6 +59,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        this.greenColor2 = Color.PINK;
 
         updateDescription();
     }
@@ -85,8 +90,8 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     public void createStatusCards() {
         this.amount2 += this.amount;
         if (this.owner.hasPower(BigBouncePower.POWER_ID)) {
-            while (this.amount2 >= 10) {
-                this.amount2 -= 10;
+            while (this.amount2 >= 7) {
+                this.amount2 -= 7;
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BigBounceStatus(), 1));
             }
         } else {
@@ -108,6 +113,23 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
                ((BraPower) pow).breakCheck();
            }
        }
+   }
+   @Override
+   public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
+       super.renderAmount(sb, x, y, c);
+       if (this.amount2 > 0) {
+           if (!this.isTurnBased) {
+               this.greenColor2.a = c.a;
+               c = this.greenColor2;
+           }
+
+           FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount2), x, y + 15.0F * Settings.scale, this.fontScale, c);
+       } else if (this.amount2 < 0 && this.canGoNegative2) {
+           this.redColor2.a = c.a;
+           c = this.redColor2;
+           FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount2), x, y + 15.0F * Settings.scale, this.fontScale, c);
+       }
+
    }
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         Random rand = new Random();

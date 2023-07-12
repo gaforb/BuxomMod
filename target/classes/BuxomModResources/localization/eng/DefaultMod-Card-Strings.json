@@ -18,12 +18,11 @@
   },
   "BuxomMod:DefaultUncommonSkill": {
     "NAME": "Expansive Wall",
-    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !B! block."
+    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !B! Block."
   },
   "BuxomMod:DefaultUncommonPower": {
     "NAME": "Chibis!",
-    "DESCRIPTION": "Channel 1 BuxomMod:Defensive Chibi.",
-    "UPGRADE_DESCRIPTION": "Channel 1 BuxomMod:Defensive Chibi."
+    "DESCRIPTION": "Gain !M! Orb slot(s). Channel 1 BuxomMod:Defensive Chibi."
   },
   "BuxomMod:DefaultRareAttack": {
     "NAME": "Omega Force",
@@ -68,7 +67,7 @@
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 5-10. NL draw !M! additional cards at the start of your turn, and gain double that amount of block."
+    "DESCRIPTION": "BuxomMod:Capacity 5-10. NL Draw !M! additional cards at the start of your turn, and gain double that amount of block."
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
@@ -186,8 +185,8 @@
   },
   "BuxomMod:InducedLactation": {
     "NAME": "Induced Lactation",
-    "DESCRIPTION": "Gain !M! BuxomMod:Milk.",
-    "UPGRADE_DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Shuffle this card into your draw pile."
+    "DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Add 1 *Afterswell to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Add 1 *Afterswell to your draw pile. NL Shuffle this card into your draw pile."
   },
   "BuxomMod:BraBreaker": {
     "NAME": "Bra Breaker",
@@ -195,8 +194,8 @@
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",
-    "DESCRIPTION": "Gain !M! Buxom. NL Generate half as many *Bounces at the end of your turn, and change them to *Big *Bounces.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Buxom. NL Generate half as many *Bounces at the end of your turn, and change them to *Big *Bounces."
+    "DESCRIPTION": "Gain !M! Buxom. NL Generate end-of-turn *Bounces 40% slower, and change them to *Big *Bounces.",
+    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Buxom. NL Generate end-of-turn *Bounces 40% slower, and change them to *Big *Bounces."
   },
   "BuxomMod:BigBounceStatus": {
     "NAME": "Big Bounce",

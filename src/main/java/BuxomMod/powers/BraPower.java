@@ -1,6 +1,7 @@
 package BuxomMod.powers;
 
 import BuxomMod.DefaultMod;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -13,7 +14,9 @@ import static BuxomMod.DefaultMod.getPwrAmt;
 public abstract class BraPower extends TwoAmountPower {
 
     public int minCapacity = 0;
-    public BraPower() {}
+    public BraPower() {
+        this.greenColor2 = Color.CYAN;
+    }
 
     public void broken() {}
 

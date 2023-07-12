@@ -1,11 +1,15 @@
 package BuxomMod.characters;
 
+import BuxomMod.powers.CommonPower;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Bone;
+import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -77,9 +81,10 @@ public class TheDefault extends CustomPlayer {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
+    public static String boobBoneNID = "boobNclothed";
+    public static String boobBoneFID = "boobFclothed";
 
     // =============== /STRINGS/ =================
-
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
@@ -104,7 +109,7 @@ public class TheDefault extends CustomPlayer {
         super(name, setClass, orbTextures,
                 "BuxomModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpineAnimation(
-                        "BuxomModResources/images/char/character/skeleton2.atlas", "BuxomModResources/images/char/character/skeleton2_Armature.json", 0.3f));
+                        "BuxomModResources/images/char/character/skeleton2.atlas", "BuxomModResources/images/char/character/skeleton2_Armaturelehmana sprite.json", 0.3f));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
@@ -127,6 +132,10 @@ public class TheDefault extends CustomPlayer {
                 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
+        this.stateData.setDefaultMix(0.1F);
+        e.setTimeScale(1.0F);
+
+
 
         // =============== /ANIMATIONS/ =================
 
@@ -139,6 +148,44 @@ public class TheDefault extends CustomPlayer {
         // =============== /TEXT BUBBLE LOCATION/ =================
 
     }
+    //animations
+    public Skeleton getSkeleton() {
+        return skeleton;
+    }
+
+    public void changeState(String stateName) {
+        switch (stateName) {
+            case "idle":
+                this.state.setAnimation(0, "idle", true);
+                break;
+            case "big_idle":
+                this.state.setAnimation(0, "big_idle", true);
+        }
+
+    }
+    @Override
+    public void renderPlayerImage(SpriteBatch sb) {
+        int frameCount = 0;
+        Bone boobN = getSkeleton().findBone(boobBoneNID);
+        Bone boobF = getSkeleton().findBone(boobBoneFID);
+        Float scale = getPwrAmt(this, CommonPower.POWER_ID)*0.03F + 1F;
+        if (scale >= 1.3F) {
+            getSkeleton().setAttachment("boobs2", "boobs2-2");
+            changeState("big_idle");
+        }
+        else {getSkeleton().setAttachment("boobs2", "boobs2-1");
+            changeState("idle");}
+        boobN.setScale(scale);
+        boobF.setScale(scale);
+        boobN.update();
+        boobF.update();
+        super.renderPlayerImage(sb);
+        frameCount++;
+    }
+
+
+
+
 
     // =============== /CHARACTER CLASS END/ =================
 

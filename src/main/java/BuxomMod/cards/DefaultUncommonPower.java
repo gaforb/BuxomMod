@@ -1,6 +1,10 @@
 package BuxomMod.cards;
 
+import BuxomMod.orbs.AttackChibi;
+import BuxomMod.orbs.DeviousChibi;
 import BuxomMod.powers.CommonPower;
+import basemod.abstracts.CustomOrb;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -11,6 +15,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import BuxomMod.DefaultMod;
 import BuxomMod.characters.TheDefault;
 import BuxomMod.orbs.DefenseChibi;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import static BuxomMod.DefaultMod.makeCardPath;
 
@@ -41,6 +49,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 1;
 
     // /STAT DECLARATION/
 
@@ -54,9 +63,8 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (p.hasPower(CommonPower.POWER_ID) == true) {
-            addToBot((AbstractGameAction)new ChannelAction((AbstractOrb)new DefenseChibi()));
-            }
+        addToBot(new IncreaseMaxOrbAction(magicNumber));
+        addToBot(new ChannelAction(new DefenseChibi()));
         }
 
     //Upgraded stats.
@@ -64,8 +72,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

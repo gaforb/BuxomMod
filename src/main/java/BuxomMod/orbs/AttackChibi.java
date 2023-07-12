@@ -72,7 +72,7 @@ public class AttackChibi extends CustomOrb {
     public void onEvoke() { // 1.On Orb Evoke
 
         AbstractDungeon.actionManager.addToBottom( // 2.Damage all enemies
-                new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(evokeAmount, true, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+                new DamageAllEnemiesAction(AbstractDungeon.player, evokeAmount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         // The damage matrix is how orb damage all enemies actions have to be assigned. For regular cards that do damage to everyone, check out cleave or whirlwind - they are a bit simpler.
 
 
@@ -90,7 +90,7 @@ public class AttackChibi extends CustomOrb {
         }
         else {
             AbstractDungeon.actionManager.addToTop(
-            new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, passiveAmount), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, passiveAmount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }
 
