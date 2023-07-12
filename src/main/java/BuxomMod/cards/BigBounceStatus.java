@@ -52,7 +52,7 @@ public class BigBounceStatus extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.STATUS;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = -1;  // COST = ${COST}
+    private static final int COST = -2;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}

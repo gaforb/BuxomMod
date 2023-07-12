@@ -49,7 +49,7 @@ public class BigBouncePowerCard extends AbstractDynamicCard {
 
         this.isInnate = false;
         baseMagicNumber = magicNumber = MAGIC;
-
+        this.cardsToPreview = new BigBounceStatus();
     }
 
     // Actions the card should do.

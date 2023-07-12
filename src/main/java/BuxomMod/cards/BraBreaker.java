@@ -51,7 +51,7 @@ public class BraBreaker extends AbstractDynamicCard {
 
     private static final int COST = 2;
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 4;
     private static final int DAMAGE = 0;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
@@ -66,7 +66,6 @@ public class BraBreaker extends AbstractDynamicCard {
 
 
     // Actions the card should do.
-    @Override
     /*public void use(AbstractPlayer p, AbstractMonster m) {
         boolean bra = false;
         for (AbstractPower pow : p.powers) { //if wearing a bra
@@ -94,13 +93,8 @@ public class BraBreaker extends AbstractDynamicCard {
             addToBot(new MakeTempCardInHandAction(braID));
         }
     }*/
+    public int getStatusCount(AbstractPlayer p) {
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractPower pow : p.powers) { //if wearing a bra
-            if (pow instanceof BraPower) {
-                ((BraPower) pow).growToBreak();
-            }
-        }
         int statusCount = 0;
         CardGroup statusCardsHand = p.hand.getCardsOfType(CardType.STATUS);
         CardGroup statusCardsDraw = p.drawPile.getCardsOfType(CardType.STATUS);
@@ -139,17 +133,32 @@ public class BraBreaker extends AbstractDynamicCard {
             }
         }
         DefaultMod.logger.info("Final status count is" + statusCount);
-        this.baseDamage = statusCount * this.magicNumber;
+        return statusCount;
+    }
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        for (AbstractPower pow : p.powers) { //if wearing a bra
+            if (pow instanceof BraPower) {
+                ((BraPower) pow).growToBreak();
+            }
+        }
+        this.baseDamage = getStatusCount(p) * this.magicNumber;
         DefaultMod.logger.info(this.baseDamage + " total damage");
         this.calculateCardDamage((AbstractMonster) null);
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE, false));
+    }
+
+    public void applyPowers() {
+        this.baseDamage = getStatusCount(AbstractDungeon.player) * this.magicNumber;
+        DefaultMod.logger.info(this.baseDamage + " total damage");
+        super.applyPowers();
+        this.initializeDescription();
     }
     //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_MAGIC);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
         }
     }
 }
