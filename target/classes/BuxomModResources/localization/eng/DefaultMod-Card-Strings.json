@@ -158,7 +158,7 @@
   },
   "BuxomMod:OmegaFlare": {
     "NAME": "Omega Flare",
-    "DESCRIPTION": "If you're within the BuxomMod:Capacity of your bra, gain !M! Strength.",
+    "DESCRIPTION": "If you're within the BuxomMod:Capacity of your bra, gain !M! Strength. NL Shuffle !BuxomMod:SecondMagic! *Afterswell into your draw pile.",
     "CANT_USE_MESSAGE": "I'm not within my bra's capacity!"
   },
   "BuxomMod:ChibiAttraction": {

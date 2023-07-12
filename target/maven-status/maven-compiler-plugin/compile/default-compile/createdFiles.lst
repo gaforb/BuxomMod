@@ -6,6 +6,7 @@ BuxomMod\powers\CommonPower.class
 BuxomMod\powers\KCupPower_old.class
 BuxomMod\relics\BottledPlaceholderRelic.class
 BuxomMod\variables\DefaultCustomVariable.class
+BuxomMod\cards\Burst.class
 BuxomMod\events\IdentityCrisisEvent.class
 BuxomMod\cards\BuxomStatus.class
 BuxomMod\cards\CardTemplate.class
@@ -65,6 +66,7 @@ BuxomMod\powers\ChibiPower.class
 BuxomMod\cards\BrokenBraM.class
 BuxomMod\powers\TCupPower.class
 BuxomMod\variables\CapacityUpperVariable.class
+BuxomMod\powers\NakedPower.class
 BuxomMod\cards\Paizuri.class
 BuxomMod\relics\PlaceholderRelic2.class
 BuxomMod\cards\Phew.class

@@ -2,6 +2,7 @@ package BuxomMod.cards;
 
 import BuxomMod.powers.BraPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -54,6 +55,7 @@ private static final int COST = 1;  // COST = ${COST}
 private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 private static final int MAGIC = 2;
 private static final int UPGRADE_PLUS_MAGIC = 1;
+private static final int SECOND_MAGIC = 1;
 
 // /STAT DECLARATION/
 
@@ -61,6 +63,8 @@ private static final int UPGRADE_PLUS_MAGIC = 1;
 public OmegaFlare() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
     super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     baseMagicNumber = magicNumber = MAGIC;
+    defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
+    this.cardsToPreview = new AftershockStatus();
     }
 
 public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -86,6 +90,7 @@ public boolean canUse(AbstractPlayer p, AbstractMonster m) {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new StrengthPower(p, magicNumber), magicNumber));
+        addToBot(new MakeTempCardInDrawPileAction(new AftershockStatus(), defaultSecondMagicNumber, true, true));
     }
 
 
