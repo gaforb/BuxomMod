@@ -54,8 +54,8 @@ public class KCupBra extends AbstractDynamicCard {
     private static final int COST = 0;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int MAGIC = 6;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_MAGIC = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int MAGIC = 5;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 

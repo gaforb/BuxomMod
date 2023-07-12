@@ -160,6 +160,9 @@ public class TheDefault extends CustomPlayer {
                 break;
             case "big_idle":
                 this.state.setAnimation(0, "big_idle", true);
+                break;
+            case "big_idle_2":
+                this.state.setAnimation(0, "big_idle_2", true);
         }
 
     }
@@ -169,9 +172,13 @@ public class TheDefault extends CustomPlayer {
         Bone boobN = getSkeleton().findBone(boobBoneNID);
         Bone boobF = getSkeleton().findBone(boobBoneFID);
         Float scale = getPwrAmt(this, CommonPower.POWER_ID)*0.03F + 1F;
-        if (scale >= 1.3F) {
+        if ((scale >= 1.18F) && (scale <= 1.33F)) {
             getSkeleton().setAttachment("boobs2", "boobs2-2");
             changeState("big_idle");
+        }
+        else if (scale >= 1.33F) {
+            getSkeleton().setAttachment("boobs2", "boobs2-2");
+            changeState("big_idle_2");
         }
         else {getSkeleton().setAttachment("boobs2", "boobs2-1");
             changeState("idle");}
