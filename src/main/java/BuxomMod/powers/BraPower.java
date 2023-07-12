@@ -1,15 +1,12 @@
 package BuxomMod.powers;
 
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static BuxomMod.DefaultMod.getPwrAmt;
+import static BuxomMod.BuxomMod.getPwrAmt;
 
 public abstract class BraPower extends TwoAmountPower {
 
@@ -26,9 +23,9 @@ public abstract class BraPower extends TwoAmountPower {
     }
 
     public boolean inCapacity() {
-        if (DefaultMod.getPwrAmt(this.owner, CommonPower.POWER_ID) > this.amount2) {
+        if (BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID) > this.amount2) {
             return false;
-        } else if (DefaultMod.getPwrAmt(this.owner, CommonPower.POWER_ID) < this.minCapacity) {
+        } else if (BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID) < this.minCapacity) {
             return false;
         }
         else {

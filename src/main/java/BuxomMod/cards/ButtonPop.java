@@ -13,11 +13,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
 // Skip this question until you start figuring out the AbstractDefaultCard/AbstractDynamicCard and just extend DynamicCard
 // for your own ones like all the other cards.
@@ -38,7 +38,7 @@ public class ButtonPop extends CustomCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(ButtonPop.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(ButtonPop.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("ButtonPop.png");
@@ -60,7 +60,7 @@ public class ButtonPop extends CustomCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
     private static final int DAMAGE = 8;

@@ -7,10 +7,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.powers.CommonPower;
 
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 public class OmegaLibrary extends AbstractDynamicCard {
 
@@ -22,7 +22,7 @@ public class OmegaLibrary extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(OmegaLibrary.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(OmegaLibrary.class.getSimpleName());
     public static final String IMG = makeCardPath("OmegaLibrary.png");
 
     // /TEXT DECLARATION/

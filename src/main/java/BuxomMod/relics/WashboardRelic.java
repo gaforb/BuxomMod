@@ -8,12 +8,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.util.TextureLoader;
 
 
-import static BuxomMod.DefaultMod.makeRelicOutlinePath;
-import static BuxomMod.DefaultMod.makeRelicPath;
+import static BuxomMod.BuxomMod.makeRelicOutlinePath;
+import static BuxomMod.BuxomMod.makeRelicPath;
 
 public class WashboardRelic extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
     /*
@@ -24,7 +24,7 @@ public class WashboardRelic extends CustomRelic implements ClickableRelic { // Y
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("WashboardRelic");
+    public static final String ID = BuxomMod.makeID("WashboardRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("WashboardRelic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("WashboardRelic.png"));

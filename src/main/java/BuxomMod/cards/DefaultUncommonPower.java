@@ -1,26 +1,16 @@
 package BuxomMod.cards;
 
-import BuxomMod.orbs.AttackChibi;
-import BuxomMod.orbs.DeviousChibi;
-import BuxomMod.powers.CommonPower;
-import basemod.abstracts.CustomOrb;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.orbs.DefenseChibi;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 public class DefaultUncommonPower extends AbstractDynamicCard {
 
@@ -32,7 +22,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(DefaultUncommonPower.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(DefaultUncommonPower.class.getSimpleName());
     public static final String IMG = makeCardPath("Chibis.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -45,7 +35,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
     private static final int MAGIC = 1;

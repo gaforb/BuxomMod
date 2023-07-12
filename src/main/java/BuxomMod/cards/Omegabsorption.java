@@ -11,11 +11,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.util.TextureLoader;
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
 public class Omegabsorption extends AbstractDynamicCard {
@@ -40,7 +40,7 @@ public class Omegabsorption extends AbstractDynamicCard {
 
 // TEXT DECLARATION
 
-public static final String ID = DefaultMod.makeID(Omegabsorption.class.getSimpleName());
+public static final String ID = BuxomMod.makeID(Omegabsorption.class.getSimpleName());
 public static final String IMG = makeCardPath("Omegabsorption.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
@@ -53,7 +53,7 @@ public static final String IMG = makeCardPath("Omegabsorption.png");// "public s
 private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
 private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
 private static final CardType TYPE = CardType.SKILL;       //
-public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
 private static final int COST = 0;  // COST = ${COST}
 private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
@@ -107,8 +107,8 @@ private AbstractGameEffect vfx(float x, float y) {
     return new VfxBuilder(TextureLoader.getTexture("BuxomModResources/images/vfx/expand_effect.png"), 1.0f)
             .setX(x)
             .setY(y)
-            .playSoundAt(0.35f, DefaultMod.makeID("HEARTBEAT"))
-            .playSoundAt(0.35f, DefaultMod.makeID("LOW_GASP"))
+            .playSoundAt(0.35f, BuxomMod.makeID("HEARTBEAT"))
+            .playSoundAt(0.35f, BuxomMod.makeID("LOW_GASP"))
             .scale(0.45f, 0.5f, VfxBuilder.Interpolations.ELASTIC)
             .fadeIn(0.25f)
             .andThen(1.0f)

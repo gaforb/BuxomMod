@@ -17,15 +17,14 @@ import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 
 import basemod.abstracts.CustomOrb;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 
-import static BuxomMod.DefaultMod.makeOrbPath;
-import static BuxomMod.DefaultMod.payMilkCost;
+import static BuxomMod.BuxomMod.makeOrbPath;
 
 public class DefenseChibi extends CustomOrb {
 
     // Standard ID/Description
-    public static final String ORB_ID = DefaultMod.makeID("DefenseChibi");
+    public static final String ORB_ID = BuxomMod.makeID("DefenseChibi");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
@@ -82,7 +81,7 @@ public class DefenseChibi extends CustomOrb {
         AbstractDungeon.actionManager.addToBottom(// 2.This orb will have a flare effect
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
 
-        if (DefaultMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
+        if (BuxomMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
             onEvoke();
         }
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, passiveAmount));

@@ -25,7 +25,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.cards.*;
 import BuxomMod.relics.DefaultClickableRelic;
 import BuxomMod.relics.JCupRelic;
@@ -34,15 +34,15 @@ import BuxomMod.relics.PlaceholderRelic2;
 
 import java.util.ArrayList;
 
-import static BuxomMod.DefaultMod.*;
-import static BuxomMod.characters.TheDefault.Enums.COLOR_GRAY;
+import static BuxomMod.BuxomMod.*;
+import static BuxomMod.characters.TheBuxom.Enums.COLOR_PINK;
 
 //Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
 
-public class TheDefault extends CustomPlayer {
-    public static final Logger logger = LogManager.getLogger(DefaultMod.class.getName());
+public class TheBuxom extends CustomPlayer {
+    public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
     // These are enums for your Characters color (both general color and for the card library) as well as
@@ -53,10 +53,10 @@ public class TheDefault extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_DEFAULT;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor COLOR_GRAY;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
+        public static AbstractPlayer.PlayerClass THE_BUXOM;
+        @SpireEnum(name = "PINK_BUXOM_COLOR") // These two HAVE to have the same absolutely identical name.
+        public static AbstractCard.CardColor COLOR_PINK;
+        @SpireEnum(name = "PINK_BUXOM_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -105,7 +105,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public TheDefault(String name, PlayerClass setClass) {
+    public TheBuxom(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "BuxomModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpineAnimation(
@@ -116,9 +116,9 @@ public class TheDefault extends CustomPlayer {
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
                 // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
-                THE_DEFAULT_SHOULDER_2, // campfire pose
-                THE_DEFAULT_SHOULDER_1, // another campfire pose
-                THE_DEFAULT_CORPSE, // dead corpse
+                THE_BUXOM_SHOULDER_2, // campfire pose
+                THE_BUXOM_SHOULDER_1, // another campfire pose
+                THE_BUXOM_CORPSE, // dead corpse
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
@@ -127,8 +127,8 @@ public class TheDefault extends CustomPlayer {
         // =============== ANIMATIONS =================  
 
         loadAnimation(
-                THE_DEFAULT_SKELETON_ATLAS,
-                THE_DEFAULT_SKELETON_JSON,
+                THE_BUXOM_SKELETON_ATLAS,
+                THE_BUXOM_SKELETON_JSON,
                 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -291,13 +291,13 @@ public class TheDefault extends CustomPlayer {
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return COLOR_GRAY;
+        return COLOR_PINK;
     }
 
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return BuxomMod.DefaultMod.DEFAULT_GRAY;
+        return BUXOM_PINK;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -328,20 +328,20 @@ public class TheDefault extends CustomPlayer {
     // Should return a new instance of your character, sending name as its name parameter.
     @Override
     public AbstractPlayer newInstance() {
-        return new TheDefault(name, chosenClass);
+        return new TheBuxom(name, chosenClass);
     }
 
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return BuxomMod.DefaultMod.DEFAULT_GRAY;
+        return BuxomMod.BUXOM_PINK;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return BuxomMod.DefaultMod.DEFAULT_GRAY;
+        return BuxomMod.BUXOM_PINK;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

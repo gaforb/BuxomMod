@@ -7,13 +7,13 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.cards.ToplessStatus;
 import BuxomMod.util.TextureLoader;
 
-import static BuxomMod.DefaultMod.makeRelicOutlinePath;
-import static BuxomMod.DefaultMod.makeRelicPath;
+import static BuxomMod.BuxomMod.makeRelicOutlinePath;
+import static BuxomMod.BuxomMod.makeRelicPath;
 
 public class DwarfBoobsRelic extends CustomRelic {
 
@@ -24,7 +24,7 @@ public class DwarfBoobsRelic extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("DwarfBoobsRelic");
+    public static final String ID = BuxomMod.makeID("DwarfBoobsRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("DwarfBoobsRelic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("DwarfBoobsRelic.png"));
@@ -43,8 +43,8 @@ public class DwarfBoobsRelic extends CustomRelic {
     }
 
     public void onReceivePower(AbstractPower power, AbstractCreature target) {
-        if ((power instanceof BuxomMod.powers.CommonPower) && (target == AbstractDungeon.player)) {
-            if (AbstractDungeon.player.getPower("CommonPower").amount >= 15) {
+        if ((power instanceof CommonPower) && (target == AbstractDungeon.player)) {
+            if (AbstractDungeon.player.getPower(CommonPower.POWER_ID).amount >= 15) {
                 if (this.triggered == false) {
                     flash();
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new ToplessStatus()));

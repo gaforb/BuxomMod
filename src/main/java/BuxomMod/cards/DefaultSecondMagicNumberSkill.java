@@ -7,10 +7,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
 
@@ -30,7 +30,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(DefaultSecondMagicNumberSkill.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(DefaultSecondMagicNumberSkill.class.getSimpleName());
     public static final String IMG = makeCardPath("OmegaFumes.png");
 
     // /TEXT DECLARATION/
@@ -41,7 +41,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 0;
 

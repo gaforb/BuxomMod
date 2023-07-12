@@ -1,5 +1,4 @@
 BuxomMod\cards\BovineForm.class
-BuxomMod\DefaultMod.class
 BuxomMod\cards\ToplessStatus.class
 BuxomMod\cards\DefaultCommonAttack.class
 BuxomMod\powers\CommonPower.class
@@ -11,7 +10,6 @@ BuxomMod\events\IdentityCrisisEvent.class
 BuxomMod\cards\BuxomStatus.class
 BuxomMod\cards\CardTemplate.class
 BuxomMod\variables\DefaultSecondMagicNumber.class
-BuxomMod\characters\TheDefault$Enums.class
 BuxomMod\powers\ReliefPower.class
 BuxomMod\powers\BigBouncePower.class
 BuxomMod\cards\DefaultUncommonSkill.class
@@ -23,7 +21,6 @@ BuxomMod\cards\DefaultUncommonPower.class
 BuxomMod\cards\BraBreaker.class
 BuxomMod\relics\DwarfBoobsRelic.class
 BuxomMod\vfx\ExpandEffect.class
-BuxomMod\characters\TheDefault.class
 BuxomMod\cards\OmegaArc.class
 BuxomMod\patches\DefaultInsertPatch.class
 BuxomMod\powers\ButtonHazardPower.class
@@ -47,6 +44,7 @@ BuxomMod\cards\BigBouncePowerCard.class
 BuxomMod\cards\OmegaLibrary.class
 BuxomMod\actions\UncommonPowerAction.class
 BuxomMod\patches\DefaultInsertPatch$Locator.class
+BuxomMod\BuxomMod.class
 BuxomMod\cards\ChibiAttraction.class
 BuxomMod\cards\AbstractDynamicCard.class
 BuxomMod\cards\OmegaFlare.class
@@ -67,6 +65,7 @@ BuxomMod\cards\BrokenBraM.class
 BuxomMod\powers\TCupPower.class
 BuxomMod\variables\CapacityUpperVariable.class
 BuxomMod\powers\NakedPower.class
+BuxomMod\characters\TheBuxom$Enums.class
 BuxomMod\cards\Paizuri.class
 BuxomMod\relics\PlaceholderRelic2.class
 BuxomMod\cards\Phew.class
@@ -76,6 +75,7 @@ BuxomMod\powers\MCupPower.class
 BuxomMod\cards\ButtonPop.class
 BuxomMod\powers\MeasurementPower.class
 BuxomMod\orbs\AttackChibi.class
+BuxomMod\characters\TheBuxom.class
 BuxomMod\cards\Library.class
 BuxomMod\cards\OmegaShock.class
 BuxomMod\relics\PlaceholderRelic.class

@@ -1,6 +1,6 @@
 package BuxomMod.cards;
 
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static BuxomMod.DefaultMod.getPwrAmt;
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.getPwrAmt;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
 public class BigBounceStatus extends AbstractDynamicCard {
@@ -37,7 +37,7 @@ public class BigBounceStatus extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(BigBounceStatus.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = BuxomMod.makeID(BigBounceStatus.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("BigBounceStatus.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 

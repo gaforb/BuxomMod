@@ -7,11 +7,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 public class Paizuri extends AbstractDynamicCard {
 
@@ -23,7 +23,7 @@ public class Paizuri extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(Paizuri.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(Paizuri.class.getSimpleName());
     public static final String IMG = makeCardPath("Paizuri.png");
 
     // /TEXT DECLARATION/
@@ -33,7 +33,7 @@ public class Paizuri extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
     private static final int BLOCK = 9;
@@ -63,7 +63,7 @@ public class Paizuri extends AbstractDynamicCard {
         if (m != null && m.getIntentBaseDmg() >= 0) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
-            if (DefaultMod.payMilkCost(p, MILKCOST)) {
+            if (BuxomMod.payMilkCost(p, MILKCOST)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
             }
         }

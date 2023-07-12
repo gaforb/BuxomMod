@@ -4,11 +4,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.MeasurementPower;
 
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 public class MeasurementTime extends AbstractDynamicCard {
 
@@ -20,7 +20,7 @@ public class MeasurementTime extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(MeasurementTime.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(MeasurementTime.class.getSimpleName());
     public static final String IMG = makeCardPath("MeasurementTime.png");
 
     // /TEXT DECLARATION/
@@ -30,7 +30,7 @@ public class MeasurementTime extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 2;
     private static final int MAGIC = 12;

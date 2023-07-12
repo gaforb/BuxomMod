@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 public class ChibiBlock extends AbstractDynamicCard {
 
@@ -22,7 +22,7 @@ public class ChibiBlock extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(ChibiBlock.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(ChibiBlock.class.getSimpleName());
     public static final String IMG = makeCardPath("ChibiBlock.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

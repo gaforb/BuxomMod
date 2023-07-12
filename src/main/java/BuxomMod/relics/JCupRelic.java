@@ -5,12 +5,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.util.TextureLoader;
 
-import static BuxomMod.DefaultMod.makeRelicOutlinePath;
-import static BuxomMod.DefaultMod.makeRelicPath;
+import static BuxomMod.BuxomMod.makeRelicOutlinePath;
+import static BuxomMod.BuxomMod.makeRelicPath;
 
 public class JCupRelic extends CustomRelic {
 
@@ -21,7 +21,7 @@ public class JCupRelic extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("JCupRelic");
+    public static final String ID = BuxomMod.makeID("JCupRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("JCupRelic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("JCupRelic.png"));
@@ -34,7 +34,7 @@ public class JCupRelic extends CustomRelic {
 
     public void atBattleStart() {
         flash();
-        CardCrawlGame.sound.playV(DefaultMod.makeID("GASP"), 0.5F);
+        CardCrawlGame.sound.playV(BuxomMod.makeID("GASP"), 0.5F);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
     }
     /*

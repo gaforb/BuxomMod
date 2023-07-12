@@ -20,14 +20,14 @@ import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 
 import basemod.abstracts.CustomOrb;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 
-import static BuxomMod.DefaultMod.makeOrbPath;
+import static BuxomMod.BuxomMod.makeOrbPath;
 
 public class AttackChibi extends CustomOrb {
 
     // Standard ID/Description
-    public static final String ORB_ID = DefaultMod.makeID("AttackChibi");
+    public static final String ORB_ID = BuxomMod.makeID("AttackChibi");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
@@ -85,7 +85,7 @@ public class AttackChibi extends CustomOrb {
     public void onEndOfTurn() {
         AbstractDungeon.actionManager.addToTop(// 2.This orb will have a flare effect
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST), 0.1f));
-        if (DefaultMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
+        if (BuxomMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
             onEvoke();
         }
         else {

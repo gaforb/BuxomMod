@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.cards.BrokenBraK;
 import BuxomMod.util.TextureLoader;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 public class KCupPower_old extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("KCupPower_old");
+    public static final String POWER_ID = BuxomMod.makeID("KCupPower_old");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

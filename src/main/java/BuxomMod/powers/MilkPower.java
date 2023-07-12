@@ -1,30 +1,26 @@
 package BuxomMod.powers;
 
-import BuxomMod.DefaultMod;
-import BuxomMod.cards.BuxomStatus;
+import BuxomMod.BuxomMod;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static BuxomMod.DefaultMod.makePowerPath;
+import static BuxomMod.BuxomMod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
 
 public class MilkPower extends TwoAmountPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("MilkPower");
+    public static final String POWER_ID = BuxomMod.makeID("MilkPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -53,7 +49,7 @@ public class MilkPower extends TwoAmountPower implements CloneablePowerInterface
         updateDescription();
     }
     public void playApplyPowerSfx() {
-        /* 30 */     CardCrawlGame.sound.play(DefaultMod.makeID("HEARTBEAT"), 0.5F);
+        /* 30 */     CardCrawlGame.sound.play(BuxomMod.makeID("HEARTBEAT"), 0.5F);
         /*    */   }
 
     public void atEndOfTurn(boolean isPlayer) { // At the end of your turn

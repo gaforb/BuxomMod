@@ -1,29 +1,18 @@
 package BuxomMod.cards;
 
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
-import BuxomMod.powers.BraBreakerPower;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.BraPower;
-import BuxomMod.powers.CommonPower;
-import BuxomMod.relics.DwarfBoobsRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import java.util.Iterator;
-import java.util.Random;
-
-import static BuxomMod.DefaultMod.getPwrAmt;
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 public class BraBreaker extends AbstractDynamicCard {
 
@@ -36,7 +25,7 @@ public class BraBreaker extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(BraBreaker.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(BraBreaker.class.getSimpleName());
     public static final String IMG = makeCardPath("BraBreaker.png");
 
     // /TEXT DECLARATION/
@@ -47,7 +36,7 @@ public class BraBreaker extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 2;
 
@@ -101,38 +90,38 @@ public class BraBreaker extends AbstractDynamicCard {
         CardGroup statusCardsDiscard = p.discardPile.getCardsOfType(CardType.STATUS);
         for (AbstractCard card : statusCardsHand.group) {
             ++statusCount;
-            DefaultMod.logger.info("Found status card. Status count is" + statusCount);
+            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
             if (card.cardID == BigBounceStatus.ID) {
                 ++statusCount;
-                DefaultMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
             } else if (card.cardID.contains("BrokenBra")) {
                 statusCount += 2;
-                DefaultMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
             }
         }
         for (AbstractCard card : statusCardsDraw.group) {
             ++statusCount;
-            DefaultMod.logger.info("Found status card. Status count is" + statusCount);
+            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
             if (card.cardID == BigBounceStatus.ID) {
                 ++statusCount;
-                DefaultMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
             } else if (card.cardID.contains("BrokenBra")) {
                 statusCount += 2;
-                DefaultMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
             }
         }
         for (AbstractCard card : statusCardsDiscard.group) {
             ++statusCount;
-            DefaultMod.logger.info("Found status card. Status count is" + statusCount);
+            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
             if (card.cardID == BigBounceStatus.ID) {
                 ++statusCount;
-                DefaultMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
             } else if (card.cardID.contains("BrokenBra")) {
                 statusCount += 2;
-                DefaultMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
             }
         }
-        DefaultMod.logger.info("Final status count is" + statusCount);
+        BuxomMod.logger.info("Final status count is" + statusCount);
         return statusCount;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -142,14 +131,14 @@ public class BraBreaker extends AbstractDynamicCard {
             }
         }
         this.baseDamage = getStatusCount(p) * this.magicNumber;
-        DefaultMod.logger.info(this.baseDamage + " total damage");
+        BuxomMod.logger.info(this.baseDamage + " total damage");
         this.calculateCardDamage((AbstractMonster) null);
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE, false));
     }
 
     public void applyPowers() {
         this.baseDamage = getStatusCount(AbstractDungeon.player) * this.magicNumber;
-        DefaultMod.logger.info(this.baseDamage + " total damage");
+        BuxomMod.logger.info(this.baseDamage + " total damage");
         super.applyPowers();
         this.initializeDescription();
     }

@@ -1,5 +1,6 @@
 package BuxomMod.potions;
 
+import BuxomMod.BuxomMod;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,7 +14,7 @@ import basemod.abstracts.CustomPotion;
 
 public class FlatteningPotion extends CustomPotion {
 
-    public static final String POTION_ID = BuxomMod.DefaultMod.makeID("FlatteningPotion");
+    public static final String POTION_ID = BuxomMod.makeID("FlatteningPotion");
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
     
     public static final String NAME = potionStrings.NAME;

@@ -1,20 +1,17 @@
 package BuxomMod.cards;
 
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static BuxomMod.DefaultMod.makeCardPath;
+import static BuxomMod.BuxomMod.makeCardPath;
 
 public class OmegaBeatdown extends AbstractDynamicCard {
 
@@ -26,7 +23,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = DefaultMod.makeID(OmegaBeatdown.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(OmegaBeatdown.class.getSimpleName());
     public static final String IMG = makeCardPath("Beatdown.png");
 
     // /TEXT DECLARATION/
@@ -37,7 +34,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 2;
     private static final int DAMAGE = 3;
@@ -89,7 +86,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int b = DefaultMod.getPwrAmt(p, CommonPower.POWER_ID);
+        int b = BuxomMod.getPwrAmt(p, CommonPower.POWER_ID);
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, b),
                         AbstractGameAction.AttackEffect.BLUNT_HEAVY));

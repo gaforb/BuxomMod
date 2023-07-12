@@ -1,6 +1,6 @@
 package BuxomMod.powers;
 
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class BraBreakerPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DefaultMod.makeID("Breaker");
+    public static final String POWER_ID = BuxomMod.makeID("Breaker");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -51,7 +51,7 @@ public class BraBreakerPower extends AbstractPower implements CloneablePowerInte
                 addToBot(new GainEnergyAction(1));
                 addToBot(new DrawCardAction(1));
                 AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player,
-                        DefaultMod.getPwrAmt(this.owner, CommonPower.POWER_ID), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+                        BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
                 addToBot(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
             }
             flash();

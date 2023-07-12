@@ -6,13 +6,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.cards.KCupBra;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.util.TextureLoader;
 
-import static BuxomMod.DefaultMod.makeRelicOutlinePath;
-import static BuxomMod.DefaultMod.makeRelicPath;
+import static BuxomMod.BuxomMod.makeRelicOutlinePath;
+import static BuxomMod.BuxomMod.makeRelicPath;
 
 public class ToplessArtifact extends CustomRelic {
 
@@ -23,7 +23,7 @@ public class ToplessArtifact extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("ToplessArtifact");
+    public static final String ID = BuxomMod.makeID("ToplessArtifact");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ToplessArtifact.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ToplessArtifact.png"));

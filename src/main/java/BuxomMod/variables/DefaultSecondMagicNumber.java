@@ -4,7 +4,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import BuxomMod.cards.AbstractDefaultCard;
 
-import static BuxomMod.DefaultMod.makeID;
+import static BuxomMod.BuxomMod.makeID;
 
 public class DefaultSecondMagicNumber extends DynamicVariable {
 

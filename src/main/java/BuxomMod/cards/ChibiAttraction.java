@@ -1,20 +1,16 @@
 package BuxomMod.cards;
 
-import BuxomMod.powers.CommonPower;
-import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import BuxomMod.DefaultMod;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.orbs.DeviousChibi;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
-import static BuxomMod.DefaultMod.makeCardPath;
-import static BuxomMod.DefaultMod.payMilkCost;
+import static BuxomMod.BuxomMod.makeCardPath;
+import static BuxomMod.BuxomMod.payMilkCost;
 
 public class ChibiAttraction extends AbstractDynamicCard {
 
@@ -26,7 +22,7 @@ public class ChibiAttraction extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = DefaultMod.makeID(ChibiAttraction.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(ChibiAttraction.class.getSimpleName());
     public static final String IMG = makeCardPath("ChibiAttraction.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -39,7 +35,7 @@ public class ChibiAttraction extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
     private static final int MAGIC = 1;
@@ -59,7 +55,7 @@ public class ChibiAttraction extends AbstractDynamicCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         this.cantUseMessage = "Not enough milk!";
-        if (DefaultMod.isMilkEffect(MILKCOST)) {
+        if (BuxomMod.isMilkEffect(MILKCOST)) {
             canUse = true;
         }
         else {

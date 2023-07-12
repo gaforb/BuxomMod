@@ -20,14 +20,14 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import BuxomMod.powers.CommonPower;
 
 import basemod.abstracts.CustomOrb;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 
-import static BuxomMod.DefaultMod.makeOrbPath;
+import static BuxomMod.BuxomMod.makeOrbPath;
 
 public class DeviousChibi extends CustomOrb {
 
     // Standard ID/Description
-    public static final String ORB_ID = DefaultMod.makeID("DeviousChibi");
+    public static final String ORB_ID = BuxomMod.makeID("DeviousChibi");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 

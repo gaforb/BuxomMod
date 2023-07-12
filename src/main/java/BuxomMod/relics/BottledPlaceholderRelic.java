@@ -15,15 +15,15 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import BuxomMod.DefaultMod;
+import BuxomMod.BuxomMod;
 import BuxomMod.patches.relics.BottledPlaceholderField;
 import BuxomMod.util.TextureLoader;
 
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-import static BuxomMod.DefaultMod.makeRelicOutlinePath;
-import static BuxomMod.DefaultMod.makeRelicPath;
+import static BuxomMod.BuxomMod.makeRelicOutlinePath;
+import static BuxomMod.BuxomMod.makeRelicPath;
 
 public class BottledPlaceholderRelic extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
     // This file will show you how to use 2 things - (Mostly) The Custom Bottle Relic and the Custom Savable - they go hand in hand.
@@ -43,7 +43,7 @@ public class BottledPlaceholderRelic extends CustomRelic implements CustomBottle
 
 
     // ID, images, text.
-    public static final String ID = DefaultMod.makeID("BottledPlaceholderRelic");
+    public static final String ID = BuxomMod.makeID("BottledPlaceholderRelic");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BottledPlaceholder.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BottledPlaceholder.png"));
 

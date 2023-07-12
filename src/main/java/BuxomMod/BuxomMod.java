@@ -8,7 +8,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -27,7 +26,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import BuxomMod.cards.*;
-import BuxomMod.characters.TheDefault;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.events.IdentityCrisisEvent;
 import BuxomMod.potions.FlatteningPotion;
 import BuxomMod.relics.BottledPlaceholderRelic;
@@ -73,7 +72,7 @@ import java.util.Properties;
  */
 
 @SpireInitializer
-public class DefaultMod implements
+public class BuxomMod implements
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
@@ -83,7 +82,7 @@ public class DefaultMod implements
         AddAudioSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
-    public static final Logger logger = LogManager.getLogger(DefaultMod.class.getName());
+    public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
     private static String modID;
 
     // Mod-settings settings. This is if you want an on/off savable button
@@ -100,7 +99,7 @@ public class DefaultMod implements
 
     // Colors (RGB)
     // Character Color
-    public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+    public static final Color BUXOM_PINK = CardHelper.getColor(215.0f, 119.0f, 157.0f);
 
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -115,31 +114,31 @@ public class DefaultMod implements
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
 
     // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "BuxomModResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "BuxomModResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "BuxomModResources/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_BUXOM_PINK = "BuxomModResources/images/512/bg_attack_default_gray.png";
+    private static final String SKILL_BUXOM_PINK = "BuxomModResources/images/512/bg_skill_default_gray.png";
+    private static final String POWER_BUXOM_PINK = "BuxomModResources/images/512/bg_power_default_gray.png";
 
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "BuxomModResources/images/512/card_default_gray_orb.png";
+    private static final String ENERGY_ORB_BUXOM_PINK = "BuxomModResources/images/512/card_default_gray_orb.png";
     private static final String CARD_ENERGY_ORB = "BuxomModResources/images/512/card_small_orb.png";
 
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "BuxomModResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "BuxomModResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "BuxomModResources/images/1024/bg_power_default_gray.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "BuxomModResources/images/1024/card_default_gray_orb.png";
+    private static final String ATTACK_BUXOM_PINK_PORTRAIT = "BuxomModResources/images/1024/bg_attack_default_gray.png";
+    private static final String SKILL_BUXOM_PINK_PORTRAIT = "BuxomModResources/images/1024/bg_skill_default_gray.png";
+    private static final String POWER_BUXOM_PINK_PORTRAIT = "BuxomModResources/images/1024/bg_power_default_gray.png";
+    private static final String ENERGY_ORB_BUXOM_PINK_PORTRAIT = "BuxomModResources/images/1024/card_default_gray_orb.png";
 
     // Character assets
-    private static final String THE_DEFAULT_BUTTON = "BuxomModResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "BuxomModResources/images/charSelect/DefaultCharacterPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "BuxomModResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "BuxomModResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_CORPSE = "BuxomModResources/images/char/defaultCharacter/corpse.png";
+    private static final String THE_BUXOM_BUTTON = "BuxomModResources/images/charSelect/DefaultCharacterButton.png";
+    private static final String THE_BUXOM_PORTRAIT = "BuxomModResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    public static final String THE_BUXOM_SHOULDER_1 = "BuxomModResources/images/char/defaultCharacter/shoulder.png";
+    public static final String THE_BUXOM_SHOULDER_2 = "BuxomModResources/images/char/defaultCharacter/shoulder.png";
+    public static final String THE_BUXOM_CORPSE = "BuxomModResources/images/char/defaultCharacter/corpse.png";
 
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "BuxomModResources/images/Badge.png";
 
     // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "BuxomModResources/images/char/character/skeleton2.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "BuxomModResources/images/char/character/skeleton2_Armaturelehmana sprite.json";
+    public static final String THE_BUXOM_SKELETON_ATLAS = "BuxomModResources/images/char/character/skeleton2.atlas";
+    public static final String THE_BUXOM_SKELETON_JSON = "BuxomModResources/images/char/character/skeleton2_Armaturelehmana sprite.json";
 
     //VFX
 
@@ -177,9 +176,9 @@ public class DefaultMod implements
     // =============== /INPUT TEXTURE LOCATION/ =================
 
 
-    // =============== SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE =================
+    // =============== SUBSCRIBE, CREATE THE COLOR_PINK, INITIALIZE =================
 
-    public DefaultMod() {
+    public BuxomMod() {
         logger.info("Subscribe to BaseMod hooks");
 
         BaseMod.subscribe(this);
@@ -213,13 +212,13 @@ public class DefaultMod implements
 
         logger.info("Done subscribing");
 
-        logger.info("Creating the color " + TheDefault.Enums.COLOR_GRAY.toString());
+        logger.info("Creating the color " + TheBuxom.Enums.COLOR_PINK.toString());
 
-        BaseMod.addColor(TheDefault.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
-                ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
-                ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
+        BaseMod.addColor(TheBuxom.Enums.COLOR_PINK, BUXOM_PINK, BUXOM_PINK, BUXOM_PINK,
+                BUXOM_PINK, BUXOM_PINK, BUXOM_PINK, BUXOM_PINK,
+                ATTACK_BUXOM_PINK, SKILL_BUXOM_PINK, POWER_BUXOM_PINK, ENERGY_ORB_BUXOM_PINK,
+                ATTACK_BUXOM_PINK_PORTRAIT, SKILL_BUXOM_PINK_PORTRAIT, POWER_BUXOM_PINK_PORTRAIT,
+                ENERGY_ORB_BUXOM_PINK_PORTRAIT, CARD_ENERGY_ORB);
 
         logger.info("Done creating the color");
 
@@ -248,7 +247,7 @@ public class DefaultMod implements
     public static void setModID(String ID) { // DON'T EDIT
         Gson coolG = new Gson(); // EY DON'T EDIT THIS
         //   String IDjson = Gdx.files.internal("IDCheckStringsDONT-EDIT-AT-ALL.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i hate u Gdx.files
-        InputStream in = DefaultMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json"); // DON'T EDIT THIS ETHER
+        InputStream in = BuxomMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json"); // DON'T EDIT THIS ETHER
         IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class); // OR THIS, DON'T EDIT IT
         logger.info("You are attempting to set your mod ID as: " + ID); // NO WHY
         if (ID.equals(EXCEPTION_STRINGS.DEFAULTID)) { // DO *NOT* CHANGE THIS ESPECIALLY, TO EDIT YOUR MOD ID, SCROLL UP JUST A LITTLE, IT'S JUST ABOVE
@@ -268,9 +267,9 @@ public class DefaultMod implements
     private static void pathCheck() { // ALSO NO
         Gson coolG = new Gson(); // NOPE DON'T EDIT THIS
         //   String IDjson = Gdx.files.internal("IDCheckStringsDONT-EDIT-AT-ALL.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i still hate u btw Gdx.files
-        InputStream in = DefaultMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json"); // DON'T EDIT THISSSSS
+        InputStream in = BuxomMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json"); // DON'T EDIT THISSSSS
         IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class); // NAH, NO EDIT
-        String packageName = DefaultMod.class.getPackage().getName(); // STILL NO EDIT ZONE
+        String packageName = BuxomMod.class.getPackage().getName(); // STILL NO EDIT ZONE
         FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources"); // PLEASE DON'T EDIT THINGS HERE, THANKS
         if (!modID.equals(EXCEPTION_STRINGS.DEVID)) { // LEAVE THIS EDIT-LESS
             if (!packageName.equals(getModID())) { // NOT HERE ETHER
@@ -287,24 +286,24 @@ public class DefaultMod implements
 
     public static void initialize() {
         logger.info("========================= Initializing Default Mod. Hi. =========================");
-        DefaultMod defaultmod = new DefaultMod();
+        BuxomMod buxommod = new BuxomMod();
         logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
     }
 
-    // ============== /SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE/ =================
+    // ============== /SUBSCRIBE, CREATE THE COLOR_PINK, INITIALIZE/ =================
 
 
     // =============== LOAD THE CHARACTER =================
 
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Beginning to edit characters. " + "Add " + TheBuxom.Enums.THE_BUXOM.toString());
 
-        BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addCharacter(new TheBuxom("the Default", TheBuxom.Enums.THE_BUXOM),
+                THE_BUXOM_BUTTON, THE_BUXOM_PORTRAIT, TheBuxom.Enums.THE_BUXOM);
 
         receiveEditPotions();
-        logger.info("Added " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Added " + TheBuxom.Enums.THE_BUXOM.toString());
     }
 
     // =============== /LOAD THE CHARACTER/ =================
@@ -362,7 +361,7 @@ public class DefaultMod implements
         // Since this is a builder these method calls (outside of create()) can be skipped/added as necessary
         AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
             .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
-            .playerClass(TheDefault.Enums.THE_DEFAULT) // Character specific event
+            .playerClass(TheBuxom.Enums.THE_BUXOM) // Character specific event
             .create();
 
         // Add the event
@@ -380,9 +379,9 @@ public class DefaultMod implements
         logger.info("Beginning to edit potions");
 
         // Class Specific Potion. If you want your potion to not be class-specific,
-        // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
+        // just remove the player class at the end (in this case the "TheDefaultEnum.THE_BUXOM".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(FlatteningPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, FlatteningPotion.POTION_ID, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addPotion(FlatteningPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, FlatteningPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
 
         logger.info("Done editing potions");
     }
@@ -404,8 +403,8 @@ public class DefaultMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new WashboardRelic(), TheDefault.Enums.COLOR_GRAY);
-        BaseMod.addRelicToCustomPool(new DwarfBoobsRelic(), TheDefault.Enums.COLOR_GRAY);
+        BaseMod.addRelicToCustomPool(new WashboardRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new DwarfBoobsRelic(), TheBuxom.Enums.COLOR_PINK);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
 
@@ -564,11 +563,11 @@ public class DefaultMod implements
 
     public static boolean isMilkEffect(int milkCost) {
         AbstractPlayer p = AbstractDungeon.player;
-        logger.info(getPwrAmt(AbstractDungeon.player, MilkPower.POWER_ID));
+        logger.info(getPwrAmt(p, MilkPower.POWER_ID));
         logger.info(" milk found");
         logger.info(milkCost);
         logger.info(" milk required");
-        if (getPwrAmt(AbstractDungeon.player, MilkPower.POWER_ID) >= milkCost) {
+        if (getPwrAmt(p, MilkPower.POWER_ID) >= milkCost) {
             logger.info("Enough milk found");
             return true;
         }
