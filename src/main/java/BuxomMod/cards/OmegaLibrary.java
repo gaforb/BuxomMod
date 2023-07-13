@@ -34,7 +34,7 @@ public class OmegaLibrary extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = AbstractCard.CardColor.COLORLESS;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int MAGIC = 3;
 
     // /STAT DECLARATION/

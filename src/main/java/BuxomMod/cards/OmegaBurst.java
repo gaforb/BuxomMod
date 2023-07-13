@@ -3,6 +3,7 @@ package BuxomMod.cards;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.NakedPower;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
@@ -52,7 +53,6 @@ public class OmegaBurst extends AbstractDynamicCard {
     public OmegaBurst() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        this.shuffleBackIntoDrawPile = false;
         this.cardsToPreview = new AftershockStatus();
         this.exhaust = true;
     }
@@ -60,8 +60,7 @@ public class OmegaBurst extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DiscardPileToTopOfDeckAction(p));
-        addToBot(new ShuffleAction(p.drawPile));
+        addToBot(new MoveCardsAction(p.discardPile, p.drawPile, p.discardPile.size()));
         AbstractDungeon.actionManager.addToBottom(
                 new RemoveAllBlockAction(p,p));
         AbstractDungeon.actionManager.addToBottom(

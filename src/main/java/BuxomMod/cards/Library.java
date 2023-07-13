@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -35,6 +36,8 @@ public class Library extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 2;
+    private static final int BLOCK = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
 
     // /STAT DECLARATION/
 
@@ -42,6 +45,7 @@ public class Library extends AbstractDynamicCard {
     public Library() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        baseBlock = block = BLOCK;
         this.exhaust = true;
         this.cardsToPreview = new OmegaLibrary();
     }
@@ -57,6 +61,7 @@ public class Library extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new OmegaLibrary(), 1));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 
     // Upgraded stats.
@@ -66,6 +71,7 @@ public class Library extends AbstractDynamicCard {
             upgradeName();
             upgradeBaseCost(1);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }
