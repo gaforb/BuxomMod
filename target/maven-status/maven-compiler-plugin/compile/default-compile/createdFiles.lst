@@ -5,7 +5,6 @@ BuxomMod\powers\CommonPower.class
 BuxomMod\powers\KCupPower_old.class
 BuxomMod\relics\BottledPlaceholderRelic.class
 BuxomMod\variables\DefaultCustomVariable.class
-BuxomMod\cards\Burst.class
 BuxomMod\events\IdentityCrisisEvent.class
 BuxomMod\cards\BuxomStatus.class
 BuxomMod\cards\CardTemplate.class
@@ -28,6 +27,7 @@ BuxomMod\powers\ShockPower.class
 BuxomMod\orbs\DefenseChibi.class
 BuxomMod\cards\ExposureStatus.class
 BuxomMod\cards\Omegabsorption.class
+BuxomMod\cards\OmegaBurst.class
 BuxomMod\cards\SteadyLactation.class
 BuxomMod\util\TextureLoader.class
 BuxomMod\cards\DefaultSecondMagicNumberSkill.class

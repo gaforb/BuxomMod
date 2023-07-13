@@ -45,7 +45,7 @@
 },
 "BuxomMod:MilkPower": {
         "NAME": "Milk",
-        "DESCRIPTIONS": ["Converts into #yTemporary #yHP at the end of your turn. NL #bCOMING SOON: Can be spent by Chibis and cards for effects."]
+        "DESCRIPTIONS": ["Converts into #yTemporary #yHP at the end of your turn. NL Can be spent by Chibis and cards for effects."]
 },
 "BuxomMod:LactatingPower": {
         "NAME": "Lactating",

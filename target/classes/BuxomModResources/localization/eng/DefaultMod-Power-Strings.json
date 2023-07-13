@@ -45,7 +45,7 @@
 },
 "BuxomMod:MilkPower": {
         "NAME": "Milk",
-        "DESCRIPTIONS": ["Converts into #yTemporary #yHP at the end of your turn. NL #bCOMING SOON: Can be spent by Chibis and cards for effects."]
+        "DESCRIPTIONS": ["Converts into #yTemporary #yHP at the end of your turn. NL Can be spent by Chibis and cards for effects."]
 },
 "BuxomMod:LactatingPower": {
         "NAME": "Lactating",
@@ -54,5 +54,9 @@
 "BuxomMod:BigBouncePower": {
         "NAME": "Big Bounce",
         "DESCRIPTIONS": ["Generate half as many #yBounces at the end of your turn, and change them to #yBig #yBounces."]
+},
+"BuxomMod:NakedPower": {
+        "NAME": "Naked",
+        "DESCRIPTIONS": ["Can't gain block. Every time you gain #yBuxom, draw #b", "card(s)."]
 }
 }

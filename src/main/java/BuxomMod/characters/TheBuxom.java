@@ -109,7 +109,7 @@ public class TheBuxom extends CustomPlayer {
         super(name, setClass, orbTextures,
                 "BuxomModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpineAnimation(
-                        "BuxomModResources/images/char/character/skeleton2.atlas", "BuxomModResources/images/char/character/skeleton2_Armaturelehmana sprite.json", 0.3f));
+                        "BuxomModResources/images/char/character/LehmanaSprite2.atlas", "BuxomModResources/images/char/character/LehmanaSprite2_Armaturelehmana sprite.json", 0.3f));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
@@ -172,19 +172,23 @@ public class TheBuxom extends CustomPlayer {
         Bone boobN = getSkeleton().findBone(boobBoneNID);
         Bone boobF = getSkeleton().findBone(boobBoneFID);
         Float scale = getPwrAmt(this, CommonPower.POWER_ID)*0.03F + 1F;
-        if ((scale >= 1.18F) && (scale <= 1.33F)) {
-            getSkeleton().setAttachment("boobs2", "boobs2-2");
-            changeState("big_idle");
-        }
-        else if (scale >= 1.33F) {
-            getSkeleton().setAttachment("boobs2", "boobs2-2");
+        if (scale < 1.33F) {
+            getSkeleton().setAttachment("boobs2", "boobs2-3");
             changeState("big_idle_2");
+            getSkeleton().update(0F);
         }
-        else {getSkeleton().setAttachment("boobs2", "boobs2-1");
-            changeState("idle");}
+        else if (scale > 1.33F) {
+            getSkeleton().setAttachment("boobs2", "boobs2-3");
+            changeState("big_idle_2");
+            getSkeleton().update(0F);
+        }
+        else {getSkeleton().setAttachment("boobs2", "boobs2-3");
+            changeState("big_idle_2");
+            getSkeleton().update(0F);
+        }
         boobN.setScale(scale);
-        boobF.setScale(scale);
         boobN.update();
+        boobF.setScale(scale);
         boobF.update();
         super.renderPlayerImage(sb);
         frameCount++;
