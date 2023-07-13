@@ -28,8 +28,8 @@ public class DefenseChibi extends CustomOrb {
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
 
-    private static final int PASSIVE_AMOUNT = 3;
-    private static final int EVOKE_AMOUNT = 5;
+    private static final int PASSIVE_AMOUNT = 4;
+    private static final int EVOKE_AMOUNT = 6;
 
     // Animation Rendering Numbers - You can leave these at default, or play around with them and see what they change.
     private float vfxTimer = 1.0f;
@@ -37,7 +37,7 @@ public class DefenseChibi extends CustomOrb {
     private float vfxIntervalMax = 0.4f;
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
-    private static final int MILKCOST = 2;
+    private static final int MILKCOST = 1;
 
     public DefenseChibi() {
         // The passive/evoke description we pass in here, specifically, don't matter
@@ -84,7 +84,9 @@ public class DefenseChibi extends CustomOrb {
         if (BuxomMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
             onEvoke();
         }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, passiveAmount));
+        else {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, passiveAmount));
+        }
     }
 
     @Override

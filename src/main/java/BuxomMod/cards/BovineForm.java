@@ -40,6 +40,7 @@ public class BovineForm extends AbstractDynamicCard {
     private static final int UPGRADE_COST = 2;
 
     private static final int MAGIC = 10;
+    private static final int SECOND_MAGIC = 10;
     private static final int UPGRADE_PLUS_MAGIC = 5;
 
     // /STAT DECLARATION/
@@ -49,6 +50,7 @@ public class BovineForm extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
 
         this.tags.add(BaseModCardTags.FORM); //Tag your strike, defend and form cards so that they work correctly.
 

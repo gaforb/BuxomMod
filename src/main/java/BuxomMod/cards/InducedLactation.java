@@ -41,7 +41,7 @@ public class InducedLactation extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private int MAGIC = 2;
+    private int MAGIC = 3;
 
     // /STAT DECLARATION/
 

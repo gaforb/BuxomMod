@@ -41,9 +41,9 @@ public class SteadyLactation extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
-    private int MAGIC = 3;
+    private int MAGIC = 4;
     private final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/

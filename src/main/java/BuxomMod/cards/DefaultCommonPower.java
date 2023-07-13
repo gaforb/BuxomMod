@@ -40,9 +40,9 @@ public class DefaultCommonPower extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int MAGIC = 3;
-    private static final int UPGRADE_MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 2;
 
     // Hey want a second magic/damage/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and TheDefault.variable.DefaultCustomVariable
