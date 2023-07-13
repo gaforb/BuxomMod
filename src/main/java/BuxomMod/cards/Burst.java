@@ -5,6 +5,10 @@ import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.NakedPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
+import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -41,7 +45,8 @@ public class Burst extends AbstractDynamicCard {
 
     private static final int COST = 0;
 
-    private int MAGIC = 5;
+    private int MAGIC = 1;
+    private int SECOND_MAGIC = 0;
 
     // /STAT DECLARATION/
 
@@ -49,17 +54,20 @@ public class Burst extends AbstractDynamicCard {
     public Burst() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
         this.shuffleBackIntoDrawPile = false;
         this.cardsToPreview = new AftershockStatus();
+        this.exhaust = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DiscardPileToTopOfDeckAction(p));
+        addToBot(new ShuffleAction(p.drawPile));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
-                        new NakedPower(p, p, -1), -1));
-        addToBot(new DrawCardAction(magicNumber));
+                        new NakedPower(p, p, magicNumber), magicNumber));
         }
 
     //Upgraded stats.
@@ -69,7 +77,6 @@ public class Burst extends AbstractDynamicCard {
             upgradeName();
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            this.shuffleBackIntoDrawPile = true;
         }
     }
 }

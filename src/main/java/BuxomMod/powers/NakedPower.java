@@ -5,6 +5,7 @@ import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,7 +32,7 @@ public class NakedPower extends AbstractPower implements CloneablePowerInterface
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.DEBUFF;
+        type = PowerType.BUFF;
         isTurnBased = false;
 
         // We load those textures here.
@@ -43,6 +44,12 @@ public class NakedPower extends AbstractPower implements CloneablePowerInterface
 
     public float modifyBlock(float blockAmount) {
         return blockAmount * 0.0F;
+    }
+
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power instanceof CommonPower) {
+            addToBot(new DrawCardAction(this.amount));
+        }
     }
 
     public void atEndOfRound() {

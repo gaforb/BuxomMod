@@ -203,7 +203,7 @@
   },
   "BuxomMod:Burst": {
     "NAME": "Burst",
-    "DESCRIPTION": "You can't gain *Block this turn. NL "
+    "DESCRIPTION": "You can't gain *Block this turn. NL Shuffle your discard pile into your draw pile. NL This turn, whenever you gain BuxomMod:Buxom, draw !M! card(s). NL Exhaust."
   }
 }
 

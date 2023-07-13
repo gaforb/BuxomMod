@@ -54,5 +54,9 @@
 "BuxomMod:BigBouncePower": {
         "NAME": "Big Bounce",
         "DESCRIPTIONS": ["Generate half as many #yBounces at the end of your turn, and change them to #yBig #yBounces."]
+},
+"BuxomMod:NakedPower": {
+        "NAME": "Naked",
+        "DESCRIPTIONS": ["Can't gain block. Every time you gain #yBuxom, draw #b", "card(s)."]
 }
 }
