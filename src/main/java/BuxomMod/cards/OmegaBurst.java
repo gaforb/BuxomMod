@@ -4,6 +4,7 @@ import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.NakedPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -43,7 +44,7 @@ public class OmegaBurst extends AbstractDynamicCard {
     private static final int COST = 0;
 
     private int MAGIC = 1;
-    private int SECOND_MAGIC = 0;
+    private int UPGRADED_MAGIC = 1;
 
     // /STAT DECLARATION/
 
@@ -51,7 +52,6 @@ public class OmegaBurst extends AbstractDynamicCard {
     public OmegaBurst() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
         this.shuffleBackIntoDrawPile = false;
         this.cardsToPreview = new AftershockStatus();
         this.exhaust = true;
@@ -63,6 +63,8 @@ public class OmegaBurst extends AbstractDynamicCard {
         addToBot(new DiscardPileToTopOfDeckAction(p));
         addToBot(new ShuffleAction(p.drawPile));
         AbstractDungeon.actionManager.addToBottom(
+                new RemoveAllBlockAction(p,p));
+        AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
                         new NakedPower(p, p, magicNumber), magicNumber));
         }
@@ -72,7 +74,7 @@ public class OmegaBurst extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADED_MAGIC);
             initializeDescription();
         }
     }

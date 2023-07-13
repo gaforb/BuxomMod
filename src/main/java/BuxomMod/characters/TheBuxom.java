@@ -172,7 +172,7 @@ public class TheBuxom extends CustomPlayer {
         Bone boobN = getSkeleton().findBone(boobBoneNID);
         Bone boobF = getSkeleton().findBone(boobBoneFID);
         Float scale = getPwrAmt(this, CommonPower.POWER_ID)*0.03F + 1F;
-        if (scale < 1.33F) {
+        /*if (scale < 1.33F) {
             getSkeleton().setAttachment("boobs2", "boobs2-3");
             changeState("big_idle_2");
             getSkeleton().update(0F);
@@ -185,7 +185,7 @@ public class TheBuxom extends CustomPlayer {
         else {getSkeleton().setAttachment("boobs2", "boobs2-3");
             changeState("big_idle_2");
             getSkeleton().update(0F);
-        }
+        }*/
         boobN.setScale(scale);
         boobN.update();
         boobF.setScale(scale);
