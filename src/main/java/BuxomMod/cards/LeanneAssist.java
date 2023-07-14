@@ -25,7 +25,7 @@ import static BuxomMod.BuxomMod.makeCardPath;
 // Abstract Dynamic Card builds up on Abstract Default Card even more and makes it so that you don't need to add
 // the NAME and the DESCRIPTION into your card - it'll get it automatically. Of course, this functionality could have easily
 // Been added to the default card rather than creating a new Dynamic one, but was done so to deliberately to showcase custom cards/inheritance a bit more.
-public class LeanneAssist extends CustomCard {
+public class LeanneAssist extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -59,7 +59,7 @@ public class LeanneAssist extends CustomCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int MILKCOST = 1;
 
@@ -82,13 +82,14 @@ public class LeanneAssist extends CustomCard {
     // in your main class, in the receiveEditCards() method
 
     public LeanneAssist() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         // Aside from baseDamage/MagicNumber/Block there's also a few more.
         // Just type this.base and let intelliJ auto complete for you, or, go read up AbstractCard
 
         baseDamage = DAMAGE;
         this.isMultiDamage = true;
+        this.milkCost = MILKCOST;
     }
 
     // Actions the card should do.

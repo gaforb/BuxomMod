@@ -225,7 +225,7 @@ public class TheBuxom extends CustomPlayer {
         retVal.add(DefaultCommonSkill.ID);
         retVal.add(DefaultCommonSkill.ID);
 
-        retVal.add(ButtonPop.ID);
+        retVal.add(BouncyExercise.ID);
         retVal.add(Omegabsorption.ID);
 
         return retVal;
@@ -236,11 +236,11 @@ public class TheBuxom extends CustomPlayer {
         logger.info("Begin loading starter Deck Strings");
 
         retVal.add(DefaultCommonAttack.ID);
-        retVal.add(DefaultUncommonAttack.ID);
-        retVal.add(DefaultRareAttack.ID);
+        retVal.add(BouncyExercise.ID);
+        retVal.add(OmegaForce.ID);
 
         retVal.add(DefaultCommonSkill.ID);
-        retVal.add(DefaultUncommonSkill.ID);
+        retVal.add(ExpansiveWall.ID);
         retVal.add(DefaultRareSkill.ID);
 
         retVal.add(DefaultCommonPower.ID);
@@ -248,7 +248,7 @@ public class TheBuxom extends CustomPlayer {
         retVal.add(BovineForm.ID);
 
         retVal.add(DefaultAttackWithVariable.ID);
-        retVal.add(DefaultSecondMagicNumberSkill.ID);
+        retVal.add(OmegaFumes.ID);
         retVal.add(KCupBra.ID);
         retVal.add(MCupBra.ID);
         retVal.add(Omegabsorption.ID);

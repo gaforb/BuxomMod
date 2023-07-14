@@ -7,7 +7,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -67,8 +69,8 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
         /*    */   }
 
     /*public void onUseCard(AbstractCard card, final UseCardAction action) {
-        if (card instanceof DefaultUncommonSkill) {
-            DefaultMod.logger.info("card is DefaultUncommonSkill");
+        if (card instanceof ExpansiveWall) {
+            DefaultMod.logger.info("card is ExpansiveWall");
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, (card.block + (this.amount))));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source,
                     new CommonPower(this.source, this.source, 1), 1));
@@ -80,7 +82,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
             }
         }
     }*/
-    public void createStatusCards() {
+    /*public void createStatusCards() {
         this.amount2 += this.amount;
         if (this.owner.hasPower(BigBouncePower.POWER_ID)) {
             while (this.amount2 >= 7) {
@@ -94,11 +96,12 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
             }
         }
     }
-    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
-        createStatusCards();
+    */public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
+        if (isPlayer) {
+            addToTop(new ApplyPowerAction(this.owner, this.owner, new BouncePower(this.owner, this.owner, this.amount)));
+        }
     }
 
-    //TODO: Gain an orb slot for every 5 Buxom
    public void stackPower(int stackAmount) {
        super.stackPower(stackAmount);
        for (AbstractPower pow : this.owner.powers) {
@@ -124,6 +127,25 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
        }
 
    }
+   @Override
+    public void reducePower(int reduceAmount) {
+        this.fontScale = 8.0F;
+        if ((this.amount - reduceAmount) <= 0) {
+            BuxomMod.logger.info("attempted to reduce Buxom past 1");
+            this.amount = 1;
+            BuxomMod.logger.info("set Buxom to 1");
+        }
+        else {this.amount -= reduceAmount;}
+
+        if (this.amount >= 999) {
+            this.amount = 999;
+        }
+
+        if (this.amount <= -999) {
+            this.amount = -999;
+        }
+
+    }
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         Random rand = new Random();
         int r = rand.nextInt(10);

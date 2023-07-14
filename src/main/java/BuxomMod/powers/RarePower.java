@@ -1,5 +1,6 @@
 package BuxomMod.powers;
 
+import BuxomMod.cards.OmegaForce;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -12,7 +13,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import BuxomMod.BuxomMod;
-import BuxomMod.cards.DefaultRareAttack;
 import BuxomMod.util.TextureLoader;
 
 public class RarePower extends AbstractPower implements CloneablePowerInterface {
@@ -47,7 +47,7 @@ public class RarePower extends AbstractPower implements CloneablePowerInterface 
 
     @Override
     public void atStartOfTurn() { // At the start of your turn
-        AbstractCard playCard = new DefaultRareAttack(); // Declare Card - the DefaultRareAttack card. We will name it 'playCard'.
+        AbstractCard playCard = new OmegaForce(); // Declare Card - the OmegaForce card. We will name it 'playCard'.
         AbstractMonster targetMonster = AbstractDungeon.getRandomMonster(); // Declare Target - Random Monster. We will name the monster 'targetMonster'.
 
         playCard.freeToPlayOnce = true; //Self Explanatory

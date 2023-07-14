@@ -49,6 +49,7 @@ public class Paizuri extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
+        milkCost = baseMilkCost = MILKCOST;
     }
 
     // Actions the card should do.

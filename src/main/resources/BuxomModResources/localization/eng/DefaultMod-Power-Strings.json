@@ -1,7 +1,7 @@
 {
 "BuxomMod:CommonPower": {
         "NAME": "Buxom",
-        "DESCRIPTIONS": ["Breast size increased. Generate status cards each turn for every 5 Buxom, cumulatively."]
+        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn."]
 },
 "BuxomMod:RarePower": {
         "NAME": "Placeholder Power",
@@ -53,10 +53,14 @@
 },
 "BuxomMod:BigBouncePower": {
         "NAME": "Big Bounce",
-        "DESCRIPTIONS": ["Generate half as many #yBounces at the end of your turn, and change them to #yBig #yBounces."]
+        "DESCRIPTIONS": ["Generate a #yBounce with every 7 Bounce stacks instead, and change them to #yBig #yBounces."]
 },
 "BuxomMod:NakedPower": {
         "NAME": "Naked",
         "DESCRIPTIONS": ["Can't gain block. Every time you gain #yBuxom, draw #b", "card(s)."]
+},
+"BuxomMod:BouncePower": {
+        "NAME": "Bounce",
+        "DESCRIPTIONS": ["For every 5 stacks, generate a #yBounce status card."]
 }
 }

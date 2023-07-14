@@ -14,7 +14,7 @@ import BuxomMod.characters.TheBuxom;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class DefaultUncommonAttack extends AbstractDynamicCard {
+public class BouncyExercise extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -24,7 +24,7 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = BuxomMod.makeID(DefaultUncommonAttack.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(BouncyExercise.class.getSimpleName());
     public static final String IMG = makeCardPath("BigBounce.png");
 
     // /TEXT DECLARATION/
@@ -32,22 +32,23 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
 
     // STAT DECLARATION 	
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 9;
     private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     // /STAT DECLARATION/
 
 
-    public DefaultUncommonAttack() {
+    public BouncyExercise() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        baseMagicNumber = magicNumber = MAGIC;
     }
 
     /*public void applyPowers() {
@@ -92,7 +93,7 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
         // addToBottom - last
         // 99.99% of the time you just want to addToBottom all of them.
         // Please do that unless you need to add to top for some specific reason.
-        new DamageAction(m, new DamageInfo(p, baseDamage, damageTypeForTurn),
+        new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
         // a list of existing actions can be found at com.megacrit.cardcrawl.actions but
         // Chances are you'd instead look at "hey my card is similar to this basegame card"
         // Let's find out what action *it* uses.
@@ -100,11 +101,10 @@ public class DefaultUncommonAttack extends AbstractDynamicCard {
         // P.s. if you want to damage ALL enemies OUTSIDE of a card, check out the custom orb.
         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (b != null) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new ReducePowerAction(p, p, p.getPower(CommonPower.POWER_ID), 1));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, b.amount, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(CommonPower.POWER_ID), magicNumber));
         }
-        }
+    }
 
     //Upgraded stats.
     @Override

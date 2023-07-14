@@ -7,24 +7,24 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
-  "BuxomMod:DefaultCommonPower": {
+  "BuxomMod:PopPopPop": {
     "NAME": "Pop, Pop, Pop!",
     "DESCRIPTION": "Gain 1 buxommod:Buxom !M! times. NL Draw !M! cards.",
     "UPGRADE_DESCRIPTION": "Gain 1 buxommod:Buxom !M! times. NL Draw !M! cards."
   },
-  "BuxomMod:DefaultUncommonAttack": {
+  "BuxomMod:BouncyExercise": {
     "NAME": "Bouncy Exercise",
-    "DESCRIPTION": "Lose 1 buxommod:Buxom. NL Deal !D! damage, then deal damage equal to your current buxommod:Buxom."
+    "DESCRIPTION": "Deal !D! damage, then deal damage equal to your current buxommod:Buxom. Lose 1 buxommod:Buxom."
   },
-  "BuxomMod:DefaultUncommonSkill": {
+  "BuxomMod:ExpansiveWall": {
     "NAME": "Expansive Wall",
     "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !B! Block."
   },
-  "BuxomMod:DefaultUncommonPower": {
+  "BuxomMod:Chibis": {
     "NAME": "Chibis!",
     "DESCRIPTION": "Gain !M! Orb slot(s). Channel 1 BuxomMod:Defensive Chibi."
   },
-  "BuxomMod:DefaultRareAttack": {
+  "BuxomMod:OmegaForce": {
     "NAME": "Omega Force",
     "DESCRIPTION": "Deal !D! damage. NL Exhaust all status cards in your hand, and gain 1 Strength for each."
   },
@@ -41,9 +41,9 @@
     "NAME": "Special Strike",
     "DESCRIPTION": "Deal !D! damage [E] times. NL (Deal !BuxomMod:ENERGY_DAMAGE! damage total.)"
   },
-  "BuxomMod:DefaultSecondMagicNumberSkill": {
+  "BuxomMod:OmegaFumes": {
     "NAME": "Omega Fumes",
-    "DESCRIPTION": "Apply !M! Vulnerable and !BuxomMod:SecondMagic! poison to ALL enemies. NL Add 2 *Afterswell to your draw pile. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Vulnerable and !BuxomMod:SecondMagic! Poison to ALL enemies. NL Add 2 *Afterswell to your draw pile. NL Exhaust."
   },
   "BuxomMod:OrbSkill": {
     "NAME": "Get Orb",
@@ -108,8 +108,8 @@
   },
   "BuxomMod:Library": {
     "NAME": "Omega Library",
-    "DESCRIPTION": "Draw !M! cards. NL Add *OMEGA *Library to your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Add *OMEGA *Library to your draw pile. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL Gain !B! block. NL Add *OMEGA *Library to your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain !B! block. NL Add *OMEGA *Library to your draw pile. NL Exhaust."
   },
   "BuxomMod:OmegaLibrary": {
     "NAME": "OMEGA Library",
@@ -163,7 +163,7 @@
   },
   "BuxomMod:ChibiAttraction": {
     "NAME": "Chibi Attraction",
-    "DESCRIPTION": "BuxomMod:Milking 2: Channel !M! BuxomMod:Devious Chibi."
+    "DESCRIPTION": "BuxomMod:Milking !BuxomMod:MilkCost!: Channel !M! BuxomMod:Devious Chibi."
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
@@ -172,7 +172,7 @@
   },
   "BuxomMod:Paizuri": {
     "NAME": "Paizuri",
-    "DESCRIPTION": "If the enemy intends to attack, inflict !M! Weak and draw !M! cards. NL BuxomMod:Milking 2: Also inflict !M! Vulnerable."
+    "DESCRIPTION": "If the enemy intends to attack, inflict !M! Weak and draw !M! cards. NL BuxomMod:Milking !BuxomMod:MilkCost!: Also inflict !M! Vulnerable."
   },
   "BuxomMod:OmegaBeatdown": {
     "NAME": "Omega Beatdown",
@@ -194,8 +194,8 @@
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",
-    "DESCRIPTION": "Gain !M! Buxom. NL Generate end-of-turn *Bounces 40% slower, and change them to *Big *Bounces.",
-    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Buxom. NL Generate end-of-turn *Bounces 40% slower, and change them to *Big *Bounces."
+    "DESCRIPTION": "Gain !M! Buxom. NL Generate a *Bounce with every 7 Bounce stacks instead, and change them to *Big *Bounces.",
+    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Buxom. NL Generate a *Bounce with every 7 Bounce stacks instead, and change them to *Big *Bounces."
   },
   "BuxomMod:BigBounceStatus": {
     "NAME": "Big Bounce",
@@ -203,7 +203,15 @@
   },
   "BuxomMod:OmegaBurst": {
     "NAME": "Omega Burst",
-    "DESCRIPTION": "You can't gain *Block this turn. NL Shuffle your discard pile into your draw pile. NL This turn, whenever you gain BuxomMod:Buxom, draw !M! card(s). NL Exhaust."
+    "DESCRIPTION": "You can't gain *Block this turn. NL Shuffle your discard pile into your draw pile. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card(s). NL Exhaust."
+  },
+  "BuxomMod:BouncyBlock": {
+    "NAME": "Bouncy Block",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage for every Status card in your hand."
+  },
+  "BuxomMod:FeelItOut": {
+    "NAME": "Feel It Out",
+    "DESCRIPTION": "Gain !B! Block. NL Draw all the Status cards in your draw pile."
   }
 }
 

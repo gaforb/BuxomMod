@@ -15,7 +15,7 @@ import BuxomMod.characters.TheBuxom;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class DefaultRareAttack extends AbstractDynamicCard {
+public class OmegaForce extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -26,7 +26,7 @@ public class DefaultRareAttack extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = BuxomMod.makeID(DefaultRareAttack.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(OmegaForce.class.getSimpleName());
     public static final String IMG = makeCardPath("OmegaSpellcasting.png");
 
     // /TEXT DECLARATION/
@@ -47,7 +47,7 @@ public class DefaultRareAttack extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public DefaultRareAttack() {
+    public OmegaForce() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }

@@ -62,6 +62,7 @@ public class ButtonHazard extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber = MILKBONUS;
+        milkCost = baseMilkCost = MILKCOST;
     }
 
 

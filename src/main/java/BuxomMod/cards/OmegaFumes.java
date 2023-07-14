@@ -12,7 +12,7 @@ import BuxomMod.characters.TheBuxom;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
+public class OmegaFumes extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -30,7 +30,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = BuxomMod.makeID(DefaultSecondMagicNumberSkill.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(OmegaFumes.class.getSimpleName());
     public static final String IMG = makeCardPath("OmegaFumes.png");
 
     // /TEXT DECLARATION/
@@ -38,7 +38,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
@@ -53,7 +53,7 @@ public class DefaultSecondMagicNumberSkill extends AbstractDynamicCard {
 
     // /STAT DECLARATION/
 
-    public DefaultSecondMagicNumberSkill() {
+    public OmegaFumes() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = VULNERABLE;

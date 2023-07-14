@@ -49,6 +49,7 @@ public class ChibiAttraction extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        milkCost = baseMilkCost = MILKCOST;
 
     }
 

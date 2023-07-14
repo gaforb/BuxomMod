@@ -11,7 +11,7 @@ import BuxomMod.powers.CommonPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class DefaultUncommonSkill extends AbstractDynamicCard {
+public class ExpansiveWall extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -21,7 +21,7 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = BuxomMod.makeID(DefaultUncommonSkill.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(ExpansiveWall.class.getSimpleName());
     public static final String IMG = makeCardPath("MassBarrier.png");
 
     // /TEXT DECLARATION/
@@ -41,7 +41,7 @@ public class DefaultUncommonSkill extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public DefaultUncommonSkill() {
+    public ExpansiveWall() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;

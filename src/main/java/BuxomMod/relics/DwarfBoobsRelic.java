@@ -42,7 +42,7 @@ public class DwarfBoobsRelic extends CustomRelic {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, this.counter), this.counter));
     }
 
-    public void onReceivePower(AbstractPower power, AbstractCreature target) {
+    /*public void onReceivePower(AbstractPower power, AbstractCreature target) {
         if ((power instanceof CommonPower) && (target == AbstractDungeon.player)) {
             if (AbstractDungeon.player.getPower(CommonPower.POWER_ID).amount >= 15) {
                 if (this.triggered == false) {
@@ -53,7 +53,7 @@ public class DwarfBoobsRelic extends CustomRelic {
             }
         }
     }
-    /*
+
     // Gain 1 energy on equip.
     @Override
     public void onEquip() {

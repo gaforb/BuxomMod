@@ -12,7 +12,7 @@ import BuxomMod.orbs.DefenseChibi;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class DefaultUncommonPower extends AbstractDynamicCard {
+public class Chibis extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -22,7 +22,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
 
     // TEXT DECLARATION 
 
-    public static final String ID = BuxomMod.makeID(DefaultUncommonPower.class.getSimpleName());
+    public static final String ID = BuxomMod.makeID(Chibis.class.getSimpleName());
     public static final String IMG = makeCardPath("Chibis.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -43,7 +43,7 @@ public class DefaultUncommonPower extends AbstractDynamicCard {
 
     // /STAT DECLARATION/
 
-    public DefaultUncommonPower() {
+    public Chibis() {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
