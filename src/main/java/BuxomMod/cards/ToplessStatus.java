@@ -1,13 +1,17 @@
 package BuxomMod.cards;
 
+import BuxomMod.characters.TheBuxom;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import BuxomMod.BuxomMod;
+import com.megacrit.cardcrawl.powers.DrawPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -46,38 +50,33 @@ public class ToplessStatus extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
-    private static final CardType TYPE = CardType.STATUS;       //
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    private static final CardType TYPE = CardType.SKILL;       //
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = -2;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 0;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/
 
 
     public ToplessStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        this.selfRetain = true;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.dontTriggerOnUseCard) {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new ExposureStatus(), 2, true, true));
-        }
     }
 
-    public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
-
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+    public void triggerOnExhaust() {
+        AbstractPlayer p = AbstractDungeon.player;
+        addToBot(new ApplyPowerAction(p, p, new DrawPower(p, this.magicNumber), this.magicNumber));
     }
 
     // Upgraded stats.
@@ -85,8 +84,7 @@ public class ToplessStatus extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeDamage(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

@@ -59,6 +59,8 @@ public class OmegaShock extends AbstractDynamicCard {
 
     private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DAMAGE = 3;
 
     // /STAT DECLARATION/
 
@@ -75,7 +77,13 @@ public class OmegaShock extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard c = new ShockStatus();
-        c.baseDamage += getPwrAmt(p, CommonPower.POWER_ID);
+        int timesGrown = 0;
+        if (p.hasPower(CommonPower.POWER_ID)) {
+            timesGrown = ((CommonPower)p.getPower(CommonPower.POWER_ID)).buxomCounterThisTurn;
+        }
+        for (int i = 0; i < timesGrown; i++) {
+            c.baseDamage += this.damage;
+        }
         if (this.upgraded) {
             c.upgrade();
             addToBot(new MakeTempCardInDrawPileAction(c, magicNumber, true, true));

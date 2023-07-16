@@ -38,6 +38,9 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("buxom84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("buxom32.png"));
+    public boolean appliedThisTurn = false;
+    public int buxomCounterThisTurn = 0;
+    public int buxomGainedThisTurn = 0;
 
     public CommonPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -96,13 +99,29 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
             }
         }
     }
-    */public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
+    */
+
+    public void atStartOfTurn() {
+        this.appliedThisTurn = false;
+        this.buxomCounterThisTurn = 0;
+        this.buxomGainedThisTurn = 0;
+    }
+
+    public void onInitialApplication() {
+        this.appliedThisTurn = true;
+        this.buxomCounterThisTurn++;
+        buxomGainedThisTurn += this.amount;
+    }
+    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         if (isPlayer) {
             addToTop(new ApplyPowerAction(this.owner, this.owner, new BouncePower(this.owner, this.owner, this.amount)));
         }
     }
 
    public void stackPower(int stackAmount) {
+        this.appliedThisTurn = true;
+       this.buxomCounterThisTurn++;
+       this.buxomGainedThisTurn += stackAmount;
        super.stackPower(stackAmount);
        for (AbstractPower pow : this.owner.powers) {
            if (pow instanceof BraPower) {
@@ -127,25 +146,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
        }
 
    }
-   @Override
-    public void reducePower(int reduceAmount) {
-        this.fontScale = 8.0F;
-        if ((this.amount - reduceAmount) <= 0) {
-            BuxomMod.logger.info("attempted to reduce Buxom past 1");
-            this.amount = 1;
-            BuxomMod.logger.info("set Buxom to 1");
-        }
-        else {this.amount -= reduceAmount;}
 
-        if (this.amount >= 999) {
-            this.amount = 999;
-        }
-
-        if (this.amount <= -999) {
-            this.amount = -999;
-        }
-
-    }
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         Random rand = new Random();
         int r = rand.nextInt(10);

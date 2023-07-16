@@ -34,10 +34,10 @@ public class FeelItOut extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 5;
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
-    private static final int UPGRADE_PLUS_BLOCK = 1;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     // /STAT DECLARATION/
 

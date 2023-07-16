@@ -100,7 +100,7 @@
   },
   "BuxomMod:ToplessStatus": {
     "NAME": "Topless",
-    "DESCRIPTION": "Unplayable. NL Retain. NL At the end of your turn, add 1 *Bounce to your draw pile."
+    "DESCRIPTION": "Unplayable. NL When this card is Exhausted, draw !M! additional cards per turn."
   },
   "BuxomMod:AftershockStatus": {
     "NAME": "Afterswell",

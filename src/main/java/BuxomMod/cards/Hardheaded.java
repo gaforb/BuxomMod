@@ -3,10 +3,7 @@ package BuxomMod.cards;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -85,8 +82,8 @@ public class Hardheaded extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
-        addToBot(new DiscardAction(p, p, 1, false));
         addToBot(new DrawCardAction(p, magicNumber));
+        addToBot(new ExhaustAction(magicNumber, false));
     }
 
     //Upgraded stats.
