@@ -83,6 +83,8 @@ public class TheBuxom extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
     public static String boobBoneNID = "boobNclothed";
     public static String boobBoneFID = "boobFclothed";
+    public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite2.atlas";
+    public static String skeletonURL ="BuxomModResources/images/char/character/LehmanaSprite2_Armaturelehmana sprite.json";
 
     // =============== /STRINGS/ =================
 
@@ -109,7 +111,7 @@ public class TheBuxom extends CustomPlayer {
         super(name, setClass, orbTextures,
                 "BuxomModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpineAnimation(
-                        "BuxomModResources/images/char/character/LehmanaSprite2.atlas", "BuxomModResources/images/char/character/LehmanaSprite2_Armaturelehmana sprite.json", 0.3f));
+                        atlasURL, skeletonURL, 0.3f));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
@@ -154,15 +156,20 @@ public class TheBuxom extends CustomPlayer {
     }
 
     public void changeState(String stateName) {
+        AnimationState.TrackEntry e;
         switch (stateName) {
             case "idle":
-                this.state.setAnimation(0, "idle", true);
+                e = this.state.setAnimation(0, "idle", true);
+                e.setTime(e.getEndTime() * MathUtils.random());
                 break;
             case "big_idle":
-                this.state.setAnimation(0, "big_idle", true);
+                e = this.state.setAnimation(0, "big_idle", true);
+                e.setTime(e.getEndTime() * MathUtils.random());
                 break;
             case "big_idle_2":
-                this.state.setAnimation(0, "big_idle_2", true);
+                e = this.state.setAnimation(0, "big_idle_2", true);
+                e.setTime(e.getEndTime() * MathUtils.random());
+                break;
         }
 
     }
@@ -172,20 +179,6 @@ public class TheBuxom extends CustomPlayer {
         Bone boobN = getSkeleton().findBone(boobBoneNID);
         Bone boobF = getSkeleton().findBone(boobBoneFID);
         Float scale = getPwrAmt(this, CommonPower.POWER_ID)*0.03F + 1F;
-        /*if (scale < 1.33F) {
-            getSkeleton().setAttachment("boobs2", "boobs2-3");
-            changeState("big_idle_2");
-            getSkeleton().update(0F);
-        }
-        else if (scale > 1.33F) {
-            getSkeleton().setAttachment("boobs2", "boobs2-3");
-            changeState("big_idle_2");
-            getSkeleton().update(0F);
-        }
-        else {getSkeleton().setAttachment("boobs2", "boobs2-3");
-            changeState("big_idle_2");
-            getSkeleton().update(0F);
-        }*/
         boobN.setScale(scale);
         boobN.update();
         boobF.setScale(scale);

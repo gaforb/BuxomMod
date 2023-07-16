@@ -212,6 +212,14 @@
   "BuxomMod:FeelItOut": {
     "NAME": "Feel It Out",
     "DESCRIPTION": "Gain !B! Block. NL Draw all the Status cards in your draw pile."
+  },
+  "BuxomMod:Hardheaded": {
+    "NAME": "Hardheaded",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Discard 1 card. NL Draw !M! card{!M!|>1=s}."
+  },
+  "BuxomMod:QuiteEnough": {
+    "NAME": "Quite Enough",
+    "DESCRIPTION": "Deal !D! damage. NL Channel !M! Offensive Chibi."
   }
 }
 

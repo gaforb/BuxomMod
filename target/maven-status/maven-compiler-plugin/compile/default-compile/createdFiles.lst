@@ -87,6 +87,7 @@ BuxomMod\relics\ToplessArtifact.class
 BuxomMod\cards\MeasurementTime.class
 BuxomMod\cards\OmegaBeatdown.class
 BuxomMod\cards\Relief.class
+BuxomMod\cards\Hardheaded.class
 BuxomMod\cards\KCupBra.class
 BuxomMod\powers\BraPower.class
 BuxomMod\cards\ExpandMind.class
@@ -98,5 +99,6 @@ BuxomMod\powers\BraBreakerPower.class
 BuxomMod\powers\BouncePower.class
 BuxomMod\cards\SwellingTight.class
 BuxomMod\events\ToplessEvent.class
+BuxomMod\cards\QuiteEnough.class
 BuxomMod\cards\BrokenBraT.class
 BuxomMod\cards\ChibiAttack.class

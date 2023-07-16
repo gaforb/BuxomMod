@@ -1,19 +1,20 @@
 package BuxomMod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import BuxomMod.BuxomMod;
+import BuxomMod.powers.CommonPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import BuxomMod.BuxomMod;
-import BuxomMod.characters.TheBuxom;
-import BuxomMod.powers.ShockPower;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 
+import static BuxomMod.BuxomMod.getPwrAmt;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class OmegaShock extends AbstractDynamicCard {
+public class ShockStatus extends AbstractDynamicCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -34,11 +35,10 @@ public class OmegaShock extends AbstractDynamicCard {
      */
 
     // TEXT DECLARATION
-    public static final String ID = BuxomMod.makeID(OmegaShock.class.getSimpleName());
-    public static final String IMG = makeCardPath("OmegaShock.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+
+    public static final String ID = BuxomMod.makeID(ShockStatus.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String IMG = makeCardPath("Shock.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
 
     // /TEXT DECLARATION/
@@ -46,40 +46,47 @@ public class OmegaShock extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
+    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
+    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
+    private static final CardType TYPE = CardType.STATUS;       //
+    public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 1;  // COST = ${COST}
-
-    private static final int MAGIC = 1;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
-
+    private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_MAGIC = 0;
     // /STAT DECLARATION/
 
 
-    public OmegaShock() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public ShockStatus(boolean upgrade) { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+
+        damage = baseDamage = getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID);
         baseMagicNumber = magicNumber = MAGIC;
+        this.exhaust = true;
+        if (upgrade) {
+            this.upgrade();
+        }
     }
-
-
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new ShockPower(p, p, magicNumber), magicNumber));
+        int bdiv = getPwrAmt(p, CommonPower.POWER_ID);
+        addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber), magicNumber));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage)));
     }
-
-
+    public void triggerWhenDrawn() {addToBot(new DrawCardAction(magicNumber));}
+    public void triggerOnEndOfTurnForPlayingCard() {
+        this.dontTriggerOnUseCard = true;
+        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+    }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
     }

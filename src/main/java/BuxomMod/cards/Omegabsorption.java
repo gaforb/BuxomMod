@@ -122,8 +122,8 @@ private AbstractGameEffect vfx(float x, float y) {
         addToBot(new VFXAction(vfx(p.drawX, p.drawY)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, magicNumber), magicNumber));
-
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
+
     }
 
 

@@ -3,6 +3,8 @@ package BuxomMod.cards;
 import BuxomMod.powers.LactatingPower;
 import BuxomMod.powers.MilkPower;
 import basemod.helpers.BaseModCardTags;
+import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -63,6 +65,9 @@ public class BovineForm extends AbstractDynamicCard {
             new ApplyPowerAction(p, p, new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LactatingPower(p, p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MilkPower(p, p, magicNumber), magicNumber));
+        AnimationState.TrackEntry e = p.state.setAnimation(0, "big_idle_2", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
+        BuxomMod.logger.info(e.getAnimation());
     }
 
     //Upgraded stats.

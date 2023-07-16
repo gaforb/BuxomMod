@@ -35,7 +35,7 @@
   },
   "BuxomMod:BovineForm": {
     "NAME": "Bovine Form",
-    "DESCRIPTION": "Gain !M! buxommod:Buxom. NL Gain !M! buxommod:Lactating. NL Gain !M! buxommod:Milk."
+    "DESCRIPTION": "Gain 10 buxommod:Buxom. NL Gain !M! buxommod:Lactating. NL Gain !M! buxommod:Milk."
   },
   "BuxomMod:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
@@ -108,8 +108,8 @@
   },
   "BuxomMod:Library": {
     "NAME": "Omega Library",
-    "DESCRIPTION": "Draw !M! cards. NL Gain !B! block. NL Add *OMEGA *Library to your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain !B! block. NL Add *OMEGA *Library to your draw pile. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL Gain !B! Block. NL Add *OMEGA *Library to your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain !B! Block. NL Add *OMEGA *Library to your draw pile. NL Exhaust."
   },
   "BuxomMod:OmegaLibrary": {
     "NAME": "OMEGA Library",
@@ -163,7 +163,7 @@
   },
   "BuxomMod:ChibiAttraction": {
     "NAME": "Chibi Attraction",
-    "DESCRIPTION": "BuxomMod:Milking !BuxomMod:MilkCost!: Channel !M! BuxomMod:Devious Chibi."
+    "DESCRIPTION": "BuxomMod:Milking 2: Channel !M! BuxomMod:Devious Chibi."
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
@@ -172,7 +172,7 @@
   },
   "BuxomMod:Paizuri": {
     "NAME": "Paizuri",
-    "DESCRIPTION": "If the enemy intends to attack, inflict !M! Weak and draw !M! cards. NL BuxomMod:Milking !BuxomMod:MilkCost!: Also inflict !M! Vulnerable."
+    "DESCRIPTION": "If the enemy intends to attack, inflict !M! Weak and draw !M! cards. NL BuxomMod:Milking 2: Also inflict !M! Vulnerable."
   },
   "BuxomMod:OmegaBeatdown": {
     "NAME": "Omega Beatdown",
@@ -180,8 +180,8 @@
   },
   "BuxomMod:ExpandMind": {
     "NAME": "Expand Mind",
-    "DESCRIPTION": "Retain your hand this turn. NL Draw !M! card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain your hand this turn. NL Draw !M! cards."
+    "DESCRIPTION": "Retain your hand this turn. NL Draw !M! card{!M!|>1=s}. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain your hand this turn. NL Draw !M! card{!M!|>1=s}."
   },
   "BuxomMod:InducedLactation": {
     "NAME": "Induced Lactation",
@@ -212,6 +212,14 @@
   "BuxomMod:FeelItOut": {
     "NAME": "Feel It Out",
     "DESCRIPTION": "Gain !B! Block. NL Draw all the Status cards in your draw pile."
+  },
+  "BuxomMod:Hardheaded": {
+    "NAME": "Hardheaded",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Discard 1 card. NL Draw !M! card{!M!|>1=s}."
+  },
+  "BuxomMod:QuiteEnough": {
+    "NAME": "Quite Enough",
+    "DESCRIPTION": "Deal !D! damage. NL Channel !M! Offensive Chibi."
   }
 }
 
