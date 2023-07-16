@@ -1,6 +1,9 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -10,6 +13,7 @@ import BuxomMod.powers.ShockPower;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
+import static BuxomMod.BuxomMod.getPwrAmt;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
@@ -47,13 +51,13 @@ public class OmegaShock extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 1;  // COST = ${COST}
+    private static final int COST = 0;  // COST = ${COST}
 
-    private static final int MAGIC = 1;    // DAMAGE = ${DAMAGE}
+    private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
@@ -62,14 +66,21 @@ public class OmegaShock extends AbstractDynamicCard {
     public OmegaShock() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        this.exhaust = true;
+        this.cardsToPreview = new ShockStatus();
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new ShockPower(p, p, magicNumber), magicNumber));
+        AbstractCard c = new ShockStatus();
+        c.baseDamage += getPwrAmt(p, CommonPower.POWER_ID);
+        if (this.upgraded) {
+            c.upgrade();
+            addToBot(new MakeTempCardInDrawPileAction(c, magicNumber, true, true));
+        }
+        else {addToBot(new MakeTempCardInDrawPileAction(c, magicNumber, true, true));}
     }
 
 
@@ -80,6 +91,7 @@ public class OmegaShock extends AbstractDynamicCard {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             rawDescription = UPGRADE_DESCRIPTION;
+            cardsToPreview.upgrade();
             initializeDescription();
         }
     }

@@ -54,6 +54,7 @@ BuxomMod\cards\OmegaFlare.class
 BuxomMod\variables\MilkCostVariable.class
 BuxomMod\cards\ExpansiveWall.class
 BuxomMod\relics\JCupRelic.class
+BuxomMod\cards\ShockStatus.class
 BuxomMod\actions\CreateBuxomStatusAction.class
 BuxomMod\cards\BigBounceStatus.class
 BuxomMod\potions\FlatteningPotion.class

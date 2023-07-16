@@ -47,27 +47,25 @@ public class ShockStatus extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.STATUS;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
     private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DMG = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
     private static final int UPGRADE_PLUS_MAGIC = 0;
     // /STAT DECLARATION/
 
 
-    public ShockStatus(boolean upgrade) { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public ShockStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
-        damage = baseDamage = getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID);
+        damage = baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
         this.exhaust = true;
-        if (upgrade) {
-            this.upgrade();
-        }
     }
     // Actions the card should do.
     @Override
@@ -77,10 +75,7 @@ public class ShockStatus extends AbstractDynamicCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage)));
     }
     public void triggerWhenDrawn() {addToBot(new DrawCardAction(magicNumber));}
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
-    }
+
     // Upgraded stats.
     @Override
     public void upgrade() {

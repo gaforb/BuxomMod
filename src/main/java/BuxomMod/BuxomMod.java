@@ -27,7 +27,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import BuxomMod.cards.*;
 import BuxomMod.characters.TheBuxom;
-import BuxomMod.events.IdentityCrisisEvent;
+//import BuxomMod.events.IdentityCrisisEvent;
 import BuxomMod.potions.FlatteningPotion;
 import BuxomMod.relics.BottledPlaceholderRelic;
 import BuxomMod.relics.DwarfBoobsRelic;
@@ -359,13 +359,13 @@ public class BuxomMod implements
 
         // Create a new event builder
         // Since this is a builder these method calls (outside of create()) can be skipped/added as necessary
-        AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
+        /*AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
             .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
             .playerClass(TheBuxom.Enums.THE_BUXOM) // Character specific event
             .create();
 
         // Add the event
-        BaseMod.addEvent(eventParams);
+        BaseMod.addEvent(eventParams);*/
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");

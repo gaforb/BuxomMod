@@ -63,7 +63,7 @@ public class Phew extends AbstractDynamicCard {
         baseBlock = BLOCK;
         this.isInnate = false;
     }
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    /*public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
@@ -74,7 +74,7 @@ public class Phew extends AbstractDynamicCard {
             }
         else canUse = false;
         return canUse;
-    }
+    }*/
     // Actions the card should do.
     @Override
     /*public void use(AbstractPlayer p, AbstractMonster m) {
@@ -92,8 +92,10 @@ public class Phew extends AbstractDynamicCard {
     }*/
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), magicNumber));
+        if (p.hasPower(CommonPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), magicNumber));
+        }
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 

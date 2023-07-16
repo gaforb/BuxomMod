@@ -129,8 +129,8 @@
   },
   "BuxomMod:OmegaShock": {
     "NAME": "Omega Shock",
-    "DESCRIPTION": "At the end of your turn, if you have a Status card in your hand, deal damage equal to your BuxomMod:Buxom to a random enemy.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, if you have a Status card in your hand, deal damage equal to your BuxomMod:Buxom twice to a random enemy."
+    "DESCRIPTION": "Add !M! Shocks to your draw pile, with damage equal to your Buxom. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add !M! Shocks to your draw pile, with damage equal to your Buxom. NL Upgrade them. NL Exhaust."
   },
   "BuxomMod:SwellingTight": {
     "NAME": "Swelling Tight",
@@ -220,6 +220,10 @@
   "BuxomMod:QuiteEnough": {
     "NAME": "Quite Enough",
     "DESCRIPTION": "Deal !D! damage. NL Channel !M! Offensive Chibi."
+  },
+  "BuxomMod:ShockStatus": {
+    "NAME": "Shock",
+    "DESCRIPTION": "{@@}When this card is drawn, draw !M! card{!M!|>1=s}. NL Gain !M! BuxomMod:Buxom. NL Deal !D! damage."
   }
 }
 

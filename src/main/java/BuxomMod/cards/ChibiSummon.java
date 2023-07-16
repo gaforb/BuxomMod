@@ -55,7 +55,7 @@ public class ChibiSummon extends AbstractDynamicCard {
 
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    /*public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
@@ -68,13 +68,15 @@ public class ChibiSummon extends AbstractDynamicCard {
         }
         else canUse = false;
         return canUse;
-    }
+    }*/
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new ReducePowerAction(p, p, p.getPower(CommonPower.POWER_ID), 2));
+        if (p.hasPower(CommonPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), 2));
+        }
         addToBot((AbstractGameAction)new ChannelAction((AbstractOrb)new DefenseChibi()));
     }
 
