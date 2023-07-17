@@ -579,10 +579,10 @@ public class BuxomMod implements
             logger.info("Paying milk cost...");
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, MilkPower.POWER_ID, milkCost));
             return true;
-        }
-        else {
+        } else {
             logger.info("Not enough milk to pay.");
             return false;
         }
     }
+
 }

@@ -35,11 +35,10 @@ public class BouncyBlock extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 2;
-    private static final int UPGRADE_COST = 1;
-    private static final int BLOCK = 9;
+    private static final int BLOCK = 12;
     private static final int DAMAGE = 4;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int UPGRADE_PLUS_BLOCK = 0;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
     // /STAT DECLARATION/
 
@@ -101,7 +100,6 @@ public class BouncyBlock extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

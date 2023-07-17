@@ -203,7 +203,7 @@
   },
   "BuxomMod:OmegaBurst": {
     "NAME": "Omega Burst",
-    "DESCRIPTION": "You can't gain *Block this turn. NL Shuffle your discard pile into your draw pile. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card(s). NL Exhaust."
+    "DESCRIPTION": "You can't gain *Block this turn. NL Scry 10. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card(s). NL Exhaust."
   },
   "BuxomMod:BouncyBlock": {
     "NAME": "Bouncy Block",

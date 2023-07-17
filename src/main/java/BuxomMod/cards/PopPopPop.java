@@ -2,6 +2,7 @@ package BuxomMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -55,6 +56,7 @@ public class PopPopPop extends AbstractDynamicCard {
     public PopPopPop() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        cardsToPreview = new AftershockStatus();
     }
 
 
@@ -62,8 +64,7 @@ public class PopPopPop extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                    new CommonPower(p, p, 1), 1));
+            addToBot(new MakeTempCardInHandAction(new AftershockStatus()));
         }
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
 
