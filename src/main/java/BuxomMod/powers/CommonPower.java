@@ -122,6 +122,8 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
         this.appliedThisTurn = true;
        this.buxomCounterThisTurn++;
        this.buxomGainedThisTurn += stackAmount;
+       BuxomMod.logger.info("Times gained this turn: " + buxomCounterThisTurn);
+       BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
        super.stackPower(stackAmount);
        for (AbstractPower pow : this.owner.powers) {
            if (pow instanceof BraPower) {

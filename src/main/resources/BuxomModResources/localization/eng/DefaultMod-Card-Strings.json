@@ -129,8 +129,8 @@
   },
   "BuxomMod:OmegaShock": {
     "NAME": "Omega Shock",
-    "DESCRIPTION": "Add !M! Shocks to your draw pile, with damage equal to your Buxom. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add !M! Shocks to your draw pile, with damage equal to your Buxom. NL Upgrade them. NL Exhaust."
+    "DESCRIPTION": "Add !M! Shocks to your draw pile, with bonus damage equal to your Buxom. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add !M! Shocks to your draw pile, with bonus damage equal to your Buxom. NL Upgrade them. NL Exhaust."
   },
   "BuxomMod:SwellingTight": {
     "NAME": "Swelling Tight",
@@ -215,7 +215,7 @@
   },
   "BuxomMod:Hardheaded": {
     "NAME": "Hardheaded",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Discard 1 card. NL Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Exhaust {!M!|>1=1-!M! cards|1=1 card}."
   },
   "BuxomMod:QuiteEnough": {
     "NAME": "Quite Enough",

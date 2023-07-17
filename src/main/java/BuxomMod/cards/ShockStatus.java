@@ -54,7 +54,7 @@ public class ShockStatus extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
     private static final int MAGIC = 1;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
     private static final int UPGRADE_PLUS_MAGIC = 0;
     // /STAT DECLARATION/
@@ -72,7 +72,7 @@ public class ShockStatus extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int bdiv = getPwrAmt(p, CommonPower.POWER_ID);
         addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber), magicNumber));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage)));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.LIGHTNING));
     }
     public void triggerWhenDrawn() {addToBot(new DrawCardAction(magicNumber));}
 

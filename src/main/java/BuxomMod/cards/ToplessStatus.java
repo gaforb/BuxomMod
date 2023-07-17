@@ -48,7 +48,7 @@ public class ToplessStatus extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
@@ -66,6 +66,7 @@ public class ToplessStatus extends AbstractDynamicCard {
 
     public ToplessStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseMagicNumber = magicNumber = MAGIC;
     }
 
 

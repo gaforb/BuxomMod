@@ -54,7 +54,6 @@ public class OmegaBurst extends AbstractDynamicCard {
     public OmegaBurst() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        this.cardsToPreview = new AftershockStatus();
         this.exhaust = true;
     }
 
