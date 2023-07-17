@@ -47,7 +47,6 @@ public class QuiteEnough extends AbstractDynamicCard {
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
     private static final int DAMAGE = 14;
-    private static final int UPGRADE_DAMAGE = 4;
 
 
     // /STAT DECLARATION/
@@ -64,7 +63,7 @@ public class QuiteEnough extends AbstractDynamicCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        for (int i = 0; i > magicNumber; i++) {
+        for (int i = 0; i < magicNumber; i++) {
             addToBot((AbstractGameAction)new ChannelAction((AbstractOrb)new AttackChibi()));
         }
     }
@@ -74,7 +73,6 @@ public class QuiteEnough extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_DAMAGE);
             upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }

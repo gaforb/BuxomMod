@@ -9,8 +9,8 @@
   },
   "BuxomMod:PopPopPop": {
     "NAME": "Pop, Pop, Pop!",
-    "DESCRIPTION": "Add !M! Afterswell into your hand. NL Draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Add !M! Afterswell into your hand. NL Draw !M! cards."
+    "DESCRIPTION": "Gain 1 Buxom !M! times. NL Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Buxom !M! times. NL Draw !M! cards."
   },
   "BuxomMod:BouncyExercise": {
     "NAME": "Bouncy Exercise",

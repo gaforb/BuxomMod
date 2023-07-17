@@ -37,7 +37,6 @@ public class FeelItOut extends AbstractDynamicCard {
     private static final int BLOCK = 5;
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     // /STAT DECLARATION/
 
@@ -93,7 +92,6 @@ public class FeelItOut extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
