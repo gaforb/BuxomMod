@@ -83,7 +83,7 @@ public class Hardheaded extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
         addToBot(new DrawCardAction(p, magicNumber));
-        addToBot(new ExhaustAction(p, p, magicNumber, false, true, false));
+        addToBot((AbstractGameAction)new ExhaustAction(1, false));
     }
 
     //Upgraded stats.

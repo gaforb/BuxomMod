@@ -142,7 +142,7 @@
   },
   "BuxomMod:TCupBra": {
     "NAME": "T-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 10-15. NL Gain [E] and !M! Dexterity each time your BuxomMod:Buxom increases. If this bra breaks, lose all your Dexterity."
+    "DESCRIPTION": "BuxomMod:Capacity 10-15. NL Gain [E] and !M! Dexterity each time your BuxomMod:Buxom increases."
   },
   "BuxomMod:BrokenBraT": {
     "NAME": "Broken T-Cup Bra",
@@ -180,8 +180,8 @@
   },
   "BuxomMod:ExpandMind": {
     "NAME": "Expand Mind",
-    "DESCRIPTION": "Retain your hand this turn. NL Draw !M! card{!M!|>1=s}. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain your hand this turn. NL Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Retain your hand this turn. NL Draw !M! card{!M!|>1=s}. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "{@@}Retain your hand this turn. NL Draw !M! card{!M!|>1=s}."
   },
   "BuxomMod:InducedLactation": {
     "NAME": "Induced Lactation",
@@ -215,7 +215,7 @@
   },
   "BuxomMod:Hardheaded": {
     "NAME": "Hardheaded",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Exhaust {!M!|>1=1-!M! cards|1=1 card}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Exhaust 1 card."
   },
   "BuxomMod:QuiteEnough": {
     "NAME": "Quite Enough",

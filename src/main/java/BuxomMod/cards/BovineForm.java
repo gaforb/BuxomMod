@@ -65,9 +65,6 @@ public class BovineForm extends AbstractDynamicCard {
             new ApplyPowerAction(p, p, new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LactatingPower(p, p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MilkPower(p, p, magicNumber), magicNumber));
-        AnimationState.TrackEntry e = p.state.setAnimation(0, "big_idle_2", true);
-        e.setTime(e.getEndTime() * MathUtils.random());
-        BuxomMod.logger.info(e.getAnimation());
     }
 
     //Upgraded stats.

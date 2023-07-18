@@ -41,7 +41,7 @@
 },
 "BuxomMod:TCupPower": {
         "NAME": "T-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases. If this bra breaks, lose all your Dexterity."]
+        "DESCRIPTIONS": ["#yCapacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases."]
 },
 "BuxomMod:MilkPower": {
         "NAME": "Milk",

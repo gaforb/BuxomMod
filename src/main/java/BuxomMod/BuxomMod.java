@@ -137,8 +137,8 @@ public class BuxomMod implements
     public static final String BADGE_IMAGE = "BuxomModResources/images/Badge.png";
 
     // Atlas and JSON files for the Animations
-    public static final String THE_BUXOM_SKELETON_ATLAS = "BuxomModResources/images/char/character/skeleton2.atlas";
-    public static final String THE_BUXOM_SKELETON_JSON = "BuxomModResources/images/char/character/skeleton2_Armaturelehmana sprite.json";
+    public static final String THE_BUXOM_SKELETON_ATLAS = "BuxomModResources/images/char/character/skeleton3.atlas";
+    public static final String THE_BUXOM_SKELETON_JSON = "BuxomModResources/images/char/character/skeleton3_Armaturelehmana sprite.json";
 
     //VFX
 

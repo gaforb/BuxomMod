@@ -62,7 +62,6 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
         flash();
         AbstractDungeon.actionManager.addToTop(new ReducePowerAction(owner, owner, this, this.amount));
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard)new BrokenBraT(), 1, true, true));
-        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "DexterityPower"));
     }
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         for (AbstractPower power : AbstractDungeon.player.powers) {

@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.AnimationState;
-import com.esotericsoftware.spine.Bone;
-import com.esotericsoftware.spine.Skeleton;
+import com.esotericsoftware.spine.*;
+import com.esotericsoftware.spine.attachments.Attachment;
+import com.esotericsoftware.spine.attachments.MeshAttachment;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -81,10 +81,10 @@ public class TheBuxom extends CustomPlayer {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
-    public static String boobBoneNID = "boobNclothed";
-    public static String boobBoneFID = "boobFclothed";
-    public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite2.atlas";
-    public static String skeletonURL ="BuxomModResources/images/char/character/LehmanaSprite2_Armaturelehmana sprite.json";
+    public static String boobBoneNID = "boobn";
+    public static String boobBoneFID = "boobf";
+    public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite3.atlas";
+    public static String skeletonURL = "BuxomModResources/images/char/character/LehmanaSprite3_Armaturelehmana sprite.json";
 
     // =============== /STRINGS/ =================
 
@@ -112,6 +112,20 @@ public class TheBuxom extends CustomPlayer {
                 "BuxomModResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpineAnimation(
                         atlasURL, skeletonURL, 0.3f));
+        for (Skin s : skeleton.getData().getSkins()) {
+            logger.info("Skin: " + s.getName());
+        }
+        for (SlotData s : skeleton.getData().getSlots()) {
+            logger.info("Slot: " + s.getName() + " Attachment: " +s.getAttachmentName() + " Index: " + s.getIndex());
+        }
+        for (Slot s : skeleton.getSlots()) {
+            logger.info("Attachment: " + s.getAttachment().getName());
+        }
+        for (Animation a : skeleton.getData().getAnimations()) {
+            logger.info("Animation: " + a.getName());
+        }
+        logger.info(skeletonURL + " loaded");
+
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================  
@@ -129,8 +143,8 @@ public class TheBuxom extends CustomPlayer {
         // =============== ANIMATIONS =================  
 
         loadAnimation(
-                THE_BUXOM_SKELETON_ATLAS,
-                THE_BUXOM_SKELETON_JSON,
+                atlasURL,
+                skeletonURL,
                 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -150,7 +164,12 @@ public class TheBuxom extends CustomPlayer {
         // =============== /TEXT BUBBLE LOCATION/ =================
 
     }
+
     //animations
+    public float scalerate = 0.03F;
+    public float threshhold1 = 10;
+    public int currRange = 0;
+
     public Skeleton getSkeleton() {
         return skeleton;
     }
@@ -162,29 +181,46 @@ public class TheBuxom extends CustomPlayer {
                 e = this.state.setAnimation(0, "idle", true);
                 e.setTime(e.getEndTime() * MathUtils.random());
                 break;
-            case "big_idle":
-                e = this.state.setAnimation(0, "big_idle", true);
+            case "idle_size3":
+                e = this.state.setAnimation(0, "idle_size3", true);
                 e.setTime(e.getEndTime() * MathUtils.random());
-                break;
-            case "big_idle_2":
-                e = this.state.setAnimation(0, "big_idle_2", true);
-                e.setTime(e.getEndTime() * MathUtils.random());
+                getSkeleton().setAttachment("boobs21", );
                 break;
         }
-
     }
-    @Override
-    public void renderPlayerImage(SpriteBatch sb) {
-        int frameCount = 0;
+
+    public void calculateScale() {
+        int size = getPwrAmt(this, CommonPower.POWER_ID);
+        if (size >= threshhold1) {
+            if (currRange == 0) {
+                logger.info("threshold1 exceeded");
+                changeState("idle_size3");
+            }
+            currRange = 1;
+        }
+        else {
+            if (currRange == 1) {
+                logger.info("threshold1 de-exceeded");
+                changeState("idle");
+            }
+            currRange = 0;
+        }
+    }
+
+    public void updateScale(int scaler) {
         Bone boobN = getSkeleton().findBone(boobBoneNID);
         Bone boobF = getSkeleton().findBone(boobBoneFID);
-        Float scale = getPwrAmt(this, CommonPower.POWER_ID)*0.03F + 1F;
+        Float scale = scaler*scalerate + 1F;
         boobN.setScale(scale);
         boobN.update();
         boobF.setScale(scale);
         boobF.update();
+    }
+    @Override
+    public void renderPlayerImage(SpriteBatch sb) {
+        updateScale(getPwrAmt(this, CommonPower.POWER_ID));
+        calculateScale();
         super.renderPlayerImage(sb);
-        frameCount++;
     }
 
 
