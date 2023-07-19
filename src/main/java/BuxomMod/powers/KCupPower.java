@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import BuxomMod.BuxomMod;
 import BuxomMod.cards.BrokenBraK;
@@ -36,7 +37,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
 
         this.owner = owner;
         this.amount = amount;
-        this.amount2 = 5;
+        this.amount2 = 10;
         this.source = source;
         this.minCapacity = 0;
 
@@ -81,11 +82,11 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
     @Override
     public void broken() {
         flash();
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(owner, owner, new StrengthPower(owner, -2), -2));
-        AbstractDungeon.actionManager.addToBottom(
+        AbstractDungeon.actionManager.addToTop(
+                new ApplyPowerAction(owner, owner, new DexterityPower(owner, -2), -2));
+        AbstractDungeon.actionManager.addToTop(
                 new ReducePowerAction(owner, owner, this, this.amount));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
+        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
     }
 
     @Override

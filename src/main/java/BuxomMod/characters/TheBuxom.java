@@ -83,8 +83,8 @@ public class TheBuxom extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
     public static String boobBoneNID = "boobn";
     public static String boobBoneFID = "boobf";
-    public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite3.atlas";
-    public static String skeletonURL = "BuxomModResources/images/char/character/LehmanaSprite3_Armaturelehmana sprite.json";
+    public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite4.atlas";
+    public static String skeletonURL = "BuxomModResources/images/char/character/LehmanaSprite4_Armaturelehmana sprite.json";
 
     // =============== /STRINGS/ =================
 
@@ -178,24 +178,37 @@ public class TheBuxom extends CustomPlayer {
         AnimationState.TrackEntry e;
         switch (stateName) {
             case "idle":
+                loadAnimation(
+                        atlasURL,
+                        skeletonURL,
+                        1.0f);
                 e = this.state.setAnimation(0, "idle", true);
                 e.setTime(e.getEndTime() * MathUtils.random());
+                getSkeleton().setAttachment("boobs21", "boobs2-1");
+                getSkeleton().setAttachment("face", "face1");
                 break;
             case "idle_size3":
+                loadAnimation(
+                        atlasURL,
+                        skeletonURL,
+                        1.0f);
                 e = this.state.setAnimation(0, "idle_size3", true);
                 e.setTime(e.getEndTime() * MathUtils.random());
-                getSkeleton().setAttachment("boobs21", );
+                getSkeleton().setAttachment("boobs21", "boobs2-3");
+                getSkeleton().setAttachment("face", "face2");
                 break;
         }
     }
 
-    public void calculateScale() {
-        int size = getPwrAmt(this, CommonPower.POWER_ID);
+    public float calculateScale() {
+        float size = getPwrAmt(this, CommonPower.POWER_ID);
+        float displaySize = size;
         if (size >= threshhold1) {
             if (currRange == 0) {
                 logger.info("threshold1 exceeded");
                 changeState("idle_size3");
             }
+            displaySize = size - threshhold1;
             currRange = 1;
         }
         else {
@@ -203,11 +216,13 @@ public class TheBuxom extends CustomPlayer {
                 logger.info("threshold1 de-exceeded");
                 changeState("idle");
             }
+            displaySize = size;
             currRange = 0;
         }
+        return displaySize;
     }
 
-    public void updateScale(int scaler) {
+    public void updateScale(float scaler) {
         Bone boobN = getSkeleton().findBone(boobBoneNID);
         Bone boobF = getSkeleton().findBone(boobBoneFID);
         Float scale = scaler*scalerate + 1F;
@@ -218,8 +233,7 @@ public class TheBuxom extends CustomPlayer {
     }
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
-        updateScale(getPwrAmt(this, CommonPower.POWER_ID));
-        calculateScale();
+        updateScale(calculateScale());
         super.renderPlayerImage(sb);
     }
 
