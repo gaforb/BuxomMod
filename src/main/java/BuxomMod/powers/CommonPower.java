@@ -100,6 +100,27 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
         }
     }
     */
+    public void reducePower(int reduceAmount) {
+        if (this.amount - reduceAmount <= 0) {
+            this.fontScale = 8.0F;
+            this.amount = 0;
+        } else {
+            this.fontScale = 8.0F;
+            this.amount -= reduceAmount;
+        }
+        for (AbstractPower pow : this.owner.powers) {
+            if (pow instanceof BraPower) {
+                ((BraPower) pow).onShrink(reduceAmount);
+            }
+        }
+    }
+    public void onRemove() {
+        for (AbstractPower pow : this.owner.powers) {
+            if (pow instanceof BraPower) {
+                ((BraPower) pow).onShrink(this.amount);
+            }
+        }
+    }
 
     public void atStartOfTurn() {
         this.appliedThisTurn = false;
@@ -111,6 +132,12 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
         this.appliedThisTurn = true;
         this.buxomCounterThisTurn++;
         buxomGainedThisTurn += this.amount;
+        for (AbstractPower pow : this.owner.powers) {
+            if (pow instanceof BraPower) {
+                ((BraPower) pow).onGrow(this.amount);
+                ((BraPower) pow).breakCheck();
+            }
+        }
     }
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         if (isPlayer) {
@@ -127,6 +154,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
        super.stackPower(stackAmount);
        for (AbstractPower pow : this.owner.powers) {
            if (pow instanceof BraPower) {
+               ((BraPower) pow).onGrow(stackAmount);
                ((BraPower) pow).breakCheck();
            }
        }

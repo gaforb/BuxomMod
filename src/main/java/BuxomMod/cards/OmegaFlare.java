@@ -73,7 +73,7 @@ public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return false;
     }
     canUse = false;
-    this.cantUseMessage = "I'm not within my bra's capacity!"; //TODO: Fix this when possible
+    this.cantUseMessage = "I'm not within my bra's capacity!";
     for (AbstractPower pow : p.powers) {
         if (pow instanceof BraPower) {
             if (((BraPower) pow).inCapacity() == true) {
