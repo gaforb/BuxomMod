@@ -3,7 +3,7 @@ package BuxomMod.powers;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import BuxomMod.BuxomMod;
 import BuxomMod.cards.BrokenBraM;
 import BuxomMod.util.TextureLoader;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class MCupPower extends BraPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -28,6 +28,7 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/MCup84.png");
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/MCup32.png");
+    private int buffAmount = 1;
 
     public MCupPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -64,6 +65,19 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
         AbstractDungeon.actionManager.addToBottom(
                 new ReducePowerAction(owner, owner, this, this.amount));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraM(), 1, true, true));
+    }
+
+    public void onGrow(int howMuch) {
+        if (this.inCapacity() == true) {
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new LoseStrengthPower(this.owner, this.amount), this.amount));
+        }
+    }
+
+    public void onShrink(int howMuch) {
+        if (this.inCapacity() == true) {
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.amount));
+        }
     }
 
     /*public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) { // At the end of your turn

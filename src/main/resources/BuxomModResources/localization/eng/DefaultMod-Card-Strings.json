@@ -194,8 +194,8 @@
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",
-    "DESCRIPTION": "Gain !M! Buxom. NL Generate a *Bounce with every 7 Bounce stacks instead, and change them to *Big *Bounces.",
-    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Buxom. NL Generate a *Bounce with every 7 Bounce stacks instead, and change them to *Big *Bounces."
+    "DESCRIPTION": "Gain !M! Buxom. NL Generate a *Bounce with every 10 Bounce stacks instead, and change them to *Big *Bounces.",
+    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Buxom. NL Generate a *Bounce with every 10 Bounce stacks instead, and change them to *Big *Bounces."
   },
   "BuxomMod:BigBounceStatus": {
     "NAME": "Big Bounce",

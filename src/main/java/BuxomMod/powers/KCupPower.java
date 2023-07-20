@@ -63,12 +63,12 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
         }
     }*/
-    public int buffAmount = 1;
-    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
+    private int buffAmount = 1;
+    /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         if (this.inCapacity() == true) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, this.amount));
         }
-    }
+    }*/
 
     public void onGrow(int howMuch) {
         if (this.inCapacity() == true) {

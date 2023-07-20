@@ -48,13 +48,13 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
         int buxom = BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID);
         this.amount += buxom;
         if (this.owner.hasPower(BigBouncePower.POWER_ID)) {
-            while (this.amount >= 7) {
-                this.amount -= 7;
+            while (this.amount >= 10) {
+                this.amount -= 10;
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BigBounceStatus(), 1));
             }
         } else {
-            while (this.amount >= 5) {
-                this.amount -= 5;
+            while (this.amount >= 8) {
+                this.amount -= 8;
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BuxomStatus(), 1));
             }
         }

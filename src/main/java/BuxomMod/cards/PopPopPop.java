@@ -58,7 +58,7 @@ public class PopPopPop extends AbstractDynamicCard {
     }
 
 
-    // Actions the card should do. //TODO: STILL BUGGED
+    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
