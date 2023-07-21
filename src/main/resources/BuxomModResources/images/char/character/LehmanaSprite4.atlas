@@ -6,7 +6,7 @@ filter: Linear,Linear
 repeat: none
 lehmana sprite/Layer_37
   rotate: false
-  xy: 195, 117
+  xy: 130, 160
   size: 25, 36
   orig: 25, 36
   offset: 0, 0
@@ -27,56 +27,56 @@ lehmana sprite/Layer_36
   index: -1
 lehmana sprite/Layer_16
   rotate: false
-  xy: 448, 46
+  xy: 131, 211
   size: 16, 44
   orig: 16, 44
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_46
   rotate: false
-  xy: 426, 46
+  xy: 479, 29
   size: 20, 52
   orig: 20, 52
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_47
   rotate: false
-  xy: 131, 213
+  xy: 157, 160
   size: 17, 25
   orig: 17, 25
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_42
   rotate: false
-  xy: 405, 47
+  xy: 255, 149
   size: 19, 60
   orig: 19, 60
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_41
   rotate: false
-  xy: 357, 47
+  xy: 207, 128
   size: 21, 64
   orig: 21, 64
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_20
   rotate: false
-  xy: 341, 1
+  xy: 351, 31
   size: 64, 44
   orig: 64, 44
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_39
   rotate: false
-  xy: 469, 1
+  xy: 140, 91
   size: 36, 67
   orig: 36, 67
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_40
   rotate: false
-  xy: 296, 31
+  xy: 233, 84
   size: 30, 63
   orig: 30, 63
   offset: 0, 0
@@ -90,91 +90,91 @@ lehmana sprite chest
   index: -1
 faceblink
   rotate: false
-  xy: 77, 152
+  xy: 281, 56
   size: 51, 59
   orig: 51, 59
   offset: 0, 0
   index: -1
 face2
   rotate: false
-  xy: 159, 56
+  xy: 87, 91
   size: 51, 59
   orig: 51, 59
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_7_Copy
   rotate: false
-  xy: 87, 91
+  xy: 77, 152
   size: 51, 59
   orig: 51, 59
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_13
   rotate: false
-  xy: 380, 47
+  xy: 230, 149
   size: 23, 56
   orig: 23, 56
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_14
   rotate: false
-  xy: 328, 47
+  xy: 178, 128
   size: 27, 53
   orig: 27, 53
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_15
   rotate: false
-  xy: 130, 187
+  xy: 265, 117
   size: 20, 24
   orig: 20, 24
   offset: 0, 0
   index: -1
 boobf
   rotate: false
-  xy: 212, 56
-  size: 42, 55
-  orig: 42, 55
+  xy: 159, 1
+  size: 66, 83
+  orig: 66, 83
   offset: 0, 0
   index: -1
 boobn
   rotate: false
-  xy: 256, 31
-  size: 38, 56
-  orig: 38, 56
+  xy: 227, 1
+  size: 52, 81
+  orig: 52, 81
   offset: 0, 0
   index: -1
 shirt top
   rotate: false
-  xy: 130, 159
+  xy: 463, 1
   size: 47, 26
   orig: 47, 26
   offset: 0, 0
   index: -1
 shadow
   rotate: false
-  xy: 229, 1
+  xy: 351, 1
   size: 110, 28
   orig: 110, 28
   offset: 0, 0
   index: -1
 boobs2-3
   rotate: false
-  xy: 159, 1
+  xy: 281, 1
   size: 68, 53
   orig: 68, 53
   offset: 0, 0
   index: -1
 boobs2-2
   rotate: false
-  xy: 407, 1
+  xy: 417, 31
   size: 60, 43
   orig: 60, 43
   offset: 0, 0
   index: -1
 boobs2
   rotate: false
-  xy: 140, 117
+  xy: 178, 86
   size: 53, 40
   orig: 53, 40
   offset: 0, 0

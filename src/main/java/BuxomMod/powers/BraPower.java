@@ -36,10 +36,7 @@ public abstract class BraPower extends TwoAmountPower {
     }
     public void broken() {}
 
-    public void growToBreak() {
-        int bdiff = (this.amount2 - getPwrAmt(this.owner, CommonPower.POWER_ID)) + 1;
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new CommonPower(this.owner, this.owner, bdiff), bdiff));
-    }
+
 
     public boolean inCapacity() {
         if (BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID) > this.amount2) {
@@ -51,16 +48,17 @@ public abstract class BraPower extends TwoAmountPower {
             return true;
         }
     }
-
-    public void breakCheck() {
-        for (AbstractPower pow : this.owner.powers) {
-            if (pow instanceof CommonPower) {
-                if (pow.amount > this.amount2) {
-                    this.broken();
-                    }
-                }
-            }
+    public void growToBreak() {
+        if (inCapacity()) {
+            int bdiff = (this.amount2 - getPwrAmt(this.owner, CommonPower.POWER_ID)) + 1;
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new CommonPower(this.owner, this.owner, bdiff), bdiff));
         }
+    }
+    public void breakCheck() {
+        if (getPwrAmt(owner, CommonPower.POWER_ID) > this.amount2) {
+            this.broken();
+        }
+    }
 
     public void atEndOfTurn(boolean isPlayer) { // At the end of your turn
         breakCheck();

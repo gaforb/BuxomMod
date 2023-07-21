@@ -71,17 +71,17 @@ public class BrokenBraK extends AbstractDynamicCard {
     }
     // Actions the card should do.
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void use(AbstractPlayer p, AbstractMonster m) {/*
         if (this.dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new BuxomStatus(), 3));
-        }
+        }*/
     }
 
     public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
 
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+        //AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
     // Upgraded stats.
     @Override

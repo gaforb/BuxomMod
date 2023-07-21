@@ -146,19 +146,21 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     }
 
    public void stackPower(int stackAmount) {
-        this.appliedThisTurn = true;
+       this.appliedThisTurn = true;
        this.buxomCounterThisTurn++;
        this.buxomGainedThisTurn += stackAmount;
        BuxomMod.logger.info("Times gained this turn: " + buxomCounterThisTurn);
        BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
        super.stackPower(stackAmount);
        for (AbstractPower pow : this.owner.powers) {
-           if (pow instanceof BraPower && ((BraPower) pow).inCapacity()) {
+           if (pow instanceof BraPower) {
                ((BraPower) pow).onGrow(stackAmount);
-               ((BraPower) pow).breakCheck();
+           } else {
+               BuxomMod.logger.info("Not a bra power");
            }
        }
    }
+
    @Override
    public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
        super.renderAmount(sb, x, y, c);

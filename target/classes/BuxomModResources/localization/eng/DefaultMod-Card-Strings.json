@@ -71,7 +71,7 @@
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
-    "DESCRIPTION": "Unplayable. NL At the end of your turn, add 1 *Bounce to your draw pile."
+    "DESCRIPTION": "Unplayable."
   },
   "BuxomMod:BrokenBraM": {
     "NAME": "Broken Bra (M)",
@@ -190,7 +190,7 @@
   },
   "BuxomMod:BraBreaker": {
     "NAME": "Bra Breaker",
-    "DESCRIPTION": "If wearing a *Bra: Gain enough BuxomMod:Buxom to break it. NL Deal !M! damage to ALL enemies for each existing Status card. *Big *Bounces count double, and *Broken *Bras count triple. NL (Deals !D! damage.)"
+    "DESCRIPTION": "If wearing a *Bra: Gain enough BuxomMod:Buxom to break it. NL Deal !M! damage for each existing Status card. *Big *Bounces count double, and *Broken *Bras count triple. NL (Deals !D! damage.)"
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",

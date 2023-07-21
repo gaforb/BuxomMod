@@ -118,9 +118,6 @@ public class TheBuxom extends CustomPlayer {
         for (SlotData s : skeleton.getData().getSlots()) {
             logger.info("Slot: " + s.getName() + " Attachment: " +s.getAttachmentName() + " Index: " + s.getIndex());
         }
-        for (Slot s : skeleton.getSlots()) {
-            logger.info("Attachment: " + s.getAttachment().getName());
-        }
         for (Animation a : skeleton.getData().getAnimations()) {
             logger.info("Animation: " + a.getName());
         }
@@ -167,7 +164,8 @@ public class TheBuxom extends CustomPlayer {
 
     //animations
     public float scalerate = 0.03F;
-    public float threshhold1 = 10;
+    public float threshhold1 = 15;
+    public float threshhold2 = 25;
     public int currRange = 0;
 
     public Skeleton getSkeleton() {
@@ -197,14 +195,32 @@ public class TheBuxom extends CustomPlayer {
                 getSkeleton().setAttachment("boobs21", "boobs2-3");
                 getSkeleton().setAttachment("face", "face2");
                 break;
+            case "idle_size4":
+                loadAnimation(
+                        atlasURL,
+                        skeletonURL,
+                        1.0f);
+                e = this.state.setAnimation(0, "idle_size4", true);
+                e.setTime(e.getEndTime() * MathUtils.random());
+                getSkeleton().setAttachment("boobs21", null);
+                getSkeleton().setAttachment("face", "face2");
+                break;
         }
     }
 
     public float calculateScale() {
         float size = getPwrAmt(this, CommonPower.POWER_ID);
         float displaySize = size;
-        if (size >= threshhold1) {
-            if (currRange == 0) {
+        if (size >= threshhold2) {
+            if (currRange != 2) {
+                logger.info("threshold2 exceeded");
+                changeState("idle_size4");
+            }
+            displaySize = size - threshhold2;
+            currRange = 2;
+        }
+        else if (size >= threshhold1 && size < threshhold2) {
+            if (currRange != 1) {
                 logger.info("threshold1 exceeded");
                 changeState("idle_size3");
             }
@@ -212,7 +228,7 @@ public class TheBuxom extends CustomPlayer {
             currRange = 1;
         }
         else {
-            if (currRange == 1) {
+            if (currRange != 0) {
                 logger.info("threshold1 de-exceeded");
                 changeState("idle");
             }
