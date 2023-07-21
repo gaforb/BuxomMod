@@ -49,22 +49,19 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
     }
 
 
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) { // At the end of your turn
-        if (this.inCapacity() == true) {
-            if (power instanceof CommonPower) {
-                flash();
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new DexterityPower(this.source, this.amount), this.amount));
-                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
-            }
-        }
+    public void onGrow(int growthAmount){ // At the end of your turn
+        flash();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new DexterityPower(this.source, this.amount), this.amount));
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
     }
 
     public void broken(){
         flash();
+        addToTop(new RemoveSpecificPowerAction(owner, owner, DexterityPower.POWER_ID));
         AbstractDungeon.actionManager.addToTop(new ReducePowerAction(owner, owner, this, this.amount));
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard)new BrokenBraT(), 1, true, true));
     }
-    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
+    /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if ((power instanceof CommonPower) && (power.amount > this.amount2)) {
                 flash();
@@ -77,7 +74,7 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard)new BrokenBraT(), 1, true, true));
             }
         }
-    }
+    }*/
     @Override
     public void updateDescription() {
         if (amount == 1) {

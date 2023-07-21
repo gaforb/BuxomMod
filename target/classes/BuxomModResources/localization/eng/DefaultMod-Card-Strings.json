@@ -63,11 +63,11 @@
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
-    "DESCRIPTION": "buxommod:Capacity 0-5. NL Gain 2 Strength. Gain !M! Block at the end of your turn."
+    "DESCRIPTION": "buxommod:Capacity 0-10. NL Gain 2 Strength. Gain !M! Block at the end of your turn."
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 5-10. NL Draw !M! additional cards at the start of your turn, and gain double that amount of block."
+    "DESCRIPTION": "BuxomMod:Capacity 10-20. NL Draw !M! additional cards at the start of your turn, and gain double that amount of block."
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
@@ -121,7 +121,7 @@
   },
   "BuxomMod:OmegaArc": {
     "NAME": "Omega Arc",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL If your BuxomMod:Buxom is less than 7, damage ALL enemies."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL If your BuxomMod:Buxom is less than 10, damage ALL enemies."
   },
   "BuxomMod:OmegaDeflection": {
     "NAME": "Omega Deflection",
@@ -142,7 +142,7 @@
   },
   "BuxomMod:TCupBra": {
     "NAME": "T-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 10-15. NL Gain [E] and !M! Dexterity each time your BuxomMod:Buxom increases."
+    "DESCRIPTION": "BuxomMod:Capacity 20-30. NL Gain [E] and !M! Dexterity each time your BuxomMod:Buxom increases."
   },
   "BuxomMod:BrokenBraT": {
     "NAME": "Broken T-Cup Bra",

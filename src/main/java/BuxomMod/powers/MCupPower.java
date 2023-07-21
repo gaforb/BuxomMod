@@ -40,6 +40,7 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
         this.source = source;
         this.minCapacity = 10;
         this.bounceBonus = 3;
+        this.buffAmount = 2;
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -51,6 +52,9 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
         updateDescription();
     }
 
+    public void onInitialApplication() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new StrengthPower(owner, buffAmount), buffAmount));
+    }
 
     public void atStartOfTurn() {
         if (this.inCapacity() == true) {
@@ -64,6 +68,7 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
         flash();
         AbstractDungeon.actionManager.addToBottom(
                 new ReducePowerAction(owner, owner, this, this.amount));
+        addToTop(new ReducePowerAction(owner, owner, new DexterityPower(owner, buffAmount), buffAmount));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraM(), 1, true, true));
     }
 
@@ -74,10 +79,8 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
         }
     }
 
-    public void onShrink(int howMuch) {
-        if (this.inCapacity() == true) {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.amount));
-        }
+    public void onRemove() {
+        addToBot(new ReducePowerAction(owner, owner, owner.getPower(StrengthPower.POWER_ID), buffAmount));
     }
 
     /*public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) { // At the end of your turn

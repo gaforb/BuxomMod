@@ -317,7 +317,7 @@ public class TheBuxom extends CustomPlayer {
     // character Select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f); // Sound Effect
+        CardCrawlGame.sound.playA(BuxomMod.makeID("RIP_SHORT"), 1.00f); // Sound Effect
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false); // Screen Effect
     }
@@ -325,7 +325,7 @@ public class TheBuxom extends CustomPlayer {
     // character Select on-button-press sound effect
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "ATTACK_DAGGER_1";
+        return BuxomMod.makeID("RIP_SHORT");
     }
 
     // Should return how much HP your maximum HP reduces by when starting a run at

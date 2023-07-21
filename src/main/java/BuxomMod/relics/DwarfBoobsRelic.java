@@ -31,7 +31,7 @@ public class DwarfBoobsRelic extends CustomRelic {
 
     public DwarfBoobsRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
-        this.counter = 1;
+        this.counter = 5;
     }
 
     // Flash at the start of Battle.

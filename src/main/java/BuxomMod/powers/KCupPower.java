@@ -63,22 +63,14 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
         }
     }*/
-    private int buffAmount = 1;
+    private int buffAmount = 2;
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         if (this.inCapacity() == true) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, this.amount));
         }
     }*/
-
-    public void onGrow(int howMuch) {
-        if (this.inCapacity() == true) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.amount));
-        }
-    }
-    public void onShrink(int howMuch) {
-        if (this.inCapacity() == true) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, buffAmount), buffAmount));
-        }
+    public void onInitialApplication() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new DexterityPower(owner, buffAmount), buffAmount));
     }
 
     /*public void update() {
@@ -94,9 +86,13 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
 
     public void broken() {
         flash();
+
         AbstractDungeon.actionManager.addToTop(
                 new ReducePowerAction(owner, owner, this, this.amount));
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
+    }
+    public void onRemove() {
+        addToBot(new ReducePowerAction(owner, owner, owner.getPower(DexterityPower.POWER_ID), buffAmount));
     }
 
     @Override

@@ -90,7 +90,7 @@ public class OmegaArc extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
 
-        if (((b != null) && (b.amount <= 6)) || b == null) {
+        if (((b != null) && (b.amount < 10)) || b == null) {
             for (int i = 0; i < magicNumber; i++) {
                 AbstractDungeon.actionManager.addToBottom(
                         new DamageAllEnemiesAction(p, multiDamage, this.damageTypeForTurn,

@@ -543,8 +543,7 @@ public class BuxomMod implements
         BaseMod.addAudio(makeID("LOW_GASP"), getModID() + "Resources/audio/low_gasp.ogg");
         BaseMod.addAudio(makeID("WHAT"), getModID() + "Resources/audio/what.ogg");
         BaseMod.addAudio(makeID("HEARTBEAT"), getModID() + "Resources/audio/heartbeat.ogg");
-        BaseMod.addAudio(makeID("RIP_SHORT"), getModID() + "Resources/audio/rip1.ogg");
-        BaseMod.addAudio(makeID("RIP_MEDIUM"), getModID() + "Resources/audio/rip2.ogg");
+        BaseMod.addAudio(makeID("RIP_SHORT"), getModID() + "Resources/audio/rip2.ogg");
         BaseMod.addAudio(makeID("RIP_LONG"), getModID() + "Resources/audio/riplong.ogg");
         logger.info("Added Audio");
     }

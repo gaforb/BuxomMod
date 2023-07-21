@@ -109,7 +109,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
             this.amount -= reduceAmount;
         }
         for (AbstractPower pow : this.owner.powers) {
-            if (pow instanceof BraPower) {
+            if (pow instanceof BraPower && ((BraPower) pow).inCapacity()) {
                 ((BraPower) pow).onShrink(reduceAmount);
             }
         }
@@ -153,7 +153,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
        BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
        super.stackPower(stackAmount);
        for (AbstractPower pow : this.owner.powers) {
-           if (pow instanceof BraPower) {
+           if (pow instanceof BraPower && ((BraPower) pow).inCapacity()) {
                ((BraPower) pow).onGrow(stackAmount);
                ((BraPower) pow).breakCheck();
            }

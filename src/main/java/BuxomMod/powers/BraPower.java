@@ -13,6 +13,7 @@ public abstract class BraPower extends TwoAmountPower {
 
     public int minCapacity = 0;
     public int bounceBonus = 0;
+    public int buffAmount = 0;
     public BraPower() {
         this.greenColor2 = Color.CYAN;
     }
@@ -29,8 +30,10 @@ public abstract class BraPower extends TwoAmountPower {
         }
     }
 
-    public void onGrow(int growthAmount) {}
-    public void onShrink(int growthAmount) {}
+    public void onGrow(int growthAmount) {
+    }
+    public void onShrink(int shrinkAmount) {
+    }
     public void broken() {}
 
     public void growToBreak() {
