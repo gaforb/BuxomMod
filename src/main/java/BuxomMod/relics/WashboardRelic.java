@@ -1,5 +1,6 @@
 package BuxomMod.relics;
 
+import BuxomMod.powers.CommonPower;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
@@ -11,9 +12,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import BuxomMod.BuxomMod;
 import BuxomMod.util.TextureLoader;
 
-
-import static BuxomMod.BuxomMod.makeRelicOutlinePath;
-import static BuxomMod.BuxomMod.makeRelicPath;
+import static BuxomMod.BuxomMod.*;
 
 public class WashboardRelic extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
     /*
@@ -43,21 +42,26 @@ public class WashboardRelic extends CustomRelic implements ClickableRelic { // Y
     @Override
     public void onRightClick() {// On right click
         AbstractPlayer p = AbstractDungeon.player;
+        logger.info("Washboard right-clicked");
+        logger.info("Has been used this turn: " + usedThisTurn);
         if (!isObtained || usedThisTurn || !isPlayerTurn) {
             // If it has been used this turn, the player doesn't actually have the relic (i.e. it's on display in the shop room), or it's the enemy's turn
+            logger.info("Washboard can't be used");
             return; // Don't do anything.
         }
         
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) { // Only if you're in combat
-            if (p.getPower("CommonPower") != null) {
+            logger.info("In a room, in combat");
+            if (p.getPower(CommonPower.POWER_ID) != null) {
                 usedThisTurn = true; // Set relic as "Used this turn"
+                logger.info("Set usedThisTurn to " + usedThisTurn);
                 flash(); // Flash
                 stopPulse(); // And stop the pulsing animation (which is started in atPreBattle() below)
                 AbstractDungeon.actionManager.addToBottom(
                         new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), 10));
             }
             else {
-                return;
+                logger.info("Buxom not found");
             }
         }
         // See that talk action? It has DESCRIPTIONS[1] instead of just hard-coding "You are mine" inside.

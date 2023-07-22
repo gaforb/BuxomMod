@@ -44,6 +44,7 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
 
         updateDescription();
     }
+    public boolean appliedThisTurn;
     public void createStatusCards() {
         int buxom = BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID);
         this.amount += buxom;
@@ -60,15 +61,19 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
         }
     }
     public void onInitialApplication() {
-        if (!this.owner.hasPower(BigBouncePower.POWER_ID) && this.amount >= 5) {
+        if (!this.owner.hasPower(BigBouncePower.POWER_ID) && this.amount >= 8) {
             createStatusCards();
         }
-        else if ((this.owner.hasPower(BigBouncePower.POWER_ID)) && this.amount >= 7) {
+        else if ((this.owner.hasPower(BigBouncePower.POWER_ID)) && this.amount >= 10) {
             createStatusCards();
         }
+        appliedThisTurn = true;
     }
     public void stackPower(int stackAmount) { // At the end of your turn
-        createStatusCards();
+        if (!appliedThisTurn) {
+            createStatusCards();
+        }
+        else { appliedThisTurn = false; }
     }
     @Override
     public AbstractPower makeCopy() {

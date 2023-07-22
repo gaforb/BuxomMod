@@ -44,8 +44,8 @@ public class BuxomStatus extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.STATUS;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 1;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
+    private static final int COST = -2;  // COST = ${COST}
+    private static final int UPGRADED_COST = -2; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DMG = 0;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
@@ -60,6 +60,11 @@ public class BuxomStatus extends AbstractDynamicCard {
         this.isEthereal = true;
     }
 
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        canUse = false;
+        return canUse;
+    }
 
     // Actions the card should do.
     @Override
@@ -72,7 +77,6 @@ public class BuxomStatus extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }
