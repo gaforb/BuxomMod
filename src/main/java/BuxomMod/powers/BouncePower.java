@@ -18,12 +18,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class BouncePower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = BuxomMod.makeID("BouncePower");
+    public static final String POWER_ID = BuxomMod.makeID(BouncePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/Bounce84.png");
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/Bounce32.png");
 
@@ -54,8 +53,8 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BigBounceStatus(), 1));
             }
         } else {
-            while (this.amount >= 8) {
-                this.amount -= 8;
+            while (this.amount >= 7) {
+                this.amount -= 7;
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BuxomStatus(), 1));
             }
         }
@@ -76,7 +75,11 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
         else { appliedThisTurn = false; }
     }
     @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0];
+    }
+    @Override
     public AbstractPower makeCopy() {
-        return new RarePower(owner, source, amount);
+        return new BouncePower(owner, source, amount);
     }
 }

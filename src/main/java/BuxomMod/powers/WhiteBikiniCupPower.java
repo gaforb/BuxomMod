@@ -1,33 +1,27 @@
 package BuxomMod.powers;
 
 import BuxomMod.BuxomMod;
-import BuxomMod.cards.BrokenBraK;
 import BuxomMod.cards.BrokenBraWhiteBikini;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 
 public class WhiteBikiniCupPower extends BraPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = BuxomMod.makeID("KCupPower");
+    public static final String POWER_ID = BuxomMod.makeID(WhiteBikiniCupPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/WhiteBikini84.png");
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/WhiteBikini32.png");
     private boolean upgraded;
@@ -97,7 +91,7 @@ public class WhiteBikiniCupPower extends BraPower implements CloneablePowerInter
         flash();
         AbstractCard brokenBra = new BrokenBraWhiteBikini();
         AbstractDungeon.actionManager.addToTop(
-                new ReducePowerAction(owner, owner, this, this.amount));
+                new RemoveSpecificPowerAction(owner, owner, WhiteBikiniCupPower.POWER_ID));
         if (upgraded) {
             brokenBra.upgrade();
         }

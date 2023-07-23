@@ -2,7 +2,6 @@ package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
-import BuxomMod.powers.KCupPower;
 import BuxomMod.powers.WhiteBikiniCupPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

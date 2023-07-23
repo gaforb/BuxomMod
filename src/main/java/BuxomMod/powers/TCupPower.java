@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import BuxomMod.BuxomMod;
 import BuxomMod.cards.BrokenBraT;
 import BuxomMod.util.TextureLoader;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 
 public class TCupPower extends BraPower implements CloneablePowerInterface {
     public AbstractCreature source;
@@ -52,7 +53,7 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
     public void onGrow(int growthAmount){ // At the end of your turn
         if (inCapacity()) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new DexterityPower(this.source, this.amount), this.amount));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new ThornsPower(this.source, this.amount), this.amount));
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
         }
     }

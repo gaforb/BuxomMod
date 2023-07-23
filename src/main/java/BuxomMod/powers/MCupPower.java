@@ -97,6 +97,6 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
 
     @Override
     public AbstractPower makeCopy() {
-        return new RarePower(owner, source, amount);
+        return new MCupPower(owner, source, amount);
     }
 }

@@ -61,7 +61,7 @@
 },
 "BuxomMod:BouncePower": {
         "NAME": "Bounce",
-        "DESCRIPTIONS": ["For every 5 stacks, generate a #yBounce status card."]
+        "DESCRIPTIONS": ["For every 7 stacks, generate a #yBounce status card."]
 },
 "BuxomMod:WhiteBikiniCupPower": {
         "NAME": "White Bikini",
