@@ -72,7 +72,7 @@ public class BrokenBraM extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.dontTriggerOnUseCard) {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new BuxomStatus(), 3, true, true));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new BuxomStatus(), 1, true, true));
         }
     }
 

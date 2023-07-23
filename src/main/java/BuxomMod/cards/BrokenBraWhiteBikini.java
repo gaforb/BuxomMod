@@ -1,19 +1,19 @@
 package BuxomMod.cards;
 
+import BuxomMod.BuxomMod;
+import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
-import BuxomMod.BuxomMod;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class BrokenBraT extends AbstractDynamicCard {
+public class BrokenBraWhiteBikini extends AbstractDynamicCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -35,8 +35,8 @@ public class BrokenBraT extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = BuxomMod.makeID(BrokenBraT.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("BrokenBraT.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String ID = BuxomMod.makeID(BrokenBraWhiteBikini.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String IMG = makeCardPath("BrokenBraWhiteBikini.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 
@@ -53,17 +53,16 @@ public class BrokenBraT extends AbstractDynamicCard {
     private static final int COST = -2;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 0;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
 
-    public BrokenBraT() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public BrokenBraWhiteBikini() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
     }
-
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         canUse = false;
@@ -73,13 +72,11 @@ public class BrokenBraT extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.dontTriggerOnUseCard) {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new AftershockStatus(), 2, true, true));
+            addToBot(new ApplyPowerAction(p, p, new MilkPower(p, p, this.magicNumber)));
         }
     }
 
-    public void triggerWhenDrawn() {
-        addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));
-    }
+    public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
 
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
@@ -90,7 +87,7 @@ public class BrokenBraT extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeDamage(UPGRADE_PLUS_MAGIC);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }

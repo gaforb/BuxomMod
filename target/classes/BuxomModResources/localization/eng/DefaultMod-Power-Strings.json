@@ -62,5 +62,9 @@
 "BuxomMod:BouncePower": {
         "NAME": "Bounce",
         "DESCRIPTIONS": ["For every 5 stacks, generate a #yBounce status card."]
+},
+"BuxomMod:WhiteBikiniCupPower": {
+        "NAME": "White Bikini",
+        "DESCRIPTIONS": ["Capacity 0-20. Whenever you gain *Lactating, gain *Buxom and *Milk. At the end of your turn, gain 1 buxommod:Lactating."]
 }
 }

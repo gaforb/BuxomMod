@@ -1,19 +1,20 @@
 package BuxomMod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
+import BuxomMod.powers.KCupPower;
+import BuxomMod.powers.WhiteBikiniCupPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
-import BuxomMod.BuxomMod;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class BrokenBraT extends AbstractDynamicCard {
+
+public class WhiteBikiniBra extends AbstractDynamicCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -34,9 +35,8 @@ public class BrokenBraT extends AbstractDynamicCard {
      */
 
     // TEXT DECLARATION
-
-    public static final String ID = BuxomMod.makeID(BrokenBraT.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("BrokenBraT.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String ID = BuxomMod.makeID(WhiteBikiniBra.class.getSimpleName());
+    public static final String IMG = makeCardPath("whitebikini.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 
@@ -45,53 +45,57 @@ public class BrokenBraT extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
-    private static final CardType TYPE = CardType.STATUS;       //
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
+    private static final CardType TYPE = CardType.POWER;       //
+    public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = -2;  // COST = ${COST}
+    private static final int COST = 0;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 0;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
 
-    public BrokenBraT() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public WhiteBikiniBra() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
-    }
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        canUse = false;
-        return canUse;
-    }
-    // Actions the card should do.
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.dontTriggerOnUseCard) {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new AftershockStatus(), 2, true, true));
+        baseMagicNumber = magicNumber = MAGIC;
+        this.cardsToPreview = new BrokenBraWhiteBikini();
+        if (upgraded) {
+            cardsToPreview.upgrade();
         }
     }
 
-    public void triggerWhenDrawn() {
-        addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));
+    // Actions the card should do.
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new WhiteBikiniCupPower(p, p, magicNumber, this.upgraded), magicNumber));
     }
 
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
+        }
+        for (AbstractPower pow : p.powers) {
+            if (pow.ID.contains("CupPower")) {
+                canUse = false;
+                this.cantUseMessage = "Already wearing a bra!";
+            }
+        }
+        return canUse;
     }
+
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

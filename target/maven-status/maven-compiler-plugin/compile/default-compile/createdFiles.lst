@@ -17,9 +17,12 @@ BuxomMod\cards\BrokenBraK.class
 BuxomMod\cards\TCupBra.class
 BuxomMod\cards\HeavyLactation.class
 BuxomMod\orbs\DefaultOrb.class
+BuxomMod\cards\BrokenBraWhiteBikini.class
+BuxomMod\powers\WhiteBikiniCupPower.class
 BuxomMod\cards\BraBreaker.class
 BuxomMod\relics\DwarfBoobsRelic.class
 BuxomMod\vfx\ExpandEffect.class
+BuxomMod\actions\BraSelectAction.class
 BuxomMod\cards\OmegaArc.class
 BuxomMod\patches\DefaultInsertPatch.class
 BuxomMod\powers\ButtonHazardPower.class
@@ -37,6 +40,7 @@ BuxomMod\cards\BouncyBlock.class
 BuxomMod\cards\AbstractDefaultCard.class
 BuxomMod\powers\MilkPower.class
 BuxomMod\cards\PopPopPop.class
+BuxomMod\cards\WhiteBikiniBra.class
 BuxomMod\cards\OmegaDeflection.class
 BuxomMod\cards\ChibiSummon.class
 BuxomMod\cards\MCupBra.class

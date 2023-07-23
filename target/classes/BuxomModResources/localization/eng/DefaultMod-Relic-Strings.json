@@ -33,16 +33,16 @@
   },
   "BuxomMod:ToplessArtifact": {
     "NAME": "Curse of Toplessness",
-    "FLAVOR": "Starting big already!",
+    "FLAVOR": "Don't bother trying to cover up.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Start each combat with 5 BuxomMod:Buxom. Immediately outgrow any bras you wear."
+      "Gain [E] at the start of your turn. Start each combat with 5 additional BuxomMod:Buxom. Immediately outgrow any bras you wear."
     ]
   },
   "BuxomMod:DwarfBoobsRelic": {
     "NAME": "Dwarf Boobs",
     "FLAVOR": "Prone to larger breasts than humans, Lehmana's J-cups are not as noteworthy as you'd think.",
     "DESCRIPTIONS": [
-      "Start each combat with this much #yBuxom."
+      "Start each combat with this much #yBuxom. At the start of combat, add 1 Common Bra power to your hand."
     ]
   },
   "BuxomMod:WashboardRelic": {

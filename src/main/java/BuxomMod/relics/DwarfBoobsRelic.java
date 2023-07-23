@@ -1,5 +1,6 @@
 package BuxomMod.relics;
 
+import BuxomMod.actions.BraSelectAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -31,7 +32,7 @@ public class DwarfBoobsRelic extends CustomRelic {
 
     public DwarfBoobsRelic() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
-        this.counter = 5;
+        this.counter = 3;
     }
 
     // Flash at the start of Battle.
@@ -40,6 +41,7 @@ public class DwarfBoobsRelic extends CustomRelic {
         flash();
         this.triggered = false;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, this.counter), this.counter));
+        addToBot(new BraSelectAction());
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

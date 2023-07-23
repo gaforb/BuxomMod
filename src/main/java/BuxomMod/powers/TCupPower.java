@@ -50,9 +50,11 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
 
 
     public void onGrow(int growthAmount){ // At the end of your turn
-        flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new DexterityPower(this.source, this.amount), this.amount));
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+        if (inCapacity()) {
+            flash();
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new DexterityPower(this.source, this.amount), this.amount));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+        }
     }
 
     public void broken(){
