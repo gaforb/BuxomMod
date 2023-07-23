@@ -108,8 +108,8 @@
   },
   "BuxomMod:Library": {
     "NAME": "Omega Library",
-    "DESCRIPTION": "Draw !M! cards. NL Gain !B! Block. NL Add *OMEGA *Library to your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain !B! Block. NL Add *OMEGA *Library to your draw pile. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL Gain !B! Block. NL Add *OMEGA *Library to your discard pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain !B! Block. NL Add *OMEGA *Library to your discard pile. NL Exhaust."
   },
   "BuxomMod:OmegaLibrary": {
     "NAME": "OMEGA Library",
