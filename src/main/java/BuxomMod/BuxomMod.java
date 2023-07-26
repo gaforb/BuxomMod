@@ -1,5 +1,7 @@
 package BuxomMod;
 
+import BuxomMod.potions.ChibiPotion;
+import BuxomMod.potions.DragonMilkPotion;
 import BuxomMod.powers.MilkPower;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
@@ -105,6 +107,10 @@ public class BuxomMod implements
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
+    public static final Color DRAGON_MILK_POTION_LIQUID = CardHelper.getColor(255.0f, 255.0f, 255.0f);
+    public static final Color DRAGON_MILK_POTION_HYBRID = CardHelper.getColor(255.0f, 203.0f, 246.0f);
+    public static final Color CHIBI_POTION_LIQUID = CardHelper.getColor(255.0f, 228.0f, 138.0f);
+    public static final Color CHIBI_POTION_HYBRID = CardHelper.getColor(58.0f, 172.0f, 255.0f);
 
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
@@ -382,6 +388,8 @@ public class BuxomMod implements
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_BUXOM".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
         BaseMod.addPotion(FlatteningPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, FlatteningPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
+        BaseMod.addPotion(DragonMilkPotion.class, DRAGON_MILK_POTION_LIQUID, DRAGON_MILK_POTION_HYBRID, null, DragonMilkPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
+        BaseMod.addPotion(ChibiPotion.class, CHIBI_POTION_LIQUID, CHIBI_POTION_HYBRID, null, ChibiPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
 
         logger.info("Done editing potions");
     }

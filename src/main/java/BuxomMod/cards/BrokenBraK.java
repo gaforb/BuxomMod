@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import BuxomMod.BuxomMod;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.DrawPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -54,20 +57,24 @@ public class BrokenBraK extends AbstractDynamicCard {
     private static final int COST = -2;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 0;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int MAGIC = 1;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
 
     public BrokenBraK() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         canUse = false;
         return canUse;
+    }
+    public void triggerOnExhaust() {
+        AbstractPlayer p = AbstractDungeon.player;
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
     }
     // Actions the card should do.
     @Override
@@ -88,7 +95,7 @@ public class BrokenBraK extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }

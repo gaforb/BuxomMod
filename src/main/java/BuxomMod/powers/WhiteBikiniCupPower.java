@@ -78,8 +78,10 @@ public class WhiteBikiniCupPower extends BraPower implements CloneablePowerInter
         }*/
     public void atEndOfTurn(boolean isPlayer) {
         flash();
+        this.breakCheck();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new LactatingPower(owner, owner, 1), 1));
     }
+
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power instanceof LactatingPower) {
             flash();

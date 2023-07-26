@@ -51,11 +51,11 @@ public class KCupBra extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 0;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int MAGIC = 2;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_MAGIC = 0;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
@@ -93,7 +93,7 @@ public class KCupBra extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeBaseCost(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

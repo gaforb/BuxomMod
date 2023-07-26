@@ -60,7 +60,7 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
 
     public void broken(){
         flash();
-        addToTop(new RemoveSpecificPowerAction(owner, owner, DexterityPower.POWER_ID));
+        addToTop(new RemoveSpecificPowerAction(owner, owner, ThornsPower.POWER_ID));
         AbstractDungeon.actionManager.addToTop(new ReducePowerAction(owner, owner, this, this.amount));
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard)new BrokenBraT(), 1, true, true));
     }
@@ -78,6 +78,9 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
             }
         }
     }*/
+    public void onRemove() {
+        addToTop(new RemoveSpecificPowerAction(owner, owner, ThornsPower.POWER_ID));
+    }
     @Override
     public void updateDescription() {
         if (amount == 1) {

@@ -33,16 +33,16 @@
   },
   "BuxomMod:ToplessArtifact": {
     "NAME": "Curse of Toplessness",
-    "FLAVOR": "Don't bother trying to cover up.",
+    "FLAVOR": "Your huge boobs magically slip out of any attempt to cover them.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Start each combat with 5 additional BuxomMod:Buxom. Immediately outgrow any bras you wear."
+      "Gain [E] at the start of your turn. Start each combat with #b5 additional BuxomMod:Buxom. Immediately outgrow any bras you wear."
     ]
   },
   "BuxomMod:DwarfBoobsRelic": {
     "NAME": "Dwarf Boobs",
     "FLAVOR": "Prone to larger breasts than humans, Lehmana's J-cups are not as noteworthy as you'd think.",
     "DESCRIPTIONS": [
-      "Start each combat with this much #yBuxom. At the start of combat, add 1 Common Bra power to your hand."
+      "Start each combat with this much #yBuxom. At the start of combat, add #b1 Common Bra power to your hand."
     ]
   },
   "BuxomMod:WashboardRelic": {
@@ -50,6 +50,13 @@
     "FLAVOR": "For when your draw pile fills up with status cards.",
     "DESCRIPTIONS": [
       "Once per combat, #bRight-Click to lose 10 #yBuxom."
+    ]
+  },
+  "BuxomMod:CowRelic": {
+    "NAME": "Stuffed Cow",
+    "FLAVOR": "For when your draw pile fills up with status cards.",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b3 Lactating and #b1 Buxom."
     ]
   }
 }

@@ -33,7 +33,7 @@
 },
 "BuxomMod:MeasurementPower": {
         "NAME": "Measurement Time",
-        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases by 4 each time your buxommod:Buxom increases."]
+        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases by #b4 each time your buxommod:Buxom increases."]
 },
 "BuxomMod:ShockPower": {
         "NAME": "Omega Shock",
@@ -49,11 +49,11 @@
 },
 "BuxomMod:LactatingPower": {
         "NAME": "Lactating",
-        "DESCRIPTIONS": ["Gain #b", " #yMilk at the start of your turn. Decreases by 2 each turn."]
+        "DESCRIPTIONS": ["Gain #b", " #yMilk at the start of your turn. Decreases by #b2 each turn."]
 },
 "BuxomMod:BigBouncePower": {
         "NAME": "Big Bounce",
-        "DESCRIPTIONS": ["Generate a #yBounce with every 7 Bounce stacks instead, and change them to #yBig #yBounces."]
+        "DESCRIPTIONS": ["Generate a #yBounce with every #b7 Bounce stacks instead, and change them to #yBig #yBounces."]
 },
 "BuxomMod:NakedPower": {
         "NAME": "Naked",
@@ -65,6 +65,6 @@
 },
 "BuxomMod:WhiteBikiniCupPower": {
         "NAME": "White Bikini",
-        "DESCRIPTIONS": ["Capacity 0-20. Whenever you gain *Lactating, gain *Buxom and *Milk. At the end of your turn, gain 1 buxommod:Lactating."]
+        "DESCRIPTIONS": ["Capacity 0-20. Whenever you gain #yLactating, gain #b", " #yBuxom and #yMilk. At the end of your turn, gain #b1 #ybuxommod:Lactating."]
 }
 }

@@ -12,6 +12,7 @@ BuxomMod\cards\CardTemplate.class
 BuxomMod\variables\DefaultSecondMagicNumber.class
 BuxomMod\powers\ReliefPower.class
 BuxomMod\cards\OmegaForce.class
+BuxomMod\relics\CowRelic.class
 BuxomMod\powers\BigBouncePower.class
 BuxomMod\cards\BrokenBraK.class
 BuxomMod\cards\TCupBra.class
@@ -26,6 +27,7 @@ BuxomMod\actions\BraSelectAction.class
 BuxomMod\cards\OmegaArc.class
 BuxomMod\patches\DefaultInsertPatch.class
 BuxomMod\powers\ButtonHazardPower.class
+BuxomMod\actions\ChannelRandomChibiAction.class
 BuxomMod\powers\ShockPower.class
 BuxomMod\orbs\DefenseChibi.class
 BuxomMod\cards\ExposureStatus.class
@@ -73,6 +75,7 @@ BuxomMod\powers\ChibiPower.class
 BuxomMod\cards\BrokenBraM.class
 BuxomMod\powers\TCupPower.class
 BuxomMod\variables\CapacityUpperVariable.class
+BuxomMod\potions\ChibiPotion.class
 BuxomMod\powers\NakedPower.class
 BuxomMod\characters\TheBuxom$Enums.class
 BuxomMod\cards\Paizuri.class
@@ -90,6 +93,7 @@ BuxomMod\cards\OmegaShock.class
 BuxomMod\relics\PlaceholderRelic.class
 BuxomMod\relics\ToplessArtifact.class
 BuxomMod\cards\MeasurementTime.class
+BuxomMod\potions\DragonMilkPotion.class
 BuxomMod\cards\OmegaBeatdown.class
 BuxomMod\cards\Relief.class
 BuxomMod\cards\Hardheaded.class

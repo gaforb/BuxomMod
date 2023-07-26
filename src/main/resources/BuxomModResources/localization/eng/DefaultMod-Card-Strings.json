@@ -71,11 +71,11 @@
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
-    "DESCRIPTION": "Unplayable."
+    "DESCRIPTION": "Unplayable. NL When this card is Exhausted, gain !M! Dexterity."
   },
   "BuxomMod:BrokenBraM": {
     "NAME": "Broken Bra (M)",
-    "DESCRIPTION": "Unplayable. At the end of your turn, add 1 *Bounce to your draw pile."
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, add 1 *Bounce to your draw pile. NL When this card is Exhausted, gain !M! Strength."
   },
   "BuxomMod:ChibiSummon": {
     "NAME": "Chibi Summon",

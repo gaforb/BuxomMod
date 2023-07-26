@@ -70,7 +70,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
         }
     }
     public void onInitialApplication() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new DexterityPower(owner, buffAmount), buffAmount));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new DexterityPower(owner, this.amount), this.amount));
     }
 
     /*public void update() {
