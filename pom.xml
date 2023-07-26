@@ -6,7 +6,7 @@
     <groupId>buxommod</groupId>
     <artifactId>BuxomMod</artifactId> <!--Keep a note of this one: this is the ID used in the "auto add cards" method-->
     <name>BuxomMod</name>
-    <version>0.5.0</version>
+    <version>0.6.0</version>
     <description>An NSFW breast-expansion-themed mod.</description>
 
     <properties>

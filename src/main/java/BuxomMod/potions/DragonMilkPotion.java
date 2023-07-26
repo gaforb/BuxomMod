@@ -24,7 +24,7 @@ public class DragonMilkPotion extends CustomPotion {
 
     public DragonMilkPotion() {
         // The bottle shape and inside is determined by potion size and color. The actual colors are the main DefaultMod.java
-        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.JAR, PotionColor.SMOKE);
+        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.BOTTLE, PotionColor.SMOKE);
         
         // Potency is the damage/magic number equivalent of potions.
         potency = getPotency();
@@ -56,7 +56,9 @@ public class DragonMilkPotion extends CustomPotion {
     @Override
     public void use(AbstractCreature target) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            addToBot(new ApplyPowerAction(target, target, new LactatingPower(target, target, potency), potency));
+            target = AbstractDungeon.player;
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, target, new LactatingPower(target, target, potency), potency));
+            BuxomMod.logger.info("potency " + getPotency());
         }
         // If you are in combat, gain strength and the "lose strength at the end of your turn" power, equal to the potency of this potion.
     }

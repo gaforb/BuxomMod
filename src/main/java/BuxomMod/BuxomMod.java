@@ -3,6 +3,7 @@ package BuxomMod;
 import BuxomMod.potions.ChibiPotion;
 import BuxomMod.potions.DragonMilkPotion;
 import BuxomMod.powers.MilkPower;
+import BuxomMod.relics.CowRelic;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
@@ -413,6 +414,7 @@ public class BuxomMod implements
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new WashboardRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new DwarfBoobsRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new CowRelic(), TheBuxom.Enums.COLOR_PINK);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
 

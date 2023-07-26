@@ -54,7 +54,6 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
         if (inCapacity()) {
             flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new ThornsPower(this.source, this.amount), this.amount));
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
         }
     }
 

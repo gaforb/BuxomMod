@@ -54,7 +54,7 @@
   },
   "BuxomMod:CowRelic": {
     "NAME": "Stuffed Cow",
-    "FLAVOR": "For when your draw pile fills up with status cards.",
+    "FLAVOR": "A friend!",
     "DESCRIPTIONS": [
       "At the start of combat, gain #b3 Lactating and #b1 Buxom."
     ]

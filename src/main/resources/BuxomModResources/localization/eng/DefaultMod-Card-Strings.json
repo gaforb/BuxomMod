@@ -142,11 +142,11 @@
   },
   "BuxomMod:TCupBra": {
     "NAME": "T-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 20-30. NL Gain [E] and !M! Dexterity each time your BuxomMod:Buxom increases."
+    "DESCRIPTION": "BuxomMod:Capacity 20-30. NL Gain !M! Thorns each time your BuxomMod:Buxom increases."
   },
   "BuxomMod:BrokenBraT": {
     "NAME": "Broken T-Cup Bra",
-    "DESCRIPTION": "Unplayable. NL At the start of your turn, lose [E]. At the end of your turn, add 2 *Afterswell to your draw pile."
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, add 2 *Afterswell to your draw pile."
   },
   "BuxomMod:ChibiAttack": {
     "NAME": "Chibi Attack",

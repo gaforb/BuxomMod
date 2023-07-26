@@ -41,7 +41,7 @@
 },
 "BuxomMod:TCupPower": {
         "NAME": "T-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 10-15. NL Gain [E] and #b", " Dexterity each time your Buxom increases."]
+        "DESCRIPTIONS": ["#yCapacity 20-30. NL Gain #b", " Thorns each time your Buxom increases."]
 },
 "BuxomMod:MilkPower": {
         "NAME": "Milk",
