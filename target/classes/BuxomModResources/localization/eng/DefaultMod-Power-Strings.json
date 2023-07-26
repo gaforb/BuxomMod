@@ -9,15 +9,15 @@
 },
 "BuxomMod:KCupPower": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 0-5. At the end of your turn, gain #b", " block."]
+        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b", "#yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
 },
 "BuxomMod:KCupPower2": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 0-5. At the end of your turn, gain #b", " block."]
+        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b", "#yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
 },
 "BuxomMod:MCupPower": {
         "NAME": "M-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 5-10. At the start of your turn, draw #b", " cards and gain twice that much block."]
+        "DESCRIPTIONS": ["#yCapacity 10-20. Whenever you gain #yBuxom, gain #b", "#yVigor."]
 },
 "BuxomMod:ChibiPower": {
         "NAME": "Chibi",
@@ -65,6 +65,6 @@
 },
 "BuxomMod:WhiteBikiniCupPower": {
         "NAME": "White Bikini",
-        "DESCRIPTIONS": ["Capacity 0-20. Whenever you gain #yLactating, gain #b", " #yBuxom and #yMilk. At the end of your turn, gain #b1 #ybuxommod:Lactating."]
+        "DESCRIPTIONS": ["Capacity 0-20. Whenever you gain #yLactating, gain #b", " #yBuxom and #yMilk. At the end of your turn, gain #b1 #yLactating."]
 }
 }

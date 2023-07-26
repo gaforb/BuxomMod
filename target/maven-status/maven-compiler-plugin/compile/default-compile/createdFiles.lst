@@ -48,6 +48,7 @@ BuxomMod\cards\ChibiSummon.class
 BuxomMod\cards\MCupBra.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\cards\ButtonHazard.class
+BuxomMod\ui\BuxomPanel.class
 BuxomMod\cards\BigBouncePowerCard.class
 BuxomMod\cards\OmegaLibrary.class
 BuxomMod\cards\BouncyExercise.class

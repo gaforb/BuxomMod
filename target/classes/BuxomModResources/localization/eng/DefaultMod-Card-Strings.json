@@ -63,7 +63,7 @@
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
-    "DESCRIPTION": "buxommod:Capacity 0-10. NL Gain 2 Dexterity. NL Whenever you gain buxommod:Buxom, gain that much Block."
+    "DESCRIPTION": "buxommod:Capacity 0-10. NL Gain !M! Dexterity. NL Whenever you gain buxommod:Buxom, gain that much Block."
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",

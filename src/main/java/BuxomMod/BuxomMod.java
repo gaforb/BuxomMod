@@ -4,6 +4,7 @@ import BuxomMod.potions.ChibiPotion;
 import BuxomMod.potions.DragonMilkPotion;
 import BuxomMod.powers.MilkPower;
 import BuxomMod.relics.CowRelic;
+import BuxomMod.ui.BuxomPanel;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
@@ -11,6 +12,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -97,6 +99,7 @@ public class BuxomMod implements
     private static final String MODNAME = "Default Mod";
     private static final String AUTHOR = "Gremious"; // And pretty soon - You!
     private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    public static BuxomPanel buxomPanel;
 
     // =============== INPUT TEXTURE LOCATION =================
 
@@ -592,6 +595,10 @@ public class BuxomMod implements
             logger.info("Not enough milk to pay.");
             return false;
         }
+    }
+    public static void renderMelodiesPanel(SpriteBatch sb, AbstractPlayer player)
+    {
+        buxomPanel.render(sb, player);
     }
 
 }
