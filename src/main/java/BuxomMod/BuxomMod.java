@@ -84,8 +84,7 @@ public class BuxomMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        AddAudioSubscriber,
-        PostRenderSubscriber{
+        AddAudioSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
@@ -597,16 +596,6 @@ public class BuxomMod implements
             logger.info("Not enough milk to pay.");
             return false;
         }
-    }
-
-    @Override
-    public void receivePostRender(SpriteBatch spriteBatch) {
-        renderBuxomPanel(spriteBatch, AbstractDungeon.player);
-    }
-
-    public static void renderBuxomPanel(SpriteBatch sb, AbstractPlayer player)
-    {
-        buxomPanel.render(sb, player);
     }
 
 }

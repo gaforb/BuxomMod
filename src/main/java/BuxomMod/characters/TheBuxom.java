@@ -3,6 +3,7 @@ package BuxomMod.characters;
 import BuxomMod.powers.CommonPower;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
+import basemod.interfaces.PostRenderSubscriber;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -17,6 +18,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -41,7 +43,7 @@ import static BuxomMod.characters.TheBuxom.Enums.COLOR_PINK;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
 
-public class TheBuxom extends CustomPlayer {
+public class TheBuxom extends CustomPlayer implements PostRenderSubscriber {
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
@@ -432,6 +434,16 @@ public class TheBuxom extends CustomPlayer {
     @Override
     public String getVampireText() {
         return TEXT[2];
+    }
+    @Override
+    public void receivePostRender(SpriteBatch spriteBatch) {
+        renderBuxomPanel(spriteBatch, AbstractDungeon.player);
+    }
+
+    public static void renderBuxomPanel(SpriteBatch sb, AbstractPlayer player)
+    {
+        logger.info("panel render called");
+        buxomPanel.render(sb, player);
     }
 
 }
