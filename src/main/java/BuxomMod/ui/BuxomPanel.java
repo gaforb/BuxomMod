@@ -46,7 +46,7 @@ public class BuxomPanel {
                         "Buxom:" + BuxomMod.getPwrAmt(player, CommonPower.POWER_ID),
                         10 * Settings.scale,
                         Settings.HEIGHT - Y_POS * Settings.scale,
-                        Settings.GOLD_COLOR
+                        Settings.PURPLE_COLOR
                 );
             }
         }
