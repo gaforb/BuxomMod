@@ -61,21 +61,7 @@ public class BuxomPanel {
     /*private class BuxomPanelHitboxListener implements HitboxListener
     {
         @Override
-        public void hoverStarted(Hitbox hitbox)
-        {
-
-        }
-
-        @Override
-        public void startClicking(Hitbox hitbox)
-        {
-
-        }
-
-        @Override
-        public void clicked(Hitbox hitbox)
-        {
-        }
+        public void hoverStarted(Hitbox hitbox) {}
     }*/
     public void grow(int amount) {
         logger.info("before size: " + size);
