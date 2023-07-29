@@ -1,6 +1,7 @@
 package BuxomMod.characters;
 
 import BuxomMod.powers.CommonPower;
+import BuxomMod.ui.BuxomPanel;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import basemod.interfaces.PostRenderSubscriber;
@@ -43,7 +44,7 @@ import static BuxomMod.characters.TheBuxom.Enums.COLOR_PINK;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
 
-public class TheBuxom extends CustomPlayer implements PostRenderSubscriber {
+public class TheBuxom extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
@@ -75,7 +76,6 @@ public class TheBuxom extends CustomPlayer implements PostRenderSubscriber {
     public static final int ORB_SLOTS = 2;
 
     // =============== /BASE STATS/ =================
-
 
     // =============== STRINGS =================
 
@@ -137,7 +137,6 @@ public class TheBuxom extends CustomPlayer implements PostRenderSubscriber {
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN)); // energy manager
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
-
 
         // =============== ANIMATIONS =================  
 
@@ -253,6 +252,17 @@ public class TheBuxom extends CustomPlayer implements PostRenderSubscriber {
     public void renderPlayerImage(SpriteBatch sb) {
         updateScale(calculateScale());
         super.renderPlayerImage(sb);
+    }
+    @Override
+    public void render(SpriteBatch sb) {
+        super.render(sb);
+        buxomPanel.render(sb, this);
+    }
+
+    @Override
+    public void update() {
+        super.update();
+        buxomPanel.update(this);
     }
 
 
@@ -434,10 +444,6 @@ public class TheBuxom extends CustomPlayer implements PostRenderSubscriber {
     @Override
     public String getVampireText() {
         return TEXT[2];
-    }
-    @Override
-    public void receivePostRender(SpriteBatch spriteBatch) {
-        renderBuxomPanel(spriteBatch, AbstractDungeon.player);
     }
 
     public static void renderBuxomPanel(SpriteBatch sb, AbstractPlayer player)

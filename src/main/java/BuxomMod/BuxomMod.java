@@ -99,7 +99,6 @@ public class BuxomMod implements
     private static final String MODNAME = "Default Mod";
     private static final String AUTHOR = "Gremious"; // And pretty soon - You!
     private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
-    public static BuxomPanel buxomPanel;
 
     // =============== INPUT TEXTURE LOCATION =================
 
@@ -184,7 +183,7 @@ public class BuxomMod implements
     // =============== /MAKE IMAGE PATHS/ =================
 
     // =============== /INPUT TEXTURE LOCATION/ =================
-
+    public static BuxomPanel buxomPanel;
 
     // =============== SUBSCRIBE, CREATE THE COLOR_PINK, INITIALIZE =================
 

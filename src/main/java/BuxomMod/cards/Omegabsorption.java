@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.GrowAction;
 import basemod.helpers.VfxBuilder;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -123,7 +124,7 @@ private AbstractGameEffect vfx(float x, float y) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
-
+        addToBot(new GrowAction(magicNumber));
     }
 
 

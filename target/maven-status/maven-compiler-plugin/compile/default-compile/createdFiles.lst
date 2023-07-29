@@ -1,11 +1,14 @@
+BuxomMod\BuxomManager.class
 BuxomMod\cards\BovineForm.class
 BuxomMod\cards\ToplessStatus.class
+BuxomMod\actions\GrowAction.class
 BuxomMod\cards\DefaultCommonAttack.class
 BuxomMod\powers\CommonPower.class
 BuxomMod\cards\FeelItOut.class
 BuxomMod\powers\KCupPower_old.class
 BuxomMod\relics\BottledPlaceholderRelic.class
 BuxomMod\variables\DefaultCustomVariable.class
+BuxomMod\actions\ShrinkAction.class
 BuxomMod\events\IdentityCrisisEvent.class
 BuxomMod\cards\BuxomStatus.class
 BuxomMod\cards\CardTemplate.class

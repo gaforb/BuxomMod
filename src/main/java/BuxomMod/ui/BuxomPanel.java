@@ -14,7 +14,15 @@ import com.megacrit.cardcrawl.core.Settings;
 
 import java.util.List;
 
+import static BuxomMod.characters.TheBuxom.logger;
+
 public class BuxomPanel {
+    public int minSize;
+    public int baseSize;
+    public int size;
+    public static int buxomCounterThisTurn;
+    public static int buxomGainedThisTurn;
+    public static int buxomLostThisTurn;
     private static final int Y_POS = 500;
     private static final int X_POS = 30;
     private boolean show = true;
@@ -29,9 +37,8 @@ public class BuxomPanel {
     {
         show = !show;
     }
-    public void update(AbstractPlayer player) {
+    public void update(AbstractPlayer player) {}
 
-    }
     public void render(SpriteBatch sb, AbstractPlayer player) {
         if (AbstractDungeon.getCurrRoom() != null
                 && AbstractDungeon.getCurrRoom() != null
@@ -43,8 +50,8 @@ public class BuxomPanel {
                 FontHelper.renderFontLeftTopAligned(
                         sb,
                         FontHelper.tipHeaderFont,
-                        "Buxom:" + BuxomMod.getPwrAmt(player, CommonPower.POWER_ID),
-                        10 * Settings.scale,
+                        "Buxom Power Amt: " + BuxomMod.getPwrAmt(player, CommonPower.POWER_ID) + "NL Buxom Manager Amt: " + size,
+                        50 * Settings.scale,
                         Settings.HEIGHT - Y_POS * Settings.scale,
                         Settings.PURPLE_COLOR
                 );
@@ -70,4 +77,19 @@ public class BuxomPanel {
         {
         }
     }*/
+    public void grow(int amount) {
+        logger.info("before size: " + size);
+        size += amount;
+        logger.info("after size: " + size);
+        buxomCounterThisTurn++;
+        buxomGainedThisTurn += amount;
+    }
+    public void shrink(int amount) {
+        logger.info("size: " + size);
+        int toShrink = amount;
+        if ((size - toShrink) <= 0) {
+            toShrink = size - 1;
+        }
+        size -= toShrink;
+    }
 }
