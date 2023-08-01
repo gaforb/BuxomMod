@@ -10,7 +10,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import static BuxomMod.characters.TheBuxom.logger;
 
 public class GrowAction extends AbstractGameAction {
-    public GrowAction(int amount) {}
+    public GrowAction(int howMuch) {
+        amount = howMuch;
+    }
     @Override
     public void update() {
         logger.info("Grow action registered");

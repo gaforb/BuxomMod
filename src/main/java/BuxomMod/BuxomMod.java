@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
@@ -84,7 +85,8 @@ public class BuxomMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        AddAudioSubscriber{
+        AddAudioSubscriber,
+        PreMonsterTurnSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
@@ -507,6 +509,8 @@ public class BuxomMod implements
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+                getModID() + "Resources/localization/eng/UIStrings.json");
 
         logger.info("Done edittting strings");
     }
@@ -596,5 +600,8 @@ public class BuxomMod implements
             return false;
         }
     }
-
+    public boolean receivePreMonsterTurn(AbstractMonster abstractMonster) {
+        buxomPanel.createStatusCards();
+        return true;
+    }
 }

@@ -71,6 +71,7 @@ public class ExpandMind extends AbstractDynamicCard {
             rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
+            this.exhaust = false;
         }
     }
 }

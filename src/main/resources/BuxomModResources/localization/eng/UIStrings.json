@@ -1,0 +1,11 @@
+{
+  "BuxomMod:BuxomPanel": {
+    "NAME": "Buxom Panel",
+    "BUXOM": "Buxom: ",
+    "BOUNCE": ["Bounce: ", " / "],
+    "TEXT": [
+      "Increased breast size. Generates #yBounce #yStacks at end of turn.",
+      "For every #b8 #yBounce stacks, generate a #yBounce status card."
+    ]
+    }
+}

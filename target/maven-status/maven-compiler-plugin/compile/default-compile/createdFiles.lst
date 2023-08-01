@@ -27,6 +27,7 @@ BuxomMod\cards\BraBreaker.class
 BuxomMod\relics\DwarfBoobsRelic.class
 BuxomMod\vfx\ExpandEffect.class
 BuxomMod\actions\BraSelectAction.class
+BuxomMod\powers\ExposedPower.class
 BuxomMod\cards\OmegaArc.class
 BuxomMod\patches\DefaultInsertPatch.class
 BuxomMod\powers\ButtonHazardPower.class
