@@ -34,7 +34,7 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
 
         this.owner = owner;
         this.amount = amount;
-        this.amount2 = 30;
+        this.maxCapacity = 30;
         this.source = source;
         this.minCapacity = 20;
         this.bounceBonus = 0;
@@ -65,7 +65,7 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
     }
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         for (AbstractPower power : AbstractDungeon.player.powers) {
-            if ((power instanceof CommonPower) && (power.amount > this.amount2)) {
+            if ((power instanceof CommonPower) && (power.amount > this.maxCapacity)) {
                 flash();
                 if (AbstractDungeon.player.hasPower("DexterityPower")) {
                     AbstractDungeon.actionManager.addToBottom(

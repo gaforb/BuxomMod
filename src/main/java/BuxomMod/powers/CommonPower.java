@@ -48,7 +48,6 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
 
         this.owner = owner;
         this.amount = amount;
-        this.amount2 = amount2;
         this.source = source;
 
         type = PowerType.BUFF;
@@ -138,6 +137,9 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
                 ((BraPower) pow).breakCheck();
             }
         }
+        if (this.amount >= 30) {
+            addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, 1), 1));
+        }
     }
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         if (isPlayer) {
@@ -152,6 +154,9 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
        BuxomMod.logger.info("Times gained this turn: " + buxomCounterThisTurn);
        BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
        super.stackPower(stackAmount);
+       if (this.amount >= 30) {
+           addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, 1), 1));
+       }
        for (AbstractPower pow : this.owner.powers) {
            if (pow instanceof BraPower) {
                ((BraPower) pow).onGrow(stackAmount);

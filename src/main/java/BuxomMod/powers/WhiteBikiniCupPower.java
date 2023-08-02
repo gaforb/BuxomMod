@@ -32,7 +32,7 @@ public class WhiteBikiniCupPower extends BraPower implements CloneablePowerInter
 
         this.owner = owner;
         this.amount = amount;
-        this.amount2 = 20;
+        this.maxCapacity = 20;
         this.source = source;
         this.minCapacity = 0;
         this.bounceBonus = 5;

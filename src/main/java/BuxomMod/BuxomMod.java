@@ -2,8 +2,10 @@ package BuxomMod;
 
 import BuxomMod.potions.ChibiPotion;
 import BuxomMod.potions.DragonMilkPotion;
+import BuxomMod.powers.BraPower;
 import BuxomMod.powers.MilkPower;
 import BuxomMod.relics.CowRelic;
+import BuxomMod.ui.BraPanel;
 import BuxomMod.ui.BuxomPanel;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
@@ -186,6 +188,7 @@ public class BuxomMod implements
 
     // =============== /INPUT TEXTURE LOCATION/ =================
     public static BuxomPanel buxomPanel;
+    public static BraPanel braPanel;
 
     // =============== SUBSCRIBE, CREATE THE COLOR_PINK, INITIALIZE =================
 
@@ -355,6 +358,7 @@ public class BuxomMod implements
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         buxomPanel = new BuxomPanel();
+        braPanel = new BraPanel();
 
 
         // =============== EVENTS =================
@@ -600,8 +604,28 @@ public class BuxomMod implements
             return false;
         }
     }
+    public static boolean hasBra(AbstractCreature c) {
+        for (AbstractPower pow : c.powers) {
+            if (pow instanceof BraPower) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public static boolean inBraCapacity(AbstractCreature c) {
+        for (AbstractPower pow : c.powers) {
+            if (pow instanceof BraPower) {
+                if (((BraPower) pow).inCapacity() == true) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
     public boolean receivePreMonsterTurn(AbstractMonster abstractMonster) {
-        buxomPanel.createStatusCards();
+        //buxomPanel.createStatusCards();
         return true;
     }
 }

@@ -14,6 +14,7 @@ import static BuxomMod.BuxomMod.getPwrAmt;
 public abstract class BraPower extends TwoAmountPower {
 
     public int minCapacity = 0;
+    public int maxCapacity = 0;
     public int bounceBonus = 0;
     public int buffAmount = 0;
     public BraPower() {
@@ -41,7 +42,7 @@ public abstract class BraPower extends TwoAmountPower {
 
 
     public boolean inCapacity() {
-        if (BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID) > this.amount2) {
+        if (BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID) > this.maxCapacity) {
             return false;
         } else if (BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID) < this.minCapacity) {
             return false;
@@ -51,13 +52,11 @@ public abstract class BraPower extends TwoAmountPower {
         }
     }
     public void growToBreak() {
-        if (inCapacity()) {
-            int bdiff = (this.amount2 - getPwrAmt(this.owner, CommonPower.POWER_ID)) + 1;
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new CommonPower(this.owner, this.owner, bdiff), bdiff));
-        }
+        int bdiff = (this.maxCapacity - getPwrAmt(this.owner, CommonPower.POWER_ID)) + 1;
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new CommonPower(this.owner, this.owner, bdiff), bdiff));
     }
     public void breakCheck() {
-        if (getPwrAmt(owner, CommonPower.POWER_ID) > this.amount2 || buxomPanel.size > this.amount2) {
+        if (getPwrAmt(owner, CommonPower.POWER_ID) > this.maxCapacity || buxomPanel.size > this.maxCapacity) {
             this.broken();
         }
     }

@@ -5,6 +5,7 @@ import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
@@ -24,6 +25,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
 
     private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/Exposed84.png");
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/Exposed32.png");
+    private boolean justApplied = false;
 
     public ExposedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -33,8 +35,8 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.DEBUFF;
-        isTurnBased = false;
+        type = PowerType.BUFF;
+        isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -50,7 +52,9 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public void onInitialApplication() {
-        addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
+        if (!BuxomMod.inBraCapacity(owner)) {
+            addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
+        }
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
@@ -58,18 +62,17 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public float modifyBlock(float blockAmount) {
-        for (AbstractPower pow : owner.powers) {
-            if (pow instanceof BraPower) {
-                if (((BraPower) pow).inCapacity() == true) {
-                    return blockAmount * 1.0F;
-                }
-            }
+        if (!BuxomMod.inBraCapacity(owner)) {
+            return blockAmount;
         }
         return blockAmount * 0.0F;
     }
-
     public void atEndOfRound() {
-        this.addToBot(new ReducePowerAction(owner, owner, this.ID, 1));
+        if (this.amount == 0) {
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        } else if (!(BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID) >= 30)) {
+            this.addToBot(new ReducePowerAction(owner, owner, this.ID, 1));
+        }
     }
 
     @Override

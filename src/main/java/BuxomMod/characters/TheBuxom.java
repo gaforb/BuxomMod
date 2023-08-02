@@ -256,13 +256,15 @@ public class TheBuxom extends CustomPlayer {
     @Override
     public void render(SpriteBatch sb) {
         super.render(sb);
-        buxomPanel.render(sb, this);
+        //buxomPanel.render(sb, this);
+        braPanel.render(sb, this);
     }
 
     @Override
     public void update() {
         super.update();
-        buxomPanel.update(this);
+        //buxomPanel.update(this);
+        braPanel.update(this);
     }
 
 

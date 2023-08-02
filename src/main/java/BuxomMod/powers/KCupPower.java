@@ -37,7 +37,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
 
         this.owner = owner;
         this.amount = amount;
-        this.amount2 = 10;
+        this.maxCapacity = 10;
         this.source = source;
         this.minCapacity = 0;
         this.bounceBonus = 5;

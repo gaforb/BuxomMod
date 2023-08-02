@@ -4,7 +4,9 @@ import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.orbs.AttackChibi;
 import BuxomMod.powers.CommonPower;
+import BuxomMod.powers.ExposedPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -62,6 +64,7 @@ public class QuiteEnough extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, 1), 1));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         for (int i = 0; i < magicNumber; i++) {
             addToBot((AbstractGameAction)new ChannelAction((AbstractOrb)new AttackChibi()));

@@ -1,7 +1,7 @@
 {
 "BuxomMod:CommonPower": {
         "NAME": "Buxom",
-        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn."]
+        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn. If your #yBuxom exceeds #b20, gain #yExposed."]
 },
 "BuxomMod:RarePower": {
         "NAME": "Placeholder Power",
@@ -69,6 +69,6 @@
 },
 "BuxomMod:ExposedPower": {
 "NAME": "Exposed",
-        "DESCRIPTIONS": ["Can't gain block. Deal #b3% bonus damage for each #yBuxom stack you have."]
+        "DESCRIPTIONS": ["Can't gain block. Deal #b3% bonus damage for each #yBuxom stack you have. Will not decay if your #yBuxom exceeds #b20."]
 }
 }
