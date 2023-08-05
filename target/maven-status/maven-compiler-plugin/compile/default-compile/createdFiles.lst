@@ -28,6 +28,7 @@ BuxomMod\relics\DwarfBoobsRelic.class
 BuxomMod\vfx\ExpandEffect.class
 BuxomMod\actions\BraSelectAction.class
 BuxomMod\powers\ExposedPower.class
+BuxomMod\cards\WardrobeMalfunction.class
 BuxomMod\cards\OmegaArc.class
 BuxomMod\patches\DefaultInsertPatch.class
 BuxomMod\powers\ButtonHazardPower.class
@@ -51,6 +52,7 @@ BuxomMod\cards\WhiteBikiniBra.class
 BuxomMod\cards\OmegaDeflection.class
 BuxomMod\cards\ChibiSummon.class
 BuxomMod\cards\MCupBra.class
+BuxomMod\cards\old\ChibiAttraction.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\cards\ButtonHazard.class
 BuxomMod\ui\BuxomPanel.class
@@ -60,7 +62,6 @@ BuxomMod\cards\BouncyExercise.class
 BuxomMod\actions\UncommonPowerAction.class
 BuxomMod\patches\DefaultInsertPatch$Locator.class
 BuxomMod\BuxomMod.class
-BuxomMod\cards\ChibiAttraction.class
 BuxomMod\cards\AbstractDynamicCard.class
 BuxomMod\cards\OmegaFlare.class
 BuxomMod\variables\MilkCostVariable.class
@@ -77,6 +78,9 @@ BuxomMod\orbs\DeviousChibi.class
 BuxomMod\cards\Chibis.class
 BuxomMod\util\IDCheckDontTouchPls.class
 BuxomMod\cards\AftershockStatus.class
+BuxomMod\cards\ChibiOffering.class
+BuxomMod\cards\Flee.class
+BuxomMod\powers\EmbarrassmentPower.class
 BuxomMod\powers\ChibiPower.class
 BuxomMod\cards\BrokenBraM.class
 BuxomMod\powers\TCupPower.class
@@ -98,6 +102,7 @@ BuxomMod\cards\Library.class
 BuxomMod\cards\OmegaShock.class
 BuxomMod\relics\PlaceholderRelic.class
 BuxomMod\relics\ToplessArtifact.class
+BuxomMod\cards\Embarrassment.class
 BuxomMod\cards\MeasurementTime.class
 BuxomMod\potions\DragonMilkPotion.class
 BuxomMod\cards\OmegaBeatdown.class

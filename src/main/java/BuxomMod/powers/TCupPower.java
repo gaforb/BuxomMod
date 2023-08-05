@@ -28,6 +28,8 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
     private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/TCup84.png");
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/TCup32.png");
 
+    private int thornsGained = 0;
+
     public TCupPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
@@ -54,14 +56,17 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
         if (inCapacity()) {
             flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new ThornsPower(this.source, this.amount), this.amount));
+            thornsGained += this.amount;
         }
     }
 
     public void broken(){
         flash();
-        addToTop(new RemoveSpecificPowerAction(owner, owner, ThornsPower.POWER_ID));
+        if (owner.hasPower(ThornsPower.POWER_ID)) {
+            addToTop(new ReducePowerAction(owner, owner, owner.getPower(ThornsPower.POWER_ID), this.amount));
+        }
         AbstractDungeon.actionManager.addToTop(new ReducePowerAction(owner, owner, this, this.amount));
-        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard)new BrokenBraT(), 1, true, true));
+        addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
     }
     /*public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         for (AbstractPower power : AbstractDungeon.player.powers) {

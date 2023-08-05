@@ -62,16 +62,14 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public float modifyBlock(float blockAmount) {
-        if (!BuxomMod.inBraCapacity(owner)) {
+        if (BuxomMod.inBraCapacity(owner)) {
             return blockAmount;
         }
         return blockAmount * 0.0F;
     }
     public void atEndOfRound() {
-        if (this.amount == 0) {
+        if (!(BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID) >= 30)) {
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-        } else if (!(BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID) >= 30)) {
-            this.addToBot(new ReducePowerAction(owner, owner, this.ID, 1));
         }
     }
 

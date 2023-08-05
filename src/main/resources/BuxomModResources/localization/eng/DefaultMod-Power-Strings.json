@@ -9,15 +9,15 @@
 },
 "BuxomMod:KCupPower": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b", "#yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
+        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b ", "#yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
 },
 "BuxomMod:KCupPower2": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b", "#yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
+        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b ", "#yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
 },
 "BuxomMod:MCupPower": {
         "NAME": "M-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 10-20. Whenever you gain #yBuxom, gain #b", "#yVigor."]
+        "DESCRIPTIONS": ["#yCapacity 10-20. Whenever you gain #yBuxom, gain #b ", "#yVigor."]
 },
 "BuxomMod:ChibiPower": {
         "NAME": "Chibi",
@@ -68,7 +68,7 @@
         "DESCRIPTIONS": ["Capacity 0-20. Whenever you gain #yLactating, gain #b", " #yBuxom and #yMilk. At the end of your turn, gain #b1 #yLactating."]
 },
 "BuxomMod:ExposedPower": {
-"NAME": "Exposed",
+        "NAME": "Exposed",
         "DESCRIPTIONS": ["Can't gain block. Deal #b3% bonus damage for each #yBuxom stack you have. Will not decay if your #yBuxom exceeds #b20."]
 }
 }

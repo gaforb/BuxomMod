@@ -1,5 +1,6 @@
-package BuxomMod.cards;
+package BuxomMod.cards.old;
 
+import BuxomMod.cards.AbstractDynamicCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -51,18 +52,6 @@ public class ChibiAttraction extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = MAGIC;
         milkCost = baseMilkCost = MILKCOST;
 
-    }
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        this.cantUseMessage = "Not enough milk!";
-        if (BuxomMod.isMilkEffect(MILKCOST)) {
-            canUse = true;
-        }
-        else {
-            canUse = false;
-        }
-        return canUse;
     }
 
     // Actions the card should do.

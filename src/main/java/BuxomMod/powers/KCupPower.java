@@ -89,7 +89,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
 
         AbstractDungeon.actionManager.addToTop(
                 new ReducePowerAction(owner, owner, this, this.amount));
-        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
+        addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
     }
     public void onRemove() {
         addToBot(new ReducePowerAction(owner, owner, owner.getPower(DexterityPower.POWER_ID), buffAmount));

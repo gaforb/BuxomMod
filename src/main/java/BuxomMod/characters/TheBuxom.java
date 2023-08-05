@@ -1,17 +1,14 @@
 package BuxomMod.characters;
 
 import BuxomMod.powers.CommonPower;
-import BuxomMod.ui.BuxomPanel;
+import BuxomMod.powers.ExposedPower;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.interfaces.PostRenderSubscriber;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.*;
-import com.esotericsoftware.spine.attachments.Attachment;
-import com.esotericsoftware.spine.attachments.MeshAttachment;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -19,7 +16,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -59,7 +55,8 @@ public class TheBuxom extends CustomPlayer {
         public static AbstractPlayer.PlayerClass THE_BUXOM;
         @SpireEnum(name = "PINK_BUXOM_COLOR") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor COLOR_PINK;
-        @SpireEnum(name = "PINK_BUXOM_COLOR") @SuppressWarnings("unused")
+        @SpireEnum(name = "PINK_BUXOM_COLOR")
+        @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -87,6 +84,10 @@ public class TheBuxom extends CustomPlayer {
     public static String boobBoneFID = "boobf";
     public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite4.atlas";
     public static String skeletonURL = "BuxomModResources/images/char/character/LehmanaSprite4_Armaturelehmana sprite.json";
+    public static final String size1animName = "idle";
+    public static final String size2animName = "idle2";
+    public static final String size3animName = "idle3";
+    public static final String boobsSlotName = "boobs";
 
     // =============== /STRINGS/ =================
 
@@ -118,7 +119,7 @@ public class TheBuxom extends CustomPlayer {
             logger.info("Skin: " + s.getName());
         }
         for (SlotData s : skeleton.getData().getSlots()) {
-            logger.info("Slot: " + s.getName() + " Attachment: " +s.getAttachmentName() + " Index: " + s.getIndex());
+            logger.info("Slot: " + s.getName() + " Attachment: " + s.getAttachmentName() + " Index: " + s.getIndex());
         }
         for (Animation a : skeleton.getData().getAnimations()) {
             logger.info("Animation: " + a.getName());
@@ -126,8 +127,7 @@ public class TheBuxom extends CustomPlayer {
         logger.info(skeletonURL + " loaded");
 
 
-
-        // =============== TEXTURES, ENERGY, LOADOUT =================  
+        // =============== TEXTURES, ENERGY, LOADOUT =================
 
         initializeClass(null, // required call to load textures and setup energy/loadout.
                 // I left these in DefaultMod.java (Ctrl+click them to see where they are, Ctrl+hover to see what they read.)
@@ -144,11 +144,10 @@ public class TheBuxom extends CustomPlayer {
                 atlasURL,
                 skeletonURL,
                 1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "idle", true);
+        AnimationState.TrackEntry e = state.setAnimation(0, size1animName, true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.stateData.setDefaultMix(0.1F);
         e.setTimeScale(1.0F);
-
 
 
         // =============== /ANIMATIONS/ =================
@@ -168,7 +167,6 @@ public class TheBuxom extends CustomPlayer {
     public float threshhold1 = 15;
     public float threshhold2 = 25;
     public int currRange = 0;
-
     public Skeleton getSkeleton() {
         return skeleton;
     }
@@ -176,36 +174,66 @@ public class TheBuxom extends CustomPlayer {
     public void changeState(String stateName) {
         AnimationState.TrackEntry e;
         switch (stateName) {
-            case "idle":
+            case size1animName:
                 loadAnimation(
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, "idle", true);
+                e = this.state.setAnimation(0, size1animName, true);
                 e.setTime(e.getEndTime() * MathUtils.random());
-                getSkeleton().setAttachment("boobs21", "boobs2-1");
+                getSkeleton().setAttachment(boobsSlotName, "boobs1");
                 getSkeleton().setAttachment("face", "face1");
+                getSkeleton().setAttachment("chest", "chest");
                 break;
-            case "idle_size3":
+            case size2animName:
                 loadAnimation(
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, "idle_size3", true);
+                e = this.state.setAnimation(0, size2animName, true);
                 e.setTime(e.getEndTime() * MathUtils.random());
-                getSkeleton().setAttachment("boobs21", "boobs2-3");
+                getSkeleton().setAttachment(boobsSlotName, "boobs2");
                 getSkeleton().setAttachment("face", "face2");
+                getSkeleton().setAttachment("chest", "chest");
                 break;
-            case "idle_size4":
+            case size3animName:
                 loadAnimation(
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, "idle_size4", true);
+                e = this.state.setAnimation(0, size3animName, true);
                 e.setTime(e.getEndTime() * MathUtils.random());
-                getSkeleton().setAttachment("boobs21", null);
+                getSkeleton().setAttachment(boobsSlotName, null);
                 getSkeleton().setAttachment("face", "face2");
+                getSkeleton().setAttachment("chest", "chest_ex");
                 break;
+        }
+    }
+
+    public void updateExposed() {
+        if (this.hasPower(ExposedPower.POWER_ID)) {
+            getSkeleton().setAttachment("chest", "chest_ex");
+            getSkeleton().setAttachment("shirt top", "shirt top");
+            logger.info(this.state.getCurrent(0).getAnimation().getName());
+            switch (this.state.getCurrent(0).getAnimation().getName()) {
+                case size1animName:
+                    logger.info("has exposed, currently idle");
+                    getSkeleton().setAttachment(boobsSlotName, "boobs1-ex");
+                    logger.info("updateExposed, idle: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
+                    getSkeleton().setAttachment("face", "face2");
+                    break;
+                case size2animName:
+                    logger.info("has exposed, currently idle_size3");
+                    getSkeleton().setAttachment(boobsSlotName, "boobs2-ex");
+                    logger.info("updateExposed, idle_size3: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
+                    getSkeleton().setAttachment("face", "face2");
+                    break;
+            }
+        }
+        else {
+            getSkeleton().setAttachment("chest", "chest");
+            getSkeleton().setAttachment("face", "face1");
+            getSkeleton().setAttachment("shirt top", null);
         }
     }
 
@@ -215,7 +243,7 @@ public class TheBuxom extends CustomPlayer {
         if (size >= threshhold2) {
             if (currRange != 2) {
                 logger.info("threshold2 exceeded");
-                changeState("idle_size4");
+                changeState(size3animName);
             }
             displaySize = size - threshhold2;
             currRange = 2;
@@ -223,7 +251,7 @@ public class TheBuxom extends CustomPlayer {
         else if (size >= threshhold1 && size < threshhold2) {
             if (currRange != 1) {
                 logger.info("threshold1 exceeded");
-                changeState("idle_size3");
+                changeState(size2animName);
             }
             displaySize = size - threshhold1;
             currRange = 1;
@@ -231,7 +259,7 @@ public class TheBuxom extends CustomPlayer {
         else {
             if (currRange != 0) {
                 logger.info("threshold1 de-exceeded");
-                changeState("idle");
+                changeState(size1animName);
             }
             displaySize = size;
             currRange = 0;
@@ -251,6 +279,8 @@ public class TheBuxom extends CustomPlayer {
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
         updateScale(calculateScale());
+        updateExposed();
+        logger.info("renderPlayerImage: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
         super.renderPlayerImage(sb);
     }
     @Override
@@ -265,6 +295,7 @@ public class TheBuxom extends CustomPlayer {
         super.update();
         //buxomPanel.update(this);
         braPanel.update(this);
+        logger.info("update: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
     }
 
 

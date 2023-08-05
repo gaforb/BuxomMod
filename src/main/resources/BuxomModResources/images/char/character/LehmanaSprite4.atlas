@@ -6,14 +6,14 @@ filter: Linear,Linear
 repeat: none
 shadow
   rotate: false
-  xy: 355, 1
+  xy: 77, 212
   size: 110, 28
   orig: 110, 28
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_37
   rotate: false
-  xy: 387, 77
+  xy: 243, 213
   size: 25, 36
   orig: 25, 36
   offset: 0, 0
@@ -34,155 +34,162 @@ lehmana sprite/Layer_36
   index: -1
 lehmana sprite/Layer_16
   rotate: false
-  xy: 185, 151
+  xy: 491, 55
   size: 16, 44
   orig: 16, 44
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_46
   rotate: false
-  xy: 160, 202
+  xy: 491, 1
   size: 20, 52
   orig: 20, 52
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_47
   rotate: false
-  xy: 489, 1
+  xy: 109, 95
   size: 17, 25
   orig: 17, 25
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_42
   rotate: false
-  xy: 258, 87
+  xy: 441, 108
   size: 19, 60
   orig: 19, 60
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_41
   rotate: false
-  xy: 210, 87
+  xy: 87, 1
   size: 21, 64
   orig: 21, 64
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_20
   rotate: false
-  xy: 355, 31
+  xy: 409, 62
   size: 64, 44
   orig: 64, 44
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_39
   rotate: false
-  xy: 140, 91
+  xy: 462, 108
   size: 36, 67
   orig: 36, 67
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_40
   rotate: false
-  xy: 178, 86
+  xy: 409, 108
   size: 30, 63
   orig: 30, 63
   offset: 0, 0
   index: -1
-lehmana sprite chest
+chest
   rotate: false
-  xy: 87, 1
+  xy: 77, 122
   size: 70, 88
   orig: 70, 88
   offset: 0, 0
   index: -1
-faceblink
+chestEx
   rotate: false
-  xy: 285, 56
-  size: 51, 59
-  orig: 51, 59
+  xy: 217, 122
+  size: 58, 89
+  orig: 58, 89
   offset: 0, 0
   index: -1
-face2
+faceblink
   rotate: false
-  xy: 87, 91
+  xy: 405, 179
   size: 51, 59
   orig: 51, 59
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_7_Copy
   rotate: false
-  xy: 77, 152
+  xy: 458, 179
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+face2
+  rotate: false
+  xy: 409, 1
   size: 51, 59
   orig: 51, 59
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_13
   rotate: false
-  xy: 233, 87
+  xy: 110, 1
   size: 23, 56
   orig: 23, 56
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_14
   rotate: false
-  xy: 131, 202
+  xy: 462, 1
   size: 27, 53
   orig: 27, 53
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_15
   rotate: false
-  xy: 467, 1
+  xy: 87, 95
   size: 20, 24
   orig: 20, 24
   offset: 0, 0
   index: -1
 boobf
   rotate: false
-  xy: 159, 1
+  xy: 149, 122
   size: 66, 83
   orig: 66, 83
   offset: 0, 0
   index: -1
 boobn
   rotate: false
-  xy: 227, 1
+  xy: 277, 122
   size: 56, 84
   orig: 56, 84
   offset: 0, 0
   index: -1
-shirt top
+boobsEx1
   rotate: false
-  xy: 338, 77
-  size: 47, 26
-  orig: 47, 26
+  xy: 277, 208
+  size: 56, 41
+  orig: 56, 41
   offset: 0, 0
   index: -1
 boobs2-3
   rotate: false
-  xy: 285, 1
+  xy: 335, 179
   size: 68, 53
   orig: 68, 53
   offset: 0, 0
   index: -1
-boobs2-2
+boobsEx2
   rotate: false
-  xy: 421, 31
-  size: 60, 43
-  orig: 60, 43
-  offset: 0, 0
-  index: -1
-boobs2
-  rotate: false
-  xy: 130, 160
-  size: 53, 40
-  orig: 53, 40
+  xy: 335, 122
+  size: 72, 55
+  orig: 72, 55
   offset: 0, 0
   index: -1
 lehmana sprite/Layer_28
   rotate: false
-  xy: 77, 213
+  xy: 189, 213
   size: 52, 41
   orig: 52, 41
+  offset: 0, 0
+  index: -1
+shirt top
+  rotate: false
+  xy: 87, 67
+  size: 47, 26
+  orig: 47, 26
   offset: 0, 0
   index: -1

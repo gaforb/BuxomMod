@@ -232,6 +232,18 @@
   "BuxomMod:BrokenBraWhiteBikini": {
     "NAME": "Broken White Bikini",
     "DESCRIPTION": "Unplayable. NL When this card is drawn, gain !M! buxommod:Milk."
+  },
+  "BuxomMod:WardrobeMalfunction": {
+    "NAME": "Malfunction",
+    "DESCRIPTION": "{@@}Gain buxommod:Exposed. NL Draw !M! card{!M!|>1=s}."
+  },
+  "BuxomMod:Embarrassment": {
+    "NAME": "Embarrassment",
+    "DESCRIPTION": "{@@}Gain !M! buxommod:Buxom. NL Whenever you buxommod:Expose, draw !BuxomMod:SecondMagic! card{!M!|>1=s}."
+  },
+  "BuxomMod:Flee": {
+    "NAME": "Flee",
+    "DESCRIPTION": "{@@}Exhaust up to !M! card{!M!|>1=s}. NL Gain !B! Block. NL If buxommod:Exposed, draw !M! card{!M!|>1=s}."
   }
 }
 

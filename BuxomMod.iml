@@ -3,8 +3,9 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/BuxomModResources/audio/exclude" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/BuxomModResources/images/char/character - Copy" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/BuxomModResources/images/char/character - Copy (2)" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/resources/BuxomModResources/images/char/character - Copy" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/BuxomMod/cards/old" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/java/BuxomMod/events" />
     </content>
   </component>

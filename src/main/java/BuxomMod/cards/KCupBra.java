@@ -51,7 +51,7 @@ public class KCupBra extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 1;  // COST = ${COST}
+    private static final int COST = 0;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int MAGIC = 2;    // DAMAGE = ${DAMAGE}
@@ -63,7 +63,6 @@ public class KCupBra extends AbstractDynamicCard {
     public KCupBra() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        this.cardsToPreview = new BrokenBraK();
     }
 
     // Actions the card should do.

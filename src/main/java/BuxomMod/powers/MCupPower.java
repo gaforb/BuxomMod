@@ -61,7 +61,7 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
         flash();
         AbstractDungeon.actionManager.addToBottom(
                 new ReducePowerAction(owner, owner, this, this.amount));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraM(), 1, true, true));
+        addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
     }
 
 
