@@ -20,6 +20,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -621,6 +623,49 @@ public class BuxomMod implements
             }
         }
         return false;
+    }
+
+    public static int getStatusCount(AbstractPlayer p) {
+
+        int statusCount = 0;
+        CardGroup statusCardsHand = p.hand.getCardsOfType(AbstractCard.CardType.STATUS);
+        CardGroup statusCardsDraw = p.drawPile.getCardsOfType(AbstractCard.CardType.STATUS);
+        CardGroup statusCardsDiscard = p.discardPile.getCardsOfType(AbstractCard.CardType.STATUS);
+        for (AbstractCard card : statusCardsHand.group) {
+            ++statusCount;
+            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
+            if (card.cardID == BigBounceStatus.ID) {
+                ++statusCount;
+                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+            } else if (card.cardID.contains("BrokenBra")) {
+                statusCount += 2;
+                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+            }
+        }
+        for (AbstractCard card : statusCardsDraw.group) {
+            ++statusCount;
+            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
+            if (card.cardID == BigBounceStatus.ID) {
+                ++statusCount;
+                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+            } else if (card.cardID.contains("BrokenBra")) {
+                statusCount += 2;
+                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+            }
+        }
+        for (AbstractCard card : statusCardsDiscard.group) {
+            ++statusCount;
+            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
+            if (card.cardID == BigBounceStatus.ID) {
+                ++statusCount;
+                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+            } else if (card.cardID.contains("BrokenBra")) {
+                statusCount += 2;
+                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+            }
+        }
+        BuxomMod.logger.info("Final status count is" + statusCount);
+        return statusCount;
     }
 
 

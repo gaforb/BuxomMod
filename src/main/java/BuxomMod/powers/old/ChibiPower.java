@@ -1,4 +1,4 @@
-package BuxomMod.powers;
+package BuxomMod.powers.old;
 
 import java.util.Random;
 import basemod.interfaces.CloneablePowerInterface;
@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import BuxomMod.BuxomMod;
-import BuxomMod.cards.ChibiBlock;
 import BuxomMod.cards.ChibiAttack;
 import BuxomMod.util.TextureLoader;
 
@@ -69,7 +68,7 @@ public class ChibiPower extends AbstractPower implements CloneablePowerInterface
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction((AbstractCard)new ChibiAttack(), 1));
             }
             else {
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction((AbstractCard)new ChibiBlock(), 1));
+                //AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction((AbstractCard)new ChibiBlock(), 1));
             }
         }
     }

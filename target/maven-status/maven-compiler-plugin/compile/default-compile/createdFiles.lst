@@ -27,6 +27,7 @@ BuxomMod\cards\BraBreaker.class
 BuxomMod\relics\DwarfBoobsRelic.class
 BuxomMod\vfx\ExpandEffect.class
 BuxomMod\actions\BraSelectAction.class
+BuxomMod\cards\ChibiOneTwo.class
 BuxomMod\powers\ExposedPower.class
 BuxomMod\cards\WardrobeMalfunction.class
 BuxomMod\cards\OmegaArc.class
@@ -49,6 +50,7 @@ BuxomMod\cards\AbstractDefaultCard.class
 BuxomMod\powers\MilkPower.class
 BuxomMod\cards\PopPopPop.class
 BuxomMod\cards\WhiteBikiniBra.class
+BuxomMod\blockMods\ChibiBlock.class
 BuxomMod\cards\OmegaDeflection.class
 BuxomMod\cards\ChibiSummon.class
 BuxomMod\cards\MCupBra.class
@@ -62,6 +64,7 @@ BuxomMod\cards\BouncyExercise.class
 BuxomMod\actions\UncommonPowerAction.class
 BuxomMod\patches\DefaultInsertPatch$Locator.class
 BuxomMod\BuxomMod.class
+BuxomMod\powers\SurprisePower.class
 BuxomMod\cards\AbstractDynamicCard.class
 BuxomMod\cards\OmegaFlare.class
 BuxomMod\variables\MilkCostVariable.class
@@ -71,6 +74,7 @@ BuxomMod\cards\ShockStatus.class
 BuxomMod\actions\CreateBuxomStatusAction.class
 BuxomMod\cards\BigBounceStatus.class
 BuxomMod\potions\FlatteningPotion.class
+BuxomMod\cards\Surprise.class
 BuxomMod\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 BuxomMod\cards\InducedLactation.class
 BuxomMod\cards\LeanneAssist.class
@@ -81,7 +85,6 @@ BuxomMod\cards\AftershockStatus.class
 BuxomMod\cards\ChibiOffering.class
 BuxomMod\cards\Flee.class
 BuxomMod\powers\EmbarrassmentPower.class
-BuxomMod\powers\ChibiPower.class
 BuxomMod\cards\BrokenBraM.class
 BuxomMod\powers\TCupPower.class
 BuxomMod\variables\CapacityUpperVariable.class
@@ -100,6 +103,7 @@ BuxomMod\orbs\AttackChibi.class
 BuxomMod\characters\TheBuxom.class
 BuxomMod\cards\Library.class
 BuxomMod\cards\OmegaShock.class
+BuxomMod\powers\old\ChibiPower.class
 BuxomMod\relics\PlaceholderRelic.class
 BuxomMod\relics\ToplessArtifact.class
 BuxomMod\cards\Embarrassment.class
@@ -107,6 +111,7 @@ BuxomMod\cards\MeasurementTime.class
 BuxomMod\potions\DragonMilkPotion.class
 BuxomMod\cards\OmegaBeatdown.class
 BuxomMod\cards\Relief.class
+BuxomMod\cards\HungryDwarf.class
 BuxomMod\cards\Hardheaded.class
 BuxomMod\cards\KCupBra.class
 BuxomMod\powers\BraPower.class

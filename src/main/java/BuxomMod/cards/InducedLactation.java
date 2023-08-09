@@ -39,7 +39,7 @@ public class InducedLactation extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private int MAGIC = 3;
 

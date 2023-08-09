@@ -1,15 +1,16 @@
 package BuxomMod.powers;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.blockMods.ChibiBlock;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.GainCustomBlockAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,21 +18,20 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class EmbarrassmentPower extends AbstractPower implements CloneablePowerInterface {
+public class SurprisePower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = BuxomMod.makeID("EmbarrassmentPower");
+    public static final String POWER_ID = BuxomMod.makeID("SurprisePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/ShockPower84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/ShockPower32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/DelayExposed84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/DelayExposed32.png");
 
-    public EmbarrassmentPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public SurprisePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -49,10 +49,10 @@ public class EmbarrassmentPower extends AbstractPower implements CloneablePowerI
         updateDescription();
     }
 
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power instanceof ExposedPower) {
-            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
-        }
+    public void atStartOfTurn() {
+        flash();
+        addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
     @Override
     public void updateDescription() {

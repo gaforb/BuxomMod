@@ -38,9 +38,9 @@ public class BouncyExercise extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 6;
     private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     // /STAT DECLARATION/
 
@@ -88,17 +88,8 @@ public class BouncyExercise extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
-        AbstractDungeon.actionManager.addToBottom( // The action managed queues all the actions a card should do.
-        // addToTop - first
-        // addToBottom - last
-        // 99.99% of the time you just want to addToBottom all of them.
-        // Please do that unless you need to add to top for some specific reason.
+        AbstractDungeon.actionManager.addToBottom(
         new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-        // a list of existing actions can be found at com.megacrit.cardcrawl.actions but
-        // Chances are you'd instead look at "hey my card is similar to this basegame card"
-        // Let's find out what action *it* uses.
-        // I.e. i want energy gain or card draw, lemme check out Adrenaline
-        // P.s. if you want to damage ALL enemies OUTSIDE of a card, check out the custom orb.
         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (b != null) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, b.amount, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));

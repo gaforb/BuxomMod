@@ -1,6 +1,8 @@
 package BuxomMod.cards;
 
 import BuxomMod.powers.CommonPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,6 +15,7 @@ import BuxomMod.orbs.DefenseChibi;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -42,8 +45,10 @@ public class ChibiSummon extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int BLOCK = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
 
     // /STAT DECLARATION/
@@ -52,6 +57,7 @@ public class ChibiSummon extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        block = baseBlock = BLOCK;
 
     }
 
@@ -75,9 +81,10 @@ public class ChibiSummon extends AbstractDynamicCard {
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         if (p.hasPower(CommonPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(
-                    new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), 2));
+                    new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), magicNumber));
         }
-        addToBot((AbstractGameAction)new ChannelAction((AbstractOrb)new DefenseChibi()));
+        this.addToBot(new GainBlockAction(p, p, this.block));
+        this.addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), this.block));
     }
 
     //Upgraded stats.
@@ -85,7 +92,8 @@ public class ChibiSummon extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

@@ -179,7 +179,7 @@ public class TheBuxom extends CustomPlayer {
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, size1animName, true);
+                e = this.state.setAnimation(0, getExposedName(size1animName), true);
                 e.setTime(e.getEndTime() * MathUtils.random());
                 getSkeleton().setAttachment(boobsSlotName, "boobs1");
                 getSkeleton().setAttachment("face", "face1");
@@ -190,7 +190,7 @@ public class TheBuxom extends CustomPlayer {
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, size2animName, true);
+                e = this.state.setAnimation(0, getExposedName(size2animName), true);
                 e.setTime(e.getEndTime() * MathUtils.random());
                 getSkeleton().setAttachment(boobsSlotName, "boobs2");
                 getSkeleton().setAttachment("face", "face2");
@@ -210,7 +210,33 @@ public class TheBuxom extends CustomPlayer {
         }
     }
 
+    public String getExposedName(String anim) {
+        if (this.hasPower(ExposedPower.POWER_ID)) {
+            return anim + "_ex";
+        }
+        return anim;
+    }
     public void updateExposed() {
+        String currAnimName = this.state.getCurrent(0).getAnimation().getName();
+        changeState(currAnimName);
+    }
+
+    /*public void updateExposed() {
+        AnimationState.TrackEntry e;
+        String currAnimName = this.state.getCurrent(0).getAnimation().getName();
+        logger.info("current animation: " + currAnimName);
+        loadAnimation(
+                atlasURL,
+                skeletonURL,
+                1.0f);
+        e = this.state.setAnimation(0, getExposedName(), true);
+        e.setTime(e.getEndTime() * MathUtils.random());
+        getSkeleton().setAttachment(boobsSlotName, "boobs2_ex");
+        getSkeleton().setAttachment("face", "face2");
+        getSkeleton().setAttachment("chest", "chest");
+    }*/
+
+    /*public void updateExposed() {
         if (this.hasPower(ExposedPower.POWER_ID)) {
             getSkeleton().setAttachment("chest", "chest_ex");
             getSkeleton().setAttachment("shirt top", "shirt top");
@@ -235,7 +261,7 @@ public class TheBuxom extends CustomPlayer {
             getSkeleton().setAttachment("face", "face1");
             getSkeleton().setAttachment("shirt top", null);
         }
-    }
+    }*/
 
     public float calculateScale() {
         float size = getPwrAmt(this, CommonPower.POWER_ID);
@@ -279,7 +305,6 @@ public class TheBuxom extends CustomPlayer {
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
         updateScale(calculateScale());
-        updateExposed();
         logger.info("renderPlayerImage: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
         super.renderPlayerImage(sb);
     }

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import BuxomMod.powers.ChibiPower;
+import BuxomMod.powers.old.ChibiPower;
 
 public class UncommonPowerAction extends AbstractGameAction {
     private boolean freeToPlayOnce;

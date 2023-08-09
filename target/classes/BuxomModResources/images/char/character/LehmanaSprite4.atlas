@@ -88,7 +88,7 @@ lehmana sprite/Layer_40
   orig: 30, 63
   offset: 0, 0
   index: -1
-chest
+lehmana sprite chest
   rotate: false
   xy: 77, 122
   size: 70, 88

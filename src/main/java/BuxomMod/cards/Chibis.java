@@ -1,5 +1,7 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.CommonPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +12,7 @@ import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.orbs.DefenseChibi;
 
+import static BuxomMod.BuxomMod.getPwrAmt;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 public class Chibis extends AbstractDynamicCard {
@@ -53,9 +56,10 @@ public class Chibis extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        addToBot(new IncreaseMaxOrbAction(magicNumber));
-        addToBot(new ChannelAction(new DefenseChibi()));
+        for (int i = 0; i < getPwrAmt(p, CommonPower.POWER_ID); i += 5) {
+
         }
+    }
 
     //Upgraded stats.
     @Override

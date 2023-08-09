@@ -131,7 +131,7 @@ public class BraBreaker extends AbstractDynamicCard {
                 ((BraPower) pow).growToBreak();
             }
         }
-        this.baseDamage = getStatusCount(p) * this.magicNumber;
+        this.baseDamage = BuxomMod.getStatusCount(p) * this.magicNumber;
         BuxomMod.logger.info(this.baseDamage + " total damage");
         this.calculateCardDamage((AbstractMonster) null);
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.FIRE, false));

@@ -65,10 +65,18 @@
 },
 "BuxomMod:WhiteBikiniCupPower": {
         "NAME": "White Bikini",
-        "DESCRIPTIONS": ["Capacity 0-20. Whenever you gain #yLactating, gain #b", " #yBuxom and #yMilk. At the end of your turn, gain #b1 #yLactating."]
+        "DESCRIPTIONS": ["Capacity 5-15. Whenever you gain #yLactating, gain #b", " #yBuxom and #yMilk. At the end of your turn, gain #b1 #yLactating."]
 },
 "BuxomMod:ExposedPower": {
         "NAME": "Exposed",
-        "DESCRIPTIONS": ["Can't gain block. Deal #b3% bonus damage for each #yBuxom stack you have. Will not decay if your #yBuxom exceeds #b20."]
+        "DESCRIPTIONS": ["Can't gain block. Deal #b3% bonus damage for each #yBuxom stack you have. Lasts #b1 turn unless your #yBuxom exceeds #b30."]
+},
+"BuxomMod:EmbarrassmentPower": {
+        "NAME": "Embarrassed",
+        "DESCRIPTIONS": ["Whenever you #yExpose, gain #yStrength."]
+},
+"BuxomMod:SurprisePower": {
+        "NAME": "Surprise!",
+        "DESCRIPTIONS": ["#yExpose at the start of your next turn."]
 }
 }

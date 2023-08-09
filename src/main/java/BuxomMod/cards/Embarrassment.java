@@ -25,7 +25,7 @@ public class Embarrassment extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = BuxomMod.makeID(Embarrassment.class.getSimpleName());
-    public static final String IMG = makeCardPath("Embarassment.png");
+    public static final String IMG = makeCardPath("Embarrassment.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -42,7 +42,7 @@ public class Embarrassment extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC = 2;
-    private static final int SECOND_MAGIC = 3;
+    private static final int SECOND_MAGIC = 2;
     private static final int UPGRADE_SECOND_MAGIC = 1;
 
     // /STAT DECLARATION/
@@ -69,8 +69,8 @@ public class Embarrassment extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isInnate = true;
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

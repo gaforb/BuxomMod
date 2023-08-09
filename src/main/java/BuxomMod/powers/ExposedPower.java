@@ -1,6 +1,7 @@
 package BuxomMod.powers;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -52,6 +53,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public void onInitialApplication() {
+        ((TheBuxom)owner).updateExposed();
         if (!BuxomMod.inBraCapacity(owner)) {
             addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
         }
@@ -71,6 +73,9 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         if (!(BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID) >= 30)) {
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
+    }
+    public void onRemove() {
+        ((TheBuxom)owner).updateExposed();
     }
 
     @Override

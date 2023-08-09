@@ -45,6 +45,7 @@ public class ChibiAttack extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int MAGIC = 1;
+    private static final int DAMAGE = 4;
 
 
     // /STAT DECLARATION/

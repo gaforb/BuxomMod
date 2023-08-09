@@ -49,9 +49,9 @@ public class Phew extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;  // COST = ${COST}
-    private static final int MAGIC = 2;    // DAMAGE = ${DAMAGE}
+    private static final int MAGIC = 4;    // DAMAGE = ${DAMAGE}
     private static final int BLOCK = 7;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 2;
     private static final int UPGRADE_PLUS_BLOCK = 2;// UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/

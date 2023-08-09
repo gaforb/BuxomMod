@@ -1,14 +1,18 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.blockMods.ChibiBlock;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.orbs.DeviousChibi;
 import BuxomMod.powers.ExposedPower;
 import BuxomMod.powers.MilkPower;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.GainCustomBlockAction;
+import com.evacipated.cardcrawl.mod.stslib.blockmods.BlockModifierManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -41,7 +45,9 @@ public class ChibiOffering extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int MAGIC = 5;
+    private static final int BLOCK = 5;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int MAGIC = 6;
     private static final int UPGRADE_PLUS_MAGIC = 3;
     private static final int MILKCOST = 2;
 
@@ -52,7 +58,6 @@ public class ChibiOffering extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-
     }
 
     // Actions the card should do.
@@ -67,6 +72,7 @@ public class ChibiOffering extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }

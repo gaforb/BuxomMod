@@ -79,7 +79,7 @@
   },
   "BuxomMod:ChibiSummon": {
     "NAME": "Chibi Summon",
-    "DESCRIPTION": "Lose 2 BuxomMod:Buxom. NL Channel 1 BuxomMod:Defensive Chibi."
+    "DESCRIPTION": "Lose 2 BuxomMod:Buxom. NL Gain !B! Block, and gain !B! block again next turn."
   },
   "BuxomMod:ButtonPop": {
     "NAME": "Button Pop",
@@ -149,21 +149,17 @@
     "DESCRIPTION": "Unplayable. NL At the end of your turn, add 2 *Afterswell to your draw pile."
   },
   "BuxomMod:ChibiAttack": {
-    "NAME": "Chibi Attack",
-    "DESCRIPTION": "Deal damage equal to your BuxomMod:Buxom. NL Channel !M! BuxomMod:Offensive Chibi."
-  },
-  "BuxomMod:ChibiBlock": {
-    "NAME": "Chibi Block",
-    "DESCRIPTION": "Gain Block equal to your BuxomMod:Buxom. Exhaust."
+    "NAME": "Chibi One-Two",
+    "DESCRIPTION": "Deal !D! damage. NL If buxommod:Exposed, deal half that damage twice."
   },
   "BuxomMod:OmegaFlare": {
     "NAME": "Omega Flare",
     "DESCRIPTION": "If you're within the BuxomMod:Capacity of your bra, gain !M! Strength. NL Shuffle !BuxomMod:SecondMagic! *Afterswell into your draw pile.",
     "CANT_USE_MESSAGE": "I'm not within my bra's capacity!"
   },
-  "BuxomMod:ChibiAttraction": {
-    "NAME": "Chibi Attraction",
-    "DESCRIPTION": "BuxomMod:Milking 2: Channel !M! BuxomMod:Devious Chibi."
+  "BuxomMod:ChibiOffering": {
+    "NAME": "Chibi Offering",
+    "DESCRIPTION": "Gain !M! buxommod:Milk. Expose."
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
@@ -219,7 +215,7 @@
   },
   "BuxomMod:QuiteEnough": {
     "NAME": "Quite Enough",
-    "DESCRIPTION": "Deal !D! damage. NL Channel !M! Offensive Chibi."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add !M! *Afterswell to your draw pile."
   },
   "BuxomMod:ShockStatus": {
     "NAME": "Shock",
@@ -227,7 +223,7 @@
   },
   "BuxomMod:WhiteBikiniBra": {
     "NAME": "White Bikini",
-    "DESCRIPTION": "Capacity 0-20. NL Whenever you gain buxommod:Lactating, gain !M! buxommod:Buxom and gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
+    "DESCRIPTION": "Capacity 5-15. NL Whenever you gain buxommod:Lactating, gain !M! buxommod:Buxom and gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
   },
   "BuxomMod:BrokenBraWhiteBikini": {
     "NAME": "Broken White Bikini",
@@ -239,11 +235,25 @@
   },
   "BuxomMod:Embarrassment": {
     "NAME": "Embarrassment",
-    "DESCRIPTION": "{@@}Gain !M! buxommod:Buxom. NL Whenever you buxommod:Expose, draw !BuxomMod:SecondMagic! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !M! buxommod:Buxom. NL Whenever you buxommod:Expose, gain !BuxomMod:SecondMagic! Strength."
   },
   "BuxomMod:Flee": {
     "NAME": "Flee",
     "DESCRIPTION": "{@@}Exhaust up to !M! card{!M!|>1=s}. NL Gain !B! Block. NL If buxommod:Exposed, draw !M! card{!M!|>1=s}."
+  },
+  "BuxomMod:ChibiBlock": {
+    "NAME": "Chibi-Block",
+    "DESCRIPTION": "Unaffected by *Exposed."
+  },
+  "BuxomMod:Surprise": {
+    "NAME": "Surprise!",
+    "DESCRIPTION": "Next turn, buxommod:Expose and gain [E].",
+    "UPGRADE_DESCRIPTION": "Next turn, buxommod:Expose and gain [E] [E]."
+  },
+  "BuxomMod:HungryDwarf": {
+    "NAME": "Hungry Dwarf",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E].",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If Fatal, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E] [E]."
   }
 }
 
