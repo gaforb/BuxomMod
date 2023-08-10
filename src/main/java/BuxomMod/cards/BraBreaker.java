@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import static BuxomMod.BuxomMod.getStatusCount;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 public class BraBreaker extends AbstractDynamicCard {
@@ -83,55 +84,13 @@ public class BraBreaker extends AbstractDynamicCard {
             addToBot(new MakeTempCardInHandAction(braID));
         }
     }*/
-    public int getStatusCount(AbstractPlayer p) {
-
-        int statusCount = 0;
-        CardGroup statusCardsHand = p.hand.getCardsOfType(CardType.STATUS);
-        CardGroup statusCardsDraw = p.drawPile.getCardsOfType(CardType.STATUS);
-        CardGroup statusCardsDiscard = p.discardPile.getCardsOfType(CardType.STATUS);
-        for (AbstractCard card : statusCardsHand.group) {
-            ++statusCount;
-            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
-            if (card.cardID == BigBounceStatus.ID) {
-                ++statusCount;
-                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
-            } else if (card.cardID.contains("BrokenBra")) {
-                statusCount += 2;
-                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
-            }
-        }
-        for (AbstractCard card : statusCardsDraw.group) {
-            ++statusCount;
-            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
-            if (card.cardID == BigBounceStatus.ID) {
-                ++statusCount;
-                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
-            } else if (card.cardID.contains("BrokenBra")) {
-                statusCount += 2;
-                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
-            }
-        }
-        for (AbstractCard card : statusCardsDiscard.group) {
-            ++statusCount;
-            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
-            if (card.cardID == BigBounceStatus.ID) {
-                ++statusCount;
-                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
-            } else if (card.cardID.contains("BrokenBra")) {
-                statusCount += 2;
-                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
-            }
-        }
-        BuxomMod.logger.info("Final status count is" + statusCount);
-        return statusCount;
-    }
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractPower pow : p.powers) { //if wearing a bra
             if (pow instanceof BraPower) {
                 ((BraPower) pow).growToBreak();
             }
         }
-        this.baseDamage = BuxomMod.getStatusCount(p) * this.magicNumber;
+        this.baseDamage = getStatusCount(p) * this.magicNumber;
         BuxomMod.logger.info(this.baseDamage + " total damage");
         this.calculateCardDamage((AbstractMonster) null);
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.FIRE, false));

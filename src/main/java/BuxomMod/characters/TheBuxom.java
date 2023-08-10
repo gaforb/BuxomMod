@@ -184,6 +184,7 @@ public class TheBuxom extends CustomPlayer {
                 getSkeleton().setAttachment(boobsSlotName, "boobs1");
                 getSkeleton().setAttachment("face", "face1");
                 getSkeleton().setAttachment("chest", "chest");
+                getSkeleton().update(0.01F);
                 break;
             case size2animName:
                 loadAnimation(
@@ -195,6 +196,7 @@ public class TheBuxom extends CustomPlayer {
                 getSkeleton().setAttachment(boobsSlotName, "boobs2");
                 getSkeleton().setAttachment("face", "face2");
                 getSkeleton().setAttachment("chest", "chest");
+                getSkeleton().update(0.01F);
                 break;
             case size3animName:
                 loadAnimation(
@@ -206,6 +208,7 @@ public class TheBuxom extends CustomPlayer {
                 getSkeleton().setAttachment(boobsSlotName, null);
                 getSkeleton().setAttachment("face", "face2");
                 getSkeleton().setAttachment("chest", "chest_ex");
+                getSkeleton().update(0.01F);
                 break;
         }
     }
@@ -216,9 +219,14 @@ public class TheBuxom extends CustomPlayer {
         }
         return anim;
     }
-    public void updateExposed() {
+
+    public void updateExposed(Boolean expose) {
         String currAnimName = this.state.getCurrent(0).getAnimation().getName();
-        changeState(currAnimName);
+        if (expose == true && !currAnimName.contains("_ex")) {
+            changeState(currAnimName + "_ex");
+        } else if (expose == false && currAnimName.contains("_ex")) {
+            changeState(currAnimName.substring(0, currAnimName.length() - 3));
+        }
     }
 
     /*public void updateExposed() {
