@@ -40,7 +40,7 @@ public class HungryDwarf extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
@@ -61,7 +61,6 @@ public class HungryDwarf extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = MAGIC;
         damage = baseDamage = DAMAGE;
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_MAGIC;
-        cardsToPreview = new AftershockStatus();
     }
 
 
@@ -74,7 +73,7 @@ public class HungryDwarf extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if ((((AbstractMonster)m).isDying || m.currentHealth <= 0) && !m.halfDead) {
+        if ((m.isDying || m.currentHealth <= 0) && !m.halfDead) {
             addToBot(new ApplyPowerAction(p, p, new MilkPower(p, p, magicNumber)));
             addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, BUXOM_GAIN)));
             addToBot(new GainEnergyAction(defaultSecondMagicNumber));
