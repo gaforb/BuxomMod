@@ -1,7 +1,7 @@
 {
 "BuxomMod:FlatteningPotion": {
         "NAME": "Flattening Potion",
-        "DESCRIPTIONS": ["Reduces your Buxom to 1."]
+        "DESCRIPTIONS": ["Reduces your Buxom to #b1."]
 },
 "BuxomMod:DragonMilkPotion": {
         "NAME": "Dragon Milk Potion",
@@ -10,5 +10,9 @@
 "BuxomMod:ChibiPotion": {
         "NAME": "Chibi Potion",
         "DESCRIPTIONS": ["Channel #b", " random Chibis."]
+},
+"BuxomMod:PermaGrowthPotion": {
+        "NAME": "Perma-Growth Potion",
+        "DESCRIPTIONS": ["Increase your starting #yBuxom by #b2."]
 }
 }

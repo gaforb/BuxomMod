@@ -2,6 +2,7 @@ package BuxomMod;
 
 import BuxomMod.potions.ChibiPotion;
 import BuxomMod.potions.DragonMilkPotion;
+import BuxomMod.potions.PermaGrowthPotion;
 import BuxomMod.powers.BraPower;
 import BuxomMod.powers.MilkPower;
 import BuxomMod.relics.CowRelic;
@@ -90,7 +91,8 @@ public class BuxomMod implements
         EditCharactersSubscriber,
         PostInitializeSubscriber,
         AddAudioSubscriber,
-        PreMonsterTurnSubscriber{
+        PreMonsterTurnSubscriber,
+        OnPlayerTurnStartSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
@@ -120,6 +122,8 @@ public class BuxomMod implements
     public static final Color DRAGON_MILK_POTION_HYBRID = CardHelper.getColor(255.0f, 203.0f, 246.0f);
     public static final Color CHIBI_POTION_LIQUID = CardHelper.getColor(255.0f, 228.0f, 138.0f);
     public static final Color CHIBI_POTION_HYBRID = CardHelper.getColor(58.0f, 172.0f, 255.0f);
+    public static final Color PERMA_POTION_LIQUID = CardHelper.getColor(67.0f, 16.0f, 64.0f);
+    public static final Color PERMA_POTION_HYBRID = CardHelper.getColor(164.0f, 23.0f, 157.0f);
 
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
@@ -401,7 +405,8 @@ public class BuxomMod implements
         // Remember, you can press ctrl+P inside parentheses like addPotions)
         BaseMod.addPotion(FlatteningPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, FlatteningPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
         BaseMod.addPotion(DragonMilkPotion.class, DRAGON_MILK_POTION_LIQUID, DRAGON_MILK_POTION_HYBRID, null, DragonMilkPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
-        BaseMod.addPotion(ChibiPotion.class, CHIBI_POTION_LIQUID, CHIBI_POTION_HYBRID, null, ChibiPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
+        //BaseMod.addPotion(ChibiPotion.class, CHIBI_POTION_LIQUID, CHIBI_POTION_HYBRID, null, ChibiPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
+        BaseMod.addPotion(PermaGrowthPotion.class, PERMA_POTION_LIQUID, PERMA_POTION_HYBRID, null, PermaGrowthPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
 
         logger.info("Done editing potions");
     }
@@ -672,5 +677,11 @@ public class BuxomMod implements
     public boolean receivePreMonsterTurn(AbstractMonster abstractMonster) {
         //buxomPanel.createStatusCards();
         return true;
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStart() {
+        AbstractPlayer p = AbstractDungeon.player;
+        ((TheBuxom)p).updateExposed();
     }
 }

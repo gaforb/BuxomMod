@@ -53,7 +53,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public void onInitialApplication() {
-        ((TheBuxom)owner).updateExposed(true);
+        ((TheBuxom)owner).changeState(((TheBuxom)owner).state.getCurrent(0).getAnimation().getName());
         if (!BuxomMod.inBraCapacity(owner)) {
             addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
         }
@@ -73,9 +73,6 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         if (!(BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID) >= 30)) {
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
-    }
-    public void onRemove() {
-        ((TheBuxom)owner).updateExposed(false);
     }
 
     @Override

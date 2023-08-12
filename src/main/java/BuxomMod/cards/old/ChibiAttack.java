@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.powers.CommonPower;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,7 +18,7 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
 import static BuxomMod.BuxomMod.makeCardPath;
-
+@AutoAdd.Ignore
 public class ChibiAttack extends AbstractDynamicCard {
 
     /*

@@ -70,7 +70,7 @@ public class TheBuxom extends CustomPlayer {
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
-    public static final int ORB_SLOTS = 2;
+    public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
 
@@ -175,40 +175,43 @@ public class TheBuxom extends CustomPlayer {
         AnimationState.TrackEntry e;
         switch (stateName) {
             case size1animName:
+                if (this.hasPower(ExposedPower.POWER_ID)) {
+                    stateName += "_ex";
+                }
                 loadAnimation(
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, getExposedName(size1animName), true);
+                e = this.state.setAnimation(0, stateName, true);
                 e.setTime(e.getEndTime() * MathUtils.random());
                 getSkeleton().setAttachment(boobsSlotName, "boobs1");
                 getSkeleton().setAttachment("face", "face1");
                 getSkeleton().setAttachment("chest", "chest");
-                getSkeleton().update(0.01F);
                 break;
             case size2animName:
+                if (this.hasPower(ExposedPower.POWER_ID)) {
+                    stateName += "_ex";
+                }
                 loadAnimation(
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, getExposedName(size2animName), true);
+                e = this.state.setAnimation(0, stateName, true);
                 e.setTime(e.getEndTime() * MathUtils.random());
                 getSkeleton().setAttachment(boobsSlotName, "boobs2");
                 getSkeleton().setAttachment("face", "face2");
                 getSkeleton().setAttachment("chest", "chest");
-                getSkeleton().update(0.01F);
                 break;
             case size3animName:
                 loadAnimation(
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, size3animName, true);
+                e = this.state.setAnimation(0, stateName, true);
                 e.setTime(e.getEndTime() * MathUtils.random());
                 getSkeleton().setAttachment(boobsSlotName, null);
                 getSkeleton().setAttachment("face", "face2");
                 getSkeleton().setAttachment("chest", "chest_ex");
-                getSkeleton().update(0.01F);
                 break;
         }
     }
@@ -220,12 +223,14 @@ public class TheBuxom extends CustomPlayer {
         return anim;
     }
 
-    public void updateExposed(Boolean expose) {
+    public void updateExposed() {
         String currAnimName = this.state.getCurrent(0).getAnimation().getName();
-        if (expose == true && !currAnimName.contains("_ex")) {
+        if (this.hasPower(ExposedPower.POWER_ID) && !currAnimName.contains("_ex")) {
             changeState(currAnimName + "_ex");
-        } else if (expose == false && currAnimName.contains("_ex")) {
-            changeState(currAnimName.substring(0, currAnimName.length() - 3));
+        } else if (!this.hasPower(ExposedPower.POWER_ID) && currAnimName.contains("_ex")) {
+            String currAnimNameClothed = currAnimName.substring(0, currAnimName.length() - 3);
+            logger.info(currAnimNameClothed);
+            changeState(currAnimNameClothed);
         }
     }
 
@@ -313,7 +318,7 @@ public class TheBuxom extends CustomPlayer {
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
         updateScale(calculateScale());
-        logger.info("renderPlayerImage: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
+        //logger.info("renderPlayerImage: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
         super.renderPlayerImage(sb);
     }
     @Override
@@ -328,7 +333,7 @@ public class TheBuxom extends CustomPlayer {
         super.update();
         //buxomPanel.update(this);
         braPanel.update(this);
-        logger.info("update: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
+        //logger.info("update: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
     }
 
 

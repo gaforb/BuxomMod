@@ -41,7 +41,7 @@ public class DwarfBoobsRelic extends CustomRelic {
         flash();
         this.triggered = false;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, this.counter), this.counter));
-        addToBot(new BraSelectAction());
+        //addToBot(new BraSelectAction());
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

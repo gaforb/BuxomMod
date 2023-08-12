@@ -6,7 +6,7 @@ import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -19,36 +19,40 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class BouncyBlock extends AbstractDynamicCard {
+public class ChaosDunk extends AbstractDynamicCard {
+
+    /*
+     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
+     *
+     * Big Slap Deal 10(15)) damage.
+     */
 
     // TEXT DECLARATION
 
-    public static final String ID = BuxomMod.makeID(BouncyBlock.class.getSimpleName());
-    public static final String IMG = makeCardPath("Bouncy.png");
+    public static final String ID = BuxomMod.makeID(ChaosDunk.class.getSimpleName());
+    public static final String IMG = makeCardPath("BasketballAttack.png");
 
     // /TEXT DECLARATION/
 
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 2;
-    private static final int BLOCK = 12;
-    private static final int MAGIC = 4;
-    private static final int UPGRADE_PLUS_MAGIC = 2;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
+    private static final int COST = 1;
+    private static final int DAMAGE = 4;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     // /STAT DECLARATION/
 
 
-    public BouncyBlock() {
+    public ChaosDunk() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = BLOCK;
-        magicNumber = baseMagicNumber = MAGIC;
+        this.isMultiDamage = true;
+        baseDamage = DAMAGE;
     }
 
     /*public void applyPowers() {
@@ -87,10 +91,12 @@ public class BouncyBlock extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, block));
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         CardGroup statusCardsHand = p.hand.getCardsOfType(CardType.STATUS);
         for (AbstractCard card : statusCardsHand.group) {
-            addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber)));
+            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
+                    AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }
 
@@ -99,8 +105,7 @@ public class BouncyBlock extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }
     }

@@ -1,6 +1,7 @@
 package BuxomMod.cards.old;
 
 import BuxomMod.cards.AbstractDynamicCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 import static BuxomMod.BuxomMod.payMilkCost;
-
+@AutoAdd.Ignore
 public class ChibiAttraction extends AbstractDynamicCard {
 
     /*

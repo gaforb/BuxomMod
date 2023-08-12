@@ -85,5 +85,13 @@
       "expose"
     ],
     "DESCRIPTION": "Can't gain block. Deal #b3% bonus damage for each #yBuxom stack you have. Will not decay if your #yBuxom exceeds #b20."
+  },
+  {
+    "PROPER_NAME": "Vigor",
+    "NAMES": [
+      "Vigor",
+      "vigor"
+    ],
+    "DESCRIPTION": "Increases the damage of the next #yAttack played."
   }
 ]

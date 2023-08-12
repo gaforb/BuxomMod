@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.powers.CommonPower;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import BuxomMod.BuxomMod;
 
 import static BuxomMod.BuxomMod.makeCardPath;
-
+@AutoAdd.Ignore
 public class ChibiBlock extends AbstractDynamicCard {
 
     /*

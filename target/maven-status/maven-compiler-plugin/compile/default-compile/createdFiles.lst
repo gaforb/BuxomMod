@@ -39,6 +39,7 @@ BuxomMod\orbs\DefenseChibi.class
 BuxomMod\cards\ExposureStatus.class
 BuxomMod\cards\Omegabsorption.class
 BuxomMod\cards\OmegaBurst.class
+BuxomMod\potions\PermaGrowthPotion.class
 BuxomMod\cards\OmegaFumes.class
 BuxomMod\cards\SteadyLactation.class
 BuxomMod\util\TextureLoader.class
@@ -55,6 +56,7 @@ BuxomMod\cards\OmegaDeflection.class
 BuxomMod\cards\ChibiSummon.class
 BuxomMod\cards\MCupBra.class
 BuxomMod\cards\old\ChibiAttraction.class
+BuxomMod\cards\ChaosDunk.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\cards\ButtonHazard.class
 BuxomMod\ui\BuxomPanel.class

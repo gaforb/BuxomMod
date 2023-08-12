@@ -22,7 +22,8 @@
   },
   "BuxomMod:Chibis": {
     "NAME": "Chibis!",
-    "DESCRIPTION": "Gain !M! Orb slot(s). Channel 1 BuxomMod:Defensive Chibi."
+    "DESCRIPTION": "Randomly gain 4 buxommod:Milk, 1 Strength, or 1 Dexterity X times.",
+    "UPGRADE_DESCRIPTION": "Randomly gain 4 buxommod:Milk, 1 Strength, or 1 Dexterity X+1 times."
   },
   "BuxomMod:OmegaForce": {
     "NAME": "Omega Force",
@@ -67,7 +68,7 @@
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 10-20. NL Whenever you gain buxommod:Buxom, gain !M! Vigor."
+    "DESCRIPTION": "BuxomMod:Capacity 10-20. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Vigor."
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
@@ -91,7 +92,7 @@
   },
   "BuxomMod:LeanneAssist": {
     "NAME": "Leanne Assist",
-    "DESCRIPTION": "Lose 1 BuxomMod:Buxom. NL Deal !D! damage to all enemies. NL BuxomMod:Milking 1: Deal !D! damage to all enemies again."
+    "DESCRIPTION": "Lose 1 BuxomMod:Buxom. NL Deal !D! damage to ALL enemies. NL BuxomMod:Milking 1: Deal !D! damage to ALL enemies again."
   },
   "BuxomMod:Relief": {
     "NAME": "Relief",
@@ -148,7 +149,7 @@
     "NAME": "Broken T-Cup Bra",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, add 2 *Afterswell to your draw pile."
   },
-  "BuxomMod:ChibiAttack": {
+  "BuxomMod:ChibiOneTwo": {
     "NAME": "Chibi One-Two",
     "DESCRIPTION": "Deal !D! damage. NL If buxommod:Exposed, deal half that damage twice."
   },
@@ -203,7 +204,7 @@
   },
   "BuxomMod:BouncyBlock": {
     "NAME": "Bouncy Block",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage for every Status card in your hand."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! buxommod:Vigor for every Status card in your hand."
   },
   "BuxomMod:FeelItOut": {
     "NAME": "Feel It Out",
@@ -231,7 +232,7 @@
   },
   "BuxomMod:WardrobeMalfunction": {
     "NAME": "Malfunction",
-    "DESCRIPTION": "{@@}Gain buxommod:Exposed. NL Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}buxommod:Expose. NL Draw !M! card{!M!|>1=s}."
   },
   "BuxomMod:Embarrassment": {
     "NAME": "Embarrassment",
@@ -254,6 +255,11 @@
     "NAME": "Hungry Dwarf",
     "DESCRIPTION": "Deal !D! damage. NL If Fatal, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E].",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If Fatal, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E] [E]."
-  }
+  },
+  "BuxomMod:ChaosDunk": {
+  "NAME": "Chaos Dunk!",
+  "DESCRIPTION": "Deal !D! damage to ALL enemies, and again for each *Status card in your hand.",
+  "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies, and again for each *Status card in your hand."
+}
 }
 
