@@ -83,7 +83,6 @@ public class ButtonHazard extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }

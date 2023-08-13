@@ -51,7 +51,7 @@ public static final String IMG = makeCardPath("Omegabsorption.png");// "public s
 
 // STAT DECLARATION
 
-private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
+private static final CardRarity RARITY = CardRarity.BASIC; //  Up to you, I like auto-complete on these
 private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
 private static final CardType TYPE = CardType.SKILL;       //
 public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
@@ -63,6 +63,8 @@ private static final int BLOCK = 5;    // DAMAGE = ${DAMAGE}
 private static final int UPGRADE_PLUS_BLOCK = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 private static final int MAGIC = 1;
 private static final int UPGRADE_PLUS_MAGIC = 1;
+private static final int SECOND_MAGIC = 2;
+private static final int UPGRADE_SECOND_MAGIC = 2;
 
 // /STAT DECLARATION/
 
@@ -71,7 +73,8 @@ public Omegabsorption() { // public ${NAME}() - This one and the one right under
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
-        }
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = UPGRADE_SECOND_MAGIC;
+    }
 
 /*private AbstractGameEffect buildVfx(float startX, Hitbox hb) {
     return new VfxBuilder(TextureLoader.getTexture("BuxomModResources/images/vfx/expand_effect.png"), Settings.ACTION_DUR_MED)
@@ -122,9 +125,8 @@ private AbstractGameEffect vfx(float x, float y) {
         addToBot((AbstractGameAction)new ExhaustAction(1, false));
         addToBot(new VFXAction(vfx(p.drawX, p.drawY)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new CommonPower(p, p, magicNumber), magicNumber));
+                new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
-        addToBot(new GrowAction(magicNumber));
     }
 
 
@@ -133,7 +135,6 @@ private AbstractGameEffect vfx(float x, float y) {
     public void upgrade() {
                 if (!upgraded) {
                 upgradeName();
-                upgradeBlock(UPGRADE_PLUS_BLOCK);
                 upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
                 initializeDescription();
                 }

@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -36,6 +37,7 @@ public class OmegaLibrary extends AbstractDynamicCard {
 
     private static final int COST = 0;
     private static final int MAGIC = 3;
+    private static final int SECOND_MAGIC = 3;
 
     // /STAT DECLARATION/
 
@@ -43,6 +45,7 @@ public class OmegaLibrary extends AbstractDynamicCard {
     public OmegaLibrary() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
         this.exhaust = true;
     }
 
@@ -56,9 +59,9 @@ public class OmegaLibrary extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Library(), 1));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Library(), 1, true, true));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new CommonPower(p, p, 1), 1));
+                new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
     }
 
     // Upgraded stats.

@@ -45,13 +45,13 @@ public class BrokenBraWhiteBikini extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.SPECIAL; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.STATUS;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = -2;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
+    private static final int UPGRADED_COST = -2; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
@@ -70,25 +70,19 @@ public class BrokenBraWhiteBikini extends AbstractDynamicCard {
     }
     // Actions the card should do.
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.dontTriggerOnUseCard) {
-            addToBot(new ApplyPowerAction(p, p, new MilkPower(p, p, this.magicNumber)));
-        }
+    public void use(AbstractPlayer p, AbstractMonster m) {}
+
+    public void triggerWhenDrawn() {
+        AbstractPlayer p = AbstractDungeon.player;
+        addToBot(new ApplyPowerAction(p, p, new MilkPower(p, p, this.magicNumber)));
     }
 
-    public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
-
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
-    }
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_MAGIC);
-            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

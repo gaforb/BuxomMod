@@ -7,9 +7,12 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -25,6 +28,8 @@ public class OmegaBeatdown extends AbstractDynamicCard {
 
     public static final String ID = BuxomMod.makeID(OmegaBeatdown.class.getSimpleName());
     public static final String IMG = makeCardPath("Beatdown.png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -36,7 +41,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 2;
+    private static final int COST = -1;
     private static final int DAMAGE = 3;
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
@@ -86,27 +91,29 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int effect = EnergyPanel.totalCount;
+        if (this.energyOnUse != -1) {
+            effect = this.energyOnUse;
+        }
         int b = BuxomMod.getPwrAmt(p, CommonPower.POWER_ID);
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, b),
-                        AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         if (this.upgraded) {
+            effect++;
+        }
+        for (int i = 0; i < effect; i++) {
             addToBot(new DamageAction(m, new DamageInfo(p, b),
                     AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
-        for (int i = 0; i < AbstractDungeon.player.orbs.size(); i++) {
-            if (!(AbstractDungeon.player.orbs.get(i) instanceof EmptyOrbSlot)) {
-                addToBot(new DamageAction(m, new DamageInfo(p, b),
-                        AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            }
+        if (!this.freeToPlayOnce) {
+            p.energy.use(EnergyPanel.totalCount);
         }
     }
-    //Upgraded stats.
+
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

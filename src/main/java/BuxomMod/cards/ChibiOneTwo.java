@@ -6,6 +6,7 @@ import BuxomMod.orbs.AttackChibi;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.ExposedPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,6 +17,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -45,8 +48,9 @@ public class ChibiOneTwo extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DAMAGE = 4;
+    private static final int DAMAGE = 5;
+    private static final int MAGIC = 5;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
 
 
     // /STAT DECLARATION/
@@ -55,24 +59,21 @@ public class ChibiOneTwo extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (p.hasPower(ExposedPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, damage/2, damageTypeForTurn),
-                            AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, damage/2, damageTypeForTurn),
-                            AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-                            AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber), magicNumber));
         }
     }
 

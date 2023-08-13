@@ -47,9 +47,8 @@ public class ChibiOffering extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 2;
-    private static final int MAGIC = 6;
+    private static final int MAGIC = 9;
     private static final int UPGRADE_PLUS_MAGIC = 3;
-    private static final int MILKCOST = 2;
 
 
     // /STAT DECLARATION/

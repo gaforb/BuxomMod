@@ -46,6 +46,8 @@ public class Surprise extends AbstractDynamicCard {
     public Surprise() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        this.retain = true;
+        this.exhaust = true;
     }
 
     @Override

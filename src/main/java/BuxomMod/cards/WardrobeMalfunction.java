@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -36,6 +37,8 @@ public class WardrobeMalfunction extends AbstractDynamicCard {
     private static final int COST = 0;
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int SECOND_MAGIC = 5;
+    private static final int UPGRADE_SECOND_MAGIC = 3;
 
     // /STAT DECLARATION/
 
@@ -43,11 +46,13 @@ public class WardrobeMalfunction extends AbstractDynamicCard {
     public WardrobeMalfunction() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_MAGIC;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
+        addToBot(new ApplyPowerAction(p, p, new VigorPower(p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         addToBot(new DrawCardAction(p, magicNumber));
     }
 
@@ -57,6 +62,7 @@ public class WardrobeMalfunction extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
             initializeDescription();
         }
     }

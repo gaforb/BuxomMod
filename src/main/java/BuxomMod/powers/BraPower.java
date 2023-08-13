@@ -53,7 +53,10 @@ public abstract class BraPower extends TwoAmountPower {
     }
     public void growToBreak() {
         int bdiff = (this.maxCapacity - getPwrAmt(this.owner, CommonPower.POWER_ID)) + 1;
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new CommonPower(this.owner, this.owner, bdiff), bdiff));
+        if (bdiff > 0) {
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new CommonPower(this.owner, this.owner, bdiff), bdiff));
+        }
+        else { BuxomMod.logger.info("buxom higher than bra capacity, no growing needed"); }
     }
     public void breakCheck() {
         if (getPwrAmt(owner, CommonPower.POWER_ID) > this.maxCapacity || buxomPanel.size > this.maxCapacity) {

@@ -61,8 +61,8 @@ public class SteadyLactation extends AbstractDynamicCard {
         AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
 
         if (b != null) {
-            if (b.amount < 6) {
-                int bdiff = 6 - b.amount;
+            if (b.amount < 11) {
+                int bdiff = 11 - b.amount;
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                         new CommonPower(p, p, bdiff), bdiff));
             }

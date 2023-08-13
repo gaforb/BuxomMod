@@ -43,7 +43,7 @@ public class Embarrassment extends AbstractDynamicCard {
     private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC = 2;
     private static final int SECOND_MAGIC = 2;
-    private static final int UPGRADE_SECOND_MAGIC = 1;
+    private static final int UPGRADE_SECOND_MAGIC = 2;
 
     // /STAT DECLARATION/
 

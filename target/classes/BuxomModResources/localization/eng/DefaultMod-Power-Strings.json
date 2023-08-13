@@ -9,15 +9,15 @@
 },
 "BuxomMod:KCupPower": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b ", "#yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
+        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b ", " #yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
 },
 "BuxomMod:KCupPower2": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b ", "#yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
+        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b ", " #yDexterity. Whenever you gain #yBuxom, gain that much #yBlock."]
 },
 "BuxomMod:MCupPower": {
         "NAME": "M-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 10-20. Whenever you gain #yBuxom, gain #b ", "#yVigor."]
+        "DESCRIPTIONS": ["#yCapacity 10-20. Whenever you gain #yBuxom, gain #b ", " #yVigor."]
 },
 "BuxomMod:ChibiPower": {
         "NAME": "Chibi",
@@ -69,7 +69,7 @@
 },
 "BuxomMod:ExposedPower": {
         "NAME": "Exposed",
-        "DESCRIPTIONS": ["Can't gain block. Deal #b3% bonus damage for each #yBuxom stack you have. Lasts #b1 turn unless your #yBuxom exceeds #b30."]
+        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock, except from #yDexterity. Deal #b3% bonus damage for each #yBuxom stack you have. Lasts #b1 turn unless your #yBuxom exceeds #b30."]
 },
 "BuxomMod:EmbarrassmentPower": {
         "NAME": "Embarrassed",
