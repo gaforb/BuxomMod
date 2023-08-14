@@ -59,7 +59,7 @@ public abstract class BraPower extends TwoAmountPower {
         else { BuxomMod.logger.info("buxom higher than bra capacity, no growing needed"); }
     }
     public void breakCheck() {
-        if (getPwrAmt(owner, CommonPower.POWER_ID) > this.maxCapacity || buxomPanel.size > this.maxCapacity) {
+        if (getPwrAmt(owner, CommonPower.POWER_ID) > this.maxCapacity) {
             this.broken();
         }
     }

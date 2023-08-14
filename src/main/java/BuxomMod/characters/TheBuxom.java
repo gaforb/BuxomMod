@@ -517,10 +517,10 @@ public class TheBuxom extends CustomPlayer {
         return TEXT[2];
     }
 
-    public static void renderBuxomPanel(SpriteBatch sb, AbstractPlayer player)
+    /*public static void renderBuxomPanel(SpriteBatch sb, AbstractPlayer player)
     {
         logger.info("panel render called");
         buxomPanel.render(sb, player);
-    }
+    }*/
 
 }

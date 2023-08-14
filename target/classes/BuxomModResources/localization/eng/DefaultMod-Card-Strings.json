@@ -151,7 +151,7 @@
   },
   "BuxomMod:ChibiOneTwo": {
     "NAME": "Chibi One-Two",
-    "DESCRIPTION": "Deal !D! damage. NL If buxommod:Exposed, deal half that damage twice."
+    "DESCRIPTION": "Deal !D! damage twice. NL If buxommod:Exposed, gain !M! Vigor."
   },
   "BuxomMod:OmegaFlare": {
     "NAME": "Omega Flare",
@@ -160,7 +160,7 @@
   },
   "BuxomMod:ChibiOffering": {
     "NAME": "Chibi Offering",
-    "DESCRIPTION": "Gain !M! buxommod:Milk. BuxomMod:Expose."
+    "DESCRIPTION": "Gain !M! buxommod:Milk. NL BuxomMod:Expose."
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
@@ -201,7 +201,7 @@
   },
   "BuxomMod:OmegaBurst": {
     "NAME": "Omega Burst",
-    "DESCRIPTION": "You can't gain *Block this turn. NL Scry 10. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card(s). NL Exhaust."
+    "DESCRIPTION": "buxommod:Expose. NL Scry 10. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card(s). NL Exhaust."
   },
   "BuxomMod:BouncyBlock": {
     "NAME": "Bouncy Block",
@@ -254,8 +254,8 @@
   },
   "BuxomMod:HungryDwarf": {
     "NAME": "Hungry Dwarf",
-    "DESCRIPTION": "Deal !D! damage. NL If Fatal, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E].",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If Fatal, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E] [E]."
+    "DESCRIPTION": "Deal !D! damage. NL If the target dies, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E].",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the target dies, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E] [E]."
   },
   "BuxomMod:ChaosDunk": {
   "NAME": "Chaos Dunk!",
