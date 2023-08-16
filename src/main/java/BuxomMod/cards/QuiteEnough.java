@@ -13,12 +13,14 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -48,7 +50,7 @@ public class QuiteEnough extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 2;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
     private static final int UPGRADE_DAMAGE = 4;
     private static final int DAMAGE = 12;
 
@@ -70,7 +72,8 @@ public class QuiteEnough extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
         new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
         AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new MakeTempCardInDrawPileAction(new AftershockStatus(), magicNumber, true, true));
+        addToBot(new MakeTempCardInDrawPileAction(new AftershockStatus(), 1, true, true));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
     }
 
     //Upgraded stats.

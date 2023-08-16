@@ -31,7 +31,7 @@ public class Flee extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 7;
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
@@ -46,7 +46,7 @@ public class Flee extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExhaustAction(magicNumber, true));
+        this.addToBot(new ExhaustAction(this.magicNumber, false, true, true));
         addToBot(new GainBlockAction(p, p, block));
         if (p.hasPower(ExposedPower.POWER_ID)) {
             addToBot(new DrawCardAction(magicNumber));

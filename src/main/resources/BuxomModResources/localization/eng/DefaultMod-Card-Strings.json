@@ -36,7 +36,7 @@
   },
   "BuxomMod:BovineForm": {
     "NAME": "Bovine Form",
-    "DESCRIPTION": "Gain 10 buxommod:Buxom. NL Gain !M! buxommod:Lactating. NL Gain !M! buxommod:Milk."
+    "DESCRIPTION": "Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL Gain !M! buxommod:Lactating. NL Gain !M! buxommod:Milk."
   },
   "BuxomMod:DefaultAttackWithVariable": {
     "NAME": "Special Strike",
@@ -60,7 +60,7 @@
   },
   "BuxomMod:Omegabsorption": {
     "NAME": "Omegabsorption",
-    "DESCRIPTION": "Exhaust a card. NL Gain !M! buxommod:Buxom. NL Draw !M! cards."
+    "DESCRIPTION": "Exhaust a card. NL Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL Draw !M! cards."
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
@@ -135,7 +135,7 @@
   },
   "BuxomMod:SwellingTight": {
     "NAME": "Swelling Tight",
-    "DESCRIPTION": "If you're within the BuxomMod:Capacity of your bra, gain 3 BuxomMod:Buxom and !M! [E]."
+    "DESCRIPTION": "If you're within the BuxomMod:Capacity of your bra, gain 3 BuxomMod:Buxom and !M! [E]. NL Exhaust."
   },
   "BuxomMod:Phew": {
     "NAME": "Phew!",
@@ -151,7 +151,7 @@
   },
   "BuxomMod:ChibiOneTwo": {
     "NAME": "Chibi One-Two",
-    "DESCRIPTION": "Deal !D! damage twice. NL If buxommod:Exposed, gain !M! Vigor."
+    "DESCRIPTION": "If buxommod:Exposed, gain !M! Strength. NL Deal !D! damage twice."
   },
   "BuxomMod:OmegaFlare": {
     "NAME": "Omega Flare",
@@ -217,7 +217,7 @@
   },
   "BuxomMod:QuiteEnough": {
     "NAME": "Quite Enough",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add !M! *Afterswell to your draw pile."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies. NL Add !M! *Afterswell to your draw pile."
   },
   "BuxomMod:ShockStatus": {
     "NAME": "Shock",
@@ -225,7 +225,7 @@
   },
   "BuxomMod:WhiteBikiniBra": {
     "NAME": "White Bikini",
-    "DESCRIPTION": "Capacity 5-15. NL Whenever you gain buxommod:Lactating, gain !M! buxommod:Buxom and gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
+    "DESCRIPTION": "Capacity 5-15. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
   },
   "BuxomMod:BrokenBraWhiteBikini": {
     "NAME": "Broken White Bikini",

@@ -42,7 +42,7 @@ public class BovineForm extends AbstractDynamicCard {
     private static final int UPGRADE_COST = 2;
 
     private static final int MAGIC = 10;
-    private static final int SECOND_MAGIC = 10;
+    private static final int SECOND_MAGIC = 15;
     private static final int UPGRADE_PLUS_MAGIC = 5;
 
     // /STAT DECLARATION/

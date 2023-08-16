@@ -62,6 +62,7 @@ private static final int UPGRADE_PLUS_MAGIC = 1;
 public SwellingTight() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
     super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     baseMagicNumber = magicNumber = MAGIC;
+    this.exhaust = true;
     }
 
 public boolean canUse(AbstractPlayer p, AbstractMonster m) {

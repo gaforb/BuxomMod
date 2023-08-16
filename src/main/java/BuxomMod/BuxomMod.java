@@ -90,9 +90,7 @@ public class BuxomMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        AddAudioSubscriber,
-        PreMonsterTurnSubscriber,
-        OnPlayerTurnStartSubscriber{
+        AddAudioSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
@@ -150,7 +148,7 @@ public class BuxomMod implements
     private static final String THE_BUXOM_PORTRAIT = "BuxomModResources/images/charSelect/DefaultCharacterPortraitBG.png";
     public static final String THE_BUXOM_SHOULDER_1 = "BuxomModResources/images/char/defaultCharacter/shoulder.png";
     public static final String THE_BUXOM_SHOULDER_2 = "BuxomModResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_BUXOM_CORPSE = "BuxomModResources/images/char/defaultCharacter/corpse.png";
+    public static final String THE_BUXOM_CORPSE = "BuxomModResources/images/char/character/corpse.png";
 
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
     public static final String BADGE_IMAGE = "BuxomModResources/images/Badge.png";
@@ -671,17 +669,5 @@ public class BuxomMod implements
         }
         BuxomMod.logger.info("Final status count is" + statusCount);
         return statusCount;
-    }
-
-
-    public boolean receivePreMonsterTurn(AbstractMonster abstractMonster) {
-        //buxomPanel.createStatusCards();
-        return true;
-    }
-
-    @Override
-    public void receiveOnPlayerTurnStart() {
-        AbstractPlayer p = AbstractDungeon.player;
-        ((TheBuxom)p).updateExposed();
     }
 }

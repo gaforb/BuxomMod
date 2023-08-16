@@ -314,6 +314,7 @@ public class TheBuxom extends CustomPlayer {
         boobN.update();
         boobF.setScale(scale);
         boobF.update();
+        updateExposed();
     }
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
