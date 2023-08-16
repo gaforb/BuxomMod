@@ -42,9 +42,7 @@ public class HungryDwarfAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         if (this.duration == 0.1F && this.target != null) {
             addToBot(new VFXAction(new BiteEffect(target.hb.cX, target.hb.cY - 40.0F * Settings.scale, Color.SCARLET.cpy()), 0.3F));
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAction(target, info,
-                            AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            this.target.damage(this.info);
             BuxomMod.logger.info("target.isDying = " + target.isDying);
             BuxomMod.logger.info("target.currentHealth = " + target.currentHealth);
             BuxomMod.logger.info("target.halfDead = " + target.halfDead);

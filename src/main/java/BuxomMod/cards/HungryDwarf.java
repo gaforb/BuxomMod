@@ -6,6 +6,7 @@ import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.MilkPower;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.DamageCallbackAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -66,7 +67,7 @@ public class HungryDwarf extends AbstractDynamicCard {
 
 
     // Actions the card should do.
-    @Override
+    /*@Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         if (m != null) {
             addToBot(new HungryDwarfAction(m, new DamageInfo(p, damage, damageTypeForTurn), magicNumber, BUXOM_GAIN, defaultSecondMagicNumber));
@@ -80,8 +81,25 @@ public class HungryDwarf extends AbstractDynamicCard {
             addToBot(new ApplyPowerAction(p, p, new MilkPower(p, p, magicNumber)));
             addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, BUXOM_GAIN)));
             addToBot(new GainEnergyAction(defaultSecondMagicNumber));
-        } else { BuxomMod.logger.info("target didn't die");}*/
+        } else { BuxomMod.logger.info("target didn't die");}
+    }*/
+
+    public void use(final AbstractPlayer p, final AbstractMonster m) {
+        if (m != null) {
+            addToBot(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY - 40.0F * Settings.scale, Color.SCARLET.cpy()), 0.3F));
+            addToBot(new DamageCallbackAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE,
+                    unblockedDamage -> {
+                        if ((m.isDying || m.currentHealth <= 0) && !m.halfDead) {
+                            BuxomMod.logger.info("target died");
+                            addToBot(new ApplyPowerAction(p, p, new MilkPower(p, p, magicNumber)));
+                            addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, BUXOM_GAIN)));
+                            addToBot(new GainEnergyAction(defaultSecondMagicNumber));
+                        }
+                    }));
+        }
     }
+
+
 
     //Upgraded stats.
     @Override
