@@ -34,6 +34,7 @@ BuxomMod\cards\OmegaArc.class
 BuxomMod\patches\DefaultInsertPatch.class
 BuxomMod\powers\ButtonHazardPower.class
 BuxomMod\actions\ChannelRandomChibiAction.class
+BuxomMod\actions\HungryDwarfAction.class
 BuxomMod\powers\ShockPower.class
 BuxomMod\orbs\DefenseChibi.class
 BuxomMod\cards\ExposureStatus.class
