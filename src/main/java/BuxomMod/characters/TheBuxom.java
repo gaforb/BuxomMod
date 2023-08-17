@@ -88,7 +88,6 @@ public class TheBuxom extends CustomPlayer {
     public static final String size2animName = "idle2";
     public static final String size3animName = "idle3";
     public static final String boobsSlotName = "boobs";
-
     // =============== /STRINGS/ =================
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============

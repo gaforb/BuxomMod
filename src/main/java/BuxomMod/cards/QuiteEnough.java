@@ -69,11 +69,11 @@ public class QuiteEnough extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-        new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
-        AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        addToBot(new MakeTempCardInDrawPileAction(new AftershockStatus(), 1, true, true));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            addToBot(new MakeTempCardInDrawPileAction(new AftershockStatus(), 1, true, true));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber));
+        }
     }
 
     //Upgraded stats.

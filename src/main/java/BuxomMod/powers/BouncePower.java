@@ -53,8 +53,8 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BigBounceStatus(), 1));
             }
         } else {
-            while (this.amount >= 7) {
-                this.amount -= 7;
+            while (this.amount >= 8) {
+                this.amount -= 8;
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BuxomStatus(), 1));
             }
         }

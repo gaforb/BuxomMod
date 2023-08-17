@@ -27,6 +27,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/Exposed84.png");
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/Exposed32.png");
     private boolean justApplied = false;
+    public static float MULTIPLIER = 0.03F;
 
     public ExposedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -43,24 +44,20 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
-        BuxomMod.logger.info(DESCRIPTIONS);
     }
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
-        BuxomMod.logger.info(DESCRIPTIONS);
+        description = DESCRIPTIONS[0] + (MULTIPLIER * 100) + DESCRIPTIONS[1] + Math.round((100 * (MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID)))) + DESCRIPTIONS[2];
     }
 
     public void onInitialApplication() {
         ((TheBuxom)owner).changeState(((TheBuxom)owner).state.getCurrent(0).getAnimation().getName());
-        if (!BuxomMod.inBraCapacity(owner)) {
-            addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
-        }
+        addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage * (1F + (0.03F * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID))) : damage;
+        return type == DamageInfo.DamageType.NORMAL ? damage * (1F + (MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID))) : damage;
     }
 
     public float modifyBlock(float blockAmount) {
@@ -73,6 +70,12 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         if (!(BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID) >= 30)) {
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
+    }
+
+    @Override
+    public void update(int slot) {
+        super.update(slot);
+        updateDescription();
     }
 
     @Override

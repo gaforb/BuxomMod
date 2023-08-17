@@ -69,7 +69,7 @@
 },
 "BuxomMod:ExposedPower": {
         "NAME": "Exposed",
-        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock, except from #yDexterity. Deal #b3% bonus damage for each #yBuxom stack you have. Lasts #b1 turn unless your #yBuxom exceeds #b30."]
+        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock, except from #yDexterity. Deal #b","% bonus damage for each #yBuxom stack you have (Currently #b", "% ). Lasts #b1 turn unless your #yBuxom exceeds #b30."]
 },
 "BuxomMod:EmbarrassmentPower": {
         "NAME": "Embarrassed",

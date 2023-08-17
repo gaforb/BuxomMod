@@ -58,6 +58,9 @@ public class NakedPower extends AbstractPower implements CloneablePowerInterface
             addToBot(new DrawCardAction(this.amount));
         }
     }
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
 
     public void atEndOfRound() {
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
