@@ -53,7 +53,7 @@
 },
 "BuxomMod:BigBouncePower": {
         "NAME": "Big Bounce",
-        "DESCRIPTIONS": ["Generate a #yBounce with every #b7 Bounce stacks instead, and change them to #yBig #yBounces."]
+        "DESCRIPTIONS": ["Generate a #yBounce with every #b10 Bounce stacks instead, and change them to #yBig #yBounces."]
 },
 "BuxomMod:NakedPower": {
         "NAME": "Naked",
