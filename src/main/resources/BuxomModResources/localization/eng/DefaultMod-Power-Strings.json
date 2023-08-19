@@ -78,5 +78,9 @@
 "BuxomMod:SurprisePower": {
         "NAME": "Surprise!",
         "DESCRIPTIONS": ["#yExpose at the start of your next turn."]
+},
+"BuxomMod:SmotherPower": {
+        "NAME": "Smother",
+        "DESCRIPTIONS": ["Takes #b", " damage whenever you draw a card this turn."]
 }
 }

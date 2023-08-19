@@ -1,6 +1,7 @@
 BuxomMod\BuxomManager.class
 BuxomMod\cards\BovineForm.class
 BuxomMod\cards\ToplessStatus.class
+BuxomMod\powers\SmotherPower$Trigger.class
 BuxomMod\actions\GrowAction.class
 BuxomMod\cards\DefaultCommonAttack.class
 BuxomMod\powers\CommonPower.class
@@ -45,6 +46,7 @@ BuxomMod\cards\OmegaFumes.class
 BuxomMod\cards\SteadyLactation.class
 BuxomMod\util\TextureLoader.class
 BuxomMod\cards\ChibiBlock.class
+BuxomMod\cards\Smother.class
 BuxomMod\ui\BraPanel.class
 BuxomMod\powers\RarePower.class
 BuxomMod\cards\BouncyBlock.class
@@ -75,6 +77,7 @@ BuxomMod\cards\ExpansiveWall.class
 BuxomMod\relics\JCupRelic.class
 BuxomMod\cards\ShockStatus.class
 BuxomMod\actions\CreateBuxomStatusAction.class
+BuxomMod\powers\SmotherPower.class
 BuxomMod\cards\BigBounceStatus.class
 BuxomMod\potions\FlatteningPotion.class
 BuxomMod\cards\Surprise.class

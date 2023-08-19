@@ -164,8 +164,8 @@
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
-    "DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain up to 6 BuxomMod:Buxom. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
-    "UPGRADE_DESCRIPTION": "If you have less than 6 BuxomMod:Buxom, gain BuxomMod:Buxom up to 6. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk."
+    "DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
+    "UPGRADE_DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk."
   },
   "BuxomMod:Paizuri": {
     "NAME": "Paizuri",
@@ -258,9 +258,13 @@
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the target dies, gain 5 buxommod:Buxom, !M! buxommod:Milk, and [E] [E] [E]."
   },
   "BuxomMod:ChaosDunk": {
-  "NAME": "Chaos Dunk!",
-  "DESCRIPTION": "Deal !D! damage to ALL enemies, and again for each *Status card in your hand.",
-  "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies, and again for each *Status card in your hand."
-}
+    "NAME": "Chaos Dunk!",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies, and again for each *Status card in your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies, and again for each *Status card in your hand."
+  },
+  "BuxomMod:Smother": {
+    "NAME": "Smother",
+    "DESCRIPTION": "Deal !D! damage. Whenever you draw a card this turn, the enemy loses !M! HP."
+  }
 }
 
