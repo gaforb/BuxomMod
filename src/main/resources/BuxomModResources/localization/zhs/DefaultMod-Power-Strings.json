@@ -1,0 +1,86 @@
+{
+"BuxomMod:CommonPower": {
+        "NAME": "罩杯",
+        "DESCRIPTIONS": ["随胸部尺寸增加. 每回合产生相应的乳摇。如果你的 #y罩杯 超过 #b20 ， 获得 #y暴露 。"]
+},
+"BuxomMod:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["在你的回合开始时触碰 #b", " 个敌人。" ]
+},
+"BuxomMod:KCupPower": {
+        "NAME": "K罩杯文胸",
+        "DESCRIPTIONS": ["#y罩杯尺码 0-10。 获得 #b ", "  点 #y敏捷. 每当你获得 #y罩杯 ，获得相同数量的格挡。"]
+},
+"BuxomMod:KCupPower2": {
+        "NAME": "K罩杯文胸",
+        "DESCRIPTIONS": ["#y罩杯尺码 0-10。 获得 #b ", "  点 #y敏捷. 每当你获得 #y罩杯 ，获得相同数量的格挡。"]
+},
+"BuxomMod:MCupPower": {
+        "NAME": "M罩杯文胸",
+        "DESCRIPTIONS": ["#y罩杯尺码 10-20。 每当你获得 #y罩杯 ，获得 #b ", " 点 #y活力 。"]
+},
+"BuxomMod:ChibiPower": {
+        "NAME": "小妖精",
+        "DESCRIPTIONS": ["每当你使用一张技能，随机获得等同于其费用的效果: NL 获得罩杯，获得小妖精，对一名敌人造成等同于你的小妖精数量的伤害。"]
+},
+"BuxomMod:ButtonHazardPower": {
+        "NAME": "纽扣威胁",
+        "DESCRIPTIONS": ["每当你获得罩杯时，对随机一名敌人造成 #b", " 点伤害。"]
+},
+"BuxomMod:ReliefPower": {
+        "NAME": "“乳释重负”",
+        "DESCRIPTIONS": ["每当你消耗一张牌时获得 #b", " 点格挡。"]
+},
+"BuxomMod:MeasurementPower": {
+        "NAME": "测量时间",
+        "DESCRIPTIONS": ["在你的回合结束时，获得 #b", " 点格挡。 NL 每当你的 #y罩杯 增加时，减少 #b4 点。"]
+},
+"BuxomMod:ShockPower": {
+        "NAME": "欧米伽电击",
+        "DESCRIPTIONS": ["在你的回合结束时，如果你手牌中有状态牌，对一个随机敌人造成等同于你的 #y罩杯 的伤害。"]
+},
+"BuxomMod:TCupPower": {
+        "NAME": "T罩杯文胸",
+        "DESCRIPTIONS": ["#罩杯尺码 20-30。 NL 每当你的 #y罩杯 增加时，获得 #b", " 点荆棘。"]
+},
+"BuxomMod:MilkPower": {
+        "NAME": "母乳",
+        "DESCRIPTIONS": ["在你的回合结束时转化为 #y临时生命 。 NL 可以被 #b小妖精 和卡牌来触发效果。"]
+},
+"BuxomMod:LactatingPower": {
+        "NAME": "泌乳",
+        "DESCRIPTIONS": ["在你的回合开始时获得 #b", "点 #y母乳。 每回合减少 #b2 。"]
+},
+"BuxomMod:BigBouncePower": {
+        "NAME": "乳体不稳定",
+        "DESCRIPTIONS": ["每当获得 #b10 层 #y乳摇 时, 将其转换为 #y乳体不稳定。"]
+},
+"BuxomMod:NakedPower": {
+        "NAME": "裸体",
+        "DESCRIPTIONS": ["无法获得格挡。每当获取 #y罩杯 时, 抽 #b", "张牌。"]
+},
+"BuxomMod:BouncePower": {
+        "NAME": "乳摇",
+        "DESCRIPTIONS": ["每8层乳摇, 生成一张 #y乳摇 "]
+},
+"BuxomMod:WhiteBikiniCupPower": {
+        "NAME": "白色比基尼",
+        "DESCRIPTIONS": ["罩杯尺码 5-15。 每当你获得 #y沁乳 时， 获得 #b", " 点 #y罩杯 和 #y母乳 。在你的回合结束时，获得 #b1 层 #y沁乳 。"]
+		},
+"BuxomMod:ExposedPower": {
+        "NAME": "暴露",
+        "DESCRIPTIONS": ["失去所有 #y格挡 无法获得 #y格挡 ，但从 #y 敏捷 获得的除外。每拥有一层 #y罩杯 ，你的攻击额外造成 #b","% 的伤害(当前 #b", "% )。该效果会持续一回合，但当你的 #y罩杯 超过 #y30 层时， #y暴露 的效果会持续保留。"]
+},
+"BuxomMod:EmbarrassmentPower": {
+        "NAME": "羞耻",
+        "DESCRIPTIONS": ["每当你 #y暴露 时, 获得 #y力量 。"]
+},
+"BuxomMod:SurprisePower": {
+        "NAME": "惊喜！",
+        "DESCRIPTIONS": ["在你的下个回合开始时 #y暴露 。"]
+},
+"BuxomMod:SmotherPower": {
+        "NAME": "窒息",
+        "DESCRIPTIONS": ["每当你在本回合抽牌时，都会受到 #b", " 伤害."]
+}
+}

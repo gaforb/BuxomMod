@@ -1,0 +1,18 @@
+{
+"BuxomMod:FlatteningPotion": {
+        "NAME": "钢板药水",
+        "DESCRIPTIONS": ["将你的罩杯变成 #b1 。"]
+},
+"BuxomMod:DragonMilkPotion": {
+        "NAME": "龙奶",
+        "DESCRIPTIONS": ["获得 #b", " 层 #y沁乳 。"]
+},
+"BuxomMod:ChibiPotion": {
+        "NAME": "小妖精召唤瓶",
+        "DESCRIPTIONS": ["召唤 #b", " 只随机的小妖精。"]
+		},
+"BuxomMod:PermaGrowthPotion": {
+        "NAME": "丰胸药水",
+        "DESCRIPTIONS": ["将你的初始 #y罩杯 增加 #b2 。"]
+}
+}

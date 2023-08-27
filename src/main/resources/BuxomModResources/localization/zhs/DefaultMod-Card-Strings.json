@@ -1,0 +1,270 @@
+{
+  "BuxomMod:DefaultCommonAttack": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "BuxomMod:DefaultCommonSkill": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "BuxomMod:PopPopPop": {
+    "NAME": "啪..啪...啪！",
+    "DESCRIPTION": "获得 1 罩杯 !M! 次。 NL 抽 !M! 张牌.",
+    "UPGRADE_DESCRIPTION": "获得 1 罩杯 !M! 次。 NL 抽 !M! 张牌。"
+  },
+  "BuxomMod:BouncyExercise": {
+    "NAME": "练习“球技”",
+    "DESCRIPTION": "造成 !D! 伤害， 造成等于你 buxommod:罩杯 的伤害。 失去1 buxommod:罩杯 。"
+  },
+  "BuxomMod:ExpansiveWall": {
+    "NAME": "“安全气囊”",
+    "DESCRIPTION": "获得 !M! buxommod:罩杯 。 NL 获得 !B! 点 格挡 。"
+  },
+  "BuxomMod:Chibis": {
+    "NAME": "帮帮我!",
+    "DESCRIPTION": "随机获得 4 buxommod:泌乳 ， 2点力量或1点敏捷X次。",
+    "UPGRADE_DESCRIPTION": "随机获得 4 buxommod:泌乳 ， 2点力量或1点敏捷X+1次。"
+  },
+  "BuxomMod:OmegaForce": {
+    "NAME": "欧米伽的力量",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 消耗 手中所有状态牌，每张牌获得1点 力量 。"
+  },
+  "BuxomMod:HeavyLactation": {
+    "NAME": "超级泌乳",
+    "DESCRIPTION": "获得等同于你 buxommod:罩杯 的 buxommod:母乳 。 回复相当于你 buxommod:罩杯 一半的生命。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留。 获得等同于你 buxommod:罩杯 的 buxommod:母乳 。 回复相当于你 buxommod:罩杯 一半的生命。 NL 消耗 。"
+  },
+  "BuxomMod:BovineForm": {
+    "NAME": "魔乳化",
+    "DESCRIPTION": "获得 !BuxomMod:SecondMagic! buxommod:罩杯 。 NL 获得 !M! buxommod:泌乳 。 NL 获得 !M! buxommod:母乳 。"
+  },
+  "BuxomMod:DefaultAttackWithVariable": {
+    "NAME": "特殊打击",
+    "DESCRIPTION": "造成 !D! 点伤害 [E] 次。 NL (造成 !BuxomMod:ENERGY_DAMAGE! 总数的伤害。)"
+  },
+  "BuxomMod:OmegaFumes": {
+    "NAME": "欧米伽烟雾",
+    "DESCRIPTION": "对所有敌人施加 !M! 层 虚弱 和 !BuxomMod:SecondMagic! 层 中毒 。 NL 在你的抽牌堆中加入 2 张 *余震 。 NL 消耗 。"
+  },
+  "BuxomMod:OrbSkill": {
+    "NAME": "召唤小妖精",
+    "DESCRIPTION": "召唤 1 默认小妖精。"
+  },
+  "BuxomMod:BuxomStatus": {
+    "NAME": "乳摇",
+    "DESCRIPTION": "不能被打出 。 NL 虚无 。"
+  },
+  "BuxomMod:ExposureStatus": {
+    "NAME": "暴露",
+    "DESCRIPTION": "不能被打出。 NL 虚无 。 NL 在你的回合结束时，获得 1 层易伤 。"
+  },
+  "BuxomMod:Omegabsorption": {
+    "NAME": "欧米伽吸收",
+    "DESCRIPTION": "消耗 一张手牌。 NL 获得 !BuxomMod:SecondMagic! buxommod:罩杯 。 NL 抽 !M! 张牌。"
+  },
+  "BuxomMod:KCupBra": {
+    "NAME": "K罩杯文胸",
+    "DESCRIPTION": " buxommod:罩杯尺码 0-10。 NL 获得 !M! 点 敏捷 。每当你获得 buxommod:罩杯 时，获得对应的 格挡 。"
+  },
+  "BuxomMod:MCupBra": {
+    "NAME": "M罩杯文胸",
+    "DESCRIPTION": " buxommod:罩杯尺码 10-20。 NL 每当你获得 buxommod:罩杯 时，获得 !M! 点 活力 。"
+  },
+  "BuxomMod:BrokenBraK": {
+    "NAME": "破损文胸 (K)",
+    "DESCRIPTION": "不能被打出 。 NL 当这张牌被 消耗 时，获得 !M! 点 敏捷 。"
+  },
+  "BuxomMod:BrokenBraM": {
+    "NAME": "破损文胸 (M)",
+    "DESCRIPTION": "不能被打出 。 NL 在你的回合结束时，将 1 张 *乳摇 加入你的抽牌堆。当这张牌被 消耗 时，获得 !M! 点 力量 "
+  },
+  "BuxomMod:ChibiSummon": {
+    "NAME": "小妖精召唤",
+    "DESCRIPTION": "失去2点 buxommod:罩杯 。 NL 获得 !B! 点 格挡 ， 并在下一回合再次获得 !B! 点 格挡 。"
+  },
+  "BuxomMod:ButtonPop": {
+    "NAME": "纽扣爆炸",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 点 buxommod:罩杯 。 NL 给予目标 !M! 层 虚弱 。"
+  },
+  "BuxomMod:ButtonHazard": {
+    "NAME": "纽扣威胁",
+    "DESCRIPTION": "每当你获得 buxommod:罩杯 时，对一个随机敌人造成 !M! 点伤害。 NL buxommod:挤奶 2 ：额外造成 !BuxomMod:SecondMagic! 点伤害。"
+  },
+  "BuxomMod:LeanneAssist": {
+    "NAME": "莉安援助",
+    "DESCRIPTION": "失去 1 点 buxommod:罩杯 。 NL 对所有敌人造成 !D! 点伤害。 NL buxommod:挤奶 1：再次对所有敌人造成 !D! 点伤害。"
+  },
+  "BuxomMod:Relief": {
+    "NAME": "“乳释重负”",
+    "DESCRIPTION": "每当你 消耗 一张牌，获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "每当你 消耗 一张牌，获得 !M! 点 格挡 。"
+  },
+  "BuxomMod:ToplessStatus": {
+    "NAME": "全裸",
+    "DESCRIPTION": "不能被打出 。 NL 当此牌被 消耗 时，每回合额外抽取 !M! 张牌。"
+  },
+  "BuxomMod:AftershockStatus": {
+    "NAME": "余震",
+    "DESCRIPTION": "不能被打出 。 NL 虚无 。 NL 在你的回合结束时，获得 1 点 buxommod:罩杯 。"
+  },
+  "BuxomMod:Library": {
+    "NAME": "图书馆",
+    "DESCRIPTION": "抽取 !M! 张牌。 NL 获得 !B! 点 格挡 。 NL 在你的弃牌堆中加入 *欧米伽图书馆 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "抽取 !M! 张牌。 NL 获得 !B! 点 格挡 。 NL 在你的弃牌堆中加入 *欧米伽图书馆 。 NL 消耗 。"
+  },
+  "BuxomMod:OmegaLibrary": {
+    "NAME": "欧米伽图书馆",
+    "DESCRIPTION": "抽取 !M! 张牌。 NL 获得 !BuxomMod:SecondMagic! 点罩杯. NL 将 *图书馆 加入你的弃牌堆 NL 消耗 。"
+  },
+  "BuxomMod:MeasurementTime": {
+    "NAME": "测量时间",
+    "DESCRIPTION": "在你的回合结束时获得 !M! 点 格挡 。 NL 每当你的 buxommod:罩杯 增加时，获得的 格挡 减少。"
+  },
+  "BuxomMod:OmegaArc": {
+    "NAME": "欧米伽弧光",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 如果你的 buxommod:罩杯 少于 10，对所有敌人造成伤害。"
+  },
+  "BuxomMod:OmegaDeflection": {
+    "NAME": "欧米伽偏转",
+    "DESCRIPTION": "获得 !M! 层虚弱。 NL 在你的抽牌堆中加入 2 张 *余震 。 NL 消耗 。"
+  },
+  "BuxomMod:OmegaShock": {
+    "NAME": "欧米伽电击",
+    "DESCRIPTION": "在你的抽牌堆中加入 !M! 张电击，伤害加成等同于你的罩杯。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "在你的抽牌堆中加入 !M! 张电击，伤害加成等同于你的罩杯。 NL 升级它们。 NL 消耗 。"
+  },
+  "BuxomMod:SwellingTight": {
+    "NAME": "膨胀的束缚",
+    "DESCRIPTION": "如果你在文胸的 buxommod:罩杯尺码 范围内，获得 3 点 buxommod:罩杯 和 !M! 能量。 消耗 。"
+  },
+  "BuxomMod:Phew": {
+    "NAME": "呼，终于解脱",
+    "DESCRIPTION": "失去 !M! 点 buxommod:罩杯 。 NL 获得 !B! 点 格挡 。"
+  },
+  "BuxomMod:TCupBra": {
+    "NAME": "T罩杯文胸",
+    "DESCRIPTION": " buxommod:罩杯尺码 20-30。 NL 每当你的 buxommod:罩杯 增加时，获得 [E] 和 !M! 敏捷 。"
+  },
+  "BuxomMod:BrokenBraT": {
+    "NAME": "破损的T罩杯文胸",
+    "DESCRIPTION": "不能被打出。 NL 在你的回合结束时， 将2 *余震 加入你的抽牌堆。"
+  },
+  "BuxomMod:ChibiOneTwo": {
+    "NAME": "小妖精连击",
+    "DESCRIPTION": "如果 buxommod:暴露 ， 获得 !M! 点力量。 NL 造成 !D! 点伤害两次。"
+  },
+  "BuxomMod:OmegaFlare": {
+    "NAME": "欧米伽耀斑",
+    "DESCRIPTION": "如果你在文胸的 buxommod:罩杯 容量范围内，获得 !M! 点 力量 。 NL 在你的抽牌堆中洗入 !BuxomMod:SecondMagic! 张 *余震 。",
+    "CANT_USE_MESSAGE": "我的文胸不在罩杯尺码范围内！"
+  },
+  "BuxomMod:ChibiOffering": {
+    "NAME": "小妖精侍奉",
+    "DESCRIPTION": " 获得 !M! 层 buxommod:母乳 。 NL buxommod:暴露 。"
+  },
+  "BuxomMod:SteadyLactation": {
+    "NAME": "稳定泌乳",
+    "DESCRIPTION": "如果你的 buxommod:罩杯 少于 6，获得 buxommod:罩杯 ，数量最多为 6。 NL 获得 !M! 点 buxommod:泌乳 。 NL 获得 !M! 点 buxommod:母乳 。",
+    "UPGRADE_DESCRIPTION": "如果你的 buxommod:罩杯 少于 6，获得 buxommod:罩杯 ，数量最多为 6。 NL 获得 !M! 点 buxommod:泌乳 。 NL 获得 !M! 点 buxommod:母乳 。"
+  },
+  "BuxomMod:Paizuri": {
+    "NAME": "乳交",
+    "DESCRIPTION": "如果敌人的意图为攻击，给予 !M! 层 虚弱 并抽取 !M! 张牌。 NL buxommod:挤奶 2：同时给予 !M! 层 易伤 。"
+  },
+  "BuxomMod:OmegaBeatdown": {
+    "NAME": "欧米伽欧拉",
+    "DESCRIPTION": "造成等同于你 buxommod:罩杯 的伤害X次。",
+    "UPGRADE_DESCRIPTION": "造成等同于你 buxommod:罩杯 的伤害X+1次。"
+  },
+  "BuxomMod:ExpandMind": {
+    "NAME": "开阔心智",
+    "DESCRIPTION": "本回合保留你的手牌。 NL 抽 !M! 张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "本回合保留你的手牌。 NL 抽 !M! 张牌。"
+  },
+  "BuxomMod:InducedLactation": {
+    "NAME": "诱导泌乳",
+    "DESCRIPTION": "获得 !M! 点 buxommod:母乳 。 NL 在你的抽牌堆中加入 1 张 *余震 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 buxommod:母乳 。 NL 在你的抽牌堆中加入 1 张 *余震 。 NL 洗入你的抽牌堆。"
+  },
+  "BuxomMod:BraBreaker": {
+    "NAME": "文胸破坏者",
+    "DESCRIPTION": "如果你穿着 *文胸 ：获得足够的 buxommod:罩杯 使其破损。 NL 根据现有的状态牌造成 !M! 点伤害。 *乳体不稳定 计算为双倍，而 *破损文胸 计算为三倍。 NL (造成 !D! 点伤害。)"
+  },
+  "BuxomMod:BigBouncePowerCard": {
+    "NAME": "大乳摇",
+    "DESCRIPTION": "获得 !M! 点罩杯。 NL 每当你获得 10 层晃动时，获得一张 *乳摇 ，并将其替换为 *乳体不稳定 。",
+    "UPGRADE_DESCRIPTION": "固有 。获得 !M! 点罩杯。 NL 每当你获得 10 层晃动时，获得一张 *乳摇 ，并将其替换为 *乳体不稳定 。"
+  },
+  "BuxomMod:BigBounceStatus": {
+    "NAME": "乳体不稳定",
+    "DESCRIPTION": "不能被打出 。 NL 虚无 。 NL 在你的回合结束时，对一个随机敌人造成伤害，伤害值为你罩杯的一半。"
+  },
+  "BuxomMod:OmegaBurst": {
+    "NAME": "欧米伽爆发",
+    "DESCRIPTION": "buxommod:暴露 。 NL 预见 10。 NL 本回合，每当你获得 buxommod:罩杯 或抽到状态牌， 抽 !M! 张牌。 NL 消耗 。"
+  },
+  "BuxomMod:BouncyBlock": {
+    "NAME": "弹力格挡",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 你的手牌中每有一张状态牌，获得 !M! 点 buxommod:活力 。"
+  },
+  "BuxomMod:FeelItOut": {
+    "NAME": "酝酿",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽取你抽牌堆中所有的状态牌。"
+  },
+  "BuxomMod:Hardheaded": {
+    "NAME": "死性不改",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 消耗 1 张手牌。"
+  },
+  "BuxomMod:QuiteEnough": {
+    "NAME": "够了！",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并施加 !M! 点虚弱。 NL 将 !M! 张 *余震 加入你的抽牌堆。"
+  },
+  "BuxomMod:ShockStatus": {
+    "NAME": "冲击",
+    "DESCRIPTION": "当抽到这张牌时，抽 !M! 张牌。 NL 获得 !M! 点 buxommod:罩杯 。 NL 造成 !D! 点伤害。 NL 消耗 。"
+	},
+  "BuxomMod:WhiteBikiniBra": {
+    "NAME": "白色比基尼",
+    "DESCRIPTION": "buxommod:罩杯尺码 0-20。 NL 每当你获得 buxommod:泌乳 时，获得 !M! 点 buxommod:罩杯 和 !M! 点 buxommod:母乳 。 NL 在你的回合结束时，获得1点 buxommod:泌乳 。"
+  },
+  "BuxomMod:BrokenBraWhiteBikini": {
+    "NAME": "破损的白色比基尼",
+    "DESCRIPTION": "不能被打出 。 NL 每当抽到这张牌，获得 !M! 点 buxommod:母乳 。"
+  },
+  "BuxomMod:WardrobeMalfunction": {
+    "NAME": "爆乳",
+    "DESCRIPTION": "buxommod:暴露 。 NL 获得 !BuxomMod:SecondMagic! 点活力。 NL 抽 !M! 张牌。"
+  },
+  "BuxomMod:Embarrassment": {
+    "NAME": "羞耻",
+    "DESCRIPTION": "获得 !M! buxommod:罩杯 。 NL 每当你 buxommod:暴露 ， 获得 !BuxomMod:SecondMagic! 点力量。"
+  },
+  "BuxomMod:Flee": {
+    "NAME": "逃跑",
+    "DESCRIPTION": "消耗 最多 !M! 张牌。 NL 获得 !B! 点 格挡 。 NL 如果 buxommod:暴露 ， 抽 !M! 张牌。"
+  },
+  "BuxomMod:ChibiBlock": {
+    "NAME": "小妖精祝福",
+    "DESCRIPTION": "使你不再受到 *暴露 影响。"
+  },
+  "BuxomMod:Surprise": {
+    "NAME": "惊喜！",
+    "DESCRIPTION": "保留。 NL 下个回合， buxommod:暴露 并获得 [E] 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留。 NL 下个回合， buxommod:暴露 并获得 [E] [E] 。 NL 消耗 。"
+  },
+  "BuxomMod:HungryDwarf": {
+    "NAME": "饥饿矮人",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标死亡， 获得5 buxommod:罩杯 ， !M! buxommod:母乳 和 [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标死亡， 获得5 buxommod:罩杯 ， !M! buxommod:母乳 和 [E] [E] [E] 。"
+  },
+  "BuxomMod:ChaosDunk": {
+  "NAME": "带球进攻",
+  "DESCRIPTION": "对所有敌人造成 !D! 点伤害， 再造成等同于你手中 *状态牌 的数量次伤害。",
+  "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害， 再造成等同于你手中 *状态牌 的数量次伤害。"
+ },
+  "BuxomMod:Smother": {
+    "NAME": "窒息",
+    "DESCRIPTION": "伤害 !D! 每当你在本回合抽牌时，敌人会失去 !M! HP。"
+  }
+}
+

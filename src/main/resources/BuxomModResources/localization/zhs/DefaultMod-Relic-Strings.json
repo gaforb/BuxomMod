@@ -1,0 +1,62 @@
+{
+  "BuxomMod:JCupRelic": {
+    "NAME": "J罩杯文胸",
+    "FLAVOR": "一开始就很大！",
+    "DESCRIPTIONS": [
+      "每场战斗开始时获得1点罩杯。"
+    ]
+  },
+  "BuxomMod:PlaceholderRelic2": {
+    "NAME": "占位符神器 2",
+    "FLAVOR": "你感到变强了。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时获得 #b1 #y力量."
+    ]
+  },
+  "BuxomMod:DefaultClickableRelic": {
+    "NAME": "右键神器",
+    "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime. HA！这是遗漏的翻译内容，如果你看到了，请提醒汉化组，因为我们不知道这个内容什么时候会被启用提前翻译会导致说明不准确。虫子",
+    "DESCRIPTIONS": [
+      "[#2aecd7]每回合一次 。 [] NL #y激活 你最右侧的小妖精.",
+      "每回合一次"
+    ]
+  },
+  "BuxomMod:BottledPlaceholderRelic": {
+    "NAME": "瓶装占位符神器",
+    "FLAVOR": "这是什么？",
+    "DESCRIPTIONS": [
+      "选择一张卡牌。每当你打出任何一张卡牌，抽取所选的卡牌。",
+      "每当你打出一张卡牌，抽取 ",
+      ".",
+      "选择一张要瓶装的卡牌，花费 "
+    ]
+  },
+  "BuxomMod:ToplessArtifact": {
+    "NAME": "坦露的诅咒",
+    "FLAVOR": "你的胸罩会魔法般地从你的胸前消失————“让我们敞开心扉。”",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 [E] 。 每场战斗开始时获得 #b5 点额外的 buxommod:罩杯。 你穿的任何胸罩都会立刻使胸罩破损。。"
+    ]
+  },
+  "BuxomMod:DwarfBoobsRelic": {
+    "NAME": "矮人胸部",
+    "FLAVOR": "与人类相比, 金蕾娜的 J罩杯并不是那么引人注目。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时获得等同于你初始罩杯的 #y罩杯 。"
+    ]
+  },
+  "BuxomMod:WashboardRelic": {
+    "NAME": "洗衣板",
+    "FLAVOR": "当你的抽牌堆里都是状态牌时使用。",
+    "DESCRIPTIONS": [
+      "每场战斗一次， #b右键点击 失去10层罩杯。"
+    ]
+  },
+  "BuxomMod:CowRelic": {
+    "NAME": "奶牛玩偶",
+    "FLAVOR": "一位同样丰满的朋友！",
+    "DESCRIPTIONS": [
+      "每场战斗开始时, 获得 #b3 层泌乳和 #b1 层罩杯。"
+    ]
+  }
+}

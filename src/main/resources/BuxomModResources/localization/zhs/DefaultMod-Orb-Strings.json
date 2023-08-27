@@ -1,0 +1,30 @@
+{
+  "BuxomMod:AttackChibi": {
+    "NAME": "攻击型小妖精",
+    "DESCRIPTION": [
+      "#y被动 : 在你的回合结束时造成 #b",
+      " 点伤害 。 NL #y挤奶 1: 改为激活效果。",
+      " NL #y激活: 对所有敌人造成 #b",
+      " 点伤害。"
+    ]
+  },
+  "BuxomMod:DeviousChibi": {
+    "NAME": "小魅魔妖精",
+    "DESCRIPTION": [
+      "#y被动 : 在你ID回合开始时获得 #b",
+      " #y罩杯 。",
+      " NL #y激活: 获得 #b",
+      " 能量并抽取 #b",
+      " 张牌。"
+    ]
+  },
+  "BuxomMod:DefenseChibi": {
+    "NAME": "防御型小妖精",
+    "DESCRIPTION": [
+      "#y被动 : 在你的回合结束时获得 #b",
+      " #y点防御 。 NL #y挤奶 1: 改为激活效果。",
+      " NL #y激活 : 获得 #b",
+      " 点格挡。"
+    ]
+  }
+}
