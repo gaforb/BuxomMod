@@ -485,6 +485,19 @@ public class BuxomMod implements
 
 
     // ================ LOAD THE TEXT ===================
+    private static String makeLocPath(Settings.GameLanguage language, String filename)
+    {
+        String ret = "localization/";
+        switch (language) {
+            case ZHS:
+                ret += "zhs/";
+                break;
+            default:
+                ret += "eng/";
+                break;
+        }
+        return getModID() + "Resources/" + ret + filename + ".json";
+    }
 
     @Override
     public void receiveEditStrings() {
@@ -492,34 +505,27 @@ public class BuxomMod implements
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
 
         // CardStrings
-        BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Card-Strings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, makeLocPath(Settings.language, "DefaultMod-Card-Strings"));
+        logger.info("card strings path: " + makeLocPath(Settings.language, "DefaultMod-Card-Strings"));
 
         // PowerStrings
-        BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Power-Strings.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, makeLocPath(Settings.language, "DefaultMod-Power-Strings"));
 
         // RelicStrings
-        BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Relic-Strings.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, makeLocPath(Settings.language, "DefaultMod-Relic-Strings"));
 
         // Event Strings
-        BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Event-Strings.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, makeLocPath(Settings.language, "DefaultMod-Event-Strings"));
 
         // PotionStrings
-        BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Potion-Strings.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, makeLocPath(Settings.language, "DefaultMod-Potion-Strings"));
 
         // CharacterStrings
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, makeLocPath(Settings.language, "DefaultMod-Character-Strings"));
 
         // OrbStrings
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
-        BaseMod.loadCustomStringsFile(UIStrings.class,
-                getModID() + "Resources/localization/eng/UIStrings.json");
+        BaseMod.loadCustomStringsFile(OrbStrings.class, makeLocPath(Settings.language, "DefaultMod-Orb-Strings"));
+        BaseMod.loadCustomStringsFile(UIStrings.class, makeLocPath(Settings.language, "UIStrings"));
 
         logger.info("Done edittting strings");
     }
@@ -539,7 +545,7 @@ public class BuxomMod implements
         // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
 
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DefaultMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(makeLocPath(Settings.language, "DefaultMod-Keyword-Strings")).readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {

@@ -1,6 +1,7 @@
 package BuxomMod.potions;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.LactatingPower;
 import BuxomMod.relics.DwarfBoobsRelic;
 import basemod.abstracts.CustomPotion;
@@ -61,6 +62,7 @@ public class PermaGrowthPotion extends CustomPotion {
                 p.getRelic(DwarfBoobsRelic.ID).counter += getPotency();
             }
             BuxomMod.logger.info("potency " + getPotency());
+            addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, getPotency()), getPotency()));
         }
         // If you are in combat, gain strength and the "lose strength at the end of your turn" power, equal to the potency of this potion.
     }
@@ -73,12 +75,12 @@ public class PermaGrowthPotion extends CustomPotion {
     // This is your potency.
     @Override
     public int getPotency(final int potency) {
-        return 2;
+        return 3;
     }
 
     public void upgradePotion()
     {
-      potency += 2;
+      potency += 3;
       tips.clear();
       tips.add(new PowerTip(name, description));
     }

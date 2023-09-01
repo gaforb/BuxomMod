@@ -1,0 +1,107 @@
+[
+  {
+    "PROPER_NAME": "罩杯",
+    "NAMES": [
+      "罩杯",
+      "Buxom",
+      "buxom"
+    ],
+    "DESCRIPTION": "你乳房的大小。在回合结束时生成乳摇层数。"
+  },
+  {
+    "PROPER_NAME": "罩杯尺码",
+    "NAMES": [
+      "罩杯尺码",
+      "Capacity",
+      "capacity"
+    ],
+    "DESCRIPTION": "当你的 #y罩杯 在文胸的 #y罩杯尺码 的范围和范围内时，文胸会提供奖励并防止 #y暴露 的负面效果。 如果在回合结束时你的 #y罩杯 超过了#y罩杯尺码 ，罩杯会损坏并生成一张状态牌。"
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "Multiword Keyword",
+      "multiword_keyword",
+      "multiword_keywords",
+      "multikey",
+      "multikeyword"
+    ],
+    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "PROPER_NAME": "小魅魔妖精",
+    "NAMES": [
+      "小魅魔妖精",
+      "Devious",
+      "devious"
+    ],
+    "DESCRIPTION": "小妖精: 每回合获得 1 #y罩杯 。 在被激活时获得 #y能量 并抽牌."
+  },
+  {
+    "PROPER_NAME": "攻击型小妖精",
+    "NAMES": [
+      "攻击型小妖精",
+      "Offensive",
+      "offensive"
+    ],
+    "DESCRIPTION": "小妖精: 在你的回合开始时随机攻击一个敌人。被激活时攻击所有敌人。"
+  },
+  {
+    "PROPER_NAME": "防御型小妖精",
+    "NAMES": [
+      "防御型小妖精",
+      "Defensive",
+      "defensive"
+    ],
+    "DESCRIPTION": "小妖精: 在回合开始时获得格挡。被激活时获得更多格挡。"
+  },
+  {
+    "PROPER_NAME": "泌乳",
+    "NAMES": [
+      "泌乳",
+      "Lactating",
+      "lactating",
+      "lactation",
+      "Lactation"
+    ],
+    "DESCRIPTION": "每回合开始时获得 #y乳汁 。 每回合减少2。"
+  },
+  {
+    "PROPER_NAME": "母乳",
+    "NAMES": [
+      "母乳",
+      "Milk",
+      "milk"
+    ],
+    "DESCRIPTION": "在回合结束后转换为 #y临时生命值 。 NL 可以被 #b小妖精 和卡牌来触发效果。"
+  },
+  {
+    "PROPER_NAME": "挤奶",
+    "NAMES": [
+      "挤奶",
+      "Milking",
+      "milking"
+    ],
+    "DESCRIPTION": "当使用时,消耗相应层数的 #y母乳 来获得额外效果。"
+	  },
+  {
+    "PROPER_NAME": "暴露",
+    "NAMES": [
+      "暴露",
+      "Exposed",
+      "exposed",
+      "Expose",
+      "expose"
+    ],
+    "DESCRIPTION": "失去所有 #y格挡 无法获得 #y格挡 ，但从 #y 敏捷 获得的除外。每拥有一层 #y罩杯 ，你的攻击额外造成 #b3% 的伤害。该效果会持续一回合，但当你的 #y罩杯 超过 #y30 层时， #y暴露 的效果会持续保留。"
+  },
+  {
+    "PROPER_NAME": "活力",
+    "NAMES": [
+      "活力",
+      "Vigor",
+      "vigor"
+    ],
+    "DESCRIPTION": "增加下一张打出的 #y攻击牌 的伤害。"
+  }
+]

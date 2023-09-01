@@ -92,12 +92,17 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int effect = EnergyPanel.totalCount;
+
         if (this.energyOnUse != -1) {
             effect = this.energyOnUse;
         }
         int b = BuxomMod.getPwrAmt(p, CommonPower.POWER_ID);
         if (this.upgraded) {
             effect++;
+        }
+        if (p.hasRelic("Chemical X")) {
+            effect += 2;
+            p.getRelic("Chemical X").flash();
         }
         for (int i = 0; i < effect; i++) {
             addToBot(new DamageAction(m, new DamageInfo(p, b),

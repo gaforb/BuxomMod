@@ -80,7 +80,7 @@
   },
   "BuxomMod:ChibiSummon": {
     "NAME": "Chibi Summon",
-    "DESCRIPTION": "Lose 2 BuxomMod:Buxom. NL Gain !B! Block, and gain !B! block again next turn."
+    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL Gain !B! Block, and gain !B! block again next turn."
   },
   "BuxomMod:ButtonPop": {
     "NAME": "Button Pop",
@@ -164,7 +164,7 @@
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
-    "DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
+    "DESCRIPTION": "If you have less than 11 ${ModID}:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
     "UPGRADE_DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk."
   },
   "BuxomMod:Paizuri": {

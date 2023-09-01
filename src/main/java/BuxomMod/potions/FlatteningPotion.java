@@ -28,7 +28,7 @@ public class FlatteningPotion extends CustomPotion {
         potency = getPotency();
         
         // Initialize the Description
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + DESCRIPTIONS[1];
         
        // Do you throw this potion at an enemy or do you just consume it.
         isThrown = false;

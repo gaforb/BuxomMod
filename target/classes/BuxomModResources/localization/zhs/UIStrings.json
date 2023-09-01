@@ -1,0 +1,11 @@
+{
+  "BuxomMod:BuxomPanel": {
+    "NAME": "罩杯米娜版",
+    "BUXOM": "罩杯: ",
+    "BOUNCE": ["弹力: ", " / "],
+    "TEXT": [
+      "增加胸部尺寸。 在回合结束时生成 #yBounce #yStacks at end of turn.",
+      "For every #b8 #yBounce stacks, generate a #yBounce status card."
+    ]
+    }
+}
