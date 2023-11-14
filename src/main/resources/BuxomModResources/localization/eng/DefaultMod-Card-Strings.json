@@ -164,7 +164,7 @@
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
-    "DESCRIPTION": "If you have less than 11 ${ModID}:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
+    "DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
     "UPGRADE_DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk."
   },
   "BuxomMod:Paizuri": {
@@ -201,7 +201,7 @@
   },
   "BuxomMod:OmegaBurst": {
     "NAME": "Omega Burst",
-    "DESCRIPTION": "buxommod:Expose. NL Scry 10. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card(s). NL Exhaust."
+    "DESCRIPTION": "{@@}buxommod:Expose. NL Scry 10. Draw 2 cards. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card{!M!|>1=s}. NL Exhaust."
   },
   "BuxomMod:BouncyBlock": {
     "NAME": "Bouncy Block",
@@ -221,7 +221,7 @@
   },
   "BuxomMod:ShockStatus": {
     "NAME": "Shock",
-    "DESCRIPTION": "buxommod:Bouncy. NL {@@}When this card is drawn, draw !M! card{!M!|>1=s}. NL Gain !M! BuxomMod:Buxom. NL Enemy loses !D! HP. NL Exhaust."
+    "DESCRIPTION": "{@@}buxommod:Bouncy. NL When this card is drawn, draw !M! card{!M!|>1=s}. NL Gain !M! BuxomMod:Buxom. NL Enemy loses !D! HP. NL Exhaust."
   },
   "BuxomMod:WhiteBikiniBra": {
     "NAME": "White Bikini",
@@ -285,8 +285,8 @@
   },
   "BuxomMod:PanicLactation": {
     "NAME": "Panic Lactation",
-    "DESCRIPTION": "Gain !B! Block and !M! buxommod:Milk.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block and !M! buxommod:Milk."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! buxommod:Milk.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! buxommod:Milk."
   }
 }
 

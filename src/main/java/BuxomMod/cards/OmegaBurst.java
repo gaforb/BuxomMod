@@ -6,6 +6,7 @@ import BuxomMod.powers.ExposedPower;
 import BuxomMod.powers.NakedPower;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
@@ -62,6 +63,7 @@ public class OmegaBurst extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ScryAction(10));
+        addToBot(new DrawCardAction(2));
         addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
