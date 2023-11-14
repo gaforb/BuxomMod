@@ -1,0 +1,18 @@
+{
+"BuxomMod:FlatteningPotion": {
+        "NAME": "빈유화 포션",
+        "DESCRIPTIONS": ["풍만함을 #b", "1 로 감소시킵니다."]
+},
+"BuxomMod:DragonMilkPotion": {
+        "NAME": "용의 우유 포션",
+        "DESCRIPTIONS": ["#y착유를 #b", " 얻습니다."]
+},
+"BuxomMod:ChibiPotion": {
+        "NAME": "치비 포션",
+        "DESCRIPTIONS": ["무작위 치비들을 #b", " 	번 영창합니다."]
+},
+"BuxomMod:PermaGrowthPotion": {
+        "NAME": "영구-성장 포션",
+        "DESCRIPTIONS": ["시작 #y풍만함을 #b", " 증가시킵니다."]
+}
+}

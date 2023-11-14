@@ -1,0 +1,274 @@
+{
+  "BuxomMod:DefaultCommonAttack": {
+    "NAME": "타격",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "BuxomMod:DefaultCommonSkill": {
+    "NAME": "수비",
+    "DESCRIPTION": "방어도를 !B! 얻습니다."
+  },
+  "BuxomMod:PopPopPop": {
+    "NAME": "팡, 팡, 팡!",
+    "DESCRIPTION": "풍만함을 1 만큼 NL !M! 번 얻습니다. NL 카드를 !M! 장 뽑습니다.",
+    "UPGRADE_DESCRIPTION": "풍만함을 1 만큼 !M! 번 얻습니다. NL 카드를 !M! 장 뽑습니다."
+  },
+  "BuxomMod:BouncyExercise": {
+    "NAME": "탄력적인 운동",
+    "DESCRIPTION": "피해를 !D! 줍니다, NL 그 후 현재 buxommod:풍만함만큼 피해를 줍니다. NL buxommod:풍만함을 1 잃습니다."
+  },
+  "BuxomMod:ExpansiveWall": {
+    "NAME": "팽창하는 벽",
+    "DESCRIPTION": "buxommod:풍만함을 !M! 얻습니다. NL 방어도를 !B! 얻습니다."
+  },
+  "BuxomMod:Chibis": {
+    "NAME": "치비들!",
+    "DESCRIPTION": "무작위로 buxommod:착유 4, 힘 2, 혹은 민첩 1 을 X 번 얻습니다.",
+    "UPGRADE_DESCRIPTION": "무작위로 buxommod:착유 4, 힘 2, 혹은 민첩 1 을 X+1 번 얻습니다."
+  },
+  "BuxomMod:OmegaForce": {
+    "NAME": "오메가 포스",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 손에 있는 상태이상 카드를 전부 소멸시킵니다, NL 그 수만큼 1 만큼 힘을 얻습니다."
+  },
+  "BuxomMod:HeavyLactation": {
+    "NAME": "대량 착유",
+    "DESCRIPTION": "현재 buxommod:풍만함만큼 buxommod:모유를 얻습니다. NL buxommod:풍만함의 절반만큼 체력을 회복합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "보존. NL 현재 buxommod:풍만함만큼 buxommod:모유를 얻습니다. NL buxommod:풍만함의 절반만큼 체력을 회복합니다. NL 소멸."
+  },
+  "BuxomMod:BovineForm": {
+    "NAME": "젖소 형태",
+    "DESCRIPTION": "buxommod:풍만함을 !BuxomMod:SecondMagic! 얻습니다. NL buxommod:착유를 !M! 얻습니다. NL buxommod:모유를 !M! 얻습니다."
+  },
+  "BuxomMod:DefaultAttackWithVariable": {
+    "NAME": "특별한 타격",
+    "DESCRIPTION": "피해를 !D! 만큼 [E] 번 줍니다. NL (피해를 총 !BuxomMod:ENERGY_DAMAGE! 줍니다.)"
+  },
+  "BuxomMod:OmegaFumes": {
+    "NAME": "오메가 증기",
+    "DESCRIPTION": "모든 적에게 취약을 !M! 부여하고 NL 중독을 !BuxomMod:SecondMagic! 부여합니다. NL 뽑을 카드 더미에 *후팽창 을 NL 2 장 섞어 넣습니다. NL 소멸."
+  },
+  "BuxomMod:OrbSkill": {
+    "NAME": "구체 얻기",
+    "DESCRIPTION": "기본 구체를 1번 영창합니다."
+  },
+  "BuxomMod:BuxomStatus": {
+    "NAME": "출렁임",
+    "DESCRIPTION": "사용불가. NL 휘발성."
+  },
+  "BuxomMod:ExposureStatus": {
+    "NAME": "드러남",
+    "DESCRIPTION": "사용불가. NL 휘발성. NL 턴 종료 시, 취약을 1 받습니다."
+  },
+  "BuxomMod:Omegabsorption": {
+    "NAME": "오메가 흡정",
+    "DESCRIPTION": "카드를 하나 소멸시킵니다. NL buxommod:풍만함을 !BuxomMod:SecondMagic! 얻습니다. NL 카드를 !M! 장 뽑습니다."
+  },
+  "BuxomMod:KCupBra": {
+    "NAME": "K-컵 브라",
+    "DESCRIPTION": "buxommod:수용량 0-10. NL 민첩을 !M! 얻습니다. NL buxommod:풍만함을 얻을 때마다, 그만큼의 방어도를 얻습니다."
+  },
+  "BuxomMod:MCupBra": {
+    "NAME": "M-컵 브라",
+    "DESCRIPTION": "BuxomMod:수용량 10-20. NL buxommod:풍만함을 얻을 때마다, buxommod:활력을 !M! 얻습니다."
+  },
+  "BuxomMod:BrokenBraK": {
+    "NAME": "망가진 브라 (K)",
+    "DESCRIPTION": "사용불가. NL 이 카드가 소멸될 때, 민첩을 !M! 얻습니다."
+  },
+  "BuxomMod:BrokenBraM": {
+    "NAME": "망가진 브라 (M)",
+    "DESCRIPTION": "사용불가. NL 턴 종료 시, 뽑을 카드 더미에 *출렁임 을 1 장 섞어 넣습니다. NL 이 카드가 소멸될 때, 힘을 !M! 얻습니다."
+  },
+  "BuxomMod:ChibiSummon": {
+    "NAME": "치비 소환",
+    "DESCRIPTION": "BuxomMod:풍만함을 !M! 잃습니다. NL 방어도를 !B! 얻습니다, 다음 턴에 방어도를 !B! 얻습니다."
+  },
+  "BuxomMod:ButtonPop": {
+    "NAME": "단추 터트리기",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL BuxomMod:풍만함을 1 얻습니다. NL 약화를 !M! 부여합니다."
+  },
+  "BuxomMod:ButtonHazard": {
+    "NAME": "단추 위험지대",
+    "DESCRIPTION": "BuxomMod:풍만함을 얻을 때마다 무작위 적에게 피해를 !M! 줍니다. NL BuxomMod:젖먹임 2: 피해를 추가로 !BuxomMod:SecondMagic! 줍니다."
+  },
+  "BuxomMod:LeanneAssist": {
+    "NAME": "린네 보조",
+    "DESCRIPTION": "BuxomMod:풍만함을 1 잃습니다. NL 모든 적에게 피해를 !D! 줍니다. NL BuxomMod:젖먹임 1: 모든 적에게 피해를 다시 !D! 줍니다."
+  },
+  "BuxomMod:Relief": {
+    "NAME": "안도",
+    "DESCRIPTION": "카드가 소멸될 때마다 방어도를 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "카드가 소멸될 때마다 방어도를 !M! 얻습니다."
+  },
+  "BuxomMod:ToplessStatus": {
+    "NAME": "상의탈의",
+    "DESCRIPTION": "사용불가. NL 이 카드가 소멸될 때, 턴마다 !M! 장의 카드를 추가로 뽑습니다."
+  },
+  "BuxomMod:AftershockStatus": {
+    "NAME": "후팽창",
+    "DESCRIPTION": "사용불가. NL 휘발성. NL 턴 종료 시, BuxomMod:풍만함을 1 얻습니다."
+  },
+  "BuxomMod:Library": {
+    "NAME": "오메가 도서관",
+    "DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 방어도를 !B! 얻습니다. NL 버린 카드 더미에 *오.메.가 *도서관 을 섞어 넣습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 방어도를 !B! 얻습니다. NL 버린 카드 더미에 *오.메.가 *도서관 을 섞어 넣습니다. NL 소멸."
+  },
+  "BuxomMod:OmegaLibrary": {
+    "NAME": "오.메.가 도서관",
+    "DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 풍만함을 !BuxomMod:SecondMagic! 얻습니다. NL 버린 카드 더미에 *오메가 *도서관 을 섞어 넣습니다. NL 소멸."
+  },
+  "BuxomMod:MeasurementTime": {
+    "NAME": "신체측정 시간",
+    "DESCRIPTION": "턴 종료 시, NL 방어도를 !M! 얻습니다. NL BuxomMod:풍만함이 증가할 때마다 줄어듭니다."
+  },
+  "BuxomMod:OmegaArc": {
+    "NAME": "오메가 방전",
+    "DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 만약 BuxomMod:풍만함이 10 미만이면, NL 모든 적에게 피해를 줍니다."
+  },
+  "BuxomMod:OmegaDeflection": {
+    "NAME": "오메가 굴절",
+    "DESCRIPTION": "인공물을 !M! 얻습니다. NL 뽑을 카드 더미에 *후팽창 을 NL 2 장 섞어 넣습니다. NL 소멸."
+  },
+  "BuxomMod:OmegaShock": {
+    "NAME": "오메가 쇼크",
+    "DESCRIPTION": "뽑을 카드 더미에 *쇼크 를 NL !M! 장 섞어 넣습니다, NL *쇼크 는 생성 시 풍만함만큼 추가 피해를 입힙니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "뽑을 카드 더미에 *쇼크 를 NL !M! 장 섞어 넣습니다, NL *쇼크 는 생성 시 풍만함만큼 추가 피해를 입힙니다. NL 섞는 *쇼크 가 강화됩니다. NL 소멸."
+  },
+  "BuxomMod:SwellingTight": {
+    "NAME": "꽉 찬 팽창",
+    "DESCRIPTION": "브라의 BuxomMod:수용량 이내라면, NL BuxomMod:풍만함 3 과 !M! [E] 를 얻습니다. NL 소멸."
+  },
+  "BuxomMod:Phew": {
+    "NAME": "휴!",
+    "DESCRIPTION": "BuxomMod:풍만함을 !M! 잃습니다. NL 방어도를 !B! 얻습니다."
+  },
+  "BuxomMod:TCupBra": {
+    "NAME": "T-컵 브라",
+    "DESCRIPTION": "BuxomMod:수용량 20-30. NL BuxomMod:풍만함이 증가할 때마다 가시를 !M! 얻습니다."
+  },
+  "BuxomMod:BrokenBraT": {
+    "NAME": "망가진 T-컵 브라",
+    "DESCRIPTION": "사용불가. NL 턴 종료 시, 뽑을 카드 더미에 *후팽창 을 2 장 섞어 넣습니다."
+  },
+  "BuxomMod:ChibiOneTwo": {
+    "NAME": "치비 원-투펀치",
+    "DESCRIPTION": "buxommod:노출되었다면, NL 힘을 !M! 얻습니다. NL 피해를 !D! 만큼 두 번 줍니다."
+  },
+  "BuxomMod:OmegaFlare": {
+    "NAME": "오메가 섬광",
+    "DESCRIPTION": "브라의 BuxomMod:수용량 이내라면, NL 힘을 !M! 얻습니다. NL 뽑을 카드 더미에 *후팽창 을 NL !BuxomMod:SecondMagic! 장 섞어 넣습니다.",
+    "CANT_USE_MESSAGE": "내 브라의 수용량 이내가 아니야!"
+  },
+  "BuxomMod:ChibiOffering": {
+    "NAME": "치비 연회식",
+    "DESCRIPTION": "buxommod:모유를 !M! 얻습니다. NL BuxomMod:노출합니다."
+  },
+  "BuxomMod:SteadyLactation": {
+    "NAME": "꾸준한 착유",
+    "DESCRIPTION": "BuxomMod:풍만함이 11 보다 적을 경우, NL BuxomMod:풍만함을 11 까지 얻습니다. NL BuxomMod:착유를 !M! 얻습니다. NL BuxomMod:모유를 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "BuxomMod:풍만함이 11 보다 적을 경우, NL BuxomMod:풍만함을 11 까지 얻습니다. NL BuxomMod:착유를 !M! 얻습니다. NL BuxomMod:모유를 !M! 얻습니다."
+  },
+  "BuxomMod:Paizuri": {
+    "NAME": "파이즈리",
+    "DESCRIPTION": "적이 공격할 의도가 있다면, NL 약화를 !M! 부여하고 카드를 !M! 장 뽑습니다. NL BuxomMod:젖먹임 2: NL 또한 취약을 !M! 부여합니다."
+  },
+  "BuxomMod:OmegaBeatdown": {
+    "NAME": "오메가 때려눕히기",
+    "DESCRIPTION": "현재 BuxomMod:풍만함만큼 피해를 X 번 줍니다.",
+    "UPGRADE_DESCRIPTION": "현재 BuxomMod:풍만함만큼 피해를 X+1 번 줍니다."
+  },
+  "BuxomMod:ExpandMind": {
+    "NAME": "사고 팽창",
+    "DESCRIPTION": "{@@}손에 있는 카드를 모두 보존합니다. NL 카드를 !M! 장 뽑습니다{!M!|>1}. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "{@@}손에 있는 카드를 모두 보존합니다. NL 카드를 !M! 장 뽑습니다{!M!|>1}."
+  },
+  "BuxomMod:InducedLactation": {
+    "NAME": "유발된 착유",
+    "DESCRIPTION": "BuxomMod:모유를 !M! 얻습니다. NL 뽑을 카드 더미에 *후팽창 을 1 장 섞어 넣습니다.",
+    "UPGRADE_DESCRIPTION": "BuxomMod:모유를 !M! 얻습니다. NL 뽑을 카드 더미에 *후팽창 을 1 장 섞어 넣습니다. NL 이 카드를 뽑을 카드 더미에 섞어 넣습니다."
+  },
+  "BuxomMod:BraBreaker": {
+    "NAME": "브라 파괴자",
+    "DESCRIPTION": "*브라 를 입고 있다면 NL 망가뜨리기에 충분한 BuxomMod:풍만함을 얻습니다. NL 손에 있는 상태이상 카드 한 장당 NL 피해를 !M! 줍니다. *큰 *출렁임 은 두 배로 셈하며, *망가진 *브라 는 세 배로 셈합니다. NL (피해를 !D! 줍니다.)"
+  },
+  "BuxomMod:BigBouncePowerCard": {
+    "NAME": "크게 출렁이기",
+    "DESCRIPTION": "풍만함을 !M! 얻습니다. NL *출렁임 을 매 10 흔들림 마다 생성하는 대신, NL *큰 *출렁임 으로 바꿉니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 풍만함을 !M! 얻습니다. NL *출렁임 을 매 10 흔들림 마다 생성하는 대신, *큰 *출렁임 으로 바꿉니다."
+  },
+  "BuxomMod:BigBounceStatus": {
+    "NAME": "큰 출렁임",
+    "DESCRIPTION": "사용불가. NL 휘발성. NL 턴 종료 시, 무작위 적에게 풍만함의 절반만큼 피해를 줍니다."
+  },
+  "BuxomMod:OmegaBurst": {
+    "NAME": "오메가 버스트",
+    "DESCRIPTION": "buxommod:노출합니다. NL 예지 10. NL 이번 턴에, BuxomMod:풍만함을 얻거나 상태이상 카드를 뽑을 때, NL 카드를 !M! 장 뽑습니다. NL 소멸."
+  },
+  "BuxomMod:BouncyBlock": {
+    "NAME": "출렁이는 방어",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 손에 있는 상태이상 카드 한 장당 buxommod:활력을 !M! 얻습니다."
+  },
+  "BuxomMod:FeelItOut": {
+    "NAME": "해방감 느끼기",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 뽑을 카드 더미의 모든 상태이상 카드를 뽑습니다."
+  },
+  "BuxomMod:Hardheaded": {
+    "NAME": "돌머리",
+    "DESCRIPTION": "{@@}방어도를 !B! 얻습니다. NL 카드를 !M! 장 뽑습니다{!M!|>1}. NL 카드를 1 장 소멸시킵니다."
+  },
+  "BuxomMod:QuiteEnough": {
+    "NAME": "이정도면 충분해",
+    "DESCRIPTION": "피해를 !D! 주고 모든 적에게 약화를 !M! 부여합니다. NL 뽑을 카드 더미에 *후팽창 을 NL !M! 장 섞어 넣습니다."
+  },
+  "BuxomMod:ShockStatus": {
+    "NAME": "쇼크",
+    "DESCRIPTION": "{@@}이 카드를 뽑으면, 카드를 !M! 장 뽑습니다{!M!|>1}. NL BuxomMod:풍만함을 !M! 얻습니다. NL 피해를 !D! 줍니다. NL 소멸."
+  },
+  "BuxomMod:WhiteBikiniBra": {
+    "NAME": "하얀 비키니",
+    "DESCRIPTION": "수용량 5-15. NL buxommod:풍만함을 얻을 때마다, NL buxommod:모유를 !M! 얻습니다. NL 턴 종료 시, buxommod:착유를 1 얻습니다."
+  },
+  "BuxomMod:BrokenBraWhiteBikini": {
+    "NAME": "망가진 하얀 비키니",
+    "DESCRIPTION": "사용불가. NL 이 카드를 뽑으면, buxommod:모유를 !M!얻습니다."
+  },
+  "BuxomMod:WardrobeMalfunction": {
+    "NAME": "고장",
+    "DESCRIPTION": "{@@}buxommod:노출합니다. NL 활력을 !BuxomMod:SecondMagic! 얻습니다. NL 카드를 !M! 장 뽑습니다{!M!|>1}."
+  },
+  "BuxomMod:Embarrassment": {
+    "NAME": "당황",
+    "DESCRIPTION": "{@@}buxommod:풍만함을 !M! 얻습니다. NL buxommod:노출할 때 마다, NL 힘을 !BuxomMod:SecondMagic! 얻습니다."
+  },
+  "BuxomMod:Flee": {
+    "NAME": "토끼기",
+    "DESCRIPTION": "{@@}카드를 !M! 장 소멸시킵니다{!M!|>1}. NL 방어도를 !B! 얻습니다. NL 만약 buxommod:노출되었다면, NL 카드를 !M! 장 뽑습니다{!M!|>1}."
+  },
+  "BuxomMod:ChibiBlock": {
+    "NAME": "치비-방어",
+    "DESCRIPTION": "*노출됨에 영향받지 않습니다."
+  },
+  "BuxomMod:Surprise": {
+    "NAME": "놀랐지!",
+    "DESCRIPTION": "보존. NL 다음 턴에, buxommod:노출하며 [E] 를 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "보존. 다음 턴에, buxommod:노출하며 [E] [E] 를 얻습니다. NL 소멸."
+  },
+  "BuxomMod:HungryDwarf": {
+    "NAME": "배고픈 드워프",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 적이 죽을 경우, buxommod:풍만함을 5, buxommod:모유를 !M!, NL 그리고 [E] [E] 를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "피해를 !D! 줍니다. NL 적이 죽을 경우, buxommod:풍만함을 5, buxommod:모유를 !M!, NL 그리고 [E] [E] [E] 를 얻습니다."
+  },
+  "BuxomMod:ChaosDunk": {
+    "NAME": "혼돈의 덩크!",
+    "DESCRIPTION": "모든 적에게 피해를 !D! 줍니다, NL 손에 있는 *상태이상 카드의 수만큼 NL 다시 사용합니다.",
+    "UPGRADE_DESCRIPTION": "모든 적에게 피해를 !D! 줍니다, 그리고 손에 있는 *상태이상 카드의 수만큼 다시 사용합니다."
+  },
+  "BuxomMod:Smother": {
+    "NAME": "숨막히게",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이번 턴에 카드를 뽑을 때마다, NL 대상은 체력을 !M! 만큼 잃습니다."
+  },
+  "BuxomMod:Submission": {
+    "NAME": "복종",
+    "DESCRIPTION": "버퍼를 1 얻습니다. NL 약화를 !M! 얻습니다."
+  }
+}
+

@@ -1,0 +1,86 @@
+{
+"BuxomMod:CommonPower": {
+        "NAME": "풍만함",
+        "DESCRIPTIONS": ["가슴 크기가 증가했습니다. 턴마다 흔들림을 얻습니다. NL 만약 #y풍만함이 #b20을 초과한다면, #y노출됨을 얻습니다."]
+},
+"BuxomMod:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"BuxomMod:KCupPower": {
+        "NAME": "K-컵 브라",
+        "DESCRIPTIONS": ["#y수용량 0-10. #b ", " #y민첩을 얻습니다. NL #y풍만함을 얻을 때마다, 그만큼의 #y방어도를 얻습니다."]
+},
+"BuxomMod:KCupPower2": {
+        "NAME": "K-컵 브라",
+        "DESCRIPTIONS": ["#y수용량 0-10. #b ", " #y민첩을 얻습니다. NL #y풍만함을 얻을 때마다, 그만큼의 #y방어도를 얻습니다."]
+},
+"BuxomMod:MCupPower": {
+        "NAME": "M-컵 브라",
+        "DESCRIPTIONS": ["#y수용량 10-20. NL #y풍만함을 얻을 때마다, #b ", " 의 #y활력을 얻습니다."]
+},
+"BuxomMod:ChibiPower": {
+        "NAME": "치비",
+        "DESCRIPTIONS": ["스킬 카드를 사용할 때, 비용에 따른 무작위 효과를 얻습니다: NL 치비와 같은 량의 풍만함을 얻거나, 치비를 얻거나, 적에게 피해를 줍니다."]
+},
+"BuxomMod:ButtonHazardPower": {
+        "NAME": "단추 위험지대",
+        "DESCRIPTIONS": ["풍만함을 얻을 때마다 #b", " 의 피해를 무작위 적에게 입힙니다."]
+},
+"BuxomMod:ReliefPower": {
+        "NAME": "안도",
+        "DESCRIPTIONS": ["카드가 소멸될 때마다 #b", " 의 방어도를 얻습니다."]
+},
+"BuxomMod:MeasurementPower": {
+        "NAME": "신체측정 시간",
+        "DESCRIPTIONS": ["턴 종료시, #b", " 의 방어도를 얻습니다. NL #y풍만함이 증가할 때마다 #b4 씩 줄어듭니다."]
+},
+"BuxomMod:ShockPower": {
+        "NAME": "오메가 쇼크",
+        "DESCRIPTIONS": ["턴 종료 시, 손에 상태이상 카드가 있을 경우, 무작위 적에게 buxommod:풍만함 만큼의 피해를 줍니다."]
+},
+"BuxomMod:TCupPower": {
+        "NAME": "T-컵 브라",
+        "DESCRIPTIONS": ["#y수용량 20-30. NL 풍만함이 증가할때 마다 #b", " 가시를 얻습니다."]
+},
+"BuxomMod:MilkPower": {
+        "NAME": "모유",
+        "DESCRIPTIONS": ["턴 종료 시 #y일시적 #y체력으로 전환됩니다. NL 치비들과 카드 효과들로 사용될 수 있습니다."]
+},
+"BuxomMod:LactatingPower": {
+        "NAME": "착유",
+        "DESCRIPTIONS": ["턴 시작 시 #y모유를 #b", " 얻습니다. 턴당 #b2 씩 감소합니다."]
+},
+"BuxomMod:BigBouncePower": {
+        "NAME": "크게 출렁이기",
+        "DESCRIPTIONS": ["#y출렁임을 #b10 흔들림마다 생성하는 대신, #y큰 #y출렁임으로 바꿉니다."]
+},
+"BuxomMod:NakedPower": {
+        "NAME": "알몸",
+        "DESCRIPTIONS": ["방어도를 얻을 수 없습니다. NL #y풍만함을 얻을 때마다, #b", " 장의 카드를 뽑습니다."]
+},
+"BuxomMod:BouncePower": {
+        "NAME": "흔들림",
+        "DESCRIPTIONS": ["8 얻을 때마다, #y출렁임 상태이상 카드를 생성합니다."]
+},
+"BuxomMod:WhiteBikiniCupPower": {
+        "NAME": "하얀 비키니",
+        "DESCRIPTIONS": ["수용량 5-15. NL 당신이 #y착유를 얻을 때 마다, #y풍만함과 #y모유를 #b", " 얻습니다. NL 턴 종료시, #y착유를 #b1 얻습니다."]
+},
+"BuxomMod:ExposedPower": {
+        "NAME": "노출됨",
+        "DESCRIPTIONS": ["모든 #y방어도를 잃고 #y방어도를 얻을 수 없습니다, #y민첩 은 예외됩니다. NL #y풍만함만큼 #b","% 의 추가 피해량을 입힙니다 (현재 #b", "% ). NL #y풍만함이 #b30 을 초과하지 않는 한 #b1 턴간 지속됩니다."]
+},
+"BuxomMod:EmbarrassmentPower": {
+        "NAME": "당황함",
+        "DESCRIPTIONS": ["#y노출될 때 마다, #y힘을 얻습니다."]
+},
+"BuxomMod:SurprisePower": {
+        "NAME": "놀랐지!",
+        "DESCRIPTIONS": ["다음 턴 시작 시 #y노출 됩니다."]
+},
+"BuxomMod:SmotherPower": {
+        "NAME": "숨막힘",
+        "DESCRIPTIONS": ["이번 턴 카드를 뽑을 때 마다 #b", " 의 피해를 입습니다."]
+}
+}

@@ -1,0 +1,125 @@
+[
+  {
+    "PROPER_NAME": "풍만함",
+    "NAMES": [
+	  "풍만함",
+	  "풍만함이",
+	  "풍만함을",
+	  "풍만함과",
+	  "풍만함만큼",
+	  "풍만함의",
+      "Buxom",
+      "buxom"
+    ],
+    "DESCRIPTION": "가슴 크기를 증가시킵니다. 턴이 끝날 때 흔들림을 얻습니다."
+  },
+  {
+    "PROPER_NAME": "수용량",
+    "NAMES": [
+	  "수용량",
+      "Capacity",
+      "capacity"
+    ],
+    "DESCRIPTION": "#y풍만함이 이 구간 이내에 있는 한 브라는 이로운 효과를 제공하며 #y노출의 해로운 효과를 방지합니다. NL 만약 #y풍만함이 이 구간을 초과할 경우, 브라는 부서지며 상태이상 카드를 생성합니다. NL 만약 이미 너무 작은 브라를 착용한다면, NL 브라는 턴 종료 시 잘 맞지 않을 경우엔 망가집니다."
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "Multiword Keyword",
+      "multiword_keyword",
+      "multiword_keywords",
+      "multikey",
+      "multikeyword"
+    ],
+    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "PROPER_NAME": "기만적",
+    "NAMES": [
+	  "기만적",
+      "Devious",
+      "devious"
+    ],
+    "DESCRIPTION": "구체: (지속)매 턴마다 #y풍만함을 1 얻습니다. NL (발현)#y에너지를 얻고 카드를 드로우 합니다."
+  },
+  {
+    "PROPER_NAME": "공격적",
+    "NAMES": [
+	  "공격적",
+      "Offensive",
+      "offensive"
+    ],
+    "DESCRIPTION": "구체: (지속)턴 시작 시 무작위 적에게 피해를 줍니다. NL (발현)모든 적에게 피해를 줍니다."
+  },
+  {
+    "PROPER_NAME": "방어적",
+    "NAMES": [
+	  "방어적",
+      "Defensive",
+      "defensive"
+    ],
+    "DESCRIPTION": "구체: (지속)턴 시작 시 방어도를 얻습니다. NL (발현)더 많은 방어도를 얻습니다."
+  },
+  {
+    "PROPER_NAME": "착유",
+    "NAMES": [
+	  "착유",
+	  "착유를",
+	  "착유와",
+      "Lactating",
+      "lactating",
+      "lactation",
+      "Lactation"
+    ],
+    "DESCRIPTION": "턴 시작 시 #y모유를 얻습니다. NL 턴당 2 씩 감소합니다."
+  },
+  {
+    "PROPER_NAME": "모유",
+    "NAMES": [
+	  "모유",
+	  "모유를",
+      "Milk",
+      "milk"
+    ],
+    "DESCRIPTION": "턴 종료 시 #y일시적 #y체력으로 전환됩니다. NL #b구체들과 카드 효과들로 사용될 수 있습니다."
+  },
+  {
+    "PROPER_NAME": "젖먹임",
+    "NAMES": [
+	  "젖먹임",
+      "Milking",
+      "milking"
+    ],
+    "DESCRIPTION": "사용 시, 그만큼의 #y모유를 소모하여 추가 효과를 얻습니다."
+  },
+  {
+    "PROPER_NAME": "노출됨",
+    "NAMES": [
+	  "노출됨",
+	  "노출됨을",
+	  "노출될",
+	  "노출",
+	  "노출의",
+	  "노출되었다면",
+	  "노출합니다",
+	  "노출할",
+	  "노출하며",
+	  "노출됨에",
+      "Exposed",
+      "exposed",
+      "Expose",
+      "expose"
+    ],
+    "DESCRIPTION": "모든 #y방어도를 잃고 #y방어도를 얻을 수 없습니다. NL 당신의 #y풍만함만큼 #b3% 의 추가 피해량을 입힙니다. NL 한 턴간 지속되지만, 당신의 #y풍만함이 #b30 을 초과할 경우 유지됩니다."
+  },
+  {
+    "PROPER_NAME": "활력",
+    "NAMES": [
+	  "활력",
+	  "활력을",
+      "Vigor",
+      "vigor"
+    ],
+    "DESCRIPTION": "다음 #y공격 이 추가 피해를 줍니다."
+  }
+]

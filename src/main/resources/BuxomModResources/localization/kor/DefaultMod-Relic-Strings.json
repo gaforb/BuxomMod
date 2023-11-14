@@ -1,0 +1,62 @@
+{
+  "BuxomMod:JCupRelic": {
+    "NAME": "J-컵 브라",
+    "FLAVOR": "시작할 때 크게 시작합니다!",
+    "DESCRIPTIONS": [
+      "전투 시작 시 풍만함을 1 얻습니다."
+    ]
+  },
+  "BuxomMod:PlaceholderRelic2": {
+    "NAME": "Placeholder Relic 2",
+    "FLAVOR": "You feel stronger.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b1 #yStrength."
+    ]
+  },
+  "BuxomMod:DefaultClickableRelic": {
+    "NAME": "Right-Clicky Relic",
+    "FLAVOR": "The more you right-click it, the more orbs you've evoked in your lifetime.",
+    "DESCRIPTIONS": [
+      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]turn.[] NL #yEvoke your rightmost Orb.",
+      "YOU ARE MINE!"
+    ]
+  },
+  "BuxomMod:BottledPlaceholderRelic": {
+    "NAME": "Bottled Placeholder",
+    "FLAVOR": "What is this?",
+    "DESCRIPTIONS": [
+      "Choose a card. Whenever you take play any card, draw the chosen card.",
+      "Whenever you play a card, draw ",
+      ".",
+      "Select a card to bottle for "
+    ]
+  },
+  "BuxomMod:ToplessArtifact": {
+    "NAME": "상의탈의의 저주",
+    "FLAVOR": "당신의 거대한 가슴은 가리려는 모든 시도를 마법적으로 빠져나갑니다.",
+    "DESCRIPTIONS": [
+      "턴 시작 시 [E] 를 얻습니다. 전투 시작 시 추가적으로 BuxomMod:풍만함을 #b5 얻습니다. 입는 브라가 즉시 벗겨집니다."
+    ]
+  },
+  "BuxomMod:DwarfBoobsRelic": {
+    "NAME": "드워프 젖통",
+    "FLAVOR": "인간들보다 더 큰 가슴이지만, 레마나의 J-컵은 당신이 생각하는것 만큼 주목할만 하지 않습니다.",
+    "DESCRIPTIONS": [
+      "전투 시작 시 #y풍만함을 얻습니다."
+    ]
+  },
+  "BuxomMod:WashboardRelic": {
+    "NAME": "빨래판",
+    "FLAVOR": "당신의 뽑을 카드 더미가 상태이상 카드로 채워져 있을 때를 위해.",
+    "DESCRIPTIONS": [
+      "전투 당 한 번, #b우클릭 하여 #y풍만함을 10 잃습니다."
+    ]
+  },
+  "BuxomMod:CowRelic": {
+    "NAME": "소 인형",
+    "FLAVOR": "친구입니다!",
+    "DESCRIPTIONS": [
+      "전투 시작 시, 착유 #b3 과 풍만함 #b1 을 얻습니다."
+    ]
+  }
+}

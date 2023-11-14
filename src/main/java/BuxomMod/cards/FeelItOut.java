@@ -84,7 +84,7 @@ public class FeelItOut extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
-        addToBot(new FetchAction(p.drawPile, c -> c.type == CardType.STATUS, Integer.MAX_VALUE)); //credit to modargo in the StS server for this
+        addToBot(new FetchAction(p.drawPile, c -> BuxomMod.getType(c) == CardType.STATUS, Integer.MAX_VALUE)); //credit to modargo in the StS server for this
     }
 
     //Upgraded stats.

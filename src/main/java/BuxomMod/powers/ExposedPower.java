@@ -28,6 +28,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/Exposed32.png");
     private boolean justApplied = false;
     public static float MULTIPLIER = 0.03F;
+    public static float INTERCEPT = 0.50F;
 
     public ExposedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -48,7 +49,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + (MULTIPLIER * 100) + DESCRIPTIONS[1] + Math.round((100 * (MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID)))) + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + (INTERCEPT*100) + DESCRIPTIONS[1] + (MULTIPLIER * 100) + DESCRIPTIONS[2] + Math.round((100 * (INTERCEPT + MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID)))) + DESCRIPTIONS[3];
     }
 
     public void onInitialApplication() {
@@ -57,7 +58,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage * (1F + (MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID))) : damage;
+        return type == DamageInfo.DamageType.NORMAL ? damage * (1F + INTERCEPT + (MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID))) : damage;
     }
 
     public float modifyBlock(float blockAmount) {

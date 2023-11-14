@@ -88,7 +88,7 @@ public class BouncyBlock extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
-        CardGroup statusCardsHand = p.hand.getCardsOfType(CardType.STATUS);
+        CardGroup statusCardsHand = BuxomMod.specialGetCardsOfType(p.hand, CardType.STATUS);
         for (AbstractCard card : statusCardsHand.group) {
             addToBot(new ApplyPowerAction(p, p, new VigorPower(p, magicNumber)));
         }

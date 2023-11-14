@@ -1,13 +1,11 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.patches.CustomTags;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static BuxomMod.BuxomMod.getPwrAmt;
@@ -48,7 +46,7 @@ public class ShockStatus extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.STATUS;       //
+    private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 1;  // COST = ${COST}
@@ -66,13 +64,14 @@ public class ShockStatus extends AbstractDynamicCard {
         damage = baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
         this.exhaust = true;
+        this.tags.add(CustomTags.BOUNCY);
     }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int bdiv = getPwrAmt(p, CommonPower.POWER_ID);
         addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber), magicNumber));
-        addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.LIGHTNING));
+        this.addToBot(new LoseHPAction(m, p, damage, AbstractGameAction.AttackEffect.LIGHTNING));
     }
     public void triggerWhenDrawn() {addToBot(new DrawCardAction(magicNumber));}
 

@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.patches.CustomTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -47,6 +48,7 @@ public class OmegaLibrary extends AbstractDynamicCard {
         baseMagicNumber = magicNumber = MAGIC;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
         this.exhaust = true;
+        this.tags.add(CustomTags.BOUNCY);
     }
 
     // Actions the card should do.

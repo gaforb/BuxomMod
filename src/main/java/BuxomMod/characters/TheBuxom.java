@@ -226,10 +226,12 @@ public class TheBuxom extends CustomPlayer {
         String currAnimName = this.state.getCurrent(0).getAnimation().getName();
         if (this.hasPower(ExposedPower.POWER_ID) && !currAnimName.contains("_ex")) {
             changeState(currAnimName + "_ex");
+            logger.info("Updated exposed state, current anim name: " + currAnimName);
         } else if (!this.hasPower(ExposedPower.POWER_ID) && currAnimName.contains("_ex")) {
             String currAnimNameClothed = currAnimName.substring(0, currAnimName.length() - 3);
             logger.info(currAnimNameClothed);
             changeState(currAnimNameClothed);
+            logger.info("Updated exposed state, current anim name: " + currAnimName);
         }
     }
 

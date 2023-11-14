@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.characters.TheBuxom;
+import BuxomMod.patches.CustomTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,6 +34,7 @@ public class ToplessStatus extends AbstractDynamicCard {
     public ToplessStatus() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        this.tags.add(CustomTags.BOUNCY);
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return false;

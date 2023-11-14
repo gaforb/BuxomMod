@@ -93,7 +93,7 @@ public class ChaosDunk extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        CardGroup statusCardsHand = p.hand.getCardsOfType(CardType.STATUS);
+        CardGroup statusCardsHand = BuxomMod.specialGetCardsOfType(p.hand, CardType.STATUS);
         for (AbstractCard card : statusCardsHand.group) {
             addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.BLUNT_HEAVY));

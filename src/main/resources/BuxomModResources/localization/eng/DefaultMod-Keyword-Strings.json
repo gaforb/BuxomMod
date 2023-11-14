@@ -93,5 +93,21 @@
       "vigor"
     ],
     "DESCRIPTION": "Increases the damage of the next #yAttack played."
+  },
+  {
+    "PROPER_NAME": "Bouncy",
+    "NAMES": [
+      "Bouncy",
+      "bouncy"
+    ],
+    "DESCRIPTION": "Also counts as a #yStatus card."
+  },
+  {
+    "PROPER_NAME": "Anatomical",
+    "NAMES": [
+      "Anatomical",
+      "anatomical"
+    ],
+    "DESCRIPTION": "Double effect on enemies with breasts. #p(Mystic, #pMugger, #pLooter, #pReptomancer, #pThe #pCollector) NL #b50% chance to double effect on enemies that might have breasts. #p(The #pChamp, #pAwakened #pOne, #pChosen, #pGremlin #pLeader)"
   }
 ]

@@ -1,6 +1,6 @@
 package BuxomMod;
 
-import BuxomMod.potions.ChibiPotion;
+import BuxomMod.patches.CustomTags;
 import BuxomMod.potions.DragonMilkPotion;
 import BuxomMod.potions.PermaGrowthPotion;
 import BuxomMod.powers.BraPower;
@@ -9,13 +9,11 @@ import BuxomMod.relics.CowRelic;
 import BuxomMod.ui.BraPanel;
 import BuxomMod.ui.BuxomPanel;
 import basemod.*;
-import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -25,11 +23,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -51,7 +47,7 @@ import BuxomMod.variables.DefaultSecondMagicNumber;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.Properties;
+import java.util.*;
 
 //TODO: DON'T MASS RENAME/REFACTOR
 //TODO: DON'T MASS RENAME/REFACTOR
@@ -492,6 +488,9 @@ public class BuxomMod implements
             case ZHS:
                 ret += "zhs/";
                 break;
+            case KOR:
+                ret += "kor/";
+                break;
             default:
                 ret += "eng/";
                 break;
@@ -581,8 +580,8 @@ public class BuxomMod implements
     }
 
     //utility
-
-    //from the Packmaster
+    public static List<String> monstersWithBreasts = Arrays.asList(new String[]{"Mystic", "Looter", "Mugger", "Reptomancer", "TheCollector"});
+    public static List<String> monstersWithBreastsMaybe = Arrays.asList(new String[]{"TheChamp", "GremlinLeader", "Chosen", "AwakenedOne"});
 
     public static int getPwrAmt(AbstractCreature check, String ID) {
         AbstractPower found = check.getPower(ID);
@@ -637,9 +636,9 @@ public class BuxomMod implements
     public static int getStatusCount(AbstractPlayer p) {
 
         int statusCount = 0;
-        CardGroup statusCardsHand = p.hand.getCardsOfType(AbstractCard.CardType.STATUS);
-        CardGroup statusCardsDraw = p.drawPile.getCardsOfType(AbstractCard.CardType.STATUS);
-        CardGroup statusCardsDiscard = p.discardPile.getCardsOfType(AbstractCard.CardType.STATUS);
+        CardGroup statusCardsHand = BuxomMod.specialGetCardsOfType(p.hand, AbstractCard.CardType.STATUS);
+        CardGroup statusCardsDraw = BuxomMod.specialGetCardsOfType(p.hand, AbstractCard.CardType.STATUS);
+        CardGroup statusCardsDiscard = BuxomMod.specialGetCardsOfType(p.hand, AbstractCard.CardType.STATUS);
         for (AbstractCard card : statusCardsHand.group) {
             ++statusCount;
             BuxomMod.logger.info("Found status card. Status count is" + statusCount);
@@ -676,4 +675,39 @@ public class BuxomMod implements
         BuxomMod.logger.info("Final status count is" + statusCount);
         return statusCount;
     }
+
+    public static AbstractCard.CardType getType(AbstractCard card) {
+        AbstractCard.CardType type = card.type;
+        if (card.hasTag(CustomTags.BOUNCY) == true) {
+            type = AbstractCard.CardType.STATUS;
+        }
+        return type;
+    }
+
+    public static CardGroup specialGetCardsOfType(CardGroup group, AbstractCard.CardType cardType) {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        Iterator var3 = group.group.iterator();
+
+        while(var3.hasNext()) {
+            AbstractCard card = (AbstractCard)var3.next();
+            if (card.type == cardType) {
+                retVal.addToBottom(card);
+            }
+        }
+
+        return retVal;
+    }
+
+    public static boolean stringContainsItemFromList(String inputStr, String[] items)
+    {
+        for(int i =0; i < items.length; i++)
+        {
+            if(inputStr.contains(items[i]))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

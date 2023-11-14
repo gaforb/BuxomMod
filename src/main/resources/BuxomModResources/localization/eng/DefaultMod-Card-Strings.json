@@ -101,7 +101,7 @@
   },
   "BuxomMod:ToplessStatus": {
     "NAME": "Topless",
-    "DESCRIPTION": "Unplayable. NL When this card is Exhausted, draw !M! additional cards per turn."
+    "DESCRIPTION": "Unplayable. NL buxommod:Bouncy. NL When this card is Exhausted, draw !M! additional cards per turn."
   },
   "BuxomMod:AftershockStatus": {
     "NAME": "Afterswell",
@@ -114,7 +114,7 @@
   },
   "BuxomMod:OmegaLibrary": {
     "NAME": "OMEGA Library",
-    "DESCRIPTION": "Draw !M! cards. NL Gain !BuxomMod:SecondMagic! Buxom. NL Add *Omega *Library to your discard pile. NL Exhaust."
+    "DESCRIPTION": "buxommod:Bouncy. NL Draw !M! cards. NL Gain !BuxomMod:SecondMagic! Buxom. NL Add *Omega *Library to your discard pile. NL Exhaust."
   },
   "BuxomMod:MeasurementTime": {
     "NAME": "Measurement Time",
@@ -221,7 +221,7 @@
   },
   "BuxomMod:ShockStatus": {
     "NAME": "Shock",
-    "DESCRIPTION": "{@@}When this card is drawn, draw !M! card{!M!|>1=s}. NL Gain !M! BuxomMod:Buxom. NL Deal !D! damage. NL Exhaust."
+    "DESCRIPTION": "buxommod:Bouncy. NL {@@}When this card is drawn, draw !M! card{!M!|>1=s}. NL Gain !M! BuxomMod:Buxom. NL Enemy loses !D! HP. NL Exhaust."
   },
   "BuxomMod:WhiteBikiniBra": {
     "NAME": "White Bikini",
@@ -265,6 +265,28 @@
   "BuxomMod:Smother": {
     "NAME": "Smother",
     "DESCRIPTION": "Deal !D! damage. Whenever you draw a card this turn, the enemy loses !M! HP."
+  },
+  "BuxomMod:Submission": {
+    "NAME": "Submission",
+    "DESCRIPTION": "Prevent the next time you would lose HP. NL Gain !M! Weak. NL Exhaust."
+  },
+  "BuxomMod:ChibiChampion": {
+  "NAME": "Chibi Champion",
+  "DESCRIPTION": "Gain 1 Strength for every !M! Milk you have. NL Deal !D! damage twice."
+  },
+  "BuxomMod:OmegaContagion": {
+    "NAME": "Omega Contagion",
+    "DESCRIPTION": "buxommod:Anatomical. NL ALL enemies lose !M! Strength."
+  },
+  "BuxomMod:OmegaCurse": {
+    "NAME": "Omega Corruption",
+    "DESCRIPTION": "Gain 2 [E], gain 2 buxommod:Buxom, add 1 *Afterswell to your draw pile, and Exhaust a random card in your hand, X times.",
+    "UPGRADE_DESCRIPTION": "Gain 2 [E], gain 2 buxommod:Buxom, add 1 *Afterswell to your draw pile, and Exhaust a card in your hand, X times."
+  },
+  "BuxomMod:PanicLactation": {
+    "NAME": "Panic Lactation",
+    "DESCRIPTION": "Gain !B! Block and !M! buxommod:Milk.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block and !M! buxommod:Milk."
   }
 }
 

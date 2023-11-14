@@ -50,7 +50,7 @@ public class EmbarrassmentPower extends AbstractPower implements CloneablePowerI
     }
 
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power instanceof ExposedPower) {
+        if (power instanceof ExposedPower && !target.hasPower(ExposedPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
         }
     }

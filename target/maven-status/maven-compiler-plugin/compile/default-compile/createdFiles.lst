@@ -5,6 +5,7 @@ BuxomMod\powers\SmotherPower$Trigger.class
 BuxomMod\actions\GrowAction.class
 BuxomMod\cards\DefaultCommonAttack.class
 BuxomMod\powers\CommonPower.class
+BuxomMod\cards\ChibiChampion.class
 BuxomMod\cards\FeelItOut.class
 BuxomMod\powers\KCupPower_old.class
 BuxomMod\relics\BottledPlaceholderRelic.class
@@ -28,6 +29,7 @@ BuxomMod\cards\BraBreaker.class
 BuxomMod\relics\DwarfBoobsRelic.class
 BuxomMod\vfx\ExpandEffect.class
 BuxomMod\actions\BraSelectAction.class
+BuxomMod\cards\OmegaContagion.class
 BuxomMod\cards\ChibiOneTwo.class
 BuxomMod\powers\ExposedPower.class
 BuxomMod\cards\WardrobeMalfunction.class
@@ -101,6 +103,7 @@ BuxomMod\characters\TheBuxom$Enums.class
 BuxomMod\cards\Paizuri.class
 BuxomMod\relics\PlaceholderRelic2.class
 BuxomMod\cards\Phew.class
+BuxomMod\patches\CustomTags.class
 BuxomMod\actions\UncommonSkillAction.class
 BuxomMod\powers\LactatingPower.class
 BuxomMod\powers\MCupPower.class
@@ -119,6 +122,7 @@ BuxomMod\potions\DragonMilkPotion.class
 BuxomMod\cards\OmegaBeatdown.class
 BuxomMod\cards\Relief.class
 BuxomMod\cards\HungryDwarf.class
+BuxomMod\cards\Submission.class
 BuxomMod\cards\Hardheaded.class
 BuxomMod\cards\KCupBra.class
 BuxomMod\powers\BraPower.class
@@ -127,6 +131,7 @@ BuxomMod\cards\DefaultCommonSkill.class
 BuxomMod\patches\relics\BottledPlaceholderField.class
 BuxomMod\powers\KCupPower.class
 BuxomMod\relics\WashboardRelic.class
+BuxomMod\cards\OmegaCurse.class
 BuxomMod\powers\BraBreakerPower.class
 BuxomMod\powers\BouncePower.class
 BuxomMod\cards\SwellingTight.class
