@@ -197,7 +197,7 @@ public class TheBuxom extends CustomPlayer {
                         1.0f);
                 e = this.state.setAnimation(0, stateName, true);
                 e.setTime(e.getEndTime() * MathUtils.random());
-                getSkeleton().setAttachment(boobsSlotName, "boobs2");
+                getSkeleton().setAttachment(boobsSlotName, "boobs2-ex");
                 getSkeleton().setAttachment("face", "face2");
                 getSkeleton().setAttachment("chest", "chest");
                 break;

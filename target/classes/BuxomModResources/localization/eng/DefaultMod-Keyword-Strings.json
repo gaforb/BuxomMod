@@ -13,7 +13,7 @@
       "Capacity",
       "capacity"
     ],
-    "DESCRIPTION": "Bras provide passive bonuses and prevent the downside of #yExpose as long as your #yBuxom is within this range (inclusive). If your #yBuxom exceeds this range, they will break and create a status card. If you put on a bra that's already too small, it will break if it doesn't fit at the end of the turn."
+    "DESCRIPTION": "Bras provide passive bonuses and prevent the downside of #yExpose as long as your #yBuxom is within this range (inclusive). If your #yBuxom exceeds this range, they will break. If you put on a bra that's already too small, it will break if it doesn't fit at the end of the turn."
   },
   {
     "PROPER_NAME": "Multiword Keyword",

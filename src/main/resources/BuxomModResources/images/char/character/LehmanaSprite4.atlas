@@ -88,13 +88,6 @@ lehmana sprite/Layer_40
   orig: 30, 63
   offset: 0, 0
   index: -1
-lehmana sprite chest
-  rotate: false
-  xy: 77, 122
-  size: 70, 88
-  orig: 70, 88
-  offset: 0, 0
-  index: -1
 chestEx
   rotate: false
   xy: 217, 122
@@ -102,7 +95,21 @@ chestEx
   orig: 58, 89
   offset: 0, 0
   index: -1
+lehmana sprite chest
+  rotate: false
+  xy: 77, 122
+  size: 70, 88
+  orig: 70, 88
+  offset: 0, 0
+  index: -1
 faceblink
+  rotate: false
+  xy: 409, 1
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+face2
   rotate: false
   xy: 405, 179
   size: 51, 59
@@ -112,13 +119,6 @@ faceblink
 lehmana sprite/Layer_7_Copy
   rotate: false
   xy: 458, 179
-  size: 51, 59
-  orig: 51, 59
-  offset: 0, 0
-  index: -1
-face2
-  rotate: false
-  xy: 409, 1
   size: 51, 59
   orig: 51, 59
   offset: 0, 0
@@ -165,11 +165,11 @@ boobsEx1
   orig: 56, 41
   offset: 0, 0
   index: -1
-boobs2-3
+lehmana sprite/Layer_28
   rotate: false
-  xy: 335, 179
-  size: 68, 53
-  orig: 68, 53
+  xy: 189, 213
+  size: 52, 41
+  orig: 52, 41
   offset: 0, 0
   index: -1
 boobsEx2
@@ -179,11 +179,11 @@ boobsEx2
   orig: 72, 55
   offset: 0, 0
   index: -1
-lehmana sprite/Layer_28
+boobs2-3
   rotate: false
-  xy: 189, 213
-  size: 52, 41
-  orig: 52, 41
+  xy: 335, 179
+  size: 68, 53
+  orig: 68, 53
   offset: 0, 0
   index: -1
 shirt top
