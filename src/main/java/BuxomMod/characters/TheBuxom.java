@@ -164,7 +164,7 @@ public class TheBuxom extends CustomPlayer {
     //animations
     public float scalerate = 0.03F;
     public float threshhold1 = 15;
-    public float threshhold2 = 25;
+    public float threshhold2 = 30;
     public int currRange = 0;
     public Skeleton getSkeleton() {
         return skeleton;

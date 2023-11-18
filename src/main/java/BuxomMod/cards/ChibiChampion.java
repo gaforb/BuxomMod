@@ -62,7 +62,9 @@ public class ChibiChampion extends AbstractDynamicCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         int milk = BuxomMod.getPwrAmt(p, MilkPower.POWER_ID);
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, (milk/magicNumber))));
+        if ((milk/magicNumber) > 0) {
+            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, (milk / magicNumber))));
+        }
         addToBot(new DamageAction(m, new DamageInfo(p, damage),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new DamageAction(m, new DamageInfo(p, damage),

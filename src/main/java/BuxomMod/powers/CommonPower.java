@@ -143,7 +143,12 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     }
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) { // At the end of your turn
         if (isPlayer) {
-            addToTop(new ApplyPowerAction(this.owner, this.owner, new BouncePower(this.owner, this.owner, this.amount)));
+            BuxomMod.logger.info("CommonPower: Applying " + amount + " bounce stacks");
+            addToTop(new ApplyPowerAction(this.owner, this.owner, new BouncePower(this.owner, this.owner, this.amount), this.amount));
+            if (this.amount >= 30 && !(owner.hasPower(ExposedPower.POWER_ID))) {
+                BuxomMod.logger.info("Buxom: " + this.amount + ". Over 30 Buxom! Exposing!");
+                addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
+            }
         }
     }
 
@@ -155,6 +160,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
        BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
        super.stackPower(stackAmount);
        if (this.amount >= 30 && !(owner.hasPower(ExposedPower.POWER_ID))) {
+           BuxomMod.logger.info("Buxom: " + this.amount + ". Over 30 Buxom! Exposing!");
            addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
        }
        for (AbstractPower pow : this.owner.powers) {

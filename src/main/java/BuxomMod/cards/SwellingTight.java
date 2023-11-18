@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.powers.BraPower;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -55,6 +56,7 @@ private static final int COST = 0;  // COST = ${COST}
 private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 private static final int MAGIC = 2;
 private static final int UPGRADE_PLUS_MAGIC = 1;
+private static final int SECOND_MAGIC = 1;
 
 // /STAT DECLARATION/
 
@@ -62,6 +64,7 @@ private static final int UPGRADE_PLUS_MAGIC = 1;
 public SwellingTight() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
     super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     baseMagicNumber = magicNumber = MAGIC;
+    defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
     this.exhaust = true;
     }
 
@@ -88,6 +91,7 @@ public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, 3), 3));
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(defaultSecondMagicNumber));
     }
 
 

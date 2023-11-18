@@ -1,8 +1,10 @@
 package BuxomMod.cards;
 
 import BuxomMod.powers.CommonPower;
+import BuxomMod.powers.ExposedPower;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -95,6 +97,10 @@ public class Phew extends AbstractDynamicCard {
         if (p.hasPower(CommonPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(
                     new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), magicNumber));
+        }
+        if (p.hasPower(ExposedPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(
+                    new RemoveSpecificPowerAction(p, p, p.getPower("BuxomMod:ExposedPower")));
         }
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }

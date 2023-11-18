@@ -93,10 +93,6 @@ public class WhiteBikiniCupPower extends BraPower implements CloneablePowerInter
         AbstractCard brokenBra = new BrokenBraWhiteBikini();
         AbstractDungeon.actionManager.addToTop(
                 new RemoveSpecificPowerAction(owner, owner, WhiteBikiniCupPower.POWER_ID));
-        if (upgraded) {
-            brokenBra.upgrade();
-        }
-        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction((AbstractCard) brokenBra, 1, true, true));
     }
 
     @Override

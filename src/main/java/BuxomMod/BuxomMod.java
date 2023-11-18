@@ -3,6 +3,7 @@ package BuxomMod;
 import BuxomMod.patches.CustomTags;
 import BuxomMod.potions.DragonMilkPotion;
 import BuxomMod.potions.PermaGrowthPotion;
+import BuxomMod.powers.BraBrokenPower;
 import BuxomMod.powers.BraPower;
 import BuxomMod.powers.MilkPower;
 import BuxomMod.relics.CowRelic;
@@ -637,42 +638,46 @@ public class BuxomMod implements
 
         int statusCount = 0;
         CardGroup statusCardsHand = BuxomMod.specialGetCardsOfType(p.hand, AbstractCard.CardType.STATUS);
-        CardGroup statusCardsDraw = BuxomMod.specialGetCardsOfType(p.hand, AbstractCard.CardType.STATUS);
-        CardGroup statusCardsDiscard = BuxomMod.specialGetCardsOfType(p.hand, AbstractCard.CardType.STATUS);
+        CardGroup statusCardsDraw = BuxomMod.specialGetCardsOfType(p.drawPile, AbstractCard.CardType.STATUS);
+        CardGroup statusCardsDiscard = BuxomMod.specialGetCardsOfType(p.discardPile, AbstractCard.CardType.STATUS);
+        BuxomMod.logger.info("Hand size: " + statusCardsHand.group.size());
+        BuxomMod.logger.info("Draw size: " + statusCardsDraw.group.size());
+        BuxomMod.logger.info("Discard size: " + statusCardsDiscard.group.size());
         for (AbstractCard card : statusCardsHand.group) {
             ++statusCount;
-            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
+            BuxomMod.logger.info("Found status card in hand. Status count is " + statusCount);
             if (card.cardID == BigBounceStatus.ID) {
                 ++statusCount;
-                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Big Bounce status card in hand. Status count is " + statusCount);
             } else if (card.cardID.contains("BrokenBra")) {
                 statusCount += 2;
-                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Broken Bra status card in hand. Status count is " + statusCount);
             }
         }
         for (AbstractCard card : statusCardsDraw.group) {
             ++statusCount;
-            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
+            BuxomMod.logger.info("Found status card in draw. Status count is " + statusCount);
             if (card.cardID == BigBounceStatus.ID) {
                 ++statusCount;
-                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Big Bounce status card in draw. Status count is " + statusCount);
             } else if (card.cardID.contains("BrokenBra")) {
                 statusCount += 2;
-                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Broken Bra status card in draw. Status count  " + statusCount);
             }
         }
         for (AbstractCard card : statusCardsDiscard.group) {
             ++statusCount;
-            BuxomMod.logger.info("Found status card. Status count is" + statusCount);
+            BuxomMod.logger.info("Found status card in discard. Status count is " + statusCount);
             if (card.cardID == BigBounceStatus.ID) {
                 ++statusCount;
-                BuxomMod.logger.info("Found Big Bounce status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Big Bounce status card in discard. Status count is " + statusCount);
             } else if (card.cardID.contains("BrokenBra")) {
                 statusCount += 2;
-                BuxomMod.logger.info("Found Broken Bra status card. Status count is" + statusCount);
+                BuxomMod.logger.info("Found Broken Bra status card in discard. Status count is " + statusCount);
             }
         }
-        BuxomMod.logger.info("Final status count is" + statusCount);
+        statusCount += getPwrAmt(p, BraBrokenPower.POWER_ID);
+        BuxomMod.logger.info("Final status count is " + statusCount);
         return statusCount;
     }
 
@@ -690,7 +695,7 @@ public class BuxomMod implements
 
         while(var3.hasNext()) {
             AbstractCard card = (AbstractCard)var3.next();
-            if (card.type == cardType) {
+            if (getType(card) == cardType) {
                 retVal.addToBottom(card);
             }
         }

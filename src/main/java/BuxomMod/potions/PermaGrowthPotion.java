@@ -75,7 +75,7 @@ public class PermaGrowthPotion extends CustomPotion {
     // This is your potency.
     @Override
     public int getPotency(final int potency) {
-        return 3;
+        return 6;
     }
 
     public void upgradePotion()

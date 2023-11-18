@@ -61,6 +61,7 @@ public abstract class BraPower extends TwoAmountPower {
     public void breakCheck() {
         if (getPwrAmt(owner, CommonPower.POWER_ID) > this.maxCapacity) {
             this.broken();
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new BraBrokenPower(this.owner, this.owner, 1), 1));
         }
     }
 

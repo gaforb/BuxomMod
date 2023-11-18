@@ -84,7 +84,7 @@
       "Expose",
       "expose"
     ],
-    "DESCRIPTION": "Lose all #yBlock and can't gain #yBlock. Deal #b3% bonus damage for each #yBuxom stack you have. Lasts one turn, but persists if your #yBuxom exceeds #b30."
+    "DESCRIPTION": "Lose all #yBlock and can't gain #yBlock. Deal #b30% + #b3% bonus damage for each #yBuxom stack you have. Lasts one turn, but persists if your #yBuxom exceeds #b30."
   },
   {
     "PROPER_NAME": "Vigor",
@@ -109,5 +109,13 @@
       "anatomical"
     ],
     "DESCRIPTION": "Double effect on enemies with breasts. #p(Mystic, #pMugger, #pLooter, #pReptomancer, #pThe #pCollector) NL #b50% chance to double effect on enemies that might have breasts. #p(The #pChamp, #pAwakened #pOne, #pChosen, #pGremlin #pLeader)"
+  },
+  {
+    "PROPER_NAME": "Bra",
+    "NAMES": [
+      "Bra",
+      "bra"
+    ],
+    "DESCRIPTION": "Bras provide passive bonuses and prevent the downside of #yExpose as long as your #yBuxom is within a certain range."
   }
 ]

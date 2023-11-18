@@ -46,33 +46,45 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
     public boolean appliedThisTurn;
     public void createStatusCards() {
         int buxom = BuxomMod.getPwrAmt(this.owner, CommonPower.POWER_ID);
-        this.amount += buxom;
+        BuxomMod.logger.info("BouncePower: " + buxom + " buxom stacks to be applied");
+        if (!appliedThisTurn) {
+            this.amount += buxom;
+        }
+        else {appliedThisTurn = false;}
+        BuxomMod.logger.info("BouncePower: "+ this.amount + " bounce stacks");
         if (this.owner.hasPower(BigBouncePower.POWER_ID)) {
             while (this.amount >= 10) {
+                BuxomMod.logger.info("BouncePower: 10 stacks reached with big bounce, making status cards");
                 this.amount -= 10;
+                BuxomMod.logger.info("BouncePower: " + amount + " stacks remaining");
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BigBounceStatus(), 1));
             }
         } else {
             while (this.amount >= 8) {
+                BuxomMod.logger.info("BouncePower: 8 stacks reached without big bounce, making status cards");
                 this.amount -= 8;
+                BuxomMod.logger.info("BouncePower: " + amount + " stacks remaining");
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BuxomStatus(), 1));
             }
         }
     }
     public void onInitialApplication() {
-        if (!this.owner.hasPower(BigBouncePower.POWER_ID) && this.amount >= 8) {
+        appliedThisTurn = true;
+        createStatusCards();
+        /*if (!this.owner.hasPower(BigBouncePower.POWER_ID) && this.amount >= 8) {
             createStatusCards();
         }
         else if ((this.owner.hasPower(BigBouncePower.POWER_ID)) && this.amount >= 10) {
             createStatusCards();
-        }
-        appliedThisTurn = true;
+        }*/
     }
     public void stackPower(int stackAmount) { // At the end of your turn
         if (!appliedThisTurn) {
+            BuxomMod.logger.info("Bounce not initially applied this turn, creating status cards");
             createStatusCards();
         }
-        else { appliedThisTurn = false; }
+        else {BuxomMod.logger.info("Bounce initially applied this turn, not creating status cards");
+            appliedThisTurn = false; }
     }
     @Override
     public void updateDescription() {

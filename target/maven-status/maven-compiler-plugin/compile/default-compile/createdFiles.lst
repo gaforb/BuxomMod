@@ -51,6 +51,7 @@ BuxomMod\util\TextureLoader.class
 BuxomMod\cards\ChibiBlock.class
 BuxomMod\cards\Smother.class
 BuxomMod\ui\BraPanel.class
+BuxomMod\powers\BraBrokenPower.class
 BuxomMod\powers\RarePower.class
 BuxomMod\cards\BouncyBlock.class
 BuxomMod\cards\AbstractDefaultCard.class
@@ -94,6 +95,7 @@ BuxomMod\util\IDCheckDontTouchPls.class
 BuxomMod\cards\AftershockStatus.class
 BuxomMod\cards\ChibiOffering.class
 BuxomMod\cards\Flee.class
+BuxomMod\cards\BraCloset.class
 BuxomMod\powers\EmbarrassmentPower.class
 BuxomMod\cards\BrokenBraM.class
 BuxomMod\powers\TCupPower.class
@@ -102,6 +104,7 @@ BuxomMod\potions\ChibiPotion.class
 BuxomMod\powers\NakedPower.class
 BuxomMod\characters\TheBuxom$Enums.class
 BuxomMod\cards\Paizuri.class
+BuxomMod\cards\BouncingLactation.class
 BuxomMod\relics\PlaceholderRelic2.class
 BuxomMod\cards\Phew.class
 BuxomMod\patches\CustomTags.class
@@ -126,6 +129,7 @@ BuxomMod\cards\HungryDwarf.class
 BuxomMod\cards\Submission.class
 BuxomMod\cards\Hardheaded.class
 BuxomMod\cards\KCupBra.class
+BuxomMod\powers\InvoluntaryLactationPower.class
 BuxomMod\powers\BraPower.class
 BuxomMod\cards\ExpandMind.class
 BuxomMod\cards\DefaultCommonSkill.class

@@ -34,7 +34,7 @@ public class WardrobeMalfunction extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
     private static final int SECOND_MAGIC = 3;

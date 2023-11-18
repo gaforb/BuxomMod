@@ -18,8 +18,8 @@ public class BigBouncePower extends AbstractPower implements CloneablePowerInter
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/BraBreaker84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/BraBreaker32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/BigBounce84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/BigBounce32.png");
 
     public BigBouncePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;

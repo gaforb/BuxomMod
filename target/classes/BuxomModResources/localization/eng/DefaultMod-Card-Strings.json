@@ -64,7 +64,7 @@
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
-    "DESCRIPTION": "buxommod:Capacity 0-10. NL Gain !M! Dexterity. NL Whenever you gain buxommod:Buxom, gain that much Block."
+    "DESCRIPTION": "buxommod:Capacity 0-10. NL Gain !M! Dexterity. NL Whenever you gain buxommod:Buxom, gain twice that much Block."
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",
@@ -80,7 +80,7 @@
   },
   "BuxomMod:ChibiSummon": {
     "NAME": "Chibi Summon",
-    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL Gain !B! Block, and gain !B! block again next turn."
+    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL Gain !B! Block. NL Gain !B! Block next turn."
   },
   "BuxomMod:ButtonPop": {
     "NAME": "Button Pop",
@@ -139,7 +139,7 @@
   },
   "BuxomMod:Phew": {
     "NAME": "Phew!",
-    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL Gain !B! Block."
+    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL If BuxomMod:Exposed, remove BuxomMod:Exposed. NL Gain !B! Block."
   },
   "BuxomMod:TCupBra": {
     "NAME": "T-Cup Bra",
@@ -188,7 +188,7 @@
   },
   "BuxomMod:BraBreaker": {
     "NAME": "Bra Breaker",
-    "DESCRIPTION": "If wearing a *Bra: Gain enough BuxomMod:Buxom to break it. NL Deal !M! damage for each existing Status card. *Big *Bounces count double, and *Broken *Bras count triple. NL (Deals !D! damage.)"
+    "DESCRIPTION": "If wearing a *Bra: Gain enough BuxomMod:Buxom to break it. NL Deal !M! damage for each existing Status card and BuxomMod:Bra broken this combat. *Big *Bounces count double. NL (Deals !D! damage.)"
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",
@@ -285,8 +285,17 @@
   },
   "BuxomMod:PanicLactation": {
     "NAME": "Panic Lactation",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! buxommod:Milk.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! buxommod:Milk."
+    "DESCRIPTION": "When you play a Strike or *Defend this turn, gain !M! buxommod:Milk.",
+    "UPGRADE_DESCRIPTION": "When you play a Strike or *Defend this turn, gain !M! buxommod:Milk."
+  },
+  "BuxomMod:BouncingLactation": {
+    "NAME": "Bouncing Lactation",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! buxommod:Milk. NL If buxommod:Exposed, gain !M! additional buxommod:Milk.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! buxommod:Milk. NL If buxommod:Exposed, gain !M! additional buxommod:Milk."
+  },
+  "BuxomMod:BraCloset": {
+    "NAME": "Bra Closet",
+    "DESCRIPTION": "{@@}Add one of 3 random buxommod:Bra cards into your hand. NL Draw !M! card{!M!|>1=s}."
   }
 }
 

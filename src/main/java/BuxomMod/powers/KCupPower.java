@@ -66,7 +66,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
     private int buffAmount = 2;
     public void onGrow(int howMuch) {
         if (this.inCapacity() == true) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, howMuch));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, howMuch*2));
         }
     }
     public void onInitialApplication() {

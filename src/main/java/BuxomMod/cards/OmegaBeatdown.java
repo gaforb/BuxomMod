@@ -42,7 +42,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = -1;
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 0;
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
@@ -51,7 +51,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
 
     public OmegaBeatdown() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        baseDamage = damage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
     }
 
@@ -91,12 +91,13 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.baseDamage = BuxomMod.getPwrAmt(p, CommonPower.POWER_ID);
+        calculateCardDamage(m);
         int effect = EnergyPanel.totalCount;
 
         if (this.energyOnUse != -1) {
             effect = this.energyOnUse;
         }
-        int b = BuxomMod.getPwrAmt(p, CommonPower.POWER_ID);
         if (this.upgraded) {
             effect++;
         }
@@ -105,12 +106,17 @@ public class OmegaBeatdown extends AbstractDynamicCard {
             p.getRelic("Chemical X").flash();
         }
         for (int i = 0; i < effect; i++) {
-            addToBot(new DamageAction(m, new DamageInfo(p, b),
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage),
                     AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
         if (!this.freeToPlayOnce) {
             p.energy.use(EnergyPanel.totalCount);
         }
+    }
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        initializeDescription();
     }
 
     @Override
