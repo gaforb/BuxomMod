@@ -86,5 +86,9 @@
 "BuxomMod:BraBrokenPower": {
         "NAME": "Bras Broken",
         "DESCRIPTIONS": ["You've broken #b", " bras this combat."]
+},
+"BuxomMod:InvoluntaryLactationPower": {
+        "NAME": "Panic Lactation",
+        "DESCRIPTIONS": ["When you play a #yStrike or #yDefend, gain #b", " #yMilk."]
 }
 }

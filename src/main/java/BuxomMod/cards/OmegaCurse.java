@@ -84,8 +84,7 @@ public class OmegaCurse extends AbstractDynamicCard {
         for (int i = 0; i < effect; i++) {
             addToBot(new GainEnergyAction(2));
             addToBot(new ApplyPowerAction(p, p,
-                    new CommonPower(p, p, 2), 2));
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new AftershockStatus(), 1, true, true));
+                    new CommonPower(p, p, 4), 4));
             if (this.upgraded) {
                 addToBot(new ExhaustAction(1, false));
             }

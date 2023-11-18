@@ -280,8 +280,8 @@
   },
   "BuxomMod:OmegaCurse": {
     "NAME": "Omega Corruption",
-    "DESCRIPTION": "Gain 2 [E], gain 2 buxommod:Buxom, add 1 *Afterswell to your draw pile, and Exhaust a random card in your hand, X times.",
-    "UPGRADE_DESCRIPTION": "Gain 2 [E], gain 2 buxommod:Buxom, add 1 *Afterswell to your draw pile, and Exhaust a card in your hand, X times."
+    "DESCRIPTION": "Gain 2 [E] , gain 4 buxommod:Buxom, and Exhaust a random card in your hand, X times.",
+    "UPGRADE_DESCRIPTION": "Gain 2 [E] , gain 4 buxommod:Buxom, and Exhaust a card in your hand, X times."
   },
   "BuxomMod:PanicLactation": {
     "NAME": "Panic Lactation",
