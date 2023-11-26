@@ -105,7 +105,7 @@
   },
   "BuxomMod:AftershockStatus": {
     "NAME": "Afterswell",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, gain 1 BuxomMod:Buxom."
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, gain !M! BuxomMod:Buxom."
   },
   "BuxomMod:Library": {
     "NAME": "Omega Library",
@@ -164,7 +164,7 @@
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
-    "DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk.",
+    "DESCRIPTION": "Add 2 *Rapidswell to your draw pile. NL Add *Lactating to your draw pile. NL Gain !M! BuxomMod:Milk.",
     "UPGRADE_DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk."
   },
   "BuxomMod:Paizuri": {
@@ -296,6 +296,14 @@
   "BuxomMod:BraCloset": {
     "NAME": "Bra Closet",
     "DESCRIPTION": "{@@}Add one of 3 random buxommod:Bra cards into your hand. NL Draw !M! card{!M!|>1=s}."
+  },
+  "BuxomMod:LactatingStatus": {
+    "NAME": "Lactating",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, gain !M! BuxomMod:Milk."
+  },
+  "BuxomMod:SuperAfterswell": {
+    "NAME": "Rapidswell",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, gain !M! BuxomMod:Buxom."
   }
 }
 

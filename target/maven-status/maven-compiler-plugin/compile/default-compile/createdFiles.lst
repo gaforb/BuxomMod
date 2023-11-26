@@ -14,6 +14,7 @@ BuxomMod\actions\ShrinkAction.class
 BuxomMod\events\IdentityCrisisEvent.class
 BuxomMod\cards\BuxomStatus.class
 BuxomMod\cards\CardTemplate.class
+BuxomMod\actions\StatusUpgradeAction.class
 BuxomMod\variables\DefaultSecondMagicNumber.class
 BuxomMod\powers\ReliefPower.class
 BuxomMod\cards\OmegaForce.class
@@ -91,6 +92,7 @@ BuxomMod\cards\InducedLactation.class
 BuxomMod\cards\LeanneAssist.class
 BuxomMod\orbs\DeviousChibi.class
 BuxomMod\cards\Chibis.class
+BuxomMod\cards\LactatingStatus.class
 BuxomMod\util\IDCheckDontTouchPls.class
 BuxomMod\cards\AftershockStatus.class
 BuxomMod\cards\ChibiOffering.class
@@ -143,4 +145,5 @@ BuxomMod\cards\SwellingTight.class
 BuxomMod\events\ToplessEvent.class
 BuxomMod\cards\QuiteEnough.class
 BuxomMod\cards\BrokenBraT.class
+BuxomMod\cards\SuperAfterswell.class
 BuxomMod\cards\ChibiAttack.class

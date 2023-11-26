@@ -3,6 +3,7 @@ package BuxomMod.cards;
 import BuxomMod.powers.LactatingPower;
 import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -53,6 +54,7 @@ public class SteadyLactation extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         this.isInnate = false;
+        this.cardsToPreview = new LactatingStatus();
     }
 
     // Actions the card should do.
@@ -60,7 +62,7 @@ public class SteadyLactation extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
 
-        if (b != null) {
+        /*if (b != null) {
             if (b.amount < 11) {
                 int bdiff = 11 - b.amount;
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
@@ -69,10 +71,9 @@ public class SteadyLactation extends AbstractDynamicCard {
         }
         else { AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, magicNumber), magicNumber));
-        }
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p,
-                        new LactatingPower(p, p, magicNumber), magicNumber));
+        }*/
+        addToBot(new MakeTempCardInDrawPileAction(new SuperAfterswell(), 2, true, true));
+        addToBot(new MakeTempCardInDrawPileAction(new LactatingStatus(), 1, true, true));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
                         new MilkPower(p, p, magicNumber), magicNumber));

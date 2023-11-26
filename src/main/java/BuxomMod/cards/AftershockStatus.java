@@ -51,17 +51,15 @@ public class AftershockStatus extends AbstractDynamicCard {
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = -2;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
-
-    private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 0;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int MAGIC = 1;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
 
     public AftershockStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
         this.isEthereal = true;
         this.exhaust = true;
     }
@@ -72,7 +70,7 @@ public class AftershockStatus extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                    new CommonPower(p, p, 1), 1));
+                    new CommonPower(p, p, magicNumber), magicNumber));
         }
     }
 
@@ -88,8 +86,7 @@ public class AftershockStatus extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

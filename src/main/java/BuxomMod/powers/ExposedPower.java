@@ -28,7 +28,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/Exposed32.png");
     private boolean justApplied = false;
     public static float MULTIPLIER = 0.03F;
-    public static float INTERCEPT = 0.50F;
+    public static float INTERCEPT = 0.30F;
 
     public ExposedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;

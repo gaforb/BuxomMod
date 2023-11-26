@@ -66,11 +66,7 @@ public class BigBounceStatus extends AbstractDynamicCard {
         baseDamage = DAMAGE;
         this.exhaust = true;
     }
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        canUse = false;
-        return canUse;
-    }
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

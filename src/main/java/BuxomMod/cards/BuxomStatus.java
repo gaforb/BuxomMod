@@ -60,11 +60,11 @@ public class BuxomStatus extends AbstractDynamicCard {
         this.isEthereal = true;
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    /*public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         canUse = false;
         return canUse;
-    }
+    }*/
 
     // Actions the card should do.
     @Override

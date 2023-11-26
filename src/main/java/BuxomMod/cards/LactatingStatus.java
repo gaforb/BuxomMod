@@ -1,19 +1,20 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
-import BuxomMod.patches.CustomTags;
 import BuxomMod.powers.CommonPower;
+import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static BuxomMod.BuxomMod.getPwrAmt;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class ShockStatus extends AbstractDynamicCard {
+public class LactatingStatus extends AbstractDynamicCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -35,8 +36,8 @@ public class ShockStatus extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = BuxomMod.makeID(ShockStatus.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Shock.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String ID = BuxomMod.makeID(LactatingStatus.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String IMG = makeCardPath("LactationStatus.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 
@@ -46,42 +47,45 @@ public class ShockStatus extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
+    private static final CardType TYPE = CardType.STATUS;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 1;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
-    private static final int MAGIC = 1;
-    private static final int DAMAGE = 5;
-    private static final int UPGRADE_PLUS_DMG = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
-    private static final int UPGRADE_PLUS_MAGIC = 0;
+    private static final int COST = -2;  // COST = ${COST}
+    private static final int MAGIC = 5;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+
     // /STAT DECLARATION/
 
 
-    public ShockStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public LactatingStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
-        damage = baseDamage = DAMAGE;
-        baseMagicNumber = magicNumber = MAGIC;
-        this.exhaust = true;
-        this.tags.add(CustomTags.BOUNCY);
+        magicNumber = baseMagicNumber = MAGIC;
     }
+
+
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int bdiv = getPwrAmt(p, CommonPower.POWER_ID);
-        addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber), magicNumber));
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
+        if (this.dontTriggerOnUseCard) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                    new MilkPower(p, p, magicNumber), magicNumber));
+        }
     }
-    public void triggerWhenDrawn() {addToBot(new DrawCardAction(magicNumber));}
+
+    public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
+
+    public void triggerOnEndOfTurnForPlayingCard() {
+        this.dontTriggerOnUseCard = true;
+        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+    }
 
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

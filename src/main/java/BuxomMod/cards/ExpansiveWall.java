@@ -33,10 +33,10 @@ public class ExpansiveWall extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 1;
-    private static final int BLOCK = 9;
+    private static final int COST = 2;
+    private static final int BLOCK = 12;
     private static final int MAGIC = 4;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
     // /STAT DECLARATION/
 

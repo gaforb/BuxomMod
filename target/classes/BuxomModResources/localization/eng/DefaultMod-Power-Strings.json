@@ -65,7 +65,7 @@
 },
 "BuxomMod:WhiteBikiniCupPower": {
         "NAME": "White Bikini",
-        "DESCRIPTIONS": ["Capacity 5-15. Whenever you gain #yLactating, gain #b", " #yBuxom and #yMilk. At the end of your turn, gain #b1 #yLactating."]
+        "DESCRIPTIONS": ["Capacity 5-15. Whenever you gain #yBuxom, gain #b", " #yMilk. At the end of your turn, gain #b1 #yLactating."]
 },
 "BuxomMod:ExposedPower": {
         "NAME": "Exposed",

@@ -36,12 +36,15 @@ public class ToplessStatus extends AbstractDynamicCard {
         baseMagicNumber = magicNumber = MAGIC;
         this.tags.add(CustomTags.BOUNCY);
     }
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return false;
-    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+    }
+
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        canUse = false;
+        return canUse;
     }
 
     public void triggerOnExhaust() {

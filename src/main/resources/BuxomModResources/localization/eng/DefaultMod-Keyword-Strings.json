@@ -100,7 +100,7 @@
       "Bouncy",
       "bouncy"
     ],
-    "DESCRIPTION": "Also counts as a #yStatus card."
+    "DESCRIPTION": "Also counts as a #yStatus card. Does not work with Medkit."
   },
   {
     "PROPER_NAME": "Anatomical",
