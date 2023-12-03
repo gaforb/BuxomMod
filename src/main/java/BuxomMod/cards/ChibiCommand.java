@@ -12,7 +12,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -42,12 +44,12 @@ public class ChibiCommand extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
     private final int UPGRADE_PLUS_DAMAGE = 2;
     private int MAGIC = 1;
     private final int UPGRADE_PLUS_MAGIC = 1;
@@ -62,7 +64,8 @@ public class ChibiCommand extends AbstractDynamicCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
-        addToBot(new ChibiCommandAction(m, magicNumber, false));
+        addToBot(new ChibiCommandAction((AbstractCreature)(AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), magicNumber, false));
+        addToBot(new ChibiCommandAction((AbstractCreature)(AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), magicNumber, false));
     }
 
     /*@Override

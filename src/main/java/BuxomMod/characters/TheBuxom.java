@@ -318,7 +318,7 @@ public class TheBuxom extends CustomPlayer {
                 logger.info("realDisplaySize+ (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
             } else if (realDisplaySize > targetDisplaySize) {
                 logger.info("realDisplaySize (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
-                realDisplaySize -= 0.012F;
+                realDisplaySize -= 0.035F;
                 logger.info("realDisplaySize- (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
             }
         }

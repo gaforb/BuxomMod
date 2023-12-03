@@ -108,8 +108,7 @@
   },
   "BuxomMod:Library": {
     "NAME": "Omega Library",
-    "DESCRIPTION": "Draw !M! cards. NL Gain !B! Block. NL Add *OMEGA *Library to your discard pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain !B! Block. NL Add *OMEGA *Library to your discard pile. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Add *Insight and buxommod:Rapidswell to your discard pile. NL Exhaust."
   },
   "BuxomMod:OmegaLibrary": {
     "NAME": "OMEGA Library",
@@ -300,7 +299,7 @@
     "NAME": "Lactating",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, gain !M! BuxomMod:Milk."
   },
-  "BuxomMod:SuperAfterswell": {
+  "BuxomMod:Rapidswell": {
     "NAME": "Rapidswell",
     "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, gain !M! BuxomMod:Buxom."
   },
@@ -310,7 +309,11 @@
   },
   "BuxomMod:ChibiCommand": {
     "NAME": "Chibi Command",
-    "DESCRIPTION": "Reduce your buxommod:Buxom by half. NL This turn, your next Skill is played twice."
+    "DESCRIPTION": "Play the top two cards of your draw pile. NL If a card played this way is a Status card, gain !M! Strength and repeat."
+  },
+  "BuxomMod:BrainDrain": {
+    "NAME": "Brain Drain",
+    "DESCRIPTION": "{@@}Gain 1 buxommod:Buxom for each card in your hand. NL Discard your hand. NL Draw !M! card{!M!|>1=s}."
   }
 }
 

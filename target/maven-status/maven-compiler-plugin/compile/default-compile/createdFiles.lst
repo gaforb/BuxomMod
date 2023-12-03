@@ -4,6 +4,7 @@ BuxomMod\cards\ToplessStatus.class
 BuxomMod\powers\SmotherPower$Trigger.class
 BuxomMod\actions\GrowAction.class
 BuxomMod\cards\DefaultCommonAttack.class
+BuxomMod\actions\ChibiCommandAction.class
 BuxomMod\powers\CommonPower.class
 BuxomMod\cards\ChibiChampion.class
 BuxomMod\cards\FeelItOut.class
@@ -25,6 +26,7 @@ BuxomMod\cards\BrokenBraK.class
 BuxomMod\cards\TCupBra.class
 BuxomMod\cards\HeavyLactation.class
 BuxomMod\orbs\DefaultOrb.class
+BuxomMod\cards\LibraryOld.class
 BuxomMod\cards\BrokenBraWhiteBikini.class
 BuxomMod\powers\WhiteBikiniCupPower.class
 BuxomMod\cards\BraBreaker.class
@@ -122,6 +124,7 @@ BuxomMod\characters\TheBuxom.class
 BuxomMod\cards\Library.class
 BuxomMod\cards\OmegaShock.class
 BuxomMod\powers\old\ChibiPower.class
+BuxomMod\cards\BrainDrain.class
 BuxomMod\relics\PlaceholderRelic.class
 BuxomMod\relics\ToplessArtifact.class
 BuxomMod\cards\Embarrassment.class
@@ -130,6 +133,7 @@ BuxomMod\potions\DragonMilkPotion.class
 BuxomMod\cards\OmegaBeatdown.class
 BuxomMod\cards\Relief.class
 BuxomMod\cards\HungryDwarf.class
+BuxomMod\actions\UpgradeAllStatusAction.class
 BuxomMod\cards\Submission.class
 BuxomMod\cards\Hardheaded.class
 BuxomMod\cards\KCupBra.class
@@ -142,10 +146,10 @@ BuxomMod\powers\KCupPower.class
 BuxomMod\relics\WashboardRelic.class
 BuxomMod\cards\OmegaCurse.class
 BuxomMod\powers\BraBreakerPower.class
+BuxomMod\cards\Rapidswell.class
 BuxomMod\powers\BouncePower.class
 BuxomMod\cards\SwellingTight.class
 BuxomMod\events\ToplessEvent.class
 BuxomMod\cards\QuiteEnough.class
 BuxomMod\cards\BrokenBraT.class
-BuxomMod\cards\SuperAfterswell.class
 BuxomMod\cards\ChibiAttack.class

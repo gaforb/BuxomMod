@@ -45,9 +45,11 @@ public class ChibiCommandAction extends AbstractGameAction {
             if (!AbstractDungeon.player.drawPile.isEmpty()) {
                 AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
                 if (BuxomMod.getType(card) == AbstractCard.CardType.STATUS) {
+                    BuxomMod.logger.info("Status card");
                     addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, strengthToGain),  strengthToGain));
                     addToBot(new ChibiCommandAction(target, strengthToGain, exhaustCards));
                 }
+                BuxomMod.logger.info("Not a status card");
                 AbstractDungeon.player.drawPile.group.remove(card);
                 (AbstractDungeon.getCurrRoom()).souls.remove(card);
                 card.exhaustOnUseOnce = this.exhaustCards;

@@ -1,5 +1,10 @@
 package BuxomMod.cards;
 
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
+import BuxomMod.powers.CommonPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,12 +12,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import BuxomMod.BuxomMod;
-import BuxomMod.characters.TheBuxom;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class PopPopPop extends AbstractDynamicCard {
+public class BrainDrain extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -21,10 +24,10 @@ public class PopPopPop extends AbstractDynamicCard {
      */
 
 
-    // TEXT DECLARATION 
+    // TEXT DECLARATION
 
-    public static final String ID = BuxomMod.makeID(PopPopPop.class.getSimpleName());
-    public static final String IMG = makeCardPath("Poppoppop.png");
+    public static final String ID = BuxomMod.makeID(BrainDrain.class.getSimpleName());
+    public static final String IMG = makeCardPath("BrainDrain.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -32,18 +35,16 @@ public class PopPopPop extends AbstractDynamicCard {
     // /TEXT DECLARATION/
 
 
-    // STAT DECLARATION 	
+    // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC = 2;
-    private static final int SECOND_MAGIC = 2;
-    private static final int UPGRADE_SECOND_MAGIC = 1;
 
     // Hey want a second magic/damage/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and TheDefault.variable.DefaultCustomVariable
@@ -53,11 +54,9 @@ public class PopPopPop extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public PopPopPop() {
+    public BrainDrain() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_MAGIC;
-        this.cardsToPreview = new Rapidswell();
     }
 
 
@@ -68,7 +67,10 @@ public class PopPopPop extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new CommonPower(p, p, 1), 1));
         }*/
-        addToBot(new MakeTempCardInDrawPileAction(new Rapidswell(), defaultSecondMagicNumber, true, true));
+        int bgain = p.hand.size();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new CommonPower(p, p, bgain), bgain));
+        addToBot(new DiscardAction(p, p, bgain, false));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
 
         /*
@@ -89,7 +91,7 @@ public class PopPopPop extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

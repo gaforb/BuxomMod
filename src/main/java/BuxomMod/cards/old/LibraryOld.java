@@ -1,7 +1,6 @@
 package BuxomMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.tempCards.Insight;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,7 +11,7 @@ import BuxomMod.characters.TheBuxom;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class Library extends AbstractDynamicCard {
+public class LibraryOld extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -29,7 +28,7 @@ public class Library extends AbstractDynamicCard {
 
     // STAT DECLARATION 	
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
@@ -37,17 +36,18 @@ public class Library extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
-    private static final int BLOCK = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int BLOCK = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
 
     // /STAT DECLARATION/
 
 
-    public Library() {
+    public LibraryOld() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         baseBlock = block = BLOCK;
-        this.cardsToPreview = new Insight();
+        this.exhaust = true;
+        this.cardsToPreview = new OmegaLibrary();
     }
 
     // Actions the card should do.
@@ -59,8 +59,12 @@ public class Library extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Insight(), 1));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Rapidswell(), 1));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
+        OmegaLibrary generatedCard = new OmegaLibrary();
+        if (upgraded) {
+            generatedCard.upgrade();
+        }
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(generatedCard, 1));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 
@@ -69,6 +73,7 @@ public class Library extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeBaseCost(1);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();

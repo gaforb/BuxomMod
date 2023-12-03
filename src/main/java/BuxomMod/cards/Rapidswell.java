@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class SuperAfterswell extends AbstractDynamicCard {
+public class Rapidswell extends AbstractDynamicCard {
 
     /*
      * "Hey, I wanna make a bunch of cards now." - You, probably.
@@ -35,7 +35,7 @@ public class SuperAfterswell extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = BuxomMod.makeID(SuperAfterswell.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String ID = BuxomMod.makeID(Rapidswell.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("SuperAfterswell.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
@@ -57,7 +57,7 @@ public class SuperAfterswell extends AbstractDynamicCard {
     // /STAT DECLARATION/
 
 
-    public SuperAfterswell() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public Rapidswell() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         this.isEthereal = true;
