@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import static BuxomMod.BuxomMod.makeID;
+
 public class ExposedPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
@@ -27,8 +29,8 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/Exposed84.png");
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/Exposed32.png");
     private boolean justApplied = false;
-    public static float MULTIPLIER = 0.03F;
-    public static float INTERCEPT = 0.30F;
+    public static float MULTIPLIER = 0.01F;
+    public static float INTERCEPT = 0.40F;
 
     public ExposedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -49,10 +51,11 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + (INTERCEPT*100) + DESCRIPTIONS[1] + (MULTIPLIER * 100) + DESCRIPTIONS[2] + Math.round((100 * (INTERCEPT + MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID)))) + DESCRIPTIONS[3];
+        description = DESCRIPTIONS[0] + Math.round(INTERCEPT*100) + DESCRIPTIONS[1] + (Math.round(MULTIPLIER * 100)) + DESCRIPTIONS[2] + Math.round((100 * (INTERCEPT + MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID)))) + DESCRIPTIONS[3];
     }
 
     public void onInitialApplication() {
+        CardCrawlGame.sound.play(makeID(BuxomMod.makeID("SUDDEN_GASP")));
         ((TheBuxom)owner).changeState(((TheBuxom)owner).state.getCurrent(0).getAnimation().getName());
         addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
     }

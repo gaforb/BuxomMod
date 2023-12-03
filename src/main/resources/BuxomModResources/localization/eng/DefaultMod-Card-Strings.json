@@ -9,8 +9,7 @@
   },
   "BuxomMod:PopPopPop": {
     "NAME": "Pop, Pop, Pop!",
-    "DESCRIPTION": "Gain 1 Buxom !M! times. NL Draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Buxom !M! times. NL Draw !M! cards."
+    "DESCRIPTION": "Add !BuxomMod:SecondMagic! *Rapidswell to your draw pile. NL Draw !M! cards."
   },
   "BuxomMod:BouncyExercise": {
     "NAME": "Bouncy Exercise",
@@ -173,8 +172,8 @@
   },
   "BuxomMod:OmegaBeatdown": {
     "NAME": "Omega Beatdown",
-    "DESCRIPTION": "Deal damage equal to your BuxomMod:Buxom X time(s).",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to your BuxomMod:Buxom X+1 time(s)."
+    "DESCRIPTION": "Deal damage equal to half your BuxomMod:Buxom four times.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to half your BuxomMod:Buxom five times."
   },
   "BuxomMod:ExpandMind": {
     "NAME": "Expand Mind",
@@ -272,16 +271,16 @@
   },
   "BuxomMod:ChibiChampion": {
   "NAME": "Chibi Champion",
-  "DESCRIPTION": "Gain 1 Strength for every !M! Milk you have. NL Deal !D! damage twice."
+  "DESCRIPTION": "Deal !D! damage twice. NL Gain 1 Strength for every !M! Milk you have."
   },
   "BuxomMod:OmegaContagion": {
     "NAME": "Omega Contagion",
-    "DESCRIPTION": "buxommod:Anatomical. NL ALL enemies lose !M! Strength."
+    "DESCRIPTION": "buxommod:Anatomical. NL ALL enemies lose !M! Strength. NL Exhaust."
   },
   "BuxomMod:OmegaCurse": {
     "NAME": "Omega Corruption",
-    "DESCRIPTION": "Gain 2 [E] , gain 4 buxommod:Buxom, and Exhaust a random card in your hand, X times.",
-    "UPGRADE_DESCRIPTION": "Gain 2 [E] , gain 4 buxommod:Buxom, and Exhaust a card in your hand, X times."
+    "DESCRIPTION": "Gain [E] [E] , gain 4 buxommod:Buxom, and Exhaust a random card in your hand, X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] , gain 4 buxommod:Buxom, and Exhaust a card in your hand, X times. NL Exhaust."
   },
   "BuxomMod:PanicLactation": {
     "NAME": "Panic Lactation",
@@ -299,11 +298,19 @@
   },
   "BuxomMod:LactatingStatus": {
     "NAME": "Lactating",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, gain !M! BuxomMod:Milk."
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, gain !M! BuxomMod:Milk."
   },
   "BuxomMod:SuperAfterswell": {
     "NAME": "Rapidswell",
     "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, gain !M! BuxomMod:Buxom."
+  },
+  "BuxomMod:OmegaDuplication": {
+    "NAME": "Omega Duplication",
+    "DESCRIPTION": "Reduce your buxommod:Buxom by half. NL This turn, your next Skill is played twice."
+  },
+  "BuxomMod:ChibiCommand": {
+    "NAME": "Chibi Command",
+    "DESCRIPTION": "Reduce your buxommod:Buxom by half. NL This turn, your next Skill is played twice."
   }
 }
 

@@ -123,7 +123,7 @@ private AbstractGameEffect vfx(float x, float y) {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot((AbstractGameAction)new ExhaustAction(1, false));
-        addToBot(new VFXAction(vfx(p.drawX, p.drawY)));
+        //addToBot(new VFXAction(vfx(p.drawX, p.drawY)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));

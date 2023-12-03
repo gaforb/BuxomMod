@@ -60,7 +60,11 @@ public class Library extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new OmegaLibrary(), 1));
+        OmegaLibrary generatedCard = new OmegaLibrary();
+        if (upgraded) {
+            generatedCard.upgrade();
+        }
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(generatedCard, 1));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 

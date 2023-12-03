@@ -66,7 +66,6 @@ public class OmegaCurse extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = VULNERABLE;
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber = POISON;
         this.exhaust = true;
-        this.cardsToPreview = new AftershockStatus();
     }
 
     // Actions the card should do.

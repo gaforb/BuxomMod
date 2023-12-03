@@ -36,7 +36,7 @@ public class OmegaLibrary extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = AbstractCard.CardColor.COLORLESS;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int MAGIC = 3;
     private static final int SECOND_MAGIC = 3;
 
@@ -61,7 +61,11 @@ public class OmegaLibrary extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Library(), 1, true, true));
+        Library generatedCard = new Library();
+        if (upgraded) {
+            generatedCard.upgrade();
+        }
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(generatedCard, 1, true, true));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
     }

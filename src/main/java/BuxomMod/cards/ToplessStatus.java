@@ -42,9 +42,10 @@ public class ToplessStatus extends AbstractDynamicCard {
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        canUse = false;
-        return canUse;
+        this.type = CardType.STATUS;
+        boolean result = super.canUse(p, m);
+        this.type = CardType.SKILL;
+        return result;
     }
 
     public void triggerOnExhaust() {

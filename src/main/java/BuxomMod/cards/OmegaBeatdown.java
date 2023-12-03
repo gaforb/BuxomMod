@@ -41,9 +41,9 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = -1;
+    private static final int COST = 2;
     private static final int DAMAGE = 0;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 4;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/
@@ -91,7 +91,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.baseDamage = BuxomMod.getPwrAmt(p, CommonPower.POWER_ID);
+        /*this.baseDamage = BuxomMod.getPwrAmt(p, CommonPower.POWER_ID);
         calculateCardDamage(m);
         int effect = EnergyPanel.totalCount;
 
@@ -111,6 +111,12 @@ public class OmegaBeatdown extends AbstractDynamicCard {
         }
         if (!this.freeToPlayOnce) {
             p.energy.use(EnergyPanel.totalCount);
+        }*/
+        this.baseDamage = (BuxomMod.getPwrAmt(p, CommonPower.POWER_ID)/2);
+        calculateCardDamage(m);
+        for (int i = 0; i < magicNumber; i++) {
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage),
+                    AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }
 

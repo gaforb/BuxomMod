@@ -16,6 +16,7 @@ BuxomMod\cards\BuxomStatus.class
 BuxomMod\cards\CardTemplate.class
 BuxomMod\actions\StatusUpgradeAction.class
 BuxomMod\variables\DefaultSecondMagicNumber.class
+BuxomMod\cards\OmegaDuplication.class
 BuxomMod\powers\ReliefPower.class
 BuxomMod\cards\OmegaForce.class
 BuxomMod\relics\CowRelic.class
@@ -37,6 +38,7 @@ BuxomMod\powers\ExposedPower.class
 BuxomMod\cards\WardrobeMalfunction.class
 BuxomMod\cards\OmegaArc.class
 BuxomMod\patches\DefaultInsertPatch.class
+BuxomMod\cards\ChibiCommand.class
 BuxomMod\powers\ButtonHazardPower.class
 BuxomMod\actions\ChannelRandomChibiAction.class
 BuxomMod\actions\HungryDwarfAction.class

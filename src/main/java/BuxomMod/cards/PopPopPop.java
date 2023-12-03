@@ -2,6 +2,7 @@ package BuxomMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -43,6 +44,8 @@ public class PopPopPop extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC = 3;
     private static final int UPGRADE_MAGIC = 2;
+    private static final int SECOND_MAGIC = 2;
+    private static final int UPGRADE_SECOND_MAGIC = 1;
 
     // Hey want a second magic/damage/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and TheDefault.variable.DefaultCustomVariable
@@ -55,16 +58,19 @@ public class PopPopPop extends AbstractDynamicCard {
     public PopPopPop() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_MAGIC;
+        this.cardsToPreview = new SuperAfterswell();
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
+        /*for (int i = 0; i < magicNumber; i++) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new CommonPower(p, p, 1), 1));
-        }
+        }*/
+        addToBot(new MakeTempCardInDrawPileAction(new SuperAfterswell(), defaultSecondMagicNumber, true, true));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
 
         /*
@@ -86,7 +92,7 @@ public class PopPopPop extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_MAGIC);
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
             initializeDescription();
         }
     }

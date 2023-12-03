@@ -52,7 +52,7 @@ public class LactatingStatus extends AbstractDynamicCard {
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = -2;  // COST = ${COST}
-    private static final int MAGIC = 5;    // DAMAGE = ${DAMAGE}
+    private static final int MAGIC = 7;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/

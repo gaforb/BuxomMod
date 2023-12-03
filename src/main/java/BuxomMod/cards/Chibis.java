@@ -76,8 +76,7 @@ public class Chibis extends AbstractDynamicCard {
             p.getRelic("Chemical X").flash();
         }
         for (int i = 0; i < effect; i += 1) {
-            Random rand = new Random();
-            int r = rand.nextInt(3);
+            int r = AbstractDungeon.cardRandomRng.random(2); //line changed for seeding using sts rng
             if (r == 0) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LactatingPower(p, p, 4), 4));
             } else if (r == 1) {
