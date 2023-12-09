@@ -31,8 +31,10 @@ BuxomMod\cards\BrokenBraWhiteBikini.class
 BuxomMod\powers\WhiteBikiniCupPower.class
 BuxomMod\cards\BraBreaker.class
 BuxomMod\relics\DwarfBoobsRelic.class
+BuxomMod\ui\BuxomBar.class
 BuxomMod\vfx\ExpandEffect.class
 BuxomMod\actions\BraSelectAction.class
+BuxomMod\actions\ModifyCapacityAction.class
 BuxomMod\cards\OmegaContagion.class
 BuxomMod\cards\ChibiOneTwo.class
 BuxomMod\cards\PanicLactation.class
@@ -48,6 +50,7 @@ BuxomMod\powers\ShockPower.class
 BuxomMod\orbs\DefenseChibi.class
 BuxomMod\cards\ExposureStatus.class
 BuxomMod\cards\Omegabsorption.class
+BuxomMod\ui\BraManager.class
 BuxomMod\cards\OmegaBurst.class
 BuxomMod\potions\PermaGrowthPotion.class
 BuxomMod\cards\OmegaFumes.class
@@ -114,7 +117,6 @@ BuxomMod\cards\BouncingLactation.class
 BuxomMod\relics\PlaceholderRelic2.class
 BuxomMod\cards\Phew.class
 BuxomMod\patches\CustomTags.class
-BuxomMod\actions\UncommonSkillAction.class
 BuxomMod\powers\LactatingPower.class
 BuxomMod\powers\MCupPower.class
 BuxomMod\cards\ButtonPop.class
@@ -137,12 +139,15 @@ BuxomMod\actions\UpgradeAllStatusAction.class
 BuxomMod\cards\Submission.class
 BuxomMod\cards\Hardheaded.class
 BuxomMod\cards\KCupBra.class
+BuxomMod\ui\BraPanel$BuxomPanelHitboxListener.class
 BuxomMod\powers\InvoluntaryLactationPower.class
 BuxomMod\powers\BraPower.class
 BuxomMod\cards\ExpandMind.class
 BuxomMod\cards\DefaultCommonSkill.class
+BuxomMod\util\GrowCommand.class
 BuxomMod\patches\relics\BottledPlaceholderField.class
 BuxomMod\powers\KCupPower.class
+BuxomMod\cards\OmegaBonk.class
 BuxomMod\relics\WashboardRelic.class
 BuxomMod\cards\OmegaCurse.class
 BuxomMod\powers\BraBreakerPower.class

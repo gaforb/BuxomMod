@@ -40,7 +40,7 @@ public class BuxomPanel {
     private static Texture BOUNCE_TEXTURE = ImageMaster.loadImage(BuxomMod.getModID() + "Resources/images/ui/Bounce84.png");
     private static final int Y_POS = 500;
     private static final int X_POS = 30;
-    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(BuxomMod.makeID("BuxomPanel")).TEXT;
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(BuxomMod.makeID("BraPanel")).TEXT;
 
     private boolean show = true;
     private Hitbox buxomPanelToggleHb;

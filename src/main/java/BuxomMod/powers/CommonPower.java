@@ -22,6 +22,7 @@ import BuxomMod.BuxomMod;
 import BuxomMod.util.TextureLoader;
 import BuxomMod.cards.BuxomStatus;
 
+import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
@@ -39,8 +40,8 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("buxom84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("buxom32.png"));
     public boolean appliedThisTurn = false;
-    public int buxomCounterThisTurn = 0;
-    public int buxomGainedThisTurn = 0;
+    public static int buxomCounterThisTurn = 0;
+    public static int buxomGainedThisTurn = 0;
 
     public CommonPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -131,12 +132,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
         this.appliedThisTurn = true;
         this.buxomCounterThisTurn++;
         buxomGainedThisTurn += this.amount;
-        for (AbstractPower pow : this.owner.powers) {
-            if (pow instanceof BraPower) {
-                ((BraPower) pow).onGrow(this.amount);
-                ((BraPower) pow).breakCheck();
-            }
-        }
+        braManager.breakCheck();
         if (this.amount >= 30) {
             addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
         }
@@ -163,13 +159,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
            BuxomMod.logger.info("Buxom: " + this.amount + ". Over 30 Buxom! Exposing!");
            addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
        }
-       for (AbstractPower pow : this.owner.powers) {
-           if (pow instanceof BraPower) {
-               ((BraPower) pow).onGrow(stackAmount);
-           } else {
-               BuxomMod.logger.info("Not a bra power");
-           }
-       }
+       braManager.breakCheck();
    }
 
    @Override

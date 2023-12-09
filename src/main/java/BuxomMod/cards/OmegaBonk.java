@@ -1,21 +1,23 @@
 package BuxomMod.cards;
 
-import BuxomMod.actions.ModifyCapacityAction;
+import BuxomMod.BuxomMod;
+import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import BuxomMod.BuxomMod;
-import BuxomMod.characters.TheBuxom;
 
+import static BuxomMod.BuxomMod.getPwrAmt;
 import static BuxomMod.BuxomMod.makeCardPath;
 
-public class BouncyExercise extends AbstractDynamicCard {
+public class OmegaBonk extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -23,33 +25,34 @@ public class BouncyExercise extends AbstractDynamicCard {
      * Big Slap Deal 10(15)) damage.
      */
 
-    // TEXT DECLARATION 
+    // TEXT DECLARATION
 
-    public static final String ID = BuxomMod.makeID(BouncyExercise.class.getSimpleName());
-    public static final String IMG = makeCardPath("BigBounce.png");
+    public static final String ID = BuxomMod.makeID(OmegaBonk.class.getSimpleName());
+    public static final String IMG = makeCardPath("OmegaBonk.png");
 
     // /TEXT DECLARATION/
 
 
-    // STAT DECLARATION 	
+    // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int MAGIC = 1;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 15;
+    private static final int UPGRADE_PLUS_DMG = 6;
+    private static final int MAGIC = 2;
 
     // /STAT DECLARATION/
 
 
-    public BouncyExercise() {
+    public OmegaBonk() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = DAMAGE;
+        baseDamage = damage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
+        this.cardsToPreview = new BuxomStatus();
     }
 
     /*public void applyPowers() {
@@ -88,14 +91,10 @@ public class BouncyExercise extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         AbstractDungeon.actionManager.addToBottom(
-        new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
-        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (b != null) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, b.amount, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, 3));
-        }
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new BuxomStatus(), magicNumber, true, true));
     }
 
     //Upgraded stats.

@@ -44,7 +44,7 @@ public class SteadyLactation extends AbstractDynamicCard {
     private static final int COST = 1;
 
     private int MAGIC = 4;
-    private final int UPGRADE_PLUS_MAGIC = 1;
+    private final int UPGRADE_PLUS_MAGIC = 3;
 
     // /STAT DECLARATION/
 
@@ -54,6 +54,7 @@ public class SteadyLactation extends AbstractDynamicCard {
         baseMagicNumber = magicNumber = MAGIC;
         this.isInnate = false;
         this.cardsToPreview = new LactatingStatus();
+        this.exhaust = true;
     }
 
     // Actions the card should do.

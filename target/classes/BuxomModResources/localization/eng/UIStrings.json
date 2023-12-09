@@ -1,11 +1,13 @@
 {
-  "BuxomMod:BuxomPanel": {
-    "NAME": "Buxom Panel",
-    "BUXOM": "Buxom: ",
-    "BOUNCE": ["Bounce: ", " / "],
+  "BuxomMod:BraPanel": {
+    "NAME": ["Bra"],
     "TEXT": [
-      "Increased breast size. Generates #yBounce #yStacks at end of turn.",
-      "For every #b8 #yBounce stacks, generate a #yBounce status card."
-    ]
+      "Capacity of your bra. If your #yBuxom exceeds the #yCapacity, you'll begin #pStraining. If you gain additional #yBuxom while #pStraining, your bra will break, and you'll lose the benefits of any #yBra powers you currently have."
+    ],
+    "TEXT_DICT": {
+      "Name": "Bra",
+      "Straining": "Straining!",
+      "Broken": "BROKEN"
+    }
     }
 }

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import BuxomMod.powers.old.ChibiPower;
 
 public class UncommonPowerAction extends AbstractGameAction {
     private boolean freeToPlayOnce;
@@ -45,9 +44,7 @@ public class UncommonPowerAction extends AbstractGameAction {
         }
         if (effect > 0) {
             for (int i = 0; i < effect; ++i) {
-                
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                        new ChibiPower(p, p, magicNumber), magicNumber));
+
             }
             if (!freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);

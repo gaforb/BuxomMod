@@ -63,7 +63,6 @@ public class ChibiCommand extends AbstractDynamicCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
         addToBot(new ChibiCommandAction((AbstractCreature)(AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), magicNumber, false));
         addToBot(new ChibiCommandAction((AbstractCreature)(AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), magicNumber, false));
     }

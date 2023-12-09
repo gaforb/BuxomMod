@@ -5,11 +5,16 @@ import BuxomMod.potions.DragonMilkPotion;
 import BuxomMod.potions.PermaGrowthPotion;
 import BuxomMod.powers.BraBrokenPower;
 import BuxomMod.powers.BraPower;
+import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.MilkPower;
 import BuxomMod.relics.CowRelic;
+import BuxomMod.ui.BraManager;
 import BuxomMod.ui.BraPanel;
+import BuxomMod.ui.BuxomBar;
 import BuxomMod.ui.BuxomPanel;
+import BuxomMod.util.GrowCommand;
 import basemod.*;
+import basemod.devcommands.ConsoleCommand;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -30,6 +35,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -87,7 +93,10 @@ public class BuxomMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        AddAudioSubscriber{
+        AddAudioSubscriber,
+        OnStartBattleSubscriber,
+        PostDungeonInitializeSubscriber,
+        PostPowerApplySubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
@@ -128,6 +137,9 @@ public class BuxomMod implements
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
 
     // Card backgrounds - The actual rectangular card.
+    private static final String BUXOM_BAR_BG = "BuxomModResources/images/ui/buxomBarBg.png";
+    private static final String BUXOM_BAR_FILL = "BuxomModResources/images/ui/buxomBarFill.png";
+    private static final String BUXOM_BAR_OVERLAY = "BuxomModResources/images/ui/buxomBarOverlay.png";
     private static final String ATTACK_BUXOM_PINK = "BuxomModResources/images/512/bg_attack_default_gray.png";
     private static final String SKILL_BUXOM_PINK = "BuxomModResources/images/512/bg_skill_default_gray.png";
     private static final String POWER_BUXOM_PINK = "BuxomModResources/images/512/bg_power_default_gray.png";
@@ -156,7 +168,9 @@ public class BuxomMod implements
 
     //VFX
 
-    public static final String EXPAND_EFFECT = "BuxomModResources/images/vfx/expand_effect.png";
+    public static final String CAPACITY_EFFECT = "BuxomModResources/images/vfx/capacity_effect.png";
+    public static final String BREAK_EFFECT = "BuxomModResources/images/vfx/break_effect.png";
+    public static final String BUXOM_BAR_EFFECT = "BuxomModResources/images/ui/buxomBarVfx.png";
 
 
     // =============== MAKE IMAGE PATHS =================
@@ -190,6 +204,7 @@ public class BuxomMod implements
     // =============== /INPUT TEXTURE LOCATION/ =================
     public static BuxomPanel buxomPanel;
     public static BraPanel braPanel;
+    public static BraManager braManager;
 
     // =============== SUBSCRIBE, CREATE THE COLOR_PINK, INITIALIZE =================
 
@@ -328,6 +343,7 @@ public class BuxomMod implements
 
     @Override
     public void receivePostInitialize() {
+        ConsoleCommand.addCommand("buxom", GrowCommand.class);
         logger.info("Loading badge image and mod options");
 
         // Load the Mod Badge
@@ -359,7 +375,8 @@ public class BuxomMod implements
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         buxomPanel = new BuxomPanel();
-        braPanel = new BraPanel();
+        braPanel = new BraPanel(TextureLoader.getTexture(CAPACITY_EFFECT));
+        braManager = new BraManager();
 
 
         // =============== EVENTS =================
@@ -715,4 +732,22 @@ public class BuxomMod implements
         return false;
     }
 
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        braManager.onStartCombat();
+    }
+
+    @Override
+    public void receivePostDungeonInitialize() {
+        braManager.startGame();
+    }
+
+    @Override
+    public void receivePostPowerApplySubscriber(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1) {
+        /*if (abstractPower instanceof CommonPower) {
+            braManager.breakCheck();
+            logger.info("Buxom: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Capacity: " + braManager.maxCapacity + ". Buxom smaller? " + braManager.inCapacity());
+            logger.info("Straining: " + braManager.straining + ". Broken: " + braManager.broken);
+        }*/
+    }
 }

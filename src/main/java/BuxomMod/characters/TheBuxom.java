@@ -313,13 +313,13 @@ public class TheBuxom extends CustomPlayer {
         targetDisplaySize = getPwrAmt(this, CommonPower.POWER_ID);
         if (!(Math.abs(realDisplaySize - targetDisplaySize) <= 0.03)) {
             if (realDisplaySize < targetDisplaySize) {
-                logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
-                realDisplaySize += 0.012F * ((targetDisplaySize - realDisplaySize)/2);
-                logger.info("realDisplaySize+ (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
+                //logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
+                realDisplaySize += ((0.012F * ((targetDisplaySize - realDisplaySize)/2)));
+                //logger.info("realDisplaySize+ (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
             } else if (realDisplaySize > targetDisplaySize) {
-                logger.info("realDisplaySize (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
+                //logger.info("realDisplaySize (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
                 realDisplaySize -= 0.035F;
-                logger.info("realDisplaySize- (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
+                //logger.info("realDisplaySize- (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
             }
         }
         /*if (Math.abs(realDisplaySize - targetDisplaySize) <= 0.03){
@@ -384,7 +384,7 @@ public class TheBuxom extends CustomPlayer {
     public void render(SpriteBatch sb) {
         super.render(sb);
         //buxomPanel.render(sb, this);
-        braPanel.render(sb, this);
+        braPanel.render(sb, this, braPanel.hbTextColor);
     }
 
     @Override

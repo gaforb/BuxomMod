@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.ModifyCapacityAction;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 
+import static BuxomMod.BuxomMod.braPanel;
 import static BuxomMod.BuxomMod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
 // Skip this question until you start figuring out the AbstractDefaultCard/AbstractDynamicCard and just extend DynamicCard
@@ -94,6 +96,7 @@ public class DefaultCommonAttack extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, 5));
         AbstractDungeon.actionManager.addToBottom( // The action managed queues all the actions a card should do.
                 // addToTop - first
                 // addToBottom - last

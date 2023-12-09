@@ -66,7 +66,7 @@ public class LactatingStatus extends AbstractDynamicCard {
 
     // Actions the card should do.
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    /*public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new MilkPower(p, p, magicNumber), magicNumber));
@@ -78,7 +78,14 @@ public class LactatingStatus extends AbstractDynamicCard {
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+    }*/
+    public void use(AbstractPlayer p, AbstractMonster m) {}
+
+    public void triggerWhenDrawn() {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                    new MilkPower(AbstractDungeon.player, AbstractDungeon.player, magicNumber), magicNumber));
     }
+
 
     // Upgraded stats.
     @Override
