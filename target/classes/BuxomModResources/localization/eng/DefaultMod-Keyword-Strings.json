@@ -8,12 +8,14 @@
     "DESCRIPTION": "Increased breast size. Generates Bounce stacks at end of turn."
   },
   {
-    "PROPER_NAME": "Capacity",
+    "PROPER_NAME": "Bra",
     "NAMES": [
       "Capacity",
-      "capacity"
+      "capacity",
+      "Bra",
+      "bra"
     ],
-    "DESCRIPTION": "Bras provide passive bonuses and prevent the downside of #yExpose as long as your #yBuxom is within this range (inclusive). If your #yBuxom exceeds this range, they will break. If you put on a bra that's already too small, it will break if it doesn't fit at the end of the turn."
+    "DESCRIPTION": "Bra powers provide passive bonuses and prevent the downside of #yExpose as long as your #yBuxom is within #yCapacity."
   },
   {
     "PROPER_NAME": "Multiword Keyword",

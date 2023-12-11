@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -59,7 +60,7 @@ public class InducedLactation extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
                         new MilkPower(p, p, magicNumber), magicNumber));
-        addToBot(new MakeTempCardInDrawPileAction(new AftershockStatus(), 1, true, true));
+        addToBot(new CreateStatusCardAction(p.drawPile, new LactatingStatus(), 1));
         }
 
     //Upgraded stats.

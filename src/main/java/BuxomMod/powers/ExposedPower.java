@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makeID;
 
 public class ExposedPower extends AbstractPower implements CloneablePowerInterface {
@@ -65,7 +66,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public float modifyBlock(float blockAmount) {
-        if (BuxomMod.inBraCapacity(owner)) {
+        if (!braManager.broken) {
             return blockAmount;
         }
         return blockAmount * 0.0F;

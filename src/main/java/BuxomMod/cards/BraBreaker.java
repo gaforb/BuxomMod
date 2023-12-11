@@ -13,8 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static BuxomMod.BuxomMod.getStatusCount;
-import static BuxomMod.BuxomMod.makeCardPath;
+import static BuxomMod.BuxomMod.*;
 
 public class BraBreaker extends AbstractDynamicCard {
 
@@ -84,12 +83,20 @@ public class BraBreaker extends AbstractDynamicCard {
             addToBot(new MakeTempCardInHandAction(braID));
         }
     }*/
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractPower pow : p.powers) { //if wearing a bra
-            if (pow instanceof BraPower) {
-                ((BraPower) pow).growToBreak();
-            }
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
         }
+        canUse = false;
+        this.cantUseMessage = "My bra is broken!";
+        if (!braManager.broken) {
+            return true;
+        }
+        return false;
+    }
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        braManager.growToBreak();
         this.baseDamage = getStatusCount(p) * this.magicNumber;
         BuxomMod.logger.info(this.baseDamage + " total damage");
         this.calculateCardDamage((AbstractMonster) null);

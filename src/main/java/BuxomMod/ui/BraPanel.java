@@ -104,6 +104,13 @@ public class BraPanel extends ClickableUIElement {
         if (buxomBarWidth != 0) {
             renderPinkBuxomBar(sb, x, y);
         }
+        /*if (braManager.straining) {
+            vfxTimer -= Gdx.graphics.getDeltaTime();
+            if (vfxTimer < 0.0F && !Settings.hideLowerElements) {
+                AbstractDungeon.effectList.add(pulseVfx(x, y));
+                vfxTimer = 2.0F;
+            }
+        }*/
         renderBuxomText(sb, y);
     }
 
@@ -122,7 +129,7 @@ public class BraPanel extends ClickableUIElement {
     private void renderBuxomText(SpriteBatch sb, float y) {
         Color color = Color.WHITE;
         if (!braManager.inCapacity()) {
-            color = Settings.RED_RELIC_COLOR;
+            color = Color.RED;
         }
         FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + "/" + braManager.maxCapacity, this.hb.cX, y + BUXOM_BAR_OFFSET_Y + BUXOM_TEXT_OFFSET_Y + 5.0F * Settings.scale, color);
     }
@@ -173,13 +180,13 @@ public class BraPanel extends ClickableUIElement {
         if (buxomBarWidth >= braManager.maxCapacity) {
             buxomBarWidth = braManager.maxCapacity;
         }
-        if (braManager.straining) {
+        /*if (braManager.straining) {
             vfxTimer -= Gdx.graphics.getDeltaTime();
             if (vfxTimer < 0.0F && !Settings.hideLowerElements) {
-                AbstractDungeon.effectList.add(pulseVfx(hb.cX, (hb.y + BUXOM_BAR_HEIGHT) * Settings.scale));
+                AbstractDungeon.effectList.add(pulseVfx(hb.cX, (hb.y + 8F) * Settings.scale));
                 vfxTimer = 2.0F;
             }
-        }
+        }*/
         this.updateHitbox();
         if (this.hitbox.hovered) {
             this.onHover();
@@ -205,10 +212,10 @@ public class BraPanel extends ClickableUIElement {
                 braColor = Color.PINK;
                 braTitle.append(TEXT_DICT.get("Name"));
             } else if (braManager.straining){
-                braColor = Settings.RED_RELIC_COLOR;
+                braColor = Color.RED;
                 braTitle.append(TEXT_DICT.get("Straining"));
             } else {
-                braColor = Settings.RED_RELIC_COLOR;
+                braColor = Color.RED;
                 braTitle.append(TEXT_DICT.get("Broken"));
             }
 

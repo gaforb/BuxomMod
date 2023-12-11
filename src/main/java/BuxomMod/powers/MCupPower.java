@@ -1,5 +1,6 @@
 package BuxomMod.powers;
 
+import BuxomMod.cards.BuxomStatus;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -66,7 +67,7 @@ public class MCupPower extends BraPower implements CloneablePowerInterface {
 
 
     public void onGrow(int howMuch) {
-        if (this.inCapacity() == true) {
+        if (!BuxomMod.braManager.broken) {
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount), this.amount));
         }
     }

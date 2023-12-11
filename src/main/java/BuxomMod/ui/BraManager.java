@@ -3,14 +3,8 @@ package BuxomMod.ui;
 import BuxomMod.BuxomMod;
 import BuxomMod.powers.BraBrokenPower;
 import BuxomMod.powers.CommonPower;
-import BuxomMod.powers.KCupPower;
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static BuxomMod.BuxomMod.*;
 
@@ -20,7 +14,7 @@ public class BraManager {
     public boolean broken;
     public int minCapacity;
     public int maxCapacity;
-    public int bounceBonus;
+    public int maxBounce;
     public int buffAmount;
     public int permaSize;
     public int permaSizeStart;
@@ -88,7 +82,7 @@ public class BraManager {
                 straining = true;
                 logger.info("Now straining!");
             }
-        }
+        } else {straining = false;}
     }
 
     public void atEndOfTurn(boolean isPlayer) { // At the end of your turn

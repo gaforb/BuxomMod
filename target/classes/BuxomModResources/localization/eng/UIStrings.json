@@ -9,5 +9,11 @@
       "Straining": "Straining!",
       "Broken": "BROKEN"
     }
-    }
+    },
+  "BuxomMod:BraBroken": {
+    "NAME": ["Bra"],
+    "TEXT": [
+      "My bra is broken!"
+    ]
+  }
 }

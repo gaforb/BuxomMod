@@ -15,13 +15,7 @@ public class GrowAction extends AbstractGameAction {
     }
     @Override
     public void update() {
-        logger.info("Grow action registered");
-        BuxomMod.buxomPanel.grow(amount);
-        for (AbstractPower pow : AbstractDungeon.player.powers) {
-            if (pow instanceof BraPower && ((BraPower) pow).inCapacity()) {
-                ((BraPower) pow).onGrow(amount);
-            }
-        }
+        logger.info("GrowAction doesn't do anything");
         this.isDone = true;
     }
 }

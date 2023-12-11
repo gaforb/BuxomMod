@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -78,9 +79,9 @@ public class OmegaShock extends AbstractDynamicCard {
         c.baseDamage += getPwrAmt(p, CommonPower.POWER_ID);
         if (this.upgraded) {
             c.upgrade();
-            addToBot(new MakeTempCardInDrawPileAction(c, magicNumber, true, true));
+            AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new ShockStatus(), magicNumber));
         }
-        else {addToBot(new MakeTempCardInDrawPileAction(c, magicNumber, true, true));}
+        else {AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new ShockStatus(), magicNumber));}
     }
     /*public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard c = new ShockStatus();

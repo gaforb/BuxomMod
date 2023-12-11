@@ -1,6 +1,8 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.CreateStatusCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.tempCards.Insight;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -59,8 +61,8 @@ public class Library extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Insight(), 1));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Rapidswell(), 1));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Insight(), 1, true, true));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new Rapidswell(), 1));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 

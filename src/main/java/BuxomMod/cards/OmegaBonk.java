@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -94,7 +95,7 @@ public class OmegaBonk extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new BuxomStatus(), magicNumber, true, true));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new BuxomStatus(), magicNumber));
     }
 
     //Upgraded stats.

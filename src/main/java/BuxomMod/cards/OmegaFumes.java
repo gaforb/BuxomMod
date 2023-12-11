@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.CreateStatusCardAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -71,7 +72,7 @@ public class OmegaFumes extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(mo, p, new PoisonPower(mo, p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber));
         }
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new AftershockStatus(), 2, true, true));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new AftershockStatus(), 2));
     }
 
     // Upgraded stats.

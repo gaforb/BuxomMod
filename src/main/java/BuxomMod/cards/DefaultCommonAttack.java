@@ -96,7 +96,6 @@ public class DefaultCommonAttack extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, 5));
         AbstractDungeon.actionManager.addToBottom( // The action managed queues all the actions a card should do.
                 // addToTop - first
                 // addToBottom - last

@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -72,8 +73,8 @@ public class SteadyLactation extends AbstractDynamicCard {
         else { AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, magicNumber), magicNumber));
         }*/
-        addToBot(new MakeTempCardInDrawPileAction(new Rapidswell(), 2, true, true));
-        addToBot(new MakeTempCardInDrawPileAction(new LactatingStatus(), 1, true, true));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new Rapidswell(), 2));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new LactatingStatus(), 1));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
                         new MilkPower(p, p, magicNumber), magicNumber));

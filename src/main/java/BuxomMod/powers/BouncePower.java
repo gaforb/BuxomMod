@@ -1,6 +1,7 @@
 package BuxomMod.powers;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.cards.BigBounceStatus;
 import BuxomMod.cards.BuxomStatus;
 import BuxomMod.util.TextureLoader;
@@ -9,6 +10,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,6 +27,7 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
 
     private static final Texture tex84 = TextureLoader.getTexture("BuxomModResources/images/powers/Bounce84.png");
     private static final Texture tex32 = TextureLoader.getTexture("BuxomModResources/images/powers/Bounce32.png");
+    private static final AbstractPlayer p = AbstractDungeon.player;
 
     public BouncePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -52,22 +55,21 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
         }
         else {appliedThisTurn = false;}
         BuxomMod.logger.info("BouncePower: "+ this.amount + " bounce stacks");
-        if (this.owner.hasPower(BigBouncePower.POWER_ID)) {
+        /*if (this.owner.hasPower(BigBouncePower.POWER_ID)) {
             while (this.amount >= 10) {
                 BuxomMod.logger.info("BouncePower: 10 stacks reached with big bounce, making status cards");
                 this.amount -= 10;
                 BuxomMod.logger.info("BouncePower: " + amount + " stacks remaining");
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BigBounceStatus(), 1));
+                AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new BuxomStatus(), 1));
             }
-        } else {
-            while (this.amount >= 8) {
+        } else {*/
+            while (this.amount >= BuxomMod.braManager.maxBounce) {
                 BuxomMod.logger.info("BouncePower: 8 stacks reached without big bounce, making status cards");
-                this.amount -= 8;
+                this.amount -= BuxomMod.braManager.maxBounce;
                 BuxomMod.logger.info("BouncePower: " + amount + " stacks remaining");
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction((AbstractCard) new BuxomStatus(), 1));
+                AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new BuxomStatus(), 1));
             }
         }
-    }
     public void onInitialApplication() {
         appliedThisTurn = true;
         createStatusCards();

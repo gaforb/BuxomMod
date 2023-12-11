@@ -13,7 +13,7 @@
   },
   "BuxomMod:BouncyExercise": {
     "NAME": "Bouncy Exercise",
-    "DESCRIPTION": "Deal !D! damage, then deal damage equal to your current buxommod:Buxom. Lose 1 buxommod:Buxom."
+    "DESCRIPTION": "Deal !D! damage, then deal damage equal to your current buxommod:Buxom. NL Gain !M! Capacity."
   },
   "BuxomMod:ExpansiveWall": {
     "NAME": "Expansive Wall",
@@ -63,11 +63,11 @@
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
-    "DESCRIPTION": "buxommod:Capacity 0-10. NL Gain !M! Dexterity. NL Whenever you gain buxommod:Buxom, gain twice that much Block."
+    "DESCRIPTION": "buxommod:Bra. NL Gain !M! Dexterity. NL Whenever you gain buxommod:Buxom, gain twice that much Block."
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 10-20. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Vigor."
+    "DESCRIPTION": "BuxomMod:Bra. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Vigor."
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
@@ -141,7 +141,7 @@
   },
   "BuxomMod:TCupBra": {
     "NAME": "T-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Capacity 20-30. NL Gain !M! Thorns each time your BuxomMod:Buxom increases."
+    "DESCRIPTION": "BuxomMod:Bra. NL Gain !M! Thorns each time your BuxomMod:Buxom increases."
   },
   "BuxomMod:BrokenBraT": {
     "NAME": "Broken T-Cup Bra",
@@ -186,7 +186,7 @@
   },
   "BuxomMod:BraBreaker": {
     "NAME": "Bra Breaker",
-    "DESCRIPTION": "If wearing a *Bra: Gain enough BuxomMod:Buxom to break it. NL Deal !M! damage for each existing Status card and BuxomMod:Bra broken this combat. *Big *Bounces count double. NL (Deals !D! damage.)"
+    "DESCRIPTION": "Unplayable if buxommod:Bra is broken. NL Gain enough BuxomMod:Buxom to break your Bra. NL Deal !M! damage for each existing Status card and BuxomMod:Bra broken this combat. *Big *Bounces count double. NL (Deals !D! damage.)"
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",
@@ -215,7 +215,7 @@
   },
   "BuxomMod:QuiteEnough": {
     "NAME": "Quite Enough",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies. NL Add !M! *Afterswell to your draw pile."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies. NL Add 2 *Bounce to your draw pile."
   },
   "BuxomMod:ShockStatus": {
     "NAME": "Shock",
@@ -223,7 +223,7 @@
   },
   "BuxomMod:WhiteBikiniBra": {
     "NAME": "White Bikini",
-    "DESCRIPTION": "Capacity 5-15. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
+    "DESCRIPTION": "Bra. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
   },
   "BuxomMod:BrokenBraWhiteBikini": {
     "NAME": "Broken White Bikini",

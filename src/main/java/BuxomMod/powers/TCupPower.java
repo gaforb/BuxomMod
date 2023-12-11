@@ -16,6 +16,8 @@ import BuxomMod.cards.BrokenBraT;
 import BuxomMod.util.TextureLoader;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 
+import static BuxomMod.BuxomMod.braManager;
+
 public class TCupPower extends BraPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
@@ -53,7 +55,7 @@ public class TCupPower extends BraPower implements CloneablePowerInterface {
 
 
     public void onGrow(int growthAmount){ // At the end of your turn
-        if (inCapacity()) {
+        if (!braManager.broken) {
             flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new ThornsPower(this.source, this.amount), this.amount));
             thornsGained += this.amount;

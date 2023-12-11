@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.orbs.AttackChibi;
 import BuxomMod.powers.CommonPower;
@@ -71,9 +72,9 @@ public class QuiteEnough extends AbstractDynamicCard {
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            addToBot(new MakeTempCardInDrawPileAction(new AftershockStatus(), 1, true, true));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber));
         }
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new BuxomStatus(), 2));
     }
 
     //Upgraded stats.

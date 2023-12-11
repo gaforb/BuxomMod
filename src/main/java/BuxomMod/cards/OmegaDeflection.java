@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.CreateStatusCardAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -62,7 +63,7 @@ public class OmegaDeflection extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new ArtifactPower(p, magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new AftershockStatus(), 2, true, true));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new AftershockStatus(), 2));
     }
 
     // Upgraded stats.

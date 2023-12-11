@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.CreateStatusCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -68,7 +69,7 @@ public class PopPopPop extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new CommonPower(p, p, 1), 1));
         }*/
-        addToBot(new MakeTempCardInDrawPileAction(new Rapidswell(), defaultSecondMagicNumber, true, true));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new Rapidswell(), defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
 
         /*

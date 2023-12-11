@@ -40,7 +40,7 @@ public class BouncyExercise extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 6;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     // /STAT DECLARATION/
@@ -94,7 +94,7 @@ public class BouncyExercise extends AbstractDynamicCard {
         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (b != null) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, b.amount, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, 3));
+            AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, magicNumber));
         }
     }
 

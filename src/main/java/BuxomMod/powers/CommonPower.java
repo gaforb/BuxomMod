@@ -108,11 +108,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
             this.fontScale = 8.0F;
             this.amount -= reduceAmount;
         }
-        for (AbstractPower pow : this.owner.powers) {
-            if (pow instanceof BraPower && ((BraPower) pow).inCapacity()) {
-                ((BraPower) pow).onShrink(reduceAmount);
-            }
-        }
+        braManager.breakCheck();
     }
     public void onRemove() {
         for (AbstractPower pow : this.owner.powers) {

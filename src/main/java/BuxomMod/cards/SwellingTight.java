@@ -4,6 +4,7 @@ import BuxomMod.powers.BraPower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,6 +13,7 @@ import BuxomMod.powers.CommonPower;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 
+import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
@@ -51,6 +53,7 @@ private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I lik
 private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
 private static final CardType TYPE = CardType.SKILL;       //
 public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
+public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(BuxomMod.makeID("BraBroken")).TEXT;
 
 private static final int COST = 0;  // COST = ${COST}
 private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
@@ -68,22 +71,18 @@ public SwellingTight() { // public ${NAME}() - This one and the one right under 
     this.exhaust = true;
     }
 
-public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-    boolean canUse = super.canUse(p, m);
-    if (!canUse) {
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
+        }
+        canUse = false;
+        this.cantUseMessage = TEXT[0];
+        if (!braManager.broken) {
+            return true;
+        }
         return false;
     }
-    canUse = false;
-    this.cantUseMessage = "Not within bra capacity!";
-    for (AbstractPower pow : p.powers) {
-        if (p.getPower("BuxomMod:CommonPower") != null) {
-            if (pow instanceof BraPower && ((BraPower)pow).inCapacity()) {
-                canUse = true;
-            }
-        }
-    }
-    return canUse;
-}
 
 // Actions the card should do.
     @Override

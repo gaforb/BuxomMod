@@ -19,6 +19,8 @@ import BuxomMod.util.TextureLoader;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 
+import static BuxomMod.BuxomMod.braManager;
+
 public class KCupPower extends BraPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
@@ -65,7 +67,7 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
     }*/
     private int buffAmount = 2;
     public void onGrow(int howMuch) {
-        if (this.inCapacity() == true) {
+        if (!braManager.broken) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.source, this.source, howMuch*2));
         }
     }
@@ -83,14 +85,6 @@ public class KCupPower extends BraPower implements CloneablePowerInterface {
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
             }
         }*/
-
-    public void broken() {
-        flash();
-
-        AbstractDungeon.actionManager.addToTop(
-                new ReducePowerAction(owner, owner, this, this.amount));
-        addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
-    }
     public void onRemove() {
         addToBot(new ReducePowerAction(owner, owner, owner.getPower(DexterityPower.POWER_ID), buffAmount));
     }
