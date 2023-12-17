@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.ModifyCapacityAction;
 import BuxomMod.powers.BraPower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -71,7 +72,7 @@ public SwellingTight() { // public ${NAME}() - This one and the one right under 
     this.exhaust = true;
     }
 
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+   /*public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
@@ -82,15 +83,17 @@ public SwellingTight() { // public ${NAME}() - This one and the one right under 
             return true;
         }
         return false;
-    }
+    }*/
 
 // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, 3), 3));
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p,3));
+        if (!braManager.broken) {
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
+        }
     }
 
 

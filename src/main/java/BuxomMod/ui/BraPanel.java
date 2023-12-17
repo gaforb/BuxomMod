@@ -56,8 +56,10 @@ public class BraPanel extends ClickableUIElement {
     public ArrayList<PowerTip> tips = new ArrayList();
     public boolean renderTip = false;
 
-    private boolean show = true;
+    private boolean show = false;
     private float hbShowTimer = 0.0F;
+    private String braTitle = "";
+    private Color braColor = Color.WHITE;
 
     public BraPanel(Texture image) {
         super(image);
@@ -104,13 +106,13 @@ public class BraPanel extends ClickableUIElement {
         if (buxomBarWidth != 0) {
             renderPinkBuxomBar(sb, x, y);
         }
-        /*if (braManager.straining) {
+        if (braManager.straining) {
             vfxTimer -= Gdx.graphics.getDeltaTime();
             if (vfxTimer < 0.0F && !Settings.hideLowerElements) {
-                AbstractDungeon.effectList.add(pulseVfx(x, y));
+                AbstractDungeon.effectList.add(pulseVfx(x, y + 5.0F * Settings.scale));
                 vfxTimer = 2.0F;
             }
-        }*/
+        }
         renderBuxomText(sb, y);
     }
 
@@ -134,11 +136,11 @@ public class BraPanel extends ClickableUIElement {
         FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + "/" + braManager.maxCapacity, this.hb.cX, y + BUXOM_BAR_OFFSET_Y + BUXOM_TEXT_OFFSET_Y + 5.0F * Settings.scale, color);
     }
     public static AbstractGameEffect capacityVfx(float x, float y) {
-        return new VfxBuilder(TextureLoader.getTexture(BUXOM_BAR_EFFECT), 1.0f)
+        return new VfxBuilder(TextureLoader.getTexture(CAPACITY_EFFECT), 1.0f)
                 .useAdditiveBlending()
                 .setX(x)
                 .setY(y)
-                .playSoundAt(0f, "POWER_FOCUS")
+                .playSoundAt(0f, "NULLIFY_SFX")
                 .scale(0.7f, 1.3f, VfxBuilder.Interpolations.ELASTICOUT)
                 .fadeOut(0.75f)
                 .build();
@@ -197,27 +199,29 @@ public class BraPanel extends ClickableUIElement {
         if (this.hitbox.hovered && InputHelper.justClickedLeft && this.isClickable()) {
             this.onClick();
         }
-    }
-
-    public void render(SpriteBatch sb, AbstractPlayer player, Color c) {
-        Color braColor = Settings.PURPLE_RELIC_COLOR;
-        sb.setColor(Color.WHITE);
         if (AbstractDungeon.getCurrRoom() != null
                 && AbstractDungeon.getCurrRoom() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
                 && !player.isDead
         ) {
-            StringBuilder braTitle = new StringBuilder();
             if (!braManager.broken && !braManager.straining) {
                 braColor = Color.PINK;
-                braTitle.append(TEXT_DICT.get("Name"));
-            } else if (braManager.straining){
+                braTitle = (TEXT_DICT.get("Name"));
+            } else if (braManager.straining) {
                 braColor = Color.RED;
-                braTitle.append(TEXT_DICT.get("Straining"));
+                braTitle = (TEXT_DICT.get("Straining"));
             } else {
                 braColor = Color.RED;
-                braTitle.append(TEXT_DICT.get("Broken"));
+                braTitle = (TEXT_DICT.get("Broken"));
             }
+            show = true;
+        }
+        else {show = false;}
+    }
+
+    public void render(SpriteBatch sb, AbstractPlayer player, Color c) {
+
+        sb.setColor(Color.WHITE);
 
             /*StringBuilder body = new StringBuilder();
                 body.append("\n" + "Capacity: " + braManager.minCapacity + "-" + braManager.maxCapacity);*/
@@ -230,7 +234,7 @@ public class BraPanel extends ClickableUIElement {
                 FontHelper.renderFontCentered(
                     sb,
                     FontHelper.panelNameFont,
-                    braTitle.toString(),
+                    braTitle,
                     hb.cX * Settings.scale,
                         (hb.y + 36.0F) * Settings.scale,
                         braColor);
@@ -244,7 +248,7 @@ public class BraPanel extends ClickableUIElement {
                 if (renderTip == true) {
                     TipHelper.queuePowerTips(hb.x + hb.width + 16F, hb.y, this.tips);
                 }
-                float halfWidth;
+                /*float halfWidth;
                 float halfHeight;
                 if (this.image != null) {
                     halfWidth = (float)this.image.getWidth() / 2.0F;
@@ -265,11 +269,10 @@ public class BraPanel extends ClickableUIElement {
                         sb.setColor(this.tint);
                         sb.draw(this.region, this.x - halfWidth + halfWidth * Settings.scale, this.y - halfHeight + halfHeight * Settings.scale, halfWidth, halfHeight, (float)this.region.packedWidth, (float)this.region.packedHeight, Settings.scale, Settings.scale, this.angle);
                         sb.setBlendFunction(770, 771);
-                    }
                 }
+            }*/
 
-                this.renderHitbox(sb);
-            }
+            this.renderHitbox(sb);
         }
     }
 
@@ -288,7 +291,7 @@ public class BraPanel extends ClickableUIElement {
 
     }
 
-    private class BuxomPanelHitboxListener implements HitboxListener
+    private class BraPanelHitboxListener implements HitboxListener
     {
         @Override
         public void hoverStarted(Hitbox hitbox) {}

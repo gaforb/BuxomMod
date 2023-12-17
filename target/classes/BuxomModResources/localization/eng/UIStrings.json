@@ -15,5 +15,17 @@
     "TEXT": [
       "My bra is broken!"
     ]
+  },
+  "BuxomMod:StartingBuxomPanel": {
+    "NAME": ["Starting Buxom"],
+    "TEXT": ["Starting Buxom",
+      "Gain this much Buxom at the start of each combat."
+    ]
+  },
+  "BuxomMod:BounceMaxPanel": {
+    "NAME": ["Max Bounce"],
+    "TEXT": ["Max Bounce",
+      "At the end of each turn, gain #pBounce stacks equal to your Buxom. For every #b", " stack(s), create a #yStatus card. If you break your #yBra, this number will decrease."
+    ]
   }
 }

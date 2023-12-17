@@ -9,11 +9,10 @@ import basemod.helpers.VfxBuilder;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Interpolation;
 import com.esotericsoftware.spine.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -86,8 +85,8 @@ public class TheBuxom extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
     public static String boobBoneNID = "boobn";
     public static String boobBoneFID = "boobf";
-    public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite5.atlas";
-    public static String skeletonURL = "BuxomModResources/images/char/character/LehmanaSprite5_Armaturelehmana sprite.json";
+    public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite7.atlas";
+    public static String skeletonURL = "BuxomModResources/images/char/character/LehmanaSprite7_Armaturelehmana sprite.json";
     public static final String size1animName = "idle";
     public static final String size2animName = "idle2";
     public static final String size3animName = "idle3";
@@ -113,7 +112,6 @@ public class TheBuxom extends CustomPlayer {
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
     // =============== CHARACTER CLASS START =================
-
     public TheBuxom(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "BuxomModResources/images/char/defaultCharacter/orb/vfx.png", null,
@@ -148,10 +146,10 @@ public class TheBuxom extends CustomPlayer {
                 atlasURL,
                 skeletonURL,
                 1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, size1animName, true);
-        e.setTime(e.getEndTime() * MathUtils.random());
+        AnimationState.TrackEntry e = state.setAnimation(1, "idle", true);
         this.stateData.setDefaultMix(0.1F);
         e.setTimeScale(1.0F);
+        AnimationState.TrackEntry f = state.setAnimation(2, "idle_boobs", true);
 
 
         // =============== /ANIMATIONS/ =================
@@ -170,6 +168,9 @@ public class TheBuxom extends CustomPlayer {
     public float scalerate = 0.025F;
     public float threshhold1 = 10;
     public float threshhold2 = 20;
+    public float animTimer = 60F;
+    public float animCurrent = 0;
+    public float animTarget = 0;
 
     public float threshhold3 = 30;
     public int currRange = 0;
@@ -180,7 +181,53 @@ public class TheBuxom extends CustomPlayer {
         return skeleton;
     }
 
-    public void changeState(String stateName) {
+    public void resetIdle() {
+        if (this.state.getCurrent(1).getAnimation().getName() == null) {
+            AnimationState.TrackEntry e = this.state.setAnimation(1, size1animName, true);
+        }
+    }
+
+    public void changeStateBoobs(String stateName) {
+        AnimationState.TrackEntry e;
+        String boobsName = stateName + "_boobs";
+        switch (stateName) {
+            case size1animName:
+                if (this.hasPower(ExposedPower.POWER_ID)) { boobsName += "_ex"; }
+                e = this.state.setAnimation(2, boobsName, true);
+                break;
+            case size2animName:
+                if (this.hasPower(ExposedPower.POWER_ID)) { boobsName += "_ex"; }
+                e = this.state.setAnimation(2, boobsName, true);
+                break;
+            case size3animName:
+                if (this.hasPower(ExposedPower.POWER_ID)) { boobsName += "_ex"; }
+                e = this.state.setAnimation(2, boobsName, true);
+                break;
+            case size4animName:
+                e = this.state.setAnimation(2, boobsName, true);
+                break;
+        }
+    }
+
+    public void changeStateBodyAnimation(String stateName) {
+        AnimationState.TrackEntry e;
+        switch (stateName) {
+            case size1animName:
+                e = this.state.setAnimation(1, stateName, true);
+                break;
+            case size2animName:
+                e = this.state.setAnimation(1, stateName, true);
+                break;
+            case size3animName:
+                e = this.state.setAnimation(1, stateName, true);
+                break;
+            case size4animName:
+                e = this.state.setAnimation(1, stateName, true);
+                break;
+        }
+    }
+
+    /*public void changeState(String stateName) {
         AnimationState.TrackEntry e;
         switch (stateName) {
             case size1animName:
@@ -191,9 +238,10 @@ public class TheBuxom extends CustomPlayer {
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, stateName, true);
-                e.setTime(e.getEndTime() * MathUtils.random());
+                e = this.state.setAnimation(1, stateName, true);
                 getSkeleton().setAttachment(boobsSlotName, "boobs1");
+                getSkeleton().setAttachment("boobn", null);
+                getSkeleton().setAttachment("boobf", null);
                 getSkeleton().setAttachment("face", "face1");
                 getSkeleton().setAttachment("chest", "chest");
                 break;
@@ -205,9 +253,10 @@ public class TheBuxom extends CustomPlayer {
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, stateName, true);
-                e.setTime(e.getEndTime() * MathUtils.random());
+                e = this.state.setAnimation(1, stateName, true);
                 getSkeleton().setAttachment(boobsSlotName, "boobs2");
+                getSkeleton().setAttachment("boobn", null);
+                getSkeleton().setAttachment("boobf", null);
                 getSkeleton().setAttachment("face", "face1");
                 getSkeleton().setAttachment("chest", "chest");
                 break;
@@ -219,9 +268,10 @@ public class TheBuxom extends CustomPlayer {
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, stateName, true);
-                e.setTime(e.getEndTime() * MathUtils.random());
+                e = this.state.setAnimation(1, stateName, true);
                 getSkeleton().setAttachment(boobsSlotName, "boobs3-ex");
+                getSkeleton().setAttachment("boobn", null);
+                getSkeleton().setAttachment("boobf", null);
                 getSkeleton().setAttachment("face", "face2");
                 getSkeleton().setAttachment("chest", "chest");
                 break;
@@ -230,14 +280,15 @@ public class TheBuxom extends CustomPlayer {
                         atlasURL,
                         skeletonURL,
                         1.0f);
-                e = this.state.setAnimation(0, stateName, true);
-                e.setTime(e.getEndTime() * MathUtils.random());
+                e = this.state.setAnimation(1, stateName, true);
                 getSkeleton().setAttachment(boobsSlotName, null);
+                getSkeleton().setAttachment("boobn", "boobn");
+                getSkeleton().setAttachment("boobf", "boobf");
                 getSkeleton().setAttachment("face", "face2");
                 getSkeleton().setAttachment("chest", "chest_ex");
                 break;
         }
-    }
+    }*/
 
     public String getExposedName(String anim) {
         if (this.hasPower(ExposedPower.POWER_ID)) {
@@ -247,15 +298,13 @@ public class TheBuxom extends CustomPlayer {
     }
 
     public void updateExposed() {
-        String currAnimName = this.state.getCurrent(0).getAnimation().getName();
+        String currAnimName = this.state.getCurrent(2).getAnimation().getName();
         if (this.hasPower(ExposedPower.POWER_ID) && !currAnimName.contains("_ex")) {
-            changeState(currAnimName + "_ex");
-            logger.info("Updated exposed state, current anim name: " + currAnimName);
+            changeStateBoobs(currAnimName + "_ex");
         } else if (!this.hasPower(ExposedPower.POWER_ID) && currAnimName.contains("_ex")) {
-            String currAnimNameClothed = currAnimName.substring(0, currAnimName.length() - 3);
+            String currAnimNameClothed = currAnimName.substring(0, currAnimName.length() - 9);
             logger.info(currAnimNameClothed);
-            changeState(currAnimNameClothed);
-            logger.info("Updated exposed state, current anim name: " + currAnimName);
+            changeStateBoobs(currAnimNameClothed);
         }
     }
 
@@ -308,17 +357,34 @@ public class TheBuxom extends CustomPlayer {
                 .playSoundAt(0.35f, BuxomMod.makeID("LOW_GASP"))
                 .build();
     }
-
+    public void animateGrowth() {
+        float rate = 0.03F;
+        animTimer -= 1;
+        if (animTimer <= 0) {
+            animCurrent = realDisplaySize;
+            animTarget = animCurrent + 2;
+            animTimer = 65;
+            logger.info("Animate growth for 65 frames");
+            logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
+            logger.info("animTarget (" + animTarget + "), animCurrent (" + animCurrent + ")");
+        }
+        if (animTimer > 0) {
+            rate = 0.03F * Interpolation.swing.apply(0, 2, (65F-animTimer)/65F);
+            logger.info(rate);
+        }
+        realDisplaySize += rate;
+    }
     public float calculateScale() {
         targetDisplaySize = getPwrAmt(this, CommonPower.POWER_ID);
         if (!(Math.abs(realDisplaySize - targetDisplaySize) <= 0.03)) {
             if (realDisplaySize < targetDisplaySize) {
-                //logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
+                animateGrowth();
+                /*logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
                 realDisplaySize += ((0.012F * ((targetDisplaySize - realDisplaySize)/2)));
-                //logger.info("realDisplaySize+ (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
-            } else if (realDisplaySize > targetDisplaySize) {
+                //logger.info("realDisplaySize+ (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");*/
+            } else if (realDisplaySize > targetDisplaySize && !(Math.abs(realDisplaySize - targetDisplaySize) <= 1F)) {
                 //logger.info("realDisplaySize (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
-                realDisplaySize -= 0.035F;
+                realDisplaySize -= 1F;
                 //logger.info("realDisplaySize- (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
             }
         }
@@ -327,19 +393,21 @@ public class TheBuxom extends CustomPlayer {
             realDisplaySize = targetDisplaySize;
         }*/
         if (realDisplaySize >= threshhold3) {
-            if (currRange != 2) {
+            if (currRange != 3) {
                 logger.info("threshold3 exceeded");
                 CardCrawlGame.sound.play(BuxomMod.makeID("INTENSE_GASP"));
-                changeState(size4animName);
+                changeStateBoobs(size4animName);
+                changeStateBodyAnimation(size4animName);
             }
-            adjustedDisplaySize = realDisplaySize - threshhold2;
-            currRange = 2;
+            adjustedDisplaySize = realDisplaySize - threshhold3;
+            currRange = 3;
         }
         else if (realDisplaySize >= threshhold2 && realDisplaySize < threshhold3) {
             if (currRange != 2) {
                 logger.info("threshold2 exceeded");
                 CardCrawlGame.sound.play(BuxomMod.makeID("INTENSE_GASP"));
-                changeState(size3animName);
+                changeStateBoobs(size3animName);
+                changeStateBodyAnimation(size3animName);
             }
             adjustedDisplaySize = realDisplaySize - threshhold2;
             currRange = 2;
@@ -348,7 +416,8 @@ public class TheBuxom extends CustomPlayer {
             if (currRange != 1) {
                 CardCrawlGame.sound.play(BuxomMod.makeID("LOW_GASP"));
                 logger.info("threshold1 exceeded");
-                changeState(size2animName);
+                changeStateBoobs(size2animName);
+                changeStateBodyAnimation(size2animName);
             }
             adjustedDisplaySize = realDisplaySize - threshhold1;
             currRange = 1;
@@ -356,7 +425,8 @@ public class TheBuxom extends CustomPlayer {
         else {
             if (currRange != 0) {
                 logger.info("threshold1 de-exceeded");
-                changeState(size1animName);
+                changeStateBoobs(size1animName);
+                changeStateBodyAnimation(size1animName);
             }
             adjustedDisplaySize = realDisplaySize;
             currRange = 0;
@@ -365,6 +435,7 @@ public class TheBuxom extends CustomPlayer {
     }
 
     public void updateScale(float scaler) {
+        resetIdle();
         Bone boobN = getSkeleton().findBone(boobBoneNID);
         Bone boobF = getSkeleton().findBone(boobBoneFID);
         Float scale = scaler*scalerate + 1F;
@@ -384,15 +455,17 @@ public class TheBuxom extends CustomPlayer {
     public void render(SpriteBatch sb) {
         super.render(sb);
         //buxomPanel.render(sb, this);
-        braPanel.render(sb, this, braPanel.hbTextColor);
     }
 
     @Override
     public void update() {
         super.update();
         //buxomPanel.update(this);
+        startingBuxomPanel.update(this);
         braPanel.update(this);
+        bounceMaxPanel.update(this);
         //logger.info("update: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
+        braManager.strainSanityCheck();
     }
 
 

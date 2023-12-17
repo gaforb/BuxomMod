@@ -15,7 +15,7 @@
       "Bra",
       "bra"
     ],
-    "DESCRIPTION": "Bra powers provide passive bonuses and prevent the downside of #yExpose as long as your #yBuxom is within #yCapacity."
+    "DESCRIPTION": "Bra powers provide passive bonuses and prevent the downside of #yExpose as long as your #yBra is intact."
   },
   {
     "PROPER_NAME": "Multiword Keyword",
@@ -127,5 +127,13 @@
       "rapidswell"
     ],
     "DESCRIPTION": "A #bStatus card that gives #b3 #yBuxom and exhausts at end of turn."
+  },
+  {
+    "PROPER_NAME": "Repair",
+    "NAMES": [
+      "Repair",
+      "repair"
+    ],
+    "DESCRIPTION": "Repairs your bra from #rBroken status."
   }
 ]

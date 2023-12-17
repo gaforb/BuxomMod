@@ -1,10 +1,13 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ModifyCapacityAction;
+import BuxomMod.actions.RepairBraAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.MilkPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -26,7 +29,7 @@ public class HeavyDutyBra extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = BuxomMod.makeID(HeavyDutyBra.class.getSimpleName());
-    public static final String IMG = makeCardPath("HeavyLactation.png");
+    public static final String IMG = makeCardPath("HeavyDutyBra.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -36,37 +39,32 @@ public class HeavyDutyBra extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
 
-    private int BLOCK = 3;
-    private final int UPGRADE_PLUS_BLOCK = 1;
+    private int MAGIC = 5;
+    private int BLOCK = 8;
+    private final int UPGRADE_PLUS_MAGIC = 3;
+    private final int UPGRADE_PLUS_BLOCK = 2;
 
     // /STAT DECLARATION/
 
 
     public HeavyDutyBra() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
-        this.selfRetain = false;
+        magicNumber = baseMagicNumber = MAGIC;
+        block = baseBlock = BLOCK;
         this.exhaust = true;
-        this.tags.add(CardTags.HEALING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
-        if (b != null) {
-            int bdiv = b.amount;
-            AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(p, p, new MilkPower(p, p, bdiv), bdiv));
-            bdiv = b.amount/2;
-            AbstractDungeon.actionManager.addToBottom(
-                    new HealAction(p, p, bdiv));
-        }
+        addToBot(new ModifyCapacityAction(p, magicNumber));
+        addToBot(new GainBlockAction(p, block));
+        addToBot(new RepairBraAction());
     }
 
     /*@Override
@@ -90,9 +88,9 @@ public class HeavyDutyBra extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.selfRetain = true;
-            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
         }
     }
 }

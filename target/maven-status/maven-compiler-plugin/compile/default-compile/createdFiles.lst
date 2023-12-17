@@ -12,6 +12,7 @@ BuxomMod\powers\KCupPower_old.class
 BuxomMod\relics\BottledPlaceholderRelic.class
 BuxomMod\variables\DefaultCustomVariable.class
 BuxomMod\actions\ShrinkAction.class
+BuxomMod\ui\StartingBuxomPanel.class
 BuxomMod\events\IdentityCrisisEvent.class
 BuxomMod\cards\BuxomStatus.class
 BuxomMod\cards\CardTemplate.class
@@ -47,6 +48,7 @@ BuxomMod\powers\ButtonHazardPower.class
 BuxomMod\actions\ChannelRandomChibiAction.class
 BuxomMod\actions\HungryDwarfAction.class
 BuxomMod\powers\ShockPower.class
+BuxomMod\ui\BraPanel$BraPanelHitboxListener.class
 BuxomMod\orbs\DefenseChibi.class
 BuxomMod\cards\ExposureStatus.class
 BuxomMod\cards\Omegabsorption.class
@@ -62,6 +64,7 @@ BuxomMod\ui\BraPanel.class
 BuxomMod\powers\BraBrokenPower.class
 BuxomMod\powers\RarePower.class
 BuxomMod\cards\BouncyBlock.class
+BuxomMod\actions\IncreaseBuxomGainAction.class
 BuxomMod\cards\AbstractDefaultCard.class
 BuxomMod\powers\MilkPower.class
 BuxomMod\cards\PopPopPop.class
@@ -75,10 +78,12 @@ BuxomMod\cards\old\ChibiAttraction.class
 BuxomMod\cards\ChaosDunk.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\cards\ButtonHazard.class
+BuxomMod\BuxomMod$2.class
 BuxomMod\ui\BuxomPanel.class
 BuxomMod\cards\BigBouncePowerCard.class
 BuxomMod\cards\OmegaLibrary.class
 BuxomMod\cards\BouncyExercise.class
+BuxomMod\actions\RepairBraAction.class
 BuxomMod\actions\UncommonPowerAction.class
 BuxomMod\patches\DefaultInsertPatch$Locator.class
 BuxomMod\BuxomMod.class
@@ -89,17 +94,19 @@ BuxomMod\variables\MilkCostVariable.class
 BuxomMod\cards\ExpansiveWall.class
 BuxomMod\relics\JCupRelic.class
 BuxomMod\cards\ShockStatus.class
-BuxomMod\actions\CreateBuxomStatusAction.class
+BuxomMod\actions\CreateStatusCardAction.class
 BuxomMod\powers\SmotherPower.class
 BuxomMod\cards\BigBounceStatus.class
 BuxomMod\potions\FlatteningPotion.class
 BuxomMod\cards\Surprise.class
+BuxomMod\cards\HeavyDutyBra.class
 BuxomMod\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 BuxomMod\cards\InducedLactation.class
 BuxomMod\cards\LeanneAssist.class
 BuxomMod\orbs\DeviousChibi.class
 BuxomMod\cards\Chibis.class
 BuxomMod\cards\LactatingStatus.class
+BuxomMod\ui\BounceMaxPanel.class
 BuxomMod\util\IDCheckDontTouchPls.class
 BuxomMod\cards\AftershockStatus.class
 BuxomMod\cards\ChibiOffering.class
@@ -110,6 +117,7 @@ BuxomMod\cards\BrokenBraM.class
 BuxomMod\powers\TCupPower.class
 BuxomMod\variables\CapacityUpperVariable.class
 BuxomMod\potions\ChibiPotion.class
+BuxomMod\cards\MassiveGrowth.class
 BuxomMod\powers\NakedPower.class
 BuxomMod\characters\TheBuxom$Enums.class
 BuxomMod\cards\Paizuri.class
@@ -123,6 +131,7 @@ BuxomMod\cards\ButtonPop.class
 BuxomMod\powers\MeasurementPower.class
 BuxomMod\orbs\AttackChibi.class
 BuxomMod\characters\TheBuxom.class
+BuxomMod\ui\BounceMaxPanel$StartingBuxomPanelHitboxListener.class
 BuxomMod\cards\Library.class
 BuxomMod\cards\OmegaShock.class
 BuxomMod\powers\old\ChibiPower.class
@@ -136,10 +145,10 @@ BuxomMod\cards\OmegaBeatdown.class
 BuxomMod\cards\Relief.class
 BuxomMod\cards\HungryDwarf.class
 BuxomMod\actions\UpgradeAllStatusAction.class
+BuxomMod\ui\StartingBuxomPanel$StartingBuxomPanelHitboxListener.class
 BuxomMod\cards\Submission.class
 BuxomMod\cards\Hardheaded.class
 BuxomMod\cards\KCupBra.class
-BuxomMod\ui\BraPanel$BuxomPanelHitboxListener.class
 BuxomMod\powers\InvoluntaryLactationPower.class
 BuxomMod\powers\BraPower.class
 BuxomMod\cards\ExpandMind.class
@@ -149,6 +158,7 @@ BuxomMod\patches\relics\BottledPlaceholderField.class
 BuxomMod\powers\KCupPower.class
 BuxomMod\cards\OmegaBonk.class
 BuxomMod\relics\WashboardRelic.class
+BuxomMod\actions\OmegabsorptionAction.class
 BuxomMod\cards\OmegaCurse.class
 BuxomMod\powers\BraBreakerPower.class
 BuxomMod\cards\Rapidswell.class

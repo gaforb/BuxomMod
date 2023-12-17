@@ -6,8 +6,6 @@ import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -57,7 +55,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
 
     public void onInitialApplication() {
         CardCrawlGame.sound.play(makeID(BuxomMod.makeID("SUDDEN_GASP")));
-        ((TheBuxom)owner).changeState(((TheBuxom)owner).state.getCurrent(0).getAnimation().getName());
+        ((TheBuxom)owner).changeStateBoobs(((TheBuxom)owner).state.getCurrent(1).getAnimation().getName());
         addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
     }
 

@@ -59,15 +59,15 @@
   },
   "BuxomMod:Omegabsorption": {
     "NAME": "Omegabsorption",
-    "DESCRIPTION": "Exhaust a card. NL Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL Draw !M! cards."
+    "DESCRIPTION": "Exhaust a card. NL Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL If it was a *Status card, draw !M! cards. Otherwise, lose !B! BuxomMod:Capacity."
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
-    "DESCRIPTION": "buxommod:Bra 0-10. NL Gain !M! Dexterity. NL Whenever you gain buxommod:Buxom, gain twice that much Block."
+    "DESCRIPTION": "buxommod:Bra. NL Gain !M! Dexterity. NL Whenever you gain buxommod:Buxom, gain twice that much Block."
   },
   "BuxomMod:MCupBra": {
     "NAME": "M-Cup Bra",
-    "DESCRIPTION": "BuxomMod:Bra 10-20. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Vigor."
+    "DESCRIPTION": "BuxomMod:Bra. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Vigor."
   },
   "BuxomMod:BrokenBraK": {
     "NAME": "Broken Bra (K)",
@@ -120,7 +120,7 @@
   },
   "BuxomMod:OmegaArc": {
     "NAME": "Omega Arc",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL If your BuxomMod:Buxom is less than 10, damage ALL enemies."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL If your BuxomMod:Bra is intact, damage ALL enemies."
   },
   "BuxomMod:OmegaDeflection": {
     "NAME": "Omega Deflection",
@@ -133,7 +133,7 @@
   },
   "BuxomMod:SwellingTight": {
     "NAME": "Swelling Tight",
-    "DESCRIPTION": "If you're within the BuxomMod:Capacity of your bra, gain 3 BuxomMod:Buxom and !M! [E]. NL Exhaust."
+    "DESCRIPTION": "Gain 3 BuxomMod:Buxom and lose 3 BuxomMod:Capacity. NL If your BuxomMod:Bra is intact, gain !M! [E]. NL Exhaust."
   },
   "BuxomMod:Phew": {
     "NAME": "Phew!",
@@ -215,7 +215,7 @@
   },
   "BuxomMod:QuiteEnough": {
     "NAME": "Quite Enough",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies. NL Add !M! *Afterswell to your draw pile."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies. NL Add 2 *Bounce to your draw pile."
   },
   "BuxomMod:ShockStatus": {
     "NAME": "Shock",
@@ -223,7 +223,7 @@
   },
   "BuxomMod:WhiteBikiniBra": {
     "NAME": "White Bikini",
-    "DESCRIPTION": "Bra 5-15. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
+    "DESCRIPTION": "Bra. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
   },
   "BuxomMod:BrokenBraWhiteBikini": {
     "NAME": "Broken White Bikini",
@@ -318,6 +318,15 @@
   "BuxomMod:OmegaBonk": {
     "NAME": "Omega Bonk",
     "DESCRIPTION": "{@@}Deal !D! damage. NL Shuffle !M! *Bounce{!M!|>1=s} into your draw pile."
+  },
+  "BuxomMod:HeavyDutyBra": {
+    "NAME": "Heavy-Duty Bra",
+    "DESCRIPTION": "Gain !M! BuxomMod:Capacity. NL BuxomMod:Repair your bra. NL Gain !B! Block."
+  },
+  "BuxomMod:MassiveGrowth": {
+    "NAME": "Massive Growth",
+    "DESCRIPTION": "Ethereal. NL Gain !M! buxommod:Buxom. NL Permanently increase this card's buxommod:Buxom gain by !BuxomMod:SecondMagic!. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! buxommod:Buxom. NL Permanently increase this card's buxommod:Buxom gain by !BuxomMod:SecondMagic!. NL Exhaust."
   }
 }
 

@@ -3,21 +3,13 @@
         "NAME": "Buxom",
         "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn. If your #yBuxom exceeds #b30, gain #yExposed."]
 },
-"BuxomMod:RarePower": {
-        "NAME": "Placeholder Power",
-        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
-},
 "BuxomMod:KCupPower": {
         "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b", " #yDexterity. Whenever you gain #yBuxom, gain twice that much #yBlock."]
-},
-"BuxomMod:KCupPower2": {
-        "NAME": "K-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 0-10. Gain #b", " #yDexterity. Whenever you gain #yBuxom, gain twice that much #yBlock."]
+        "DESCRIPTIONS": ["#yBra. Gain #b", " #yDexterity. Whenever you gain #yBuxom, gain twice that much #yBlock."]
 },
 "BuxomMod:MCupPower": {
         "NAME": "M-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 10-20. Whenever you gain #yBuxom, gain #b", " #yVigor."]
+        "DESCRIPTIONS": ["#yBra. Whenever you gain #yBuxom, gain #b", " #yVigor."]
 },
 "BuxomMod:ChibiPower": {
         "NAME": "Chibi",
@@ -41,7 +33,7 @@
 },
 "BuxomMod:TCupPower": {
         "NAME": "T-Cup Bra",
-        "DESCRIPTIONS": ["#yCapacity 20-30. NL Gain #b", " Thorns each time your Buxom increases."]
+        "DESCRIPTIONS": ["#yBra. NL Gain #b", " Thorns each time your Buxom increases."]
 },
 "BuxomMod:MilkPower": {
         "NAME": "Milk",
@@ -65,11 +57,11 @@
 },
 "BuxomMod:WhiteBikiniCupPower": {
         "NAME": "White Bikini",
-        "DESCRIPTIONS": ["Capacity 5-15. Whenever you gain #yBuxom, gain #b", " #yMilk. At the end of your turn, gain #b1 #yLactating."]
+        "DESCRIPTIONS": ["#yBra. Whenever you gain #yBuxom, gain #b", " #yMilk."]
 },
 "BuxomMod:ExposedPower": {
         "NAME": "Exposed",
-        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock unless within capacity of a bra, except from #yPowers. Deal #b", "% + #b","% bonus damage for each #yBuxom stack you have (Currently #b", "% ). Lasts #b1 turn unless your #yBuxom exceeds #b30."]
+        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock unless within #yBra capacity, except from #yPowers. Deal #b", "% + #b","% bonus damage for each #yBuxom stack you have (Currently #b", "% ). Lasts #b1 turn unless your #yBuxom exceeds #b30."]
 },
 "BuxomMod:EmbarrassmentPower": {
         "NAME": "Embarrassed",

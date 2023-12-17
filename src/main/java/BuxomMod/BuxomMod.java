@@ -5,21 +5,19 @@ import BuxomMod.potions.DragonMilkPotion;
 import BuxomMod.potions.PermaGrowthPotion;
 import BuxomMod.powers.BraBrokenPower;
 import BuxomMod.powers.BraPower;
-import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.MilkPower;
 import BuxomMod.relics.CowRelic;
-import BuxomMod.ui.BraManager;
-import BuxomMod.ui.BraPanel;
-import BuxomMod.ui.BuxomBar;
-import BuxomMod.ui.BuxomPanel;
+import BuxomMod.ui.*;
 import BuxomMod.util.GrowCommand;
 import basemod.*;
+import basemod.abstracts.CustomSavable;
 import basemod.devcommands.ConsoleCommand;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -96,7 +94,8 @@ public class BuxomMod implements
         AddAudioSubscriber,
         OnStartBattleSubscriber,
         PostDungeonInitializeSubscriber,
-        PostPowerApplySubscriber{
+        PostPowerApplySubscriber,
+        PostRenderSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
@@ -171,6 +170,8 @@ public class BuxomMod implements
     public static final String CAPACITY_EFFECT = "BuxomModResources/images/vfx/capacity_effect.png";
     public static final String BREAK_EFFECT = "BuxomModResources/images/vfx/break_effect.png";
     public static final String BUXOM_BAR_EFFECT = "BuxomModResources/images/ui/buxomBarVfx.png";
+    public static final String STARTING_BUXOM_ICON = "BuxomModResources/images/ui/buxom42.png";
+    public static final String MAX_BOUNCE_ICON = "BuxomModResources/images/ui/bounce42.png";
 
 
     // =============== MAKE IMAGE PATHS =================
@@ -205,6 +206,8 @@ public class BuxomMod implements
     public static BuxomPanel buxomPanel;
     public static BraPanel braPanel;
     public static BraManager braManager;
+    public static StartingBuxomPanel startingBuxomPanel;
+    public static BounceMaxPanel bounceMaxPanel;
 
     // =============== SUBSCRIBE, CREATE THE COLOR_PINK, INITIALIZE =================
 
@@ -377,6 +380,22 @@ public class BuxomMod implements
         buxomPanel = new BuxomPanel();
         braPanel = new BraPanel(TextureLoader.getTexture(CAPACITY_EFFECT));
         braManager = new BraManager();
+        startingBuxomPanel = new StartingBuxomPanel(TextureLoader.getTexture(STARTING_BUXOM_ICON));
+        bounceMaxPanel = new BounceMaxPanel(TextureLoader.getTexture(MAX_BOUNCE_ICON));
+
+        BaseMod.addSaveField(makeID("StartingBuxom"), new CustomSavable<Integer>() {
+            @Override
+            public Integer onSave() {
+                return braManager.getPermaSize();
+            }
+
+            @Override
+            public void onLoad(Integer i) {
+                if (braManager != null) {
+                    braManager.setPermaSize(i);
+                }
+            }
+        });
 
 
         // =============== EVENTS =================
@@ -749,5 +768,14 @@ public class BuxomMod implements
             logger.info("Buxom: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Capacity: " + braManager.maxCapacity + ". Buxom smaller? " + braManager.inCapacity());
             logger.info("Straining: " + braManager.straining + ". Broken: " + braManager.broken);
         }*/
+    }
+
+    @Override
+    public void receivePostRender(SpriteBatch spriteBatch) {
+        if (AbstractDungeon.player != null) {
+            braPanel.render(spriteBatch, AbstractDungeon.player, braPanel.hbTextColor);
+            startingBuxomPanel.render(spriteBatch, AbstractDungeon.player, startingBuxomPanel.hbTextColor);
+            bounceMaxPanel.render(spriteBatch, AbstractDungeon.player, bounceMaxPanel.hbTextColor);
+        }
     }
 }

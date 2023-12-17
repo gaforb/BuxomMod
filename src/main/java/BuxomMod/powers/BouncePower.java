@@ -64,7 +64,7 @@ public class BouncePower extends AbstractPower implements CloneablePowerInterfac
             }
         } else {*/
             while (this.amount >= BuxomMod.braManager.maxBounce) {
-                BuxomMod.logger.info("BouncePower: 8 stacks reached without big bounce, making status cards");
+                BuxomMod.logger.info("BouncePower: " + BuxomMod.braManager.maxBounce + " stacks reached");
                 this.amount -= BuxomMod.braManager.maxBounce;
                 BuxomMod.logger.info("BouncePower: " + amount + " stacks remaining");
                 AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new BuxomStatus(), 1));

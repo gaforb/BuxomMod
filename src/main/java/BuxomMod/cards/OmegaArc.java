@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 
+import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 public class OmegaArc extends AbstractDynamicCard {
@@ -90,7 +91,7 @@ public class OmegaArc extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
 
-        if (((b != null) && (b.amount < 10)) || b == null) {
+        if (!braManager.broken) {
             for (int i = 0; i < magicNumber; i++) {
                 AbstractDungeon.actionManager.addToBottom(
                         new DamageAllEnemiesAction(p, multiDamage, this.damageTypeForTurn,
