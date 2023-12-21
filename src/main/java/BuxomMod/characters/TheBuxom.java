@@ -6,6 +6,7 @@ import BuxomMod.util.TextureLoader;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import basemod.helpers.VfxBuilder;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -137,6 +138,8 @@ public class TheBuxom extends CustomPlayer {
         clothed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top_placeholder", shirtTopPlaceholder);
         clothed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_clothed", chestClothed);
 
+        skeleton.getData().getDefaultSkin().addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_exposed", chestExposed);
+
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
 
@@ -178,6 +181,7 @@ public class TheBuxom extends CustomPlayer {
     public float threshhold1 = 10;
     public float threshhold2 = 20;
     public float animTimer = 60F;
+    public float messageTimer = 60F;
     public float animCurrent = 0;
     public float animTarget = 0;
 
@@ -198,7 +202,16 @@ public class TheBuxom extends CustomPlayer {
     }
 
 
-
+    public void timedMessage() {
+        if (messageTimer <= 0) {
+            messageTimer = 60F;
+            for (SlotData s : skeleton.getData().getSlots()) {
+                logger.info("Slot: " + s.getName() + " Attachment: " + s.getAttachmentName() + " Index: " + s.getIndex());
+                logger.info("current skin: " + skeleton.getSkin());
+            }
+        }
+        messageTimer -= 1F;
+    }
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
@@ -485,13 +498,6 @@ public class TheBuxom extends CustomPlayer {
         return adjustedDisplaySize;
     }
 
-    public float getBoobNBaseScale() {
-        float baseScale = 0;
-        Bone boobN = getSkeleton().findBone(boobBoneNID);
-        baseScale = (boobN.getScaleX() + boobN.getScaleY())/2;
-        return baseScale;
-    }
-
     public void updateScale(float scaler) {
         resetIdle();
         Bone boobN = getSkeleton().findBone(boobBoneNID);
@@ -502,18 +508,20 @@ public class TheBuxom extends CustomPlayer {
         boobF.setScale(addScale);
         boobF.update();
         updateExposed();
-        logger.info("update function: current skin: " + skeleton.getSkin());
+        //logger.info("update function: current skin: " + skeleton.getSkin());
         skeleton.setSlotsToSetupPose();
         this.state.apply(skeleton);
-        logger.info("state applied: current skin: " + skeleton.getSkin());
-        logger.info("state applied: current chest attachment: " + skeleton.getAttachment(skeleton.findSlotIndex(String.valueOf(chestSlot)),String.valueOf(chestSlot)));
+        this.state.update(Gdx.graphics.getDeltaTime());
+        timedMessage();
+        //logger.info("state applied: current skin: " + skeleton.getSkin());
+        //logger.info("state applied: current chest attachment: " + skeleton.getAttachment(skeleton.findSlotIndex(String.valueOf(chestSlot)),String.valueOf(chestSlot)));
     }
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
         updateScale(calculateScale());
         //logger.info("renderPlayerImage: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
         super.renderPlayerImage(sb);
-        logger.info("rendered: current skin: " + skeleton.getSkin());
+        //logger.info("rendered: current skin: " + skeleton.getSkin());
     }
     @Override
     public void render(SpriteBatch sb) {
