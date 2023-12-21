@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.Iterator;
 
+import static BuxomMod.characters.TheBuxom.logger;
+
 public class OmegabsorptionAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
@@ -42,12 +44,14 @@ public class OmegabsorptionAction extends AbstractGameAction {
         AbstractCard c = null;
         if (this.duration == this.startDuration) {
             if (this.p.hand.size() == 0) {
+                logger.info("this.p.hand.size() == 0");
                 this.isDone = true;
                 return;
             }
 
             int i;
             if (!this.anyNumber && this.p.hand.size() <= this.amount) {
+                logger.info("!this.anyNumber && this.p.hand.size() <= this.amount");
                 this.amount = this.p.hand.size();
                 numExhausted = this.amount;
                 i = this.p.hand.size();
@@ -57,10 +61,12 @@ public class OmegabsorptionAction extends AbstractGameAction {
                 }
 
                 CardCrawlGame.dungeon.checkForPactAchievement();
+                this.tickDuration();
                 return;
             }
 
             if (!this.isRandom) {
+                logger.info("!this.isRandom");
                 numExhausted = this.amount;
                 AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, this.anyNumber, this.canPickZero);
                 this.tickDuration();
@@ -75,6 +81,7 @@ public class OmegabsorptionAction extends AbstractGameAction {
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+            logger.info("!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved");
             Iterator var4 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator();
 
             while(var4.hasNext()) {
@@ -85,12 +92,14 @@ public class OmegabsorptionAction extends AbstractGameAction {
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }
         if (c != null && BuxomMod.getType(c) == AbstractCard.CardType.STATUS) {
+            logger.info("c != null && BuxomMod.getType(c) == AbstractCard.CardType.STATUS");
             addToBot(new DrawCardAction(drawCards));
         } else if (c != null && BuxomMod.getType(c) != AbstractCard.CardType.STATUS) {
-        addToBot(new ModifyCapacityAction(p, -drawCards));
+            logger.info("c != null && BuxomMod.getType(c) != AbstractCard.CardType.STATUS");
+            addToBot(new ModifyCapacityAction(p, -drawCards));
         }
 
-        this.tickDuration();
+        this.isDone = true;
     }
 
     static {

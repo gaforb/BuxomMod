@@ -17,29 +17,27 @@ public class CreateStatusCardAction extends AbstractGameAction {
     private AbstractCard cardToMake;
     private int amount;
     private CardGroup group;
-    private AbstractPlayer p;
 
     public CreateStatusCardAction(CardGroup group, AbstractCard card, int amount) {
         this.cardToMake = card;
         this.amount = amount;
         this.group = group;
-        this.p = AbstractDungeon.player;
     }
     
     @Override
     public void update() {
         if (cardToMake instanceof BuxomStatus) {
-            if (p.hasPower(BigBouncePower.POWER_ID)) {
+            if (AbstractDungeon.player.hasPower(BigBouncePower.POWER_ID)) {
                 cardToMake = new BigBounceStatus();
             }
         }
-        if (group == p.discardPile) {
+        if (group == AbstractDungeon.player.discardPile) {
             addToBot(new MakeTempCardInDiscardAction(cardToMake, amount));
         }
-        else if (group == p.drawPile) {
+        else if (group == AbstractDungeon.player.drawPile) {
             addToBot(new MakeTempCardInDrawPileAction(cardToMake, amount, true, true));
         }
-        else if (group == p.hand) {
+        else if (group == AbstractDungeon.player.hand) {
             addToBot(new MakeTempCardInHandAction(cardToMake, amount));
         }
         isDone = true;

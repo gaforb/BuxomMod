@@ -45,7 +45,7 @@ public class ShockStatus extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.SPECIAL; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
@@ -61,7 +61,6 @@ public class ShockStatus extends AbstractDynamicCard {
 
     public ShockStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         damage = baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
         this.exhaust = true;

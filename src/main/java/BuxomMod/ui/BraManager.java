@@ -59,6 +59,8 @@ public class BraManager {
     public void braBreak() {
         braPanel.breakVfx();
         maxBounce -= brokenBouncePenalty;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BraBrokenPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
+        straining = false;
         broken = true;
     }
     public void braRepair() {
@@ -96,10 +98,8 @@ public class BraManager {
         if (getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) > this.maxCapacity && !broken) {
             if (straining == true) {
                 this.braBreak();
-                straining = false;
                 logger.info("Buxom: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Capacity: " + this.maxCapacity + ".");
                 logger.info("Bra broke! No longer straining!");
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BraBrokenPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
             }
             else {
                 logger.info("Buxom: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Capacity: " + this.maxCapacity + ".");

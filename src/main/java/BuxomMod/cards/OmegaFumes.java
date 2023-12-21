@@ -1,7 +1,9 @@
 package BuxomMod.cards;
 
 import BuxomMod.actions.CreateStatusCardAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -44,13 +46,13 @@ public class OmegaFumes extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     private static final int VULNERABLE = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
 
-    private static final int POISON = 3;
-    private static final int UPGRADE_PLUS_POISON = 1;
+    private static final int DAMAGE = 9;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
 
     // /STAT DECLARATION/
 
@@ -58,7 +60,7 @@ public class OmegaFumes extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = VULNERABLE;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = POISON;
+        damage = baseDamage = DAMAGE;
         this.exhaust = true;
         this.cardsToPreview = new AftershockStatus();
     }
@@ -68,9 +70,10 @@ public class OmegaFumes extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), this.magicNumber));
+                    new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
+                            AbstractGameAction.AttackEffect.FIRE));
             AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(mo, p, new PoisonPower(mo, p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber));
+                    new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), this.magicNumber));
         }
         AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new AftershockStatus(), 2));
     }
@@ -81,7 +84,7 @@ public class OmegaFumes extends AbstractDynamicCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_PLUS_VULNERABLE);
-            this.upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_POISON);
+            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
             this.initializeDescription();
         }
     }

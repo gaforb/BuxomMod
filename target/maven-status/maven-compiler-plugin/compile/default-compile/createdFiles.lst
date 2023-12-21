@@ -12,6 +12,7 @@ BuxomMod\powers\KCupPower_old.class
 BuxomMod\relics\BottledPlaceholderRelic.class
 BuxomMod\variables\DefaultCustomVariable.class
 BuxomMod\actions\ShrinkAction.class
+BuxomMod\cards\OmegaThorns.class
 BuxomMod\ui\StartingBuxomPanel.class
 BuxomMod\events\IdentityCrisisEvent.class
 BuxomMod\cards\BuxomStatus.class
@@ -26,9 +27,11 @@ BuxomMod\powers\BigBouncePower.class
 BuxomMod\cards\BrokenBraK.class
 BuxomMod\cards\TCupBra.class
 BuxomMod\cards\HeavyLactation.class
+BuxomMod\cards\AdjustBra.class
 BuxomMod\orbs\DefaultOrb.class
 BuxomMod\cards\LibraryOld.class
 BuxomMod\cards\BrokenBraWhiteBikini.class
+BuxomMod\cards\SilentCosplay.class
 BuxomMod\powers\WhiteBikiniCupPower.class
 BuxomMod\cards\BraBreaker.class
 BuxomMod\relics\DwarfBoobsRelic.class
@@ -49,6 +52,7 @@ BuxomMod\actions\ChannelRandomChibiAction.class
 BuxomMod\actions\HungryDwarfAction.class
 BuxomMod\powers\ShockPower.class
 BuxomMod\ui\BraPanel$BraPanelHitboxListener.class
+BuxomMod\cards\WatcherCosplay.class
 BuxomMod\orbs\DefenseChibi.class
 BuxomMod\cards\ExposureStatus.class
 BuxomMod\cards\Omegabsorption.class
@@ -64,6 +68,7 @@ BuxomMod\ui\BraPanel.class
 BuxomMod\powers\BraBrokenPower.class
 BuxomMod\powers\RarePower.class
 BuxomMod\cards\BouncyBlock.class
+BuxomMod\cards\ShivChibi.class
 BuxomMod\actions\IncreaseBuxomGainAction.class
 BuxomMod\cards\AbstractDefaultCard.class
 BuxomMod\powers\MilkPower.class
@@ -92,6 +97,7 @@ BuxomMod\cards\AbstractDynamicCard.class
 BuxomMod\cards\OmegaFlare.class
 BuxomMod\variables\MilkCostVariable.class
 BuxomMod\cards\ExpansiveWall.class
+BuxomMod\actions\WatcherCosplayAction.class
 BuxomMod\relics\JCupRelic.class
 BuxomMod\cards\ShockStatus.class
 BuxomMod\actions\CreateStatusCardAction.class

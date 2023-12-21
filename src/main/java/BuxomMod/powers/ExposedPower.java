@@ -55,7 +55,6 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
 
     public void onInitialApplication() {
         CardCrawlGame.sound.play(makeID(BuxomMod.makeID("SUDDEN_GASP")));
-        ((TheBuxom)owner).changeStateBoobs(((TheBuxom)owner).state.getCurrent(1).getAnimation().getName());
         addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
     }
 

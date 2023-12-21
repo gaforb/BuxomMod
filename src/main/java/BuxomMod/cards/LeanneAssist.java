@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.RepairBraAction;
 import BuxomMod.powers.CommonPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -59,55 +60,22 @@ public class LeanneAssist extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int MILKCOST = 1;
-
-    // Hey want a second damage/magic/block/unique number??? Great!
-    // Go check out DefaultAttackWithVariable and TheDefault.variable.DefaultCustomVariable
-    // that's how you get your own custom variable that you can use for anything you like.
-    // Feel free to explore other mods to see what variables they personally have and create your own ones.
-
-    // /STAT DECLARATION/
-
-    // IMPORTANT NOTE: If you add parameters to your constructor, you'll crash the auto-add cards with a
-    // `NoSuchMethodException` because it except a constructor with no params.
-    // (If you don't know what a constructor or params are or what not pls google, java questions = java study)
-    // You have two option:
-    // 1. Create a new constructor with empty parameters call your custom one with default params in it
-    // 2. Mark the card with @AutoAdd.NotSeen (https://github.com/daviscook477/BaseMod/wiki/AutoAdd) to prevent it from
-    // being auto-add it, and then load it manually with
-    // BaseMod.addCard(new DefaultCommonAttack());
-    // UnlockTracker.unlockCard(DefaultCommonAttack.ID);
-    // in your main class, in the receiveEditCards() method
+    private static final int DAMAGE = 8;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public LeanneAssist() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
-        // Aside from baseDamage/MagicNumber/Block there's also a few more.
-        // Just type this.base and let intelliJ auto complete for you, or, go read up AbstractCard
-
         baseDamage = DAMAGE;
         this.isMultiDamage = true;
-        this.milkCost = MILKCOST;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
-        AbstractDungeon.actionManager.addToBottom( // The action managed queues all the actions a card should do.
-        new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
-        AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        if (b != null) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new ReducePowerAction(p, p, p.getPower(CommonPower.POWER_ID), 1));
-        }
-        if (BuxomMod.payMilkCost(p, MILKCOST)) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
-                            AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        }
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
+                        AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new RepairBraAction());
     }
 
     // Upgraded stats.

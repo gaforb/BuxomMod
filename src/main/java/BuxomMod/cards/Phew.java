@@ -52,7 +52,7 @@ public class Phew extends AbstractDynamicCard {
 
     private static final int COST = 1;  // COST = ${COST}
     private static final int MAGIC = 4;    // DAMAGE = ${DAMAGE}
-    private static final int BLOCK = 7;    // DAMAGE = ${DAMAGE}
+    private static final int BLOCK = 10;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 2;
     private static final int UPGRADE_PLUS_BLOCK = 2;// UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
@@ -110,7 +110,6 @@ public class Phew extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }

@@ -38,7 +38,7 @@ public class BounceMaxPanel extends ClickableUIElement {
 
     public BounceMaxPanel(Texture image) {
         super(image);
-        this.image = TextureLoader.getTexture(MAX_BOUNCE_ICON);
+        this.image = TextureLoader.getTexture(makeID(MAX_BOUNCE_ICON));
         this.tips.add(new PowerTip(NAME, DESCRIPTION));
         this.hitbox = hb;
         setClickable(false);

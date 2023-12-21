@@ -49,10 +49,9 @@ public class WhiteBikiniBra extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 0;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
+    private static final int COST = 2;  // COST = ${COST}
 
-    private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
+    private static final int MAGIC = 4;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
@@ -61,9 +60,6 @@ public class WhiteBikiniBra extends AbstractDynamicCard {
     public WhiteBikiniBra() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        if (upgraded) {
-            cardsToPreview.upgrade();
-        }
     }
 
     // Actions the card should do.
@@ -71,21 +67,6 @@ public class WhiteBikiniBra extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new WhiteBikiniCupPower(p, p, magicNumber, this.upgraded), magicNumber));
-    }
-
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) {
-            return false;
-        }
-        for (AbstractPower pow : p.powers) {
-            if (pow.ID.contains("CupPower")) {
-                canUse = false;
-                this.cantUseMessage = "Already wearing a bra!";
-            }
-        }
-        return canUse;
     }
 
     // Upgraded stats.

@@ -75,13 +75,14 @@ public class OmegaShock extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int b = getPwrAmt(p, CommonPower.POWER_ID);
         AbstractCard c = new ShockStatus();
-        c.baseDamage += getPwrAmt(p, CommonPower.POWER_ID);
+        c.baseDamage += b;
         if (this.upgraded) {
             c.upgrade();
-            AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new ShockStatus(), magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, magicNumber, true, true));
         }
-        else {AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new ShockStatus(), magicNumber));}
+        else {AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, magicNumber, true, true));}
     }
     /*public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard c = new ShockStatus();

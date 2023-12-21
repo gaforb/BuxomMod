@@ -1,2 +1,2 @@
 @ECHO OFF
-fixalpha mul LehmanaSprite7.png LehmanaSprite7.png
+fixalpha mul LehmanaSprite8.png LehmanaSprite8.png

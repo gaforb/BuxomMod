@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 
+import static BuxomMod.BuxomMod.getType;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 public class OmegaForce extends AbstractDynamicCard {
@@ -60,7 +61,7 @@ public class OmegaForce extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.type == AbstractCard.CardType.STATUS) {
+            if (getType(c) == CardType.STATUS) {
                 AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                         new StrengthPower(p, 1), 1));

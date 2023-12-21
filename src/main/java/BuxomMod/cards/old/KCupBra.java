@@ -2,14 +2,12 @@ package BuxomMod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.KCupPower;
-import BuxomMod.powers.CommonPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -37,7 +35,7 @@ public class KCupBra extends AbstractDynamicCard {
 
     // TEXT DECLARATION
     public static final String ID = BuxomMod.makeID(KCupBra.class.getSimpleName());
-    public static final String IMG = makeCardPath("KCupPower.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("KCupBra.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 

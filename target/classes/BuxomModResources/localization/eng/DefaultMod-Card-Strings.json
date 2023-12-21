@@ -91,7 +91,7 @@
   },
   "BuxomMod:LeanneAssist": {
     "NAME": "Leanne Assist",
-    "DESCRIPTION": "Lose 1 BuxomMod:Buxom. NL Deal !D! damage to ALL enemies. NL BuxomMod:Milking 1: Deal !D! damage to ALL enemies again."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL BuxomMod:Repair your bra."
   },
   "BuxomMod:Relief": {
     "NAME": "Relief",
@@ -181,8 +181,7 @@
   },
   "BuxomMod:InducedLactation": {
     "NAME": "Induced Lactation",
-    "DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Add 1 *Afterswell to your draw pile.",
-    "UPGRADE_DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Add 1 *Afterswell to your draw pile. NL Shuffle this card into your draw pile."
+    "DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Add 1 *Afterswell to your hand."
   },
   "BuxomMod:BraBreaker": {
     "NAME": "Bra Breaker",
@@ -223,7 +222,7 @@
   },
   "BuxomMod:WhiteBikiniBra": {
     "NAME": "White Bikini",
-    "DESCRIPTION": "Bra. NL Whenever you gain buxommod:Buxom, gain !M! buxommod:Milk. NL At the end of your turn, gain 1 buxommod:Lactating."
+    "DESCRIPTION": "Gain !M! BuxomMod:Milk at the start of your turn. NL At the end of combat, if your BuxomMod:Bra is intact, gain 2 BuxomMod:Buxom permanently."
   },
   "BuxomMod:BrokenBraWhiteBikini": {
     "NAME": "Broken White Bikini",
@@ -293,7 +292,7 @@
   },
   "BuxomMod:BraCloset": {
     "NAME": "Bra Closet",
-    "DESCRIPTION": "{@@}Add one of 3 random buxommod:Bra cards into your hand. NL Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Gain !M! buxommod:Capacity. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust."
   },
   "BuxomMod:LactatingStatus": {
     "NAME": "Lactating",
@@ -327,6 +326,26 @@
     "NAME": "Massive Growth",
     "DESCRIPTION": "Ethereal. NL Gain !M! buxommod:Buxom. NL Permanently increase this card's buxommod:Buxom gain by !BuxomMod:SecondMagic!. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! buxommod:Buxom. NL Permanently increase this card's buxommod:Buxom gain by !BuxomMod:SecondMagic!. NL Exhaust."
+  },
+  "BuxomMod:WatcherCosplay": {
+  "NAME": "Watcher Cosplay",
+  "DESCRIPTION": "Deal !D! damage. NL Gain buxommod:Milk equal to unblocked damage dealt."
+  },
+  "BuxomMod:AdjustBra": {
+    "NAME": "Adjust Bra",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Capacity."
+  },
+  "BuxomMod:OmegaThorns": {
+    "NAME": "Omega Thorns",
+    "DESCRIPTION": "If your buxommod:Bra is intact, gain !M! Thorns for every !BuxomMod:SecondMagic! buxommod:Buxom you have."
+  },
+  "BuxomMod:SilentCosplay": {
+    "NAME": "Silent Cosplay",
+    "DESCRIPTION": "buxommod:Expose. NL Add !M! *Shiv *Chibi to your hand and shuffle 1 *Shiv *Chibi into your draw pile."
+  },
+  "BuxomMod:ShivChibi": {
+    "NAME": "Shiv Chibi",
+    "DESCRIPTION": "Bouncy. NL Deal !D! damage. NL Apply !M! Weak. NL Exhaust."
   }
 }
 

@@ -1,6 +1,8 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ModifyCapacityAction;
+import BuxomMod.actions.RepairBraAction;
 import BuxomMod.characters.TheBuxom;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -29,13 +31,16 @@ public class BraCloset extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 8;
+    private static final int UPGRADE_PLUS_MAGIC = 3;
+    private static final int SECOND_MAGIC = 2;
+    private static final int UPGRADE_SECOND_MAGIC = 1;
 
     // /STAT DECLARATION/
 
@@ -43,18 +48,14 @@ public class BraCloset extends AbstractDynamicCard {
     public BraCloset() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
+        this.exhaust = true;
     }
-
-    // Actions the card should do.
-    /*@Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new PlatedArmorPower(p, block), block));
-    }*/
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new BraSelectAction());
+        addToBot(new RepairBraAction());
+        AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, magicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
     }
 
@@ -63,7 +64,8 @@ public class BraCloset extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
             initializeDescription();
         }
     }

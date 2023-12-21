@@ -37,7 +37,7 @@
 },
 "BuxomMod:MilkPower": {
         "NAME": "Milk",
-        "DESCRIPTIONS": ["Converts into #yTemporary #yHP at the end of your turn. NL Can be spent by Chibis and cards for effects."]
+        "DESCRIPTIONS": ["Converts into #yTemporary #yHP at the end of your turn."]
 },
 "BuxomMod:LactatingPower": {
         "NAME": "Lactating",
@@ -61,7 +61,7 @@
 },
 "BuxomMod:ExposedPower": {
         "NAME": "Exposed",
-        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock unless within #yBra capacity, except from #yPowers. Deal #b", "% + #b","% bonus damage for each #yBuxom stack you have (Currently #b", "% ). Lasts #b1 turn unless your #yBuxom exceeds #b30."]
+        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock from cards, unless within #yBra capacity. Deal #b", "% + #b","% bonus damage for each #yBuxom stack you have (Currently #b", "% ). Lasts #b1 turn unless your #yBuxom exceeds #b30."]
 },
 "BuxomMod:EmbarrassmentPower": {
         "NAME": "Embarrassed",

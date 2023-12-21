@@ -40,9 +40,9 @@ public class InducedLactation extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
-    private int MAGIC = 3;
+    private int MAGIC = 6;
 
     // /STAT DECLARATION/
 
@@ -50,8 +50,6 @@ public class InducedLactation extends AbstractDynamicCard {
     public InducedLactation() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        this.shuffleBackIntoDrawPile = false;
-        this.cardsToPreview = new AftershockStatus();
     }
 
     // Actions the card should do.
@@ -60,7 +58,7 @@ public class InducedLactation extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
                         new MilkPower(p, p, magicNumber), magicNumber));
-        addToBot(new CreateStatusCardAction(p.drawPile, new LactatingStatus(), 1));
+        addToBot(new CreateStatusCardAction(p.hand, new AftershockStatus(), 1));
         }
 
     //Upgraded stats.
@@ -68,9 +66,8 @@ public class InducedLactation extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(0);
             initializeDescription();
-            this.shuffleBackIntoDrawPile = true;
         }
     }
 }

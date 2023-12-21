@@ -14,7 +14,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class WhiteBikiniCupPower extends BraPower implements CloneablePowerInterface {
+import static BuxomMod.BuxomMod.braManager;
+
+public class WhiteBikiniCupPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = BuxomMod.makeID(WhiteBikiniCupPower.class.getSimpleName());
@@ -32,10 +34,7 @@ public class WhiteBikiniCupPower extends BraPower implements CloneablePowerInter
 
         this.owner = owner;
         this.amount = amount;
-        this.maxCapacity = 15;
         this.source = source;
-        this.minCapacity = 5;
-        this.bounceBonus = 5;
         this.upgraded = upgraded;
 
         type = PowerType.BUFF;
@@ -76,23 +75,20 @@ public class WhiteBikiniCupPower extends BraPower implements CloneablePowerInter
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction((AbstractCard) new BrokenBraK(), 1, true, true));
             }
         }*/
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atStartOfTurn() {
         flash();
-        this.breakCheck();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new LactatingPower(owner, owner, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new MilkPower(owner, owner, this.amount), this.amount));
     }
 
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power instanceof CommonPower) {
-            flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new MilkPower(owner, owner, this.amount)));
-        }
-    }
-    public void broken() {
+    public void onInitialApplication() {
         flash();
-        AbstractCard brokenBra = new BrokenBraWhiteBikini();
-        AbstractDungeon.actionManager.addToTop(
-                new RemoveSpecificPowerAction(owner, owner, WhiteBikiniCupPower.POWER_ID));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new MilkPower(owner, owner, this.amount), this.amount));
+    }
+
+    public void onVictory() {
+        if (!braManager.broken) {
+            braManager.permaSize += 2;
+        }
     }
 
     @Override

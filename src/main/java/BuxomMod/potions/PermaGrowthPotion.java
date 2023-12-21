@@ -10,10 +10,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.shrines.WeMeetAgain;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+
+import static BuxomMod.BuxomMod.braManager;
 
 public class PermaGrowthPotion extends CustomPotion {
 
@@ -25,7 +28,7 @@ public class PermaGrowthPotion extends CustomPotion {
 
     public PermaGrowthPotion() {
         // The bottle shape and inside is determined by potion size and color. The actual colors are the main DefaultMod.java
-        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.S, PotionColor.SMOKE);
+        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.S, PotionColor.SMOKE);
         
         // Potency is the damage/magic number equivalent of potions.
         potency = getPotency();
@@ -53,18 +56,22 @@ public class PermaGrowthPotion extends CustomPotion {
      * 3. Without hardcoded strings, editing a string doesn't require a compile, saving you time (unless you clean+package).
      *
      */
+    public boolean canUse() {
+        if (AbstractDungeon.actionManager.turnHasEnded && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            return false;
+        } else {
+            return AbstractDungeon.getCurrRoom().event == null || !(AbstractDungeon.getCurrRoom().event instanceof WeMeetAgain);
+        }
+    }
 
     @Override
     public void use(AbstractCreature target) {
+        AbstractPlayer p = AbstractDungeon.player;
+        braManager.permaSize += getPotency();
+        BuxomMod.logger.info("potency " + getPotency());
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            AbstractPlayer p = AbstractDungeon.player;
-            if (p.hasRelic(DwarfBoobsRelic.ID)) {
-                p.getRelic(DwarfBoobsRelic.ID).counter += getPotency();
-            }
-            BuxomMod.logger.info("potency " + getPotency());
             addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, getPotency()), getPotency()));
         }
-        // If you are in combat, gain strength and the "lose strength at the end of your turn" power, equal to the potency of this potion.
     }
     
     @Override
@@ -75,7 +82,7 @@ public class PermaGrowthPotion extends CustomPotion {
     // This is your potency.
     @Override
     public int getPotency(final int potency) {
-        return 6;
+        return 3;
     }
 
     public void upgradePotion()
