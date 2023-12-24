@@ -43,7 +43,7 @@
   },
   "BuxomMod:OmegaFumes": {
     "NAME": "Omega Fumes",
-    "DESCRIPTION": "Apply !M! Vulnerable and !BuxomMod:SecondMagic! Poison to ALL enemies. NL Add 2 *Afterswell to your draw pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies. NL Add 2 *Afterswell to your draw pile. NL Exhaust."
   },
   "BuxomMod:OrbSkill": {
     "NAME": "Get Orb",
@@ -108,7 +108,7 @@
   },
   "BuxomMod:Library": {
     "NAME": "Omega Library",
-    "DESCRIPTION": "Gain !B! Block. NL Add *Insight and buxommod:Rapidswell to your discard pile. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Add *Insight to your draw pile and buxommod:Rapidswell to your discard pile. NL Exhaust."
   },
   "BuxomMod:OmegaLibrary": {
     "NAME": "OMEGA Library",
@@ -346,6 +346,10 @@
   "BuxomMod:ShivChibi": {
     "NAME": "Shiv Chibi",
     "DESCRIPTION": "Bouncy. NL Deal !D! damage. NL Apply !M! Weak. NL Exhaust."
+  },
+  "BuxomMod:OmegaRunes": {
+    "NAME": "Omega Runes",
+    "DESCRIPTION": "Gain !M! maximum *Bounce stacks. NL Repair your BuxomMod:Bra."
   }
 }
 

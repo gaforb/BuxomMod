@@ -5,6 +5,7 @@ BuxomMod\powers\SmotherPower$Trigger.class
 BuxomMod\actions\GrowAction.class
 BuxomMod\cards\DefaultCommonAttack.class
 BuxomMod\actions\ChibiCommandAction.class
+BuxomMod\cards\OmegaRunes.class
 BuxomMod\powers\CommonPower.class
 BuxomMod\cards\ChibiChampion.class
 BuxomMod\cards\FeelItOut.class
@@ -128,6 +129,7 @@ BuxomMod\powers\NakedPower.class
 BuxomMod\characters\TheBuxom$Enums.class
 BuxomMod\cards\Paizuri.class
 BuxomMod\cards\BouncingLactation.class
+BuxomMod\actions\ModifyMaxBounceAction.class
 BuxomMod\relics\PlaceholderRelic2.class
 BuxomMod\cards\Phew.class
 BuxomMod\patches\CustomTags.class

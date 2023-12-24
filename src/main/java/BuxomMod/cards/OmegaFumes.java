@@ -34,7 +34,7 @@ public class OmegaFumes extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = BuxomMod.makeID(OmegaFumes.class.getSimpleName());
-    public static final String IMG = makeCardPath("OmegaFumes.png");
+    public static final String IMG = makeCardPath("OmegaFumesAttack.png");
 
     // /TEXT DECLARATION/
 
@@ -43,7 +43,7 @@ public class OmegaFumes extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
@@ -68,10 +68,10 @@ public class OmegaFumes extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
+                        AbstractGameAction.AttackEffect.FIRE));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
-                            AbstractGameAction.AttackEffect.FIRE));
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), this.magicNumber));
         }

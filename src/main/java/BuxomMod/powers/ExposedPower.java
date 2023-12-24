@@ -63,9 +63,9 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public float modifyBlock(float blockAmount) {
-        if (!braManager.broken) {
+        /*if (!braManager.broken) {
             return blockAmount;
-        }
+        }*/
         return blockAmount * 0.0F;
     }
     public void atEndOfRound() {

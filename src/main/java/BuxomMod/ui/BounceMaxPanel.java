@@ -49,7 +49,7 @@ public class BounceMaxPanel extends ClickableUIElement {
         show = !show;
     }
     public void updateDescription() {
-        DESCRIPTION = TEXT[1] + braManager.maxBounce + TEXT[2];
+        DESCRIPTION = TEXT[1];
     }
 
     public void update(AbstractPlayer player) {

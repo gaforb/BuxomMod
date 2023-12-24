@@ -64,8 +64,10 @@ public class BraManager {
         broken = true;
     }
     public void braRepair() {
-        broken = false;
-        maxBounce += brokenBouncePenalty;
+        if (broken) {
+            broken = false;
+            maxBounce += brokenBouncePenalty;
+        }
     }
 
     public boolean inCapacity() {
@@ -85,13 +87,18 @@ public class BraManager {
         }
         else { BuxomMod.logger.info("buxom higher than bra capacity, no growing needed"); }
     }
-    public void strainSanityCheck() {
+    public void strainCheck() {
         if (getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) < this.maxCapacity && straining) {
-            logger.info("Within capacity! No longer straining!");
+            //logger.info("Within capacity! No longer straining!");
             straining = false;
         }
         if (broken) {
             straining = false;
+        }
+        if (getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) > this.maxCapacity && !broken) {
+            //logger.info("Buxom: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Capacity: " + this.maxCapacity + ".");
+            straining = true;
+            //logger.info("Now straining!");
         }
     }
     public void breakCheck() {
@@ -101,16 +108,6 @@ public class BraManager {
                 logger.info("Buxom: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Capacity: " + this.maxCapacity + ".");
                 logger.info("Bra broke! No longer straining!");
             }
-            else {
-                logger.info("Buxom: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Capacity: " + this.maxCapacity + ".");
-                straining = true;
-                logger.info("Now straining!");
-            }
-        } else {straining = false;}
+        }
     }
-
-    public void atEndOfTurn(boolean isPlayer) { // At the end of your turn
-        breakCheck();
-    }
-
 }

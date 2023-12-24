@@ -25,7 +25,7 @@
   "BuxomMod:BounceMaxPanel": {
     "NAME": ["Max Bounce"],
     "TEXT": ["Max Bounce",
-      "At the end of each turn, gain #pBounce stacks equal to your Buxom. For every #b", " stack(s), create a #yStatus card. If you break your #yBra, this number will decrease."
+      "You can have this many #pBounce stacks before creating a #yStatus card. If you break your #yBra, this number will decrease."
     ]
   }
 }

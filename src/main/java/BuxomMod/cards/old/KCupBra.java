@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,6 +14,7 @@ import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
 
+@AutoAdd.Ignore
 public class KCupBra extends AbstractDynamicCard {
 
     /*
@@ -44,7 +46,7 @@ public class KCupBra extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.SPECIAL; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;

@@ -95,7 +95,7 @@ public class BuxomMod implements
         OnStartBattleSubscriber,
         PostDungeonInitializeSubscriber,
         PostPowerApplySubscriber,
-        PostRenderSubscriber{
+        RenderSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
@@ -771,8 +771,9 @@ public class BuxomMod implements
     }
 
     @Override
-    public void receivePostRender(SpriteBatch spriteBatch) {
+    public void receiveRender(SpriteBatch spriteBatch) {
         if (AbstractDungeon.player != null) {
+            spriteBatch.setColor(Color.WHITE);
             braPanel.render(spriteBatch, AbstractDungeon.player, braPanel.hbTextColor);
             startingBuxomPanel.render(spriteBatch, AbstractDungeon.player, startingBuxomPanel.hbTextColor);
             bounceMaxPanel.render(spriteBatch, AbstractDungeon.player, bounceMaxPanel.hbTextColor);

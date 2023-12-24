@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,6 +12,7 @@ import BuxomMod.characters.TheBuxom;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class LibraryOld extends AbstractDynamicCard {
 
     /*

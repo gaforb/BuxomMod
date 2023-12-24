@@ -6,7 +6,6 @@ import BuxomMod.util.TextureLoader;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import basemod.helpers.VfxBuilder;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -132,13 +131,13 @@ public class TheBuxom extends CustomPlayer {
             logger.info("Animation: " + a.getName());
         }
         logger.info(skeletonURL + " loaded");
-        exposed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top", shirtTopVisible);
-        exposed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_exposed", chestExposed);
+        //exposed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top", shirtTopVisible);
+        //exposed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_exposed", chestExposed);
 
-        clothed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top_placeholder", shirtTopPlaceholder);
-        clothed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_clothed", chestClothed);
+        //clothed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top_placeholder", shirtTopPlaceholder);
+        //clothed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_clothed", chestClothed);
 
-        skeleton.getData().getDefaultSkin().addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_exposed", chestExposed);
+        //skeleton.getData().getDefaultSkin().addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_exposed", chestExposed);
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
@@ -196,6 +195,7 @@ public class TheBuxom extends CustomPlayer {
     public Slot chestSlot = skeleton.findSlot("chest");
     public Attachment chestClothed = skeleton.getAttachment(String.valueOf(chestSlot), "chest");
     public Attachment chestExposed = skeleton.getAttachment(String.valueOf(chestSlot), "chest_ex");
+    public Animation lastAnim;
 
     public Skeleton getSkeleton() {
         return skeleton;
@@ -204,9 +204,18 @@ public class TheBuxom extends CustomPlayer {
 
     public void timedMessage() {
         if (messageTimer <= 0) {
-            messageTimer = 60F;
-            for (SlotData s : skeleton.getData().getSlots()) {
-                logger.info("Slot: " + s.getName() + " Attachment: " + s.getAttachmentName() + " Index: " + s.getIndex());
+            messageTimer = 600F;
+            logger.info("-------------------------------------------");
+            for (Slot s : skeleton.getSlots()) {
+                if (s != null) {
+                    logger.info("Slot: " + s);
+                }
+                if (s.getAttachment() != null) {
+                    logger.info("Attachment: " + s.getAttachment().getName());
+                }
+                else {logger.info("Attachment: null");}
+                logger.info("Index: " + s.getData().getIndex());
+                logger.info("-------------------------------------------");
                 logger.info("current skin: " + skeleton.getSkin());
             }
         }
@@ -359,8 +368,9 @@ public class TheBuxom extends CustomPlayer {
     public void updateExposed() {
         AnimationState.TrackEntry e;
         String currAnimName = this.state.getCurrent(2).getAnimation().getName();
-        if (this.hasPower(ExposedPower.POWER_ID) && !currAnimName.contains("_ex")) {
-            changeStateBoobs(currAnimName + "_ex");
+        if (this.hasPower(ExposedPower.POWER_ID) && (!currAnimName.contains("_ex") || currAnimName.contains("idle4"))) {
+            logger.info("currAnimName: " + currAnimName);
+            changeStateBoobs(currAnimName);
             skeleton.setSkin(exposed);
             logger.info("exposed, current skin: " + skeleton.getSkin());
         } else if (!this.hasPower(ExposedPower.POWER_ID) && currAnimName.contains("_ex")) {
@@ -425,6 +435,9 @@ public class TheBuxom extends CustomPlayer {
         float rate = 0.03F;
         animTimer -= 1;
         if (animTimer <= 0) {
+            /*AnimationState.TrackEntry e;
+            e = this.state.setAnimation(3, "idle_grow", false);
+            logger.info("Playing: " + e.getAnimation().getName() + ", Duration: " + e.getEndTime());*/
             animCurrent = realDisplaySize;
             animTarget = animCurrent + 2;
             animTimer = 65;
@@ -509,9 +522,6 @@ public class TheBuxom extends CustomPlayer {
         boobF.update();
         updateExposed();
         //logger.info("update function: current skin: " + skeleton.getSkin());
-        skeleton.setSlotsToSetupPose();
-        this.state.apply(skeleton);
-        this.state.update(Gdx.graphics.getDeltaTime());
         timedMessage();
         //logger.info("state applied: current skin: " + skeleton.getSkin());
         //logger.info("state applied: current chest attachment: " + skeleton.getAttachment(skeleton.findSlotIndex(String.valueOf(chestSlot)),String.valueOf(chestSlot)));
@@ -537,7 +547,7 @@ public class TheBuxom extends CustomPlayer {
         braPanel.update(this);
         bounceMaxPanel.update(this);
         //logger.info("update: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
-        braManager.strainSanityCheck();
+        braManager.strainCheck();
     }
 
 

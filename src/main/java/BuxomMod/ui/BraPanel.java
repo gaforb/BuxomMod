@@ -106,13 +106,13 @@ public class BraPanel extends ClickableUIElement {
         if (buxomBarWidth != 0) {
             renderPinkBuxomBar(sb, x, y);
         }
-        if (braManager.straining) {
+        /*if (braManager.straining) {
             vfxTimer -= Gdx.graphics.getDeltaTime();
             if (vfxTimer < 0.0F && !Settings.hideLowerElements) {
                 AbstractDungeon.effectList.add(pulseVfx(x, y + 5.0F * Settings.scale));
                 vfxTimer = 2.0F;
             }
-        }
+        }*/
         renderBuxomText(sb, y);
     }
 
