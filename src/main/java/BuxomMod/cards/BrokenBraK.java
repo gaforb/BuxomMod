@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -17,6 +18,7 @@ import com.megacrit.cardcrawl.powers.DrawPower;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
+@AutoAdd.Ignore
 public class BrokenBraK extends AbstractDynamicCard {
 
     /*
