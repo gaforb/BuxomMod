@@ -34,6 +34,7 @@ public class IncreaseBuxomGainAction extends AbstractGameAction {
         for(var1 = GetAllInBattleInstances.get(this.uuid).iterator(); var1.hasNext(); c.baseMagicNumber = c.misc) {
             c = (AbstractCard)var1.next();
             c.misc += this.miscIncrease;
+            c.magicNumber = c.baseMagicNumber;
             c.applyPowers();
         }
 

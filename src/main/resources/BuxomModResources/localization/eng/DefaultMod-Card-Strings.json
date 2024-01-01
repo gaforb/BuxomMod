@@ -189,8 +189,8 @@
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",
-    "DESCRIPTION": "Gain !M! Buxom. NL Generate a *Bounce with every 10 Bounce stacks instead, and change them to *Big *Bounces.",
-    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Buxom. NL Generate a *Bounce with every 10 Bounce stacks instead, and change them to *Big *Bounces."
+    "DESCRIPTION": "Increase your max BuxomMod:Bounce stacks by 2. NL Create *Big *Bounces instead of *Bounces.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Increase your max BuxomMod:Bounce stacks by 2. NL Create *Big *Bounces instead of *Bounces."
   },
   "BuxomMod:BigBounceStatus": {
     "NAME": "Big Bounce",
@@ -350,6 +350,10 @@
   "BuxomMod:OmegaRunes": {
     "NAME": "Omega Runes",
     "DESCRIPTION": "Gain !M! maximum *Bounce stacks. NL Repair your BuxomMod:Bra."
+  },
+  "BuxomMod:ChargedChibi": {
+    "NAME": "Charged Chibi",
+    "DESCRIPTION": "Unplayable. NL BuxomMod:Bouncy. NL If *Exhausted, deal !D! damage to ALL enemies and add a copy of this card into your discard pile."
   }
 }
 

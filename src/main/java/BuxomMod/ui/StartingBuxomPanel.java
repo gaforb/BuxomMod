@@ -77,11 +77,11 @@ public class StartingBuxomPanel extends ClickableUIElement {
             if (show) {
                 sb.setColor(Color.WHITE);
                 sb.draw(image, hb.x+6F, hb.y+6F);
-                FontHelper.renderFontCentered(
+                FontHelper.renderFontRightAligned(
                     sb,
                     FontHelper.panelNameFont,
                     buxomNumber,
-                    hb.cX * Settings.scale,
+                    hb.x * Settings.scale,
                         (hb.cY) * Settings.scale,
                         Color.WHITE);
                 if (renderTip == true) {

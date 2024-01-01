@@ -2,7 +2,7 @@
   "BuxomMod:BraPanel": {
     "NAME": ["Bra"],
     "TEXT": [
-      "Capacity of your bra. If your #yBuxom exceeds the #yCapacity, you'll begin #pStraining. If you gain additional #yBuxom while #pStraining, your bra will break, and you'll lose the benefits of any #yBra powers you currently have."
+      "Capacity of your bra. If your #yBuxom exceeds the #yCapacity, you'll begin #pStraining. If you gain additional #yBuxom while #pStraining, your bra will break, and your maximum #pBounce stacks will decrease."
     ],
     "TEXT_DICT": {
       "Name": "Bra",

@@ -53,6 +53,7 @@ C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\BrokenBraM.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\OmegaLibrary.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\MeasurementTime.java
+C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\OmegaRunes.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\powers\LactatingPower.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\OmegaThorns.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\OmegaBurst.java
@@ -65,6 +66,7 @@ C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\BigBouncePowerCard.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\BovineForm.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\BuxomManager.java
+C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\ChargedChibi.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\Chibis.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\ChibiOffering.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\old\ChibiAttraction.java
@@ -168,3 +170,4 @@ C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\cards\LeanneAssist.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\orbs\DefenseChibi.java
 C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\relics\DwarfBoobsRelic.java
+C:\Users\user\Documents\STSModSetup-master\StS-DefaultModBase-master\LehmanaMod\src\main\java\BuxomMod\actions\ModifyMaxBounceAction.java

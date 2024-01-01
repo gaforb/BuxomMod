@@ -61,7 +61,7 @@
 },
 "BuxomMod:ExposedPower": {
         "NAME": "Exposed",
-        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock from cards, unless within #yBra capacity. Deal #b", "% + #b","% bonus damage for each #yBuxom stack you have (Currently #b", "% ). Lasts #b1 turn unless your #yBuxom exceeds #b30."]
+        "DESCRIPTIONS": ["Lose all #yBlock and can't gain #yBlock from cards. Deal #b", "% + #b","% bonus damage for each #yBuxom stack you have (Currently #b", "% ). Lasts #b1 turn, but persists if your #yBuxom is #b30 or higher."]
 },
 "BuxomMod:EmbarrassmentPower": {
         "NAME": "Embarrassed",

@@ -13,6 +13,7 @@ BuxomMod\powers\KCupPower_old.class
 BuxomMod\relics\BottledPlaceholderRelic.class
 BuxomMod\variables\DefaultCustomVariable.class
 BuxomMod\actions\ShrinkAction.class
+BuxomMod\cards\ChargedChibi.class
 BuxomMod\cards\OmegaThorns.class
 BuxomMod\ui\StartingBuxomPanel.class
 BuxomMod\events\IdentityCrisisEvent.class
@@ -85,6 +86,7 @@ BuxomMod\cards\ChaosDunk.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\cards\ButtonHazard.class
 BuxomMod\BuxomMod$2.class
+BuxomMod\GrowthEvent.class
 BuxomMod\ui\BuxomPanel.class
 BuxomMod\cards\BigBouncePowerCard.class
 BuxomMod\cards\OmegaLibrary.class

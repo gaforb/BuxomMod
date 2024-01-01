@@ -56,7 +56,7 @@ public class OmegabsorptionAction extends AbstractGameAction {
                 numExhausted = this.amount;
                 i = this.p.hand.size();
 
-                for(i = 0; i < i; ++i) {
+                for(int n = 0; n < i; ++n) {
                     c = this.p.hand.getTopCard();
                 }
 

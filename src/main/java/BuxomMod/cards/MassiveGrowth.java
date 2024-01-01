@@ -40,7 +40,7 @@ public class MassiveGrowth extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int MAGIC = 6;
-    private static final int SECOND_MAGIC = 3;
+    private static final int SECOND_MAGIC = 1;
 
     // /STAT DECLARATION/
 
@@ -68,11 +68,11 @@ public class MassiveGrowth extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, magicNumber), magicNumber));
         addToBot(new IncreaseBuxomGainAction(this.uuid, this.misc, defaultSecondMagicNumber));
-        BuxomMod.logger.info("After MN: " + magicNumber + " Base MN: " + baseMagicNumber + " SMN: " + defaultSecondMagicNumber + " Base SMN: " + defaultBaseSecondMagicNumber + " Misc: " + misc);
     }
 
     public void applyPowers() {
         this.baseMagicNumber = this.misc;
+        this.magicNumber = this.baseMagicNumber;
         super.applyPowers();
         this.initializeDescription();
     }

@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ModifyMaxBounceAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.BigBouncePower;
 import BuxomMod.powers.CommonPower;
@@ -56,8 +57,7 @@ public class BigBouncePowerCard extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-            new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber), magicNumber));
+        addToBot(new ModifyMaxBounceAction(2));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BigBouncePower(p, p, -1), -1));
     }
 

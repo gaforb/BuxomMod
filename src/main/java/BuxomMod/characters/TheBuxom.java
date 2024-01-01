@@ -6,6 +6,7 @@ import BuxomMod.util.TextureLoader;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
 import basemod.helpers.VfxBuilder;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -34,8 +36,10 @@ import BuxomMod.relics.DefaultClickableRelic;
 import BuxomMod.relics.JCupRelic;
 import BuxomMod.relics.DwarfBoobsRelic;
 import BuxomMod.relics.PlaceholderRelic2;
+import BuxomMod.GrowthEvent;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static BuxomMod.BuxomMod.*;
 import static BuxomMod.characters.TheBuxom.Enums.COLOR_PINK;
@@ -131,11 +135,11 @@ public class TheBuxom extends CustomPlayer {
             logger.info("Animation: " + a.getName());
         }
         logger.info(skeletonURL + " loaded");
-        //exposed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top", shirtTopVisible);
-        //exposed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_exposed", chestExposed);
+        exposed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top", shirtTopVisible);
+        exposed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_exposed", chestExposed);
 
-        //clothed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top_placeholder", shirtTopPlaceholder);
-        //clothed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_clothed", chestClothed);
+        clothed.addAttachment(getSkeleton().findSlotIndex(shirtTopSlot.toString()), "shirt_top_placeholder", shirtTopPlaceholder);
+        clothed.addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest", chestClothed);
 
         //skeleton.getData().getDefaultSkin().addAttachment(getSkeleton().findSlotIndex(chestSlot.toString()), "chest_exposed", chestExposed);
 
@@ -158,7 +162,7 @@ public class TheBuxom extends CustomPlayer {
                 skeletonURL,
                 1.0f);
         AnimationState.TrackEntry e = state.setAnimation(1, "idle", true);
-        this.stateData.setDefaultMix(0.1F);
+        this.stateData.setDefaultMix(1.0F);
         e.setTimeScale(1.0F);
         AnimationState.TrackEntry f = state.setAnimation(2, "idle_boobs", true);
 
@@ -179,12 +183,13 @@ public class TheBuxom extends CustomPlayer {
     public float scalerate = 0.025F;
     public float threshhold1 = 10;
     public float threshhold2 = 20;
+    public float threshhold3 = 30;
+    public float animTime = 60F;
     public float animTimer = 60F;
     public float messageTimer = 60F;
-    public float animCurrent = 0;
+    public float animStart = 0;
     public float animTarget = 0;
-
-    public float threshhold3 = 30;
+    public String sizeToApply = size1animName;
     public int currRange = 0;
     public float targetDisplaySize = 1;
     public float realDisplaySize = 1;
@@ -193,9 +198,19 @@ public class TheBuxom extends CustomPlayer {
     public Attachment shirtTopPlaceholder = skeleton.getAttachment(String.valueOf(shirtTopSlot), "shirt_top_placeholder");
     public Attachment shirtTopVisible = skeleton.getAttachment(String.valueOf(shirtTopSlot), "shirt top");
     public Slot chestSlot = skeleton.findSlot("chest");
-    public Attachment chestClothed = skeleton.getAttachment(String.valueOf(chestSlot), "chest");
+    public Attachment chestClothed = skeleton.getAttachment(String.valueOf(chestSlot), "chest_clothed");
     public Attachment chestExposed = skeleton.getAttachment(String.valueOf(chestSlot), "chest_ex");
     public Animation lastAnim;
+    public ArrayList<GrowthEvent> growthQueue = new ArrayList<GrowthEvent>();
+
+    public static AbstractGameEffect growVfx(float x, float y) {
+        return new VfxBuilder(TextureLoader.getTexture(STARTING_BUXOM_ICON), 0.3f)
+                .useAdditiveBlending()
+                .setX(x)
+                .setY(y)
+                .fadeOut(0.3f)
+                .build();
+    }
 
     public Skeleton getSkeleton() {
         return skeleton;
@@ -205,7 +220,7 @@ public class TheBuxom extends CustomPlayer {
     public void timedMessage() {
         if (messageTimer <= 0) {
             messageTimer = 600F;
-            logger.info("-------------------------------------------");
+            /*logger.info("-------------------------------------------");
             for (Slot s : skeleton.getSlots()) {
                 if (s != null) {
                     logger.info("Slot: " + s);
@@ -217,7 +232,7 @@ public class TheBuxom extends CustomPlayer {
                 logger.info("Index: " + s.getData().getIndex());
                 logger.info("-------------------------------------------");
                 logger.info("current skin: " + skeleton.getSkin());
-            }
+            }*/
         }
         messageTimer -= 1F;
     }
@@ -236,7 +251,7 @@ public class TheBuxom extends CustomPlayer {
         targetDisplaySize = 1;
         realDisplaySize = 1;
         adjustedDisplaySize = 1;
-        animCurrent = 0;
+        animStart = 0;
         animTarget = 0;
     }
 
@@ -247,27 +262,42 @@ public class TheBuxom extends CustomPlayer {
     }
 
     public void changeStateBoobs(String stateName) {
-        AnimationState.TrackEntry e;
-        String boobsName = stateName + "_boobs";
+        String boobsName;
+        if (this.hasPower(ExposedPower.POWER_ID)) {
+            skeleton.setAttachment("shirt top", "shirt top");
+            skeleton.setAttachment("chest", "chest_ex");
+        }
+        else {
+            skeleton.setAttachment("shirt top", "shirt_top_placeholder");
+            skeleton.setAttachment("chest", "chest_clothed");
+        }
         switch (stateName) {
             case size1animName:
-                if (this.hasPower(ExposedPower.POWER_ID)) { boobsName += "_ex"; }
-                e = this.state.setAnimation(2, boobsName, true);
-                logger.info("Switched boobs to: " + this.state.getCurrent(2).getAnimation().getName());
+                boobsName = "boobs1";
+                if (this.hasPower(ExposedPower.POWER_ID)) { boobsName += "-ex"; }
+                this.skeleton.setAttachment("boobs", boobsName);
+                this.skeleton.setAttachment("boobn", "boobn_placeholder");
+                this.skeleton.setAttachment("boobf", "boobf_placeholder");
                 break;
             case size2animName:
-                if (this.hasPower(ExposedPower.POWER_ID)) { boobsName += "_ex"; }
-                e = this.state.setAnimation(2, boobsName, true);
-                logger.info("Switched boobs to: " + this.state.getCurrent(2).getAnimation().getName());
+                boobsName = "boobs2";
+                if (this.hasPower(ExposedPower.POWER_ID)) { boobsName += "-ex"; }
+                skeleton.setAttachment("boobs", boobsName);
+                skeleton.setAttachment("boobn", "boobn_placeholder");
+                skeleton.setAttachment("boobf", "boobf_placeholder");
                 break;
             case size3animName:
-                if (this.hasPower(ExposedPower.POWER_ID)) { boobsName += "_ex"; }
-                e = this.state.setAnimation(2, boobsName, true);
-                logger.info("Switched boobs to: " + this.state.getCurrent(2).getAnimation().getName());
+                skeleton.setAttachment("boobs", "boobs3");
+                if (this.hasPower(ExposedPower.POWER_ID)) {
+                    skeleton.setAttachment("boobs", null);
+                    skeleton.setAttachment("boobn", "boobsEx3N");
+                    skeleton.setAttachment("boobf", "boobsEx3F");
+                }
                 break;
             case size4animName:
-                e = this.state.setAnimation(2, boobsName, true);
-                logger.info("Switched boobs to: " + this.state.getCurrent(2).getAnimation().getName());
+                skeleton.setAttachment("boobs", null);
+                skeleton.setAttachment("boobn", "boobn");
+                skeleton.setAttachment("boobf", "boobf");
                 break;
         }
     }
@@ -276,20 +306,16 @@ public class TheBuxom extends CustomPlayer {
         AnimationState.TrackEntry e;
         switch (stateName) {
             case size1animName:
-                e = this.state.setAnimation(1, stateName, true);
-                logger.info("Switched body anim to: " + this.state.getCurrent(1).getAnimation().getName());
+                e = this.state.addAnimation(1, stateName, true, 0.0F);
                 break;
             case size2animName:
-                e = this.state.setAnimation(1, stateName, true);
-                logger.info("Switched body anim to: " + this.state.getCurrent(1).getAnimation().getName());
+                e = this.state.addAnimation(1, stateName, true, 0.0F);
                 break;
             case size3animName:
-                e = this.state.setAnimation(1, stateName, true);
-                logger.info("Switched body anim to: " + this.state.getCurrent(1).getAnimation().getName());
+                e = this.state.addAnimation(1, stateName, true, 0.0F);
                 break;
             case size4animName:
-                e = this.state.setAnimation(1, stateName, true);
-                logger.info("Switched body anim to: " + this.state.getCurrent(1).getAnimation().getName());
+                e = this.state.addAnimation(1, stateName, true, 0.0F);
                 break;
         }
         logger.info("Switched body anim to: " + this.state.getCurrent(1).getAnimation().getName());
@@ -368,7 +394,7 @@ public class TheBuxom extends CustomPlayer {
     public void updateExposed() {
         AnimationState.TrackEntry e;
         String currAnimName = this.state.getCurrent(2).getAnimation().getName();
-        if (this.hasPower(ExposedPower.POWER_ID) && (!currAnimName.contains("_ex") || currAnimName.contains("idle4"))) {
+        if (this.hasPower(ExposedPower.POWER_ID) && (!currAnimName.contains("_ex") && !currAnimName.contains("idle4"))) {
             logger.info("currAnimName: " + currAnimName);
             changeStateBoobs(currAnimName);
             skeleton.setSkin(exposed);
@@ -431,39 +457,85 @@ public class TheBuxom extends CustomPlayer {
                 .playSoundAt(0.35f, BuxomMod.makeID("LOW_GASP"))
                 .build();
     }
-    public void animateGrowth() {
-        float rate = 0.03F;
-        animTimer -= 1;
-        if (animTimer <= 0) {
-            /*AnimationState.TrackEntry e;
-            e = this.state.setAnimation(3, "idle_grow", false);
-            logger.info("Playing: " + e.getAnimation().getName() + ", Duration: " + e.getEndTime());*/
-            animCurrent = realDisplaySize;
-            animTarget = animCurrent + 2;
-            animTimer = 65;
-            //logger.info("Animate growth for 65 frames");
-            //logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
-            //logger.info("animTarget (" + animTarget + "), animCurrent (" + animCurrent + ")");
-        }
-        if (animTimer > 0) {
-            rate = 0.03F * Interpolation.swing.apply(0, 2, (65F-animTimer)/65F);
-            //logger.info(rate);
-        }
-        realDisplaySize += rate;
+    public void beginGrowth(int amount) {
+        int perEvent = amount/3;
+        growthQueue.add(new GrowthEvent(animTime, perEvent));
+        growthQueue.add(new GrowthEvent(animTime, perEvent));
+        growthQueue.add(new GrowthEvent(animTime, perEvent));
+        logger.info("growthqueue size: " + growthQueue.size());
+        logger.info("Animate growth for " + animTime + " frames");
+        logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
+        logger.info("animTarget (" + animTarget + "), animCurrent (" + animStart + ")");
     }
-    public float calculateScale() {
-        targetDisplaySize = getPwrAmt(this, CommonPower.POWER_ID);
-        if (!(Math.abs(realDisplaySize - targetDisplaySize) <= 0.03)) {
-            if (realDisplaySize < targetDisplaySize) {
-                animateGrowth();
-                /*logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
-                realDisplaySize += ((0.012F * ((targetDisplaySize - realDisplaySize)/2)));
-                //logger.info("realDisplaySize+ (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");*/
-            } else if (realDisplaySize > targetDisplaySize && !(Math.abs(realDisplaySize - targetDisplaySize) <= 1F)) {
-                //logger.info("realDisplaySize (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
-                realDisplaySize -= 1F;
-                //logger.info("realDisplaySize- (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
+    public void animateGrowth() {
+        Iterator i = growthQueue.iterator();
+        if (i.hasNext()){
+            GrowthEvent e = (GrowthEvent) i.next();
+            if (e.isDone) {
+                logger.info("Growth event isDone: " + e.isDone + ", removing");
+                growthQueue.remove(e);
+                setIdleStage();
             }
+            e.apply();
+        }
+        else {
+
+        }
+    }
+    public void adjustDisplaySize() {
+        adjustedDisplaySize = realDisplaySize;
+        while (adjustedDisplaySize > 10) {
+            if (adjustedDisplaySize >= threshhold3) {
+                adjustedDisplaySize -= threshhold3;
+                break;
+            }
+            else {adjustedDisplaySize -= 10;}
+        }
+        logger.info("adjusted display size: " + adjustedDisplaySize);
+    }
+    public void setIdleStage() {
+        switch (currRange) {
+            case 3:
+                changeStateBodyAnimation(size4animName);
+                break;
+            case 2:
+                changeStateBodyAnimation(size3animName);
+                break;
+            case 1:
+                changeStateBodyAnimation(size2animName);
+                break;
+            case 0:
+                changeStateBodyAnimation(size1animName);
+                break;
+        }
+        logger.info("changed idle stage: " + currRange + ". current animation: " + this.state.getCurrent(1).getAnimation().getName());
+    }
+    public void setBoobsStage() {
+        switch (currRange) {
+            case 3:
+                sizeToApply = size4animName;
+                break;
+            case 2:
+                sizeToApply = size3animName;
+                break;
+            case 1:
+                sizeToApply = size2animName;
+                break;
+            case 0:
+                sizeToApply = size1animName;
+                break;
+        }
+    }
+    public void calculateScale() {
+        targetDisplaySize = getPwrAmt(this, CommonPower.POWER_ID);
+        animateGrowth();
+        if (realDisplaySize > targetDisplaySize) {
+            logger.info("realDisplaySize (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
+            logger.info("adjustedDisplaySize: " + adjustedDisplaySize);
+            realDisplaySize -= 1F;
+            if (realDisplaySize < targetDisplaySize) { realDisplaySize = targetDisplaySize;}
+            setBoobsStage();
+            //logger.info("realDisplaySize- (" + realDisplaySize + ") > targetDisplaySize (" + targetDisplaySize + ")");
         }
         /*if (Math.abs(realDisplaySize - targetDisplaySize) <= 0.03){
             logger.info("realDisplaySize (" + realDisplaySize + "), targetDisplaySize (" + targetDisplaySize +")");
@@ -472,43 +544,27 @@ public class TheBuxom extends CustomPlayer {
         if (realDisplaySize >= threshhold3) {
             if (currRange != 3) {
                 logger.info("threshold3 exceeded");
-                CardCrawlGame.sound.play(BuxomMod.makeID("INTENSE_GASP"));
-                changeStateBoobs(size4animName);
-                changeStateBodyAnimation(size4animName);
             }
-            adjustedDisplaySize = realDisplaySize - threshhold3;
             currRange = 3;
         }
         else if (realDisplaySize >= threshhold2 && realDisplaySize < threshhold3) {
             if (currRange != 2) {
                 logger.info("threshold2 exceeded");
-                CardCrawlGame.sound.play(BuxomMod.makeID("INTENSE_GASP"));
-                changeStateBoobs(size3animName);
-                changeStateBodyAnimation(size3animName);
             }
-            adjustedDisplaySize = realDisplaySize - threshhold2;
             currRange = 2;
         }
         else if (realDisplaySize >= threshhold1 && realDisplaySize < threshhold2) {
             if (currRange != 1) {
-                CardCrawlGame.sound.play(BuxomMod.makeID("LOW_GASP"));
                 logger.info("threshold1 exceeded");
-                changeStateBoobs(size2animName);
-                changeStateBodyAnimation(size2animName);
             }
-            adjustedDisplaySize = realDisplaySize - threshhold1;
             currRange = 1;
         }
         else {
             if (currRange != 0) {
                 logger.info("threshold1 de-exceeded");
-                changeStateBoobs(size1animName);
-                changeStateBodyAnimation(size1animName);
             }
-            adjustedDisplaySize = realDisplaySize;
             currRange = 0;
         }
-        return adjustedDisplaySize;
     }
 
     public void updateScale(float scaler) {
@@ -517,10 +573,9 @@ public class TheBuxom extends CustomPlayer {
         Bone boobF = getSkeleton().findBone(boobBoneFID);
         Float addScale = scaler*scalerate + 1F;
         boobN.setScale(addScale);
-        boobN.update();
         boobF.setScale(addScale);
-        boobF.update();
-        updateExposed();
+
+        //updateExposed();
         //logger.info("update function: current skin: " + skeleton.getSkin());
         timedMessage();
         //logger.info("state applied: current skin: " + skeleton.getSkin());
@@ -528,10 +583,21 @@ public class TheBuxom extends CustomPlayer {
     }
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
-        updateScale(calculateScale());
         //logger.info("renderPlayerImage: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
-        super.renderPlayerImage(sb);
-        //logger.info("rendered: current skin: " + skeleton.getSkin());
+        calculateScale();
+        this.state.update(Gdx.graphics.getDeltaTime());
+        this.state.apply(this.skeleton);
+        this.skeleton.updateWorldTransform();
+        this.skeleton.setPosition(this.drawX + this.animX, this.drawY + this.animY);
+        this.skeleton.setColor(this.tint.color);
+        this.skeleton.setFlip(this.flipHorizontal, this.flipVertical);
+        updateScale(adjustedDisplaySize);
+        changeStateBoobs(sizeToApply);
+        sb.end();
+        CardCrawlGame.psb.begin();
+        sr.draw(CardCrawlGame.psb, this.skeleton);
+        CardCrawlGame.psb.end();
+        sb.begin();
     }
     @Override
     public void render(SpriteBatch sb) {

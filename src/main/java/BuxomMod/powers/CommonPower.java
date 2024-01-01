@@ -1,6 +1,7 @@
 package BuxomMod.powers;
 
 import BuxomMod.cards.BigBounceStatus;
+import BuxomMod.characters.TheBuxom;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -125,6 +126,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     }
 
     public void onInitialApplication() {
+        ((TheBuxom)this.owner).beginGrowth(this.amount);
         this.appliedThisTurn = true;
         this.buxomCounterThisTurn++;
         buxomGainedThisTurn += this.amount;
@@ -145,6 +147,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     }
 
    public void stackPower(int stackAmount) {
+       ((TheBuxom)this.owner).beginGrowth(stackAmount);
        this.appliedThisTurn = true;
        this.buxomCounterThisTurn++;
        this.buxomGainedThisTurn += stackAmount;

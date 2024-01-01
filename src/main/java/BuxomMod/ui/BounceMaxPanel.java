@@ -38,7 +38,7 @@ public class BounceMaxPanel extends ClickableUIElement {
 
     public BounceMaxPanel(Texture image) {
         super(image);
-        this.image = TextureLoader.getTexture(makeID(MAX_BOUNCE_ICON));
+        this.image = TextureLoader.getTexture(MAX_BOUNCE_ICON);
         this.tips.add(new PowerTip(NAME, DESCRIPTION));
         this.hitbox = hb;
         setClickable(false);
@@ -81,11 +81,11 @@ public class BounceMaxPanel extends ClickableUIElement {
             if (show) {
                 sb.setColor(Color.WHITE);
                 sb.draw(image, hb.x+6F, hb.y+6F);
-                FontHelper.renderFontCentered(
+                FontHelper.renderFontRightAligned(
                     sb,
                     FontHelper.panelNameFont,
                     buxomNumber,
-                    hb.cX * Settings.scale,
+                    hb.x * Settings.scale,
                         (hb.cY) * Settings.scale,
                         Color.WHITE);
                 if (renderTip == true) {
