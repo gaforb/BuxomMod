@@ -469,7 +469,7 @@ public class TheBuxom extends CustomPlayer {
     }
     public void animateGrowth() {
         Iterator i = growthQueue.iterator();
-        if (i.hasNext()){
+        if (i.hasNext()) {
             GrowthEvent e = (GrowthEvent) i.next();
             if (e.isDone) {
                 logger.info("Growth event isDone: " + e.isDone + ", removing");
@@ -477,9 +477,6 @@ public class TheBuxom extends CustomPlayer {
                 setIdleStage();
             }
             e.apply();
-        }
-        else {
-
         }
     }
     public void adjustDisplaySize() {
