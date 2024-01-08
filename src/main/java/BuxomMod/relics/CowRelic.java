@@ -11,8 +11,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static BuxomMod.BuxomMod.makeRelicOutlinePath;
-import static BuxomMod.BuxomMod.makeRelicPath;
+import static BuxomMod.BuxomMod.*;
 
 public class CowRelic extends CustomRelic {
 
@@ -34,11 +33,14 @@ public class CowRelic extends CustomRelic {
 
     // Flash at the start of Battle.
     private boolean triggered = false;
+
+    public void onEquip(){
+        braManager.permaSize += 2;
+    }
     public void atBattleStart() {
         flash();
         this.triggered = false;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LactatingPower(AbstractDungeon.player, AbstractDungeon.player, 3), 3));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LactatingPower(AbstractDungeon.player, AbstractDungeon.player, 4), 4));
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

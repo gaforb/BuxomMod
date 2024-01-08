@@ -35,7 +35,7 @@
     "NAME": "Curse of Nudity",
     "FLAVOR": "Your naked body magically slips out of any attempt to cover it.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Start each combat with #b5 additional BuxomMod:Buxom. Permanently #yExpose. If you would #yExpose, gain [E]."
+      "Gain [E] at the start of your turn. On pickup, gain #b5 #yBuxom permanently. Permanently #yExpose. If you would #yExpose, gain [E]."
     ]
   },
   "BuxomMod:DwarfBoobsRelic": {
@@ -56,7 +56,7 @@
     "NAME": "Stuffed Cow",
     "FLAVOR": "A friend!",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b3 Lactating and #b1 Buxom."
+      "On pickup, gain #b2 #yBuxom permanently. At the start of combat, gain #b4 Lactating."
     ]
   }
 }

@@ -107,7 +107,6 @@ public class ButtonPop extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-                new CommonPower(p, p, 1), 1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction((AbstractCreature)m, (AbstractCreature)p, (AbstractPower)new WeakPower((AbstractCreature)m, this.magicNumber, false), this.magicNumber));
     }
 

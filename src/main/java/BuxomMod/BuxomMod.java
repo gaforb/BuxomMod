@@ -462,7 +462,7 @@ public class BuxomMod implements
         // in order to automatically differentiate which pool to add the relic too.
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new WashboardRelic(), TheBuxom.Enums.COLOR_PINK);
+        //BaseMod.addRelicToCustomPool(new WashboardRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new DwarfBoobsRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new CowRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new NakedRelic(), TheBuxom.Enums.COLOR_PINK);

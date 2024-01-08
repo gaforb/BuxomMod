@@ -83,7 +83,7 @@
   },
   "BuxomMod:ButtonPop": {
     "NAME": "Button Pop",
-    "DESCRIPTION": "Gain !BuxomMod:SecondMagic! Buxom. NL Deal !D! damage, then deal damage equal to your BuxomMod:Buxom (!BuxomMod:BuxomDamage! total). NL Inflict !M! Weak."
+    "DESCRIPTION": "Gain !BuxomMod:SecondMagic! Buxom. NL Deal !D! damage. NL Inflict !M! Weak."
   },
   "BuxomMod:ButtonHazard": {
     "NAME": "Button Hazard",
@@ -108,7 +108,7 @@
   },
   "BuxomMod:Library": {
     "NAME": "Omega Library",
-    "DESCRIPTION": "Gain !B! Block. NL Add *Insight to your draw pile and buxommod:Rapidswell to your discard pile. NL Exhaust."
+    "DESCRIPTION": "Scry !M!. NL Gain !B! Block. NL Add buxommod:Rapidswell to your discard pile."
   },
   "BuxomMod:OmegaLibrary": {
     "NAME": "OMEGA Library",
