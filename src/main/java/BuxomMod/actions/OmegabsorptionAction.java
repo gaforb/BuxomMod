@@ -98,7 +98,7 @@ public class OmegabsorptionAction extends AbstractGameAction {
             addToBot(new DrawCardAction(drawCards));
         } else if (c != null && BuxomMod.getType(c) != AbstractCard.CardType.STATUS) {
             logger.info("c != null && BuxomMod.getType(c) != AbstractCard.CardType.STATUS");
-            addToBot(new ModifyCapacityAction(p, -drawCards));
+            addToBot(new ModifyCapacityAction(p, capacityLoss));
         }
 
         this.isDone = true;

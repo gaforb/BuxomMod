@@ -58,7 +58,6 @@ public class HeavyDutyBra extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         block = baseBlock = BLOCK;
-        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

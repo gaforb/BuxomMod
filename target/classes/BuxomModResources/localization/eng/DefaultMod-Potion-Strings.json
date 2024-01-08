@@ -1,7 +1,7 @@
 {
 "BuxomMod:CapacityPotion": {
         "NAME": "Capacity Potion",
-        "DESCRIPTIONS": ["Increases your #yCapacity by #b", "."]
+        "DESCRIPTIONS": ["Increases your #yCapacity by #b", ". #yRepair your #yBra."]
 },
 "BuxomMod:DragonMilkPotion": {
         "NAME": "Dragon Milk Potion",

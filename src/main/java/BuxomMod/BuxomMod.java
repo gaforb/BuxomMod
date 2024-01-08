@@ -31,6 +31,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -116,6 +117,8 @@ public class BuxomMod implements
     // =============== INPUT TEXTURE LOCATION =================
 
     // Colors (RGB)
+    public static final Color BOUNCE_GREEN = CardHelper.getColor(194.0f, 237.0f, 172.0f);
+    public static final Color STARTING_BUXOM_PURPLE = CardHelper.getColor(218.0f, 172.0f, 237.0f);
     // Character Color
     public static final Color BUXOM_PINK = CardHelper.getColor(215.0f, 119.0f, 157.0f);
 
@@ -390,12 +393,15 @@ public class BuxomMod implements
         BaseMod.addSaveField(makeID("StartingBuxom"), new CustomSavable<Integer>() {
             @Override
             public Integer onSave() {
-                return braManager.getPermaSize();
+                if (AbstractDungeon.player instanceof TheBuxom) {
+                    return braManager.getPermaSize();
+                }
+                return 0;
             }
 
             @Override
             public void onLoad(Integer i) {
-                if (braManager != null) {
+                if (braManager != null && AbstractDungeon.player instanceof TheBuxom) {
                     braManager.setPermaSize(i);
                 }
             }
@@ -761,7 +767,9 @@ public class BuxomMod implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        braManager.onStartCombat();
+        if (AbstractDungeon.player instanceof TheBuxom) {
+            braManager.onStartCombat();
+        }
     }
 
     @Override
@@ -780,7 +788,7 @@ public class BuxomMod implements
 
     @Override
     public void receiveRender(SpriteBatch spriteBatch) {
-        if (AbstractDungeon.player != null) {
+        if (AbstractDungeon.player != null && AbstractDungeon.player instanceof TheBuxom) {
             spriteBatch.setColor(Color.WHITE);
             braPanel.render(spriteBatch, AbstractDungeon.player, braPanel.hbTextColor);
             startingBuxomPanel.render(spriteBatch, AbstractDungeon.player, startingBuxomPanel.hbTextColor);
@@ -791,6 +799,8 @@ public class BuxomMod implements
 
     @Override
     public void receiveOnPlayerTurnStart() {
-        braManager.onTurnStart();
+        if (AbstractDungeon.player instanceof TheBuxom) {
+            braManager.onTurnStart();
+        }
     }
 }

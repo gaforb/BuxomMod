@@ -61,10 +61,11 @@ public class LactatingSkill extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = MAGIC;
         this.tags.add(CustomTags.BOUNCY);
     }
-
-
-    public boolean canUse(){
-        return false;
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        this.type = CardType.STATUS;
+        boolean result = super.canUse(p, m);
+        this.type = CardType.SKILL;
+        return result;
     }
     // Actions the card should do.
     @Override

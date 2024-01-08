@@ -66,7 +66,6 @@ public class ChibiEvent extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions(); // 2. and remove all others
                         AbstractDungeon.player.decreaseMaxHealth(this.healthdamage);
                         CardCrawlGame.sound.play(makeID("LOW_GASP"));
-                        AbstractDungeon.player.masterDeck.addToTop(new LactatingSkill());
                         AbstractDungeon.topLevelEffects.add(new ShowCardAndObtainEffect(new LactatingSkill(), (float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2)));
                         screenNum = 1; // Screen set the screen number to 1. Once we exit the switch (i) statement,
                         // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions

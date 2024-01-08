@@ -2,6 +2,7 @@ package BuxomMod.potions;
 
 import BuxomMod.BuxomMod;
 import BuxomMod.actions.ModifyCapacityAction;
+import BuxomMod.actions.RepairBraAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -57,6 +58,7 @@ public class CapacityPotion extends CustomPotion {
         target = AbstractDungeon.player;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             addToBot(new ModifyCapacityAction(AbstractDungeon.player, potency));
+            addToBot(new RepairBraAction());
         // If you are in combat, gain strength and the "lose strength at the end of your turn" power, equal to the potency of this potion.
         }
     }

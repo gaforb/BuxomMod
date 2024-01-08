@@ -83,7 +83,7 @@ public class StartingBuxomPanel extends ClickableUIElement {
                     buxomNumber,
                     hb.x * Settings.scale,
                         (hb.cY) * Settings.scale,
-                        Color.WHITE);
+                        STARTING_BUXOM_PURPLE);
                 if (renderTip == true) {
                     TipHelper.queuePowerTips(hb.x + hb.width + 16F, hb.y, this.tips);
                 }

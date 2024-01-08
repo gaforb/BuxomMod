@@ -83,7 +83,7 @@
   },
   "BuxomMod:ButtonPop": {
     "NAME": "Button Pop",
-    "DESCRIPTION": "Gain !BuxomMod:SecondMagic! Buxom. NL Deal !D! damage. NL Inflict !M! Weak."
+    "DESCRIPTION": "Gain !BuxomMod:SecondMagic! BuxomMod:Buxom. NL Deal !D! damage. NL Inflict !M! Weak."
   },
   "BuxomMod:ButtonHazard": {
     "NAME": "Button Hazard",
@@ -116,7 +116,7 @@
   },
   "BuxomMod:MeasurementTime": {
     "NAME": "Measurement Time",
-    "DESCRIPTION": "At the end of your turn, gain !M! Block. NL Decreases each time your BuxomMod:Buxom increases."
+    "DESCRIPTION": "At the end of your turn, gain !M! Block. NL Decreases by 4 each time your BuxomMod:Buxom increases."
   },
   "BuxomMod:OmegaArc": {
     "NAME": "Omega Arc",
@@ -199,7 +199,7 @@
   },
   "BuxomMod:OmegaBurst": {
     "NAME": "Omega Burst",
-    "DESCRIPTION": "{@@}buxommod:Expose. NL Scry 20. Draw 2 cards. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card{!M!|>1=s}. NL Exhaust."
+    "DESCRIPTION": "{@@}buxommod:Expose. NL Scry 20. NL Draw 2 cards. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card{!M!|>1=s}. NL Exhaust."
   },
   "BuxomMod:BouncyBlock": {
     "NAME": "Bouncy Block",
@@ -306,7 +306,7 @@
   },
   "BuxomMod:OmegaDuplication": {
     "NAME": "Omega Duplication",
-    "DESCRIPTION": "Reduce your buxommod:Buxom by half. NL This turn, your next Skill is played twice."
+    "DESCRIPTION": "Lose !M! buxommod:Buxom. NL This turn, your next Skill is played twice."
   },
   "BuxomMod:ChibiCommand": {
     "NAME": "Chibi Command",

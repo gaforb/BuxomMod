@@ -59,7 +59,7 @@ public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
 private static final int COST = 0;  // COST = ${COST}
 private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
-private static final int MAGIC = 1;
+private static final int MAGIC = 2;
 private static final int UPGRADE_PLUS_MAGIC = 1;
 private static final int SECOND_MAGIC = 3;
 private static final int UPGRADE_SECOND_MAGIC = 1;
@@ -119,7 +119,7 @@ private AbstractGameEffect vfx(float x, float y) {
 }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new OmegabsorptionAction(1, false, false, false, magicNumber, 2));
+        addToBot(new OmegabsorptionAction(1, false, false, false, -2, magicNumber));
         //addToBot(new VFXAction(vfx(p.drawX, p.drawY)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));

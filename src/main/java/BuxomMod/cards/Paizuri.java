@@ -63,21 +63,6 @@ public class Paizuri extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new PlatedArmorPower(p, block), block));
     }*/
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.isPlayerInDungeon()) {
-            boolean canUse = super.canUse(p, m);
-            if (!canUse) {
-                return false;
-            }
-            canUse = false;
-            this.cantUseMessage = TEXT[0];
-            if (m != null && m.getIntentBaseDmg() >= 0) {
-                return true;
-            }
-            return canUse;
-        }
-        return false;
-    }
 
     public boolean freeToPlay() {
         if (AbstractDungeon.isPlayerInDungeon()) {
@@ -95,7 +80,7 @@ public class Paizuri extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
         }
         else {
-            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, "Enemy does not intend to attack!", true));
+            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[0], true));
         }
         braManager.embarrassingList.add(this.uuid);
         BuxomMod.logger.info("embarrassinglist: " + braManager.embarrassingList);

@@ -50,7 +50,7 @@ public class Library extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         baseBlock = block = BLOCK;
-        this.cardsToPreview = new Insight();
+        this.cardsToPreview = new Rapidswell();
     }
 
     // Actions the card should do.

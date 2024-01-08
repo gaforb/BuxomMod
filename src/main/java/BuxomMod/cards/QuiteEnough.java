@@ -63,7 +63,7 @@ public class QuiteEnough extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         damage = baseDamage = DAMAGE;
-        cardsToPreview = new AftershockStatus();
+        cardsToPreview = new BuxomStatus();
     }
 
 
