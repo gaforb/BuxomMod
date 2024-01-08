@@ -1,7 +1,7 @@
 {
-"BuxomMod:FlatteningPotion": {
-        "NAME": "Flattening Potion",
-        "DESCRIPTIONS": ["Reduces your Buxom to #b", "1."]
+"BuxomMod:CapacityPotion": {
+        "NAME": "Capacity Potion",
+        "DESCRIPTIONS": ["Increases your #yCapacity by #b", "."]
 },
 "BuxomMod:DragonMilkPotion": {
         "NAME": "Dragon Milk Potion",

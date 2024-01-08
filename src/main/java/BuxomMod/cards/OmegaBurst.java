@@ -62,7 +62,7 @@ public class OmegaBurst extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ScryAction(10));
+        addToBot(new ScryAction(20));
         addToBot(new DrawCardAction(2));
         addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
         AbstractDungeon.actionManager.addToBottom(

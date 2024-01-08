@@ -1,16 +1,21 @@
 package BuxomMod.cards;
 
+import BuxomMod.powers.ExposedPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
+import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 public class Paizuri extends AbstractDynamicCard {
@@ -27,7 +32,7 @@ public class Paizuri extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Paizuri.png");
 
     // /TEXT DECLARATION/
-
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(BuxomMod.makeID("NoAttackIntent")).TEXT;
     // STAT DECLARATION 	
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -58,19 +63,42 @@ public class Paizuri extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new PlatedArmorPower(p, block), block));
     }*/
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (AbstractDungeon.isPlayerInDungeon()) {
+            boolean canUse = super.canUse(p, m);
+            if (!canUse) {
+                return false;
+            }
+            canUse = false;
+            this.cantUseMessage = TEXT[0];
+            if (m != null && m.getIntentBaseDmg() >= 0) {
+                return true;
+            }
+            return canUse;
+        }
+        return false;
+    }
+
+    public boolean freeToPlay() {
+        if (AbstractDungeon.isPlayerInDungeon()) {
+            if (AbstractDungeon.player.hasPower(ExposedPower.POWER_ID) && !braManager.embarrassingList.contains(this.uuid)) {
+                return true;
+            }
+        }
+        return super.freeToPlay();
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null && m.getIntentBaseDmg() >= 0) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
-            if (BuxomMod.payMilkCost(p, MILKCOST)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
-            }
         }
         else {
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, "Enemy does not intend to attack!", true));
         }
+        braManager.embarrassingList.add(this.uuid);
+        BuxomMod.logger.info("embarrassinglist: " + braManager.embarrassingList);
     }
 
     // Upgraded stats.

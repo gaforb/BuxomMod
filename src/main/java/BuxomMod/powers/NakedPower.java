@@ -43,6 +43,14 @@ public class NakedPower extends AbstractPower implements CloneablePowerInterface
         updateDescription();
     }
 
+    public void onInitialApplication(){
+        BuxomMod.braManager.changeNaked(true);
+    }
+
+    public void onRemove(){
+        BuxomMod.braManager.changeNaked(false);
+    }
+
     public float modifyBlock(float blockAmount) {
         return blockAmount * 0.0F;
     }

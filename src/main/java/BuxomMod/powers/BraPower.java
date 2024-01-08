@@ -28,7 +28,7 @@ public abstract class BraPower extends TwoAmountPower {
     }*/
 
     public void onInitialApplication() {
-        if (AbstractDungeon.player.hasRelic("BuxomMod:ToplessArtifact")) {
+        if (AbstractDungeon.player.hasRelic("BuxomMod:NakedRelic")) {
             growToBreak();
         }
     }

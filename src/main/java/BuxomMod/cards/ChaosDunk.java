@@ -43,7 +43,7 @@ public class ChaosDunk extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 2;
 
     // /STAT DECLARATION/

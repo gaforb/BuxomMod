@@ -2,9 +2,11 @@ package BuxomMod.cards;
 
 import BuxomMod.actions.ModifyCapacityAction;
 import BuxomMod.powers.CommonPower;
+import BuxomMod.ui.BraManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,6 +15,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 
+import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 public class BouncyExercise extends AbstractDynamicCard {
@@ -39,9 +42,9 @@ public class BouncyExercise extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 8;
     private static final int MAGIC = 3;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     // /STAT DECLARATION/
 
@@ -88,14 +91,14 @@ public class BouncyExercise extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower b = AbstractDungeon.player.getPower(CommonPower.POWER_ID);
         AbstractDungeon.actionManager.addToBottom(
         new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (b != null) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, b.amount, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, magicNumber));
+        CardGroup statusCardsHand = BuxomMod.specialGetCardsOfType(p.hand, CardType.STATUS);
+        if (braManager.buxomGainedThisTurn > 0) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
+        AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, magicNumber));
     }
 
     //Upgraded stats.

@@ -25,8 +25,8 @@ public class ChargedChibi extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = -2;
-    private static final int DAMAGE = 20;
-    private static final int UPGRADE_PLUS_DAMAGE = 5;
+    private static final int DAMAGE = 15;
+    private static final int UPGRADE_PLUS_DAMAGE = 7;
 
 
     public ChargedChibi() {

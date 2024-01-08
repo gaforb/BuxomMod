@@ -109,28 +109,22 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
             this.fontScale = 8.0F;
             this.amount -= reduceAmount;
         }
-        braManager.breakCheck();
+        braManager.onShrink(reduceAmount);
     }
     public void onRemove() {
-        for (AbstractPower pow : this.owner.powers) {
-            if (pow instanceof BraPower) {
-                ((BraPower) pow).onShrink(this.amount);
-            }
-        }
+        braManager.onShrink(this.amount);
     }
 
     public void atStartOfTurn() {
         this.appliedThisTurn = false;
-        this.buxomCounterThisTurn = 0;
-        this.buxomGainedThisTurn = 0;
+        braManager.buxomCounterThisTurn = 0;
+        braManager.buxomGainedThisTurn = 0;
+        BuxomMod.logger.info("buxomCounterThisTurn: " + braManager.buxomCounterThisTurn);
+        BuxomMod.logger.info("buxomGainedThisTurn: " + braManager.buxomGainedThisTurn);
     }
 
     public void onInitialApplication() {
-        ((TheBuxom)this.owner).beginGrowth(this.amount);
-        this.appliedThisTurn = true;
-        this.buxomCounterThisTurn++;
-        buxomGainedThisTurn += this.amount;
-        braManager.breakCheck();
+        braManager.onGrow(this.amount);
         if (this.amount >= 30) {
             addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
         }
@@ -147,18 +141,9 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
     }
 
    public void stackPower(int stackAmount) {
-       ((TheBuxom)this.owner).beginGrowth(stackAmount);
+       braManager.onGrow(stackAmount);
        this.appliedThisTurn = true;
-       this.buxomCounterThisTurn++;
-       this.buxomGainedThisTurn += stackAmount;
-       BuxomMod.logger.info("Times gained this turn: " + buxomCounterThisTurn);
-       BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
        super.stackPower(stackAmount);
-       if (this.amount >= 30 && !(owner.hasPower(ExposedPower.POWER_ID))) {
-           BuxomMod.logger.info("Buxom: " + this.amount + ". Over 30 Buxom! Exposing!");
-           addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
-       }
-       braManager.breakCheck();
    }
 
    @Override

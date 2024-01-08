@@ -6,7 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/BuxomModResources/images/char/character - Copy (2)" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/resources/BuxomModResources/images/char/character - Copy" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/java/BuxomMod/cards/old" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/BuxomMod/events" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/BuxomMod/OldEvents" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/java/BuxomMod/powers/old" />
     </content>
   </component>

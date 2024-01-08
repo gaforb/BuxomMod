@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 public class Flee extends AbstractDynamicCard {
@@ -32,6 +34,7 @@ public class Flee extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
     private static final int BLOCK = 7;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
@@ -44,6 +47,15 @@ public class Flee extends AbstractDynamicCard {
         magicNumber = baseMagicNumber = MAGIC;
     }
 
+    public boolean freeToPlay() {
+        if (AbstractDungeon.isPlayerInDungeon()) {
+            if (AbstractDungeon.player.hasPower(ExposedPower.POWER_ID) && !braManager.embarrassingList.contains(this.uuid)) {
+                return true;
+            }
+        }
+        return super.freeToPlay();
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ExhaustAction(this.magicNumber, false, true, true));
@@ -51,6 +63,8 @@ public class Flee extends AbstractDynamicCard {
         if (p.hasPower(ExposedPower.POWER_ID)) {
             addToBot(new DrawCardAction(magicNumber));
         }
+        braManager.embarrassingList.add(this.uuid);
+        BuxomMod.logger.info("embarrassinglist: " + braManager.embarrassingList);
     }
 
     //Upgraded stats.

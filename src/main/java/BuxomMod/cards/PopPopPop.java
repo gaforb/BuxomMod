@@ -44,7 +44,6 @@ public class PopPopPop extends AbstractDynamicCard {
     private static final int MAGIC = 3;
     private static final int UPGRADE_MAGIC = 2;
     private static final int SECOND_MAGIC = 2;
-    private static final int UPGRADE_SECOND_MAGIC = 1;
 
     // Hey want a second magic/damage/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and TheDefault.variable.DefaultCustomVariable
@@ -58,7 +57,7 @@ public class PopPopPop extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_MAGIC;
-        this.cardsToPreview = new Rapidswell();
+        this.cardsToPreview = new AftershockStatus();
     }
 
 
@@ -69,7 +68,7 @@ public class PopPopPop extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new CommonPower(p, p, 1), 1));
         }*/
-        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new Rapidswell(), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new AftershockStatus(), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, defaultSecondMagicNumber));
 
         /*
@@ -90,7 +89,7 @@ public class PopPopPop extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

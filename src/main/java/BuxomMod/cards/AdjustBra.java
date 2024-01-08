@@ -5,6 +5,7 @@ import BuxomMod.actions.ModifyCapacityAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.KCupPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -52,11 +53,11 @@ public class AdjustBra extends AbstractDynamicCard {
 
     private static final int COST = 0;  // COST = ${COST}
     private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
-    private static final int MAGIC = 2;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_MAGIC = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int MAGIC = 4;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
@@ -71,21 +72,7 @@ public class AdjustBra extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ModifyCapacityAction(p, magicNumber));
-    }
-
-
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) {
-            return false;
-        }
-        for (AbstractPower pow : p.powers) {
-            if (pow.ID.contains("CupPower")) {
-                canUse = false;
-                this.cantUseMessage = "Already wearing a bra!";
-            }
-        }
-        return canUse;
+        addToBot(new GainBlockAction(p, block));
     }
 
     // Upgraded stats.

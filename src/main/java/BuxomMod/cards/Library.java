@@ -3,6 +3,7 @@ package BuxomMod.cards;
 import BuxomMod.actions.CreateStatusCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.tempCards.Insight;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,7 +38,7 @@ public class Library extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_MAGIC = 1;
     private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 3;
@@ -61,7 +62,7 @@ public class Library extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Insight(), 1, true, true));
+        addToBot(new ScryAction(magicNumber));
         AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new Rapidswell(), 1));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }

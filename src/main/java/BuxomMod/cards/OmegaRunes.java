@@ -39,7 +39,7 @@ public class OmegaRunes extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private int MAGIC = 2;
+    private int MAGIC = 1;
     private final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/

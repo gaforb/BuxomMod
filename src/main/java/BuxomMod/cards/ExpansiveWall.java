@@ -35,7 +35,7 @@ public class ExpansiveWall extends AbstractDynamicCard {
 
     private static final int COST = 2;
     private static final int BLOCK = 12;
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 6;
     private static final int UPGRADE_PLUS_BLOCK = 4;
 
     // /STAT DECLARATION/

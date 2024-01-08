@@ -5,6 +5,7 @@ import BuxomMod.actions.IncreaseBuxomGainAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -64,6 +65,7 @@ public class MassiveGrowth extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DiscardAction(p, p, 2, true));
         BuxomMod.logger.info("Before MN: " + magicNumber + " Base MN: " + baseMagicNumber + " SMN: " + defaultSecondMagicNumber + " Base SMN: " + defaultBaseSecondMagicNumber + " Misc: " + misc);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, magicNumber), magicNumber));
@@ -82,7 +84,7 @@ public class MassiveGrowth extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isEthereal = false;
+            this.upgradeBaseCost(0);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

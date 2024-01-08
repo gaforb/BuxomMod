@@ -1,0 +1,286 @@
+
+LehmanaSprite9.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shadow
+  rotate: false
+  xy: 131, 310
+  size: 110, 28
+  orig: 110, 28
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_37
+  rotate: false
+  xy: 193, 117
+  size: 25, 36
+  orig: 25, 36
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_35
+  rotate: false
+  xy: 1, 1
+  size: 84, 119
+  orig: 84, 119
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_36
+  rotate: false
+  xy: 1, 122
+  size: 74, 129
+  orig: 74, 129
+  offset: 0, 0
+  index: -1
+fshoulder naked1
+  rotate: false
+  xy: 203, 55
+  size: 15, 42
+  orig: 15, 42
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_16
+  rotate: false
+  xy: 115, 120
+  size: 16, 44
+  orig: 16, 44
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_46
+  rotate: false
+  xy: 200, 1
+  size: 20, 52
+  orig: 20, 52
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_47
+  rotate: false
+  xy: 138, 29
+  size: 17, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_20
+  rotate: false
+  xy: 309, 467
+  size: 64, 44
+  orig: 64, 44
+  offset: 0, 0
+  index: -1
+pelvis naked
+  rotate: false
+  xy: 242, 467
+  size: 65, 44
+  orig: 65, 44
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_42
+  rotate: false
+  xy: 179, 1
+  size: 19, 60
+  orig: 19, 60
+  offset: 0, 0
+  index: -1
+fcalf naked1
+  rotate: false
+  xy: 158, 29
+  size: 19, 60
+  orig: 20, 60
+  offset: 0, 0
+  index: -1
+fthigh naked1
+  rotate: false
+  xy: 205, 230
+  size: 30, 62
+  orig: 32, 62
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_40
+  rotate: false
+  xy: 189, 165
+  size: 30, 63
+  orig: 30, 63
+  offset: 0, 0
+  index: -1
+ncalf naked
+  rotate: false
+  xy: 110, 56
+  size: 21, 62
+  orig: 22, 62
+  offset: 1, 0
+  index: -1
+lehmana sprite/Layer_41
+  rotate: false
+  xy: 87, 56
+  size: 21, 64
+  orig: 21, 64
+  offset: 0, 0
+  index: -1
+nthigh naked
+  rotate: false
+  xy: 77, 122
+  size: 36, 67
+  orig: 36, 68
+  offset: 0, 1
+  index: -1
+lehmana sprite/Layer_39
+  rotate: false
+  xy: 276, 388
+  size: 36, 67
+  orig: 36, 67
+  offset: 0, 0
+  index: -1
+chestEx
+  rotate: false
+  xy: 69, 343
+  size: 58, 89
+  orig: 58, 89
+  offset: 0, 0
+  index: -1
+chest_naked
+  rotate: false
+  xy: 129, 343
+  size: 58, 89
+  orig: 58, 89
+  offset: 0, 0
+  index: -1
+lehmana sprite chest
+  rotate: false
+  xy: 1, 253
+  size: 70, 88
+  orig: 70, 88
+  offset: 0, 0
+  index: -1
+face2
+  rotate: false
+  xy: 189, 340
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+faceblink
+  rotate: false
+  xy: 176, 434
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_7_Copy
+  rotate: false
+  xy: 123, 434
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+nshoulder naked
+  rotate: false
+  xy: 179, 63
+  size: 22, 52
+  orig: 22, 52
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_13
+  rotate: false
+  xy: 133, 56
+  size: 23, 56
+  orig: 23, 56
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_14
+  rotate: false
+  xy: 87, 1
+  size: 27, 53
+  orig: 27, 53
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_15
+  rotate: false
+  xy: 116, 29
+  size: 20, 24
+  orig: 20, 24
+  offset: 0, 0
+  index: -1
+boobf new
+  rotate: false
+  xy: 1, 343
+  size: 66, 83
+  orig: 66, 83
+  offset: 0, 0
+  index: -1
+boobsEx2F
+  rotate: false
+  xy: 71, 434
+  size: 50, 63
+  orig: 50, 63
+  offset: 0, 0
+  index: -1
+boobs_placeholder
+  rotate: false
+  xy: 135, 208
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+boobn new
+  rotate: false
+  xy: 73, 253
+  size: 56, 84
+  orig: 56, 84
+  offset: 0, 0
+  index: -1
+boobsEx2N
+  rotate: false
+  xy: 229, 401
+  size: 45, 64
+  orig: 45, 64
+  offset: 0, 0
+  index: -1
+boobsEx2
+  rotate: false
+  xy: 131, 253
+  size: 72, 55
+  orig: 72, 55
+  offset: 0, 0
+  index: -1
+boobsEx2new
+  rotate: false
+  xy: 242, 340
+  size: 58, 46
+  orig: 58, 46
+  offset: 0, 0
+  index: -1
+lehmana sprite/Layer_28
+  rotate: false
+  xy: 135, 165
+  size: 52, 41
+  orig: 52, 41
+  offset: 0, 0
+  index: -1
+boobs2-3
+  rotate: false
+  xy: 1, 434
+  size: 68, 53
+  orig: 68, 53
+  offset: 0, 0
+  index: -1
+boobsEx1
+  rotate: false
+  xy: 135, 122
+  size: 56, 41
+  orig: 56, 41
+  offset: 0, 0
+  index: -1
+boobs2-4
+  rotate: false
+  xy: 77, 191
+  size: 56, 43
+  orig: 56, 43
+  offset: 0, 0
+  index: -1
+shirt top
+  rotate: false
+  xy: 116, 1
+  size: 47, 26
+  orig: 47, 26
+  offset: 0, 0
+  index: -1

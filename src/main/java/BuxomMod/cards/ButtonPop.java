@@ -17,6 +17,7 @@ import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 
+import static BuxomMod.BuxomMod.getPwrAmt;
 import static BuxomMod.BuxomMod.makeCardPath;
 // "How come this card extends CustomCard and not DynamicCard like all the rest?"
 // Skip this question until you start figuring out the AbstractDefaultCard/AbstractDynamicCard and just extend DynamicCard
@@ -28,7 +29,7 @@ import static BuxomMod.BuxomMod.makeCardPath;
 // Abstract Dynamic Card builds up on Abstract Default Card even more and makes it so that you don't need to add
 // the NAME and the DESCRIPTION into your card - it'll get it automatically. Of course, this functionality could have easily
 // Been added to the default card rather than creating a new Dynamic one, but was done so to deliberately to showcase custom cards/inheritance a bit more.
-public class ButtonPop extends CustomCard {
+public class ButtonPop extends AbstractDynamicCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -65,6 +66,7 @@ public class ButtonPop extends CustomCard {
     private static final int COST = 1;
     private static final int DAMAGE = 8;
     private static final int MAGIC = 1;
+    private static final int SECOND_MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
     private static final int UPGRADE_PLUS_DMG = 3;
 
@@ -87,21 +89,24 @@ public class ButtonPop extends CustomCard {
     // in your main class, in the receiveEditCards() method
 
     public ButtonPop() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         // Aside from baseDamage/MagicNumber/Block there's also a few more.
         // Just type this.base and let intelliJ auto complete for you, or, go read up AbstractCard
 
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
 
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        int b = getPwrAmt(p, CommonPower.POWER_ID);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 new CommonPower(p, p, 1), 1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction((AbstractCreature)m, (AbstractCreature)p, (AbstractPower)new WeakPower((AbstractCreature)m, this.magicNumber, false), this.magicNumber));
     }

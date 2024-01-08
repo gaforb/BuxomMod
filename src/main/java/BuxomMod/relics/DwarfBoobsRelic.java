@@ -37,9 +37,9 @@ public class DwarfBoobsRelic extends CustomRelic {
 
     // Flash at the start of Battle.
     private boolean triggered = false;
-    public void atBattleStart() {
+    public void atTurnStart() {
         flash();
-        addToBot(new ModifyCapacityAction(AbstractDungeon.player, 10));
+        addToBot(new ModifyCapacityAction(AbstractDungeon.player, 1));
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

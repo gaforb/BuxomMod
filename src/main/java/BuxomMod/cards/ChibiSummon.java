@@ -44,8 +44,8 @@ public class ChibiSummon extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 1;
-    private static final int MAGIC = 3;
+    private static final int COST = 0;
+    private static final int MAGIC = 4;
     private static final int UPGRADE_PLUS_MAGIC = 1;
     private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 2;
@@ -93,7 +93,6 @@ public class ChibiSummon extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

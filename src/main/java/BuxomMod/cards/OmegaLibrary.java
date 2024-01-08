@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.patches.CustomTags;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,6 +15,7 @@ import BuxomMod.powers.CommonPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
+@AutoAdd.Ignore
 public class OmegaLibrary extends AbstractDynamicCard {
 
     /*

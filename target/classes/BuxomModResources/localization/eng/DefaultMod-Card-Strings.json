@@ -9,11 +9,11 @@
   },
   "BuxomMod:PopPopPop": {
     "NAME": "Pop, Pop, Pop!",
-    "DESCRIPTION": "Add !BuxomMod:SecondMagic! *Rapidswell to your draw pile. NL Draw !M! cards."
+    "DESCRIPTION": "Draw !M! cards. NL Add !BuxomMod:SecondMagic! *Afterswell to your draw pile."
   },
   "BuxomMod:BouncyExercise": {
     "NAME": "Bouncy Exercise",
-    "DESCRIPTION": "Deal !D! damage, then deal damage equal to your current buxommod:Buxom. NL Gain !M! Capacity."
+    "DESCRIPTION": "Deal !D! damage, and again if you gained BuxomMod:Buxom this turn. NL Gain !M! BuxomMod:Capacity."
   },
   "BuxomMod:ExpansiveWall": {
     "NAME": "Expansive Wall",
@@ -21,8 +21,8 @@
   },
   "BuxomMod:Chibis": {
     "NAME": "Chibis!",
-    "DESCRIPTION": "Randomly gain 4 buxommod:Lactating, 2 Strength, or 1 Dexterity X times.",
-    "UPGRADE_DESCRIPTION": "Randomly gain 4 buxommod:Lactating, 2 Strength, or 1 Dexterity X+1 times."
+    "DESCRIPTION": "Randomly gain 4 buxommod:Lactating, 2 Strength, or 2 Dexterity X times.",
+    "UPGRADE_DESCRIPTION": "Randomly gain 4 buxommod:Lactating, 2 Strength, or 2 Dexterity X+1 times."
   },
   "BuxomMod:OmegaForce": {
     "NAME": "Omega Force",
@@ -31,7 +31,7 @@
   "BuxomMod:HeavyLactation": {
     "NAME": "Heavy Lactation",
     "DESCRIPTION": "Gain buxommod:Milk equal to your buxommod:Buxom. Heal equal to half your buxommod:Buxom. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. Gain buxommod:Milk equal to your Buxom. Heal equal to half your buxommod:Buxom. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain buxommod:Milk equal to your Buxom. Heal equal to half your buxommod:Buxom. NL Exhaust."
   },
   "BuxomMod:BovineForm": {
     "NAME": "Bovine Form",
@@ -59,7 +59,7 @@
   },
   "BuxomMod:Omegabsorption": {
     "NAME": "Omegabsorption",
-    "DESCRIPTION": "Exhaust a card. NL Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL If it was a *Status card, draw !M! cards. Otherwise, lose !B! BuxomMod:Capacity."
+    "DESCRIPTION": "{@@}Exhaust a card. NL Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL If it was a *Status card, draw !M! card{!M!|>1=s}. Otherwise, lose 2 BuxomMod:Capacity."
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
@@ -83,7 +83,7 @@
   },
   "BuxomMod:ButtonPop": {
     "NAME": "Button Pop",
-    "DESCRIPTION": "Deal !D! damage. NL Gain 1 BuxomMod:Buxom. NL Inflict !M! Weak."
+    "DESCRIPTION": "Gain !BuxomMod:SecondMagic! Buxom. NL Deal !D! damage, then deal damage equal to your BuxomMod:Buxom (!BuxomMod:BuxomDamage! total). NL Inflict !M! Weak."
   },
   "BuxomMod:ButtonHazard": {
     "NAME": "Button Hazard",
@@ -128,12 +128,13 @@
   },
   "BuxomMod:OmegaShock": {
     "NAME": "Omega Shock",
-    "DESCRIPTION": "Add !M! Shocks to your draw pile, with bonus damage equal to your Buxom. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add !M! Shocks to your draw pile, with bonus damage equal to your Buxom. NL Upgrade them. NL Exhaust."
+    "DESCRIPTION": "Add !M! Shocks to your draw pile, with !BuxomMod:SecondMagic! bonus damage for each time you gained buxommod:Buxom this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add !M! Shocks to your draw pile, with !BuxomMod:SecondMagic! bonus damage for each time you gained buxommod:Buxom this turn. NL Upgrade them. NL Exhaust."
   },
   "BuxomMod:SwellingTight": {
     "NAME": "Swelling Tight",
-    "DESCRIPTION": "Gain 3 BuxomMod:Buxom and lose 3 BuxomMod:Capacity. NL If your BuxomMod:Bra is intact, gain !M! [E]. NL Exhaust."
+    "DESCRIPTION": "Gain 3 BuxomMod:Buxom and lose 3 BuxomMod:Capacity. NL If your BuxomMod:Bra is intact, gain [E] [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 3 BuxomMod:Buxom and lose 3 BuxomMod:Capacity. NL If your BuxomMod:Bra is intact, gain [E] [E] [E]. NL Exhaust."
   },
   "BuxomMod:Phew": {
     "NAME": "Phew!",
@@ -167,12 +168,12 @@
   },
   "BuxomMod:Paizuri": {
     "NAME": "Paizuri",
-    "DESCRIPTION": "If the enemy intends to attack, inflict !M! Weak and draw !M! cards. NL BuxomMod:Milking 2: Also inflict !M! Vulnerable."
+    "DESCRIPTION": "BuxomMod:Embarrassing. NL If the enemy intends to attack, inflict !M! Weak and draw !M! cards."
   },
   "BuxomMod:OmegaBeatdown": {
     "NAME": "Omega Beatdown",
-    "DESCRIPTION": "Deal damage equal to half your BuxomMod:Buxom four times.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to half your BuxomMod:Buxom five times."
+    "DESCRIPTION": "Deal damage equal to half your BuxomMod:Buxom (!BuxomMod:BuxomHalfDamage!) !M! times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to half your BuxomMod:Buxom (!BuxomMod:BuxomHalfDamage!) !M! times. NL Exhaust."
   },
   "BuxomMod:ExpandMind": {
     "NAME": "Expand Mind",
@@ -181,7 +182,7 @@
   },
   "BuxomMod:InducedLactation": {
     "NAME": "Induced Lactation",
-    "DESCRIPTION": "Gain !M! BuxomMod:Milk. NL Add 1 *Afterswell to your hand."
+    "DESCRIPTION": "BuxomMod:Embarrassing. NL Gain !M! BuxomMod:Milk. NL Add 1 *Afterswell to your hand."
   },
   "BuxomMod:BraBreaker": {
     "NAME": "Bra Breaker",
@@ -189,8 +190,8 @@
   },
   "BuxomMod:BigBouncePowerCard": {
     "NAME": "Big Bounce",
-    "DESCRIPTION": "Increase your max BuxomMod:Bounce stacks by 2. NL Create *Big *Bounces instead of *Bounces.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Increase your max BuxomMod:Bounce stacks by 2. NL Create *Big *Bounces instead of *Bounces."
+    "DESCRIPTION": "Increase your max *Bounce stacks by 2. NL Create *Big *Bounces instead of *Bounces.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Increase your max *Bounce stacks by 2. NL Create *Big *Bounces instead of *Bounces."
   },
   "BuxomMod:BigBounceStatus": {
     "NAME": "Big Bounce",
@@ -198,7 +199,7 @@
   },
   "BuxomMod:OmegaBurst": {
     "NAME": "Omega Burst",
-    "DESCRIPTION": "{@@}buxommod:Expose. NL Scry 10. Draw 2 cards. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card{!M!|>1=s}. NL Exhaust."
+    "DESCRIPTION": "{@@}buxommod:Expose. NL Scry 20. Draw 2 cards. NL This turn, whenever you gain BuxomMod:Buxom or draw a Status card, draw !M! card{!M!|>1=s}. NL Exhaust."
   },
   "BuxomMod:BouncyBlock": {
     "NAME": "Bouncy Block",
@@ -238,7 +239,7 @@
   },
   "BuxomMod:Flee": {
     "NAME": "Flee",
-    "DESCRIPTION": "{@@}Exhaust up to !M! card{!M!|>1=s}. NL Gain !B! Block. NL If buxommod:Exposed, draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}BuxomMod:Embarrassing. NL Exhaust up to !M! card{!M!|>1=s}. NL Gain !B! Block. NL If buxommod:Exposed, draw !M! card{!M!|>1=s}."
   },
   "BuxomMod:ChibiBlock": {
     "NAME": "Chibi-Block",
@@ -265,7 +266,7 @@
   },
   "BuxomMod:Submission": {
     "NAME": "Submission",
-    "DESCRIPTION": "Prevent the next time you would lose HP. NL Gain !M! Weak. NL Exhaust."
+    "DESCRIPTION": "BuxomMod:Embarrassing. NL Prevent the next time you would lose HP. NL Gain !M! Weak. NL Exhaust."
   },
   "BuxomMod:ChibiChampion": {
   "NAME": "Chibi Champion",
@@ -282,8 +283,8 @@
   },
   "BuxomMod:PanicLactation": {
     "NAME": "Panic Lactation",
-    "DESCRIPTION": "When you play a Strike or *Defend this turn, gain !M! buxommod:Milk.",
-    "UPGRADE_DESCRIPTION": "When you play a Strike or *Defend this turn, gain !M! buxommod:Milk."
+    "DESCRIPTION": "When you play a *Common card this turn, gain !M! buxommod:Milk.",
+    "UPGRADE_DESCRIPTION": "When you play a *Common card this turn, gain !M! buxommod:Milk."
   },
   "BuxomMod:BouncingLactation": {
     "NAME": "Bouncing Lactation",
@@ -292,7 +293,8 @@
   },
   "BuxomMod:BraCloset": {
     "NAME": "Bra Closet",
-    "DESCRIPTION": "{@@}Gain !M! buxommod:Capacity. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust."
+    "DESCRIPTION": "{@@}Gain !M! buxommod:Capacity. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "{@@}Innate. NL Gain !M! buxommod:Capacity. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust."
   },
   "BuxomMod:LactatingStatus": {
     "NAME": "Lactating",
@@ -324,8 +326,8 @@
   },
   "BuxomMod:MassiveGrowth": {
     "NAME": "Massive Growth",
-    "DESCRIPTION": "Ethereal. NL Gain !M! buxommod:Buxom. NL Permanently increase this card's buxommod:Buxom gain by !BuxomMod:SecondMagic!. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! buxommod:Buxom. NL Permanently increase this card's buxommod:Buxom gain by !BuxomMod:SecondMagic!. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Discard 2 random cards. NL Gain !M! buxommod:Buxom. NL Permanently increase this card's buxommod:Buxom gain by !BuxomMod:SecondMagic!. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Discard 2 random cards. NL Gain !M! buxommod:Buxom. NL Permanently increase this card's buxommod:Buxom gain by !BuxomMod:SecondMagic!. NL Exhaust."
   },
   "BuxomMod:WatcherCosplay": {
   "NAME": "Watcher Cosplay",
@@ -333,11 +335,11 @@
   },
   "BuxomMod:AdjustBra": {
     "NAME": "Adjust Bra",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Capacity."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! BuxomMod:Capacity."
   },
   "BuxomMod:OmegaThorns": {
     "NAME": "Omega Thorns",
-    "DESCRIPTION": "If your buxommod:Bra is intact, gain !M! Thorns for every !BuxomMod:SecondMagic! buxommod:Buxom you have."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns. NL Gain !M! additional Thorns for every !BuxomMod:SecondMagic! buxommod:Buxom you have."
   },
   "BuxomMod:SilentCosplay": {
     "NAME": "Silent Cosplay",
@@ -349,11 +351,15 @@
   },
   "BuxomMod:OmegaRunes": {
     "NAME": "Omega Runes",
-    "DESCRIPTION": "Gain !M! maximum *Bounce stacks. NL Repair your BuxomMod:Bra."
+    "DESCRIPTION": "{@@}Gain !M! maximum *Bounce stack{!M!|>1=s}. NL Repair your BuxomMod:Bra."
   },
   "BuxomMod:ChargedChibi": {
     "NAME": "Charged Chibi",
     "DESCRIPTION": "Unplayable. NL BuxomMod:Bouncy. NL If *Exhausted, deal !D! damage to ALL enemies and add a copy of this card into your discard pile."
+  },
+  "BuxomMod:LactatingSkill": {
+    "NAME": "Lactating",
+    "DESCRIPTION": "BuxomMod:Bouncy. NL Unplayable. NL When drawn, gain !M! BuxomMod:Milk."
   }
 }
 

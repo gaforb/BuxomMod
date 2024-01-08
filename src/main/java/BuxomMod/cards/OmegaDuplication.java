@@ -47,25 +47,21 @@ public class OmegaDuplication extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
-    private static final int COST = 1;
-    private static final int MAGIC = 2;
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int COST = 0;
+    private static final int MAGIC = 8;
+    private static final int UPGRADE_PLUS_MAGIC = -3;
 
     // /STAT DECLARATION/
 
     public OmegaDuplication() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int b = getPwrAmt(p, CommonPower.POWER_ID);
-        if (b > 0) {
-            addToBot(new ReducePowerAction(p, p, CommonPower.POWER_ID, b/2));
-        }
+        addToBot(new ReducePowerAction(p, p, CommonPower.POWER_ID, magicNumber));
         addToBot(new ApplyPowerAction(p, p, new BurstPower(p, 1), 1));
     }
 
@@ -74,7 +70,7 @@ public class OmegaDuplication extends AbstractDynamicCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             this.initializeDescription();
         }
     }

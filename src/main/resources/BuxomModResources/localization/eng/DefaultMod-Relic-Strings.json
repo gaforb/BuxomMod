@@ -31,18 +31,18 @@
       "Select a card to bottle for "
     ]
   },
-  "BuxomMod:ToplessArtifact": {
-    "NAME": "Curse of Toplessness",
-    "FLAVOR": "Your huge boobs magically slip out of any attempt to cover them.",
+  "BuxomMod:NakedRelic": {
+    "NAME": "Curse of Nudity",
+    "FLAVOR": "Your naked body magically slips out of any attempt to cover it.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Start each combat with #b5 additional BuxomMod:Buxom. Immediately outgrow any bras you wear."
+      "Gain [E] at the start of your turn. Start each combat with #b5 additional BuxomMod:Buxom. Permanently #yExpose. If you would #yExpose, gain [E]."
     ]
   },
   "BuxomMod:DwarfBoobsRelic": {
     "NAME": "J-Cup Bra",
     "FLAVOR": "Prone to larger breasts than humans, Lehmana's J-cups are not as noteworthy as you'd think.",
     "DESCRIPTIONS": [
-      "Increase your #yBra's capacity by #b10 at the start of combat."
+      "Increase your #yBra's capacity by #b1 at the start of your turn."
     ]
   },
   "BuxomMod:WashboardRelic": {

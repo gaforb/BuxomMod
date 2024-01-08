@@ -1,17 +1,22 @@
 package BuxomMod;
 
+import BuxomMod.events.ChibiEvent;
 import BuxomMod.patches.CustomTags;
+import BuxomMod.potions.CapacityPotion;
 import BuxomMod.potions.DragonMilkPotion;
 import BuxomMod.potions.PermaGrowthPotion;
 import BuxomMod.powers.BraBrokenPower;
 import BuxomMod.powers.BraPower;
 import BuxomMod.powers.MilkPower;
-import BuxomMod.relics.CowRelic;
+import BuxomMod.relics.*;
 import BuxomMod.ui.*;
 import BuxomMod.util.GrowCommand;
+import BuxomMod.variables.BuxomDamageVariable;
+import BuxomMod.variables.BuxomHalfDamageVariable;
 import basemod.*;
 import basemod.abstracts.CustomSavable;
 import basemod.devcommands.ConsoleCommand;
+import basemod.eventUtil.AddEventParams;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -39,11 +44,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import BuxomMod.cards.*;
 import BuxomMod.characters.TheBuxom;
-//import BuxomMod.events.IdentityCrisisEvent;
-import BuxomMod.potions.FlatteningPotion;
-import BuxomMod.relics.BottledPlaceholderRelic;
-import BuxomMod.relics.DwarfBoobsRelic;
-import BuxomMod.relics.WashboardRelic;
+//import BuxomMod.events.ChibiEvent;
 import BuxomMod.util.IDCheckDontTouchPls;
 import BuxomMod.util.TextureLoader;
 import BuxomMod.variables.DefaultCustomVariable;
@@ -95,7 +96,8 @@ public class BuxomMod implements
         OnStartBattleSubscriber,
         PostDungeonInitializeSubscriber,
         PostPowerApplySubscriber,
-        RenderSubscriber{
+        RenderSubscriber,
+        OnPlayerTurnStartSubscriber{
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(BuxomMod.class.getName());
@@ -118,7 +120,7 @@ public class BuxomMod implements
     public static final Color BUXOM_PINK = CardHelper.getColor(215.0f, 119.0f, 157.0f);
 
     // Potion Colors in RGB
-    public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
+    public static final Color CAPACITY_POTION_LIQUID = CardHelper.getColor(58.0f, 45.0f, 62.0f); // Orange-ish Red
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
     public static final Color DRAGON_MILK_POTION_LIQUID = CardHelper.getColor(255.0f, 255.0f, 255.0f);
@@ -208,6 +210,7 @@ public class BuxomMod implements
     public static BraManager braManager;
     public static StartingBuxomPanel startingBuxomPanel;
     public static BounceMaxPanel bounceMaxPanel;
+    public static DebugInfoPanel debugInfoPanel;
 
     // =============== SUBSCRIBE, CREATE THE COLOR_PINK, INITIALIZE =================
 
@@ -382,6 +385,7 @@ public class BuxomMod implements
         braManager = new BraManager();
         startingBuxomPanel = new StartingBuxomPanel(TextureLoader.getTexture(STARTING_BUXOM_ICON));
         bounceMaxPanel = new BounceMaxPanel(TextureLoader.getTexture(MAX_BOUNCE_ICON));
+        debugInfoPanel = new DebugInfoPanel(TextureLoader.getTexture(MAX_BOUNCE_ICON));
 
         BaseMod.addSaveField(makeID("StartingBuxom"), new CustomSavable<Integer>() {
             @Override
@@ -402,7 +406,7 @@ public class BuxomMod implements
         // https://github.com/daviscook477/BaseMod/wiki/Custom-Events
 
         // You can add the event like so:
-        // BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
+        // BaseMod.addEvent(ChibiEvent.ID, ChibiEvent.class, TheCity.ID);
         // Then, this event will be exclusive to the City (act 2), and will show up for all characters.
         // If you want an event that's present at any part of the game, simply don't include the dungeon ID
 
@@ -412,13 +416,12 @@ public class BuxomMod implements
 
         // Create a new event builder
         // Since this is a builder these method calls (outside of create()) can be skipped/added as necessary
-        /*AddEventParams eventParams = new AddEventParams.Builder(IdentityCrisisEvent.ID, IdentityCrisisEvent.class) // for this specific event
-            .dungeonID(TheCity.ID) // The dungeon (act) this event will appear in
+        AddEventParams eventParams = new AddEventParams.Builder(ChibiEvent.ID, ChibiEvent.class) // for this specific event
             .playerClass(TheBuxom.Enums.THE_BUXOM) // Character specific event
             .create();
 
         // Add the event
-        BaseMod.addEvent(eventParams);*/
+        BaseMod.addEvent(eventParams);
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
@@ -434,7 +437,7 @@ public class BuxomMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_BUXOM".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(FlatteningPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, FlatteningPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
+        BaseMod.addPotion(CapacityPotion.class, CAPACITY_POTION_LIQUID, null, null, CapacityPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
         BaseMod.addPotion(DragonMilkPotion.class, DRAGON_MILK_POTION_LIQUID, DRAGON_MILK_POTION_HYBRID, null, DragonMilkPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
         //BaseMod.addPotion(ChibiPotion.class, CHIBI_POTION_LIQUID, CHIBI_POTION_HYBRID, null, ChibiPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
         BaseMod.addPotion(PermaGrowthPotion.class, PERMA_POTION_LIQUID, PERMA_POTION_HYBRID, null, PermaGrowthPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
@@ -462,6 +465,7 @@ public class BuxomMod implements
         BaseMod.addRelicToCustomPool(new WashboardRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new DwarfBoobsRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new CowRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new NakedRelic(), TheBuxom.Enums.COLOR_PINK);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
 
@@ -487,6 +491,8 @@ public class BuxomMod implements
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+        BaseMod.addDynamicVariable(new BuxomDamageVariable());
+        BaseMod.addDynamicVariable(new BuxomHalfDamageVariable());
 
         logger.info("Adding cards");
         // Add the cards
@@ -621,9 +627,11 @@ public class BuxomMod implements
     public static List<String> monstersWithBreastsMaybe = Arrays.asList(new String[]{"TheChamp", "GremlinLeader", "Chosen", "AwakenedOne"});
 
     public static int getPwrAmt(AbstractCreature check, String ID) {
-        AbstractPower found = check.getPower(ID);
-        if (found != null) {
-            return found.amount;
+        if (check != null) {
+            AbstractPower found = check.getPower(ID);
+            if (found != null) {
+                return found.amount;
+            }
         }
         return 0;
     }
@@ -777,6 +785,12 @@ public class BuxomMod implements
             braPanel.render(spriteBatch, AbstractDungeon.player, braPanel.hbTextColor);
             startingBuxomPanel.render(spriteBatch, AbstractDungeon.player, startingBuxomPanel.hbTextColor);
             bounceMaxPanel.render(spriteBatch, AbstractDungeon.player, bounceMaxPanel.hbTextColor);
+            debugInfoPanel.render(spriteBatch, AbstractDungeon.player, debugInfoPanel.hbTextColor);
         }
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStart() {
+        braManager.onTurnStart();
     }
 }

@@ -43,7 +43,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
 
     private static final int COST = 2;
     private static final int DAMAGE = 0;
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/
@@ -53,6 +53,7 @@ public class OmegaBeatdown extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
+        this.exhaust = true;
     }
 
     /*public void applyPowers() {

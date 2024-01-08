@@ -2,16 +2,19 @@ package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
+import BuxomMod.powers.ExposedPower;
 import BuxomMod.powers.SurprisePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
+import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makeCardPath;
 
 public class Submission extends AbstractDynamicCard {
@@ -46,10 +49,20 @@ public class Submission extends AbstractDynamicCard {
         this.exhaust = true;
     }
 
+    public boolean freeToPlay() {
+        if (AbstractDungeon.isPlayerInDungeon()) {
+            if (AbstractDungeon.player.hasPower(ExposedPower.POWER_ID) && !braManager.embarrassingList.contains(this.uuid)) {
+                return true;
+            }
+        }
+        return super.freeToPlay();
+    }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, 1), 1));
         addToBot(new ApplyPowerAction(p, p, new WeakPower(p, magicNumber, false), magicNumber));
+        braManager.embarrassingList.add(this.uuid);
+        BuxomMod.logger.info("embarrassinglist: " + braManager.embarrassingList);
     }
 
     //Upgraded stats.

@@ -2,15 +2,18 @@ package BuxomMod.powers;
 
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
+import BuxomMod.relics.NakedRelic;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -61,6 +64,15 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         return type == DamageInfo.DamageType.NORMAL ? damage * (1F + INTERCEPT + (MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID))) : damage;
     }
+    public void stackPower(int stackAmount) {
+        if (AbstractDungeon.player.hasRelic(NakedRelic.ID)) {
+            addToBot(new GainEnergyAction(1));
+        }
+    }
+    public int onPlayerGainedBlock(int blockAmount) {
+
+        return blockAmount;
+    }
 
     public float modifyBlock(float blockAmount) {
         /*if (!braManager.broken) {
@@ -69,7 +81,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         return blockAmount * 0.0F;
     }
     public void atEndOfRound() {
-        if (!(BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID) >= 30)) {
+        if (!(BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID) >= 30) && !((TheBuxom)this.owner).naked) {
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
     }

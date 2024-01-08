@@ -16,5 +16,23 @@
       "[Leave] Cover your nipples and leave.",
       "[Leave ]"
     ]
+  },
+  "BuxomMod:ChibiEvent": {
+    "NAME": "Dark Hallway",
+    "DESCRIPTIONS": [
+      "Suddenly, the hallway around you plunges into #bdarkness. You @yelp@ and freeze, afraid something might ambush you in the dark! NL Calling out to your #gChibis for help, you're met only with #p~mischievous~ giggles. NL NL You sigh and fidget with your hair, weighing your options. Either brave the darkness yourself, or offer your #p~bare~ #p~breasts~ to the #gChibis' whims in exchange for a magical favor.",
+      "You reluctantly roll up your shirt and lift your bra. Giggles intensify and little #bblue eyes shine in the dark. As the #gChibis alight on your breasts and pepper them with kisses, you feel them swell with ~glowing~ ~milk~. NL The little fairies take turns teasing out your new bounties and guiding you forth, until you arrive at the end of the hall. NL NL However, as the Chibis fade away, the ~itching~ in your nipples does not. You suspect their little 'gift' will remain for a long while.",
+      " While the breast magic is more helpful than you'd like to admit, it's best to keep Chibi dealings to a minimum. With some stumbling around, you manage to find your own way out."
+    ],
+    "OPTIONS": [
+      "[Find your own way out]",
+      "Option [1] #gHP.",
+      "[Appease Chibis] #rLose #r",
+      " #rMax #rHP. #gGet #ga #gunique #gCard.",
+      "Option [4]",
+      "Option [5]",
+      "[Leave]",
+      "Option [7] [Leave ]"
+    ]
   }
 }

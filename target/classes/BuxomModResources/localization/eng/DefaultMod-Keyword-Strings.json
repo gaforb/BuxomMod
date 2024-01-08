@@ -127,5 +127,13 @@
       "repair"
     ],
     "DESCRIPTION": "Repairs your bra from #rBroken status."
+  },
+  {
+    "PROPER_NAME": "Embarrassing",
+    "NAMES": [
+      "Embarrassing",
+      "embarrassing"
+    ],
+    "DESCRIPTION": "Free to play once per turn if you have #yExposed."
   }
 ]

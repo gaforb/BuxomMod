@@ -54,10 +54,11 @@ public class OmegabsorptionAction extends AbstractGameAction {
                 logger.info("!this.anyNumber && this.p.hand.size() <= this.amount");
                 this.amount = this.p.hand.size();
                 numExhausted = this.amount;
-                i = this.p.hand.size();
+                int n = this.p.hand.size();
 
-                for(int n = 0; n < i; ++n) {
+                for(i = 0; i < n; ++i) {
                     c = this.p.hand.getTopCard();
+                    this.p.hand.moveToExhaustPile(c);
                 }
 
                 CardCrawlGame.dungeon.checkForPactAchievement();
@@ -86,6 +87,7 @@ public class OmegabsorptionAction extends AbstractGameAction {
 
             while(var4.hasNext()) {
                 c = (AbstractCard)var4.next();
+                this.p.hand.moveToExhaustPile(c);
             }
 
             CardCrawlGame.dungeon.checkForPactAchievement();

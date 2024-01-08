@@ -5,6 +5,7 @@ import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -57,6 +58,7 @@ public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(Buxom
 private static final int COST = 2;  // COST = ${COST}
 private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 private static final int MAGIC = 2;
+private static final int BLOCK = 15;
 private static final int SECOND_MAGIC = 10;
 private static final int UPGRADE_SECOND_MAGIC = -3;
 
@@ -66,6 +68,7 @@ private static final int UPGRADE_SECOND_MAGIC = -3;
 public OmegaThorns() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
     super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     baseMagicNumber = magicNumber = MAGIC;
+    baseBlock = block = BLOCK;
     defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
     }
 
@@ -86,8 +89,12 @@ public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+                new ThornsPower(p, magicNumber), magicNumber));
         int b;
-        for (b = getPwrAmt(p, CommonPower.POWER_ID); b >= 10; b -= 10) {
+        for (b = getPwrAmt(p, CommonPower.POWER_ID); b >= defaultSecondMagicNumber; b -= defaultSecondMagicNumber) {
+            logger.info("b: " + b + ", secondmagic: " + defaultSecondMagicNumber);
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new ThornsPower(p, magicNumber), magicNumber));
         }

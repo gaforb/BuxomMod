@@ -31,7 +31,7 @@ public class BraCloset extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
@@ -50,13 +50,14 @@ public class BraCloset extends AbstractDynamicCard {
         baseMagicNumber = magicNumber = MAGIC;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
         this.exhaust = true;
+        this.isInnate = false;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new RepairBraAction());
         AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, defaultSecondMagicNumber));
     }
 
     // Upgraded stats.
@@ -64,8 +65,8 @@ public class BraCloset extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
+            this.isInnate = true;
             initializeDescription();
         }
     }

@@ -1,4 +1,4 @@
-package BuxomMod;
+package BuxomMod.vfx;
 
 import BuxomMod.characters.TheBuxom;
 import com.badlogic.gdx.math.Interpolation;
@@ -8,16 +8,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static BuxomMod.BuxomMod.logger;
 
-public class GrowthEvent {
-    private AbstractPlayer p = AbstractDungeon.player;
-    public float timer;
-    public float timerStart;
-    public int howMuch;
-    public float animStart;
-    public float animTarget;
-    public boolean isDone;
-    public boolean initiated;
-    public GrowthEvent(Float timer, int howMuch){
+public class GrowthEvent extends AbstractSizeEvent{
+    public GrowthEvent(Float timer, float howMuch){
+        super(timer, howMuch);
         this.timer = timer;
         this.timerStart = timer;
         this.howMuch = howMuch;
@@ -27,7 +20,7 @@ public class GrowthEvent {
         logger.info("HowMuch: " + howMuch);
     }
     public void initiate() {
-        this.animStart = ((TheBuxom)p).realDisplaySize;
+        this.animStart = ((TheBuxom)AbstractDungeon.player).realDisplaySize;
         this.animTarget = animStart + howMuch;
         logger.info("animStart: " + animStart);
         logger.info("animTarget: " + animTarget);
@@ -37,21 +30,21 @@ public class GrowthEvent {
         if (!initiated) {
             initiate();
         }
-        float rate = 0;
-        logger.info("Timer: " + timer);
+        float rate = 0F;
         if (timer > 0F) {
             timer -= 1F;
-            rate = (Interpolation.swing.apply(animStart, animTarget, (timerStart-timer)/timerStart));
-            logger.info("Rate: " + rate);
+            rate = (Interpolation.exp5.apply(animStart, animTarget, (timerStart-timer)/timerStart));
+            /*logger.info("Rate: " + rate);
             logger.info("animStart: " + animStart);
             logger.info("animTarget: " + animTarget);
-            logger.info("a: " + (timerStart-timer)/timer);
-            ((TheBuxom)p).realDisplaySize = rate;
+            logger.info("a: " + (timerStart-timer)/timer);*/
+            ((TheBuxom)AbstractDungeon.player).realDisplaySize = rate;
             if (rate > animStart) {
-                ((TheBuxom)p).adjustDisplaySize();
-                ((TheBuxom)p).setBoobsStage();
+                ((TheBuxom)AbstractDungeon.player).adjustDisplaySize();
+                ((TheBuxom)AbstractDungeon.player).setBoobsStage();
             }
         }
-        else { this.isDone = true;}
+        else { ((TheBuxom)AbstractDungeon.player).setBoobsStage();
+            this.isDone = true;}
     }
 }

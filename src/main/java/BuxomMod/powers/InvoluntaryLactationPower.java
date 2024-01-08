@@ -49,7 +49,7 @@ public class InvoluntaryLactationPower extends AbstractPower implements Cloneabl
     }
 
     public void onUseCard(AbstractCard card, final UseCardAction action) {
-        if (card.hasTag(AbstractCard.CardTags.STRIKE) || card.hasTag(AbstractCard.CardTags.STARTER_DEFEND)) {
+        if (card.rarity == AbstractCard.CardRarity.COMMON || card.rarity == AbstractCard.CardRarity.BASIC) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new MilkPower(owner, owner, this.amount)));
         }
     }

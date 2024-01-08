@@ -9,7 +9,7 @@
       "Straining": "Straining!",
       "Broken": "BROKEN"
     }
-    },
+  },
   "BuxomMod:BraBroken": {
     "NAME": ["Bra"],
     "TEXT": [
@@ -26,6 +26,12 @@
     "NAME": ["Max Bounce"],
     "TEXT": ["Max Bounce",
       "You can have this many #pBounce stacks before creating a #yStatus card. If you break your #yBra, this number will decrease."
+    ]
+  },
+  "BuxomMod:NoAttackIntent": {
+    "NAME": ["No Attack Intent"],
+    "TEXT": [
+      "Enemy doesn't intend to attack!"
     ]
   }
 }

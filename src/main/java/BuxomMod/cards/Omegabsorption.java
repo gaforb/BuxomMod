@@ -59,8 +59,6 @@ public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
 private static final int COST = 0;  // COST = ${COST}
 private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
-
-private static final int BLOCK = 2;    // DAMAGE = ${DAMAGE}
 private static final int MAGIC = 1;
 private static final int UPGRADE_PLUS_MAGIC = 1;
 private static final int SECOND_MAGIC = 3;
@@ -71,7 +69,6 @@ private static final int UPGRADE_SECOND_MAGIC = 1;
 
 public Omegabsorption() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = block = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_MAGIC;
     }
@@ -122,7 +119,7 @@ private AbstractGameEffect vfx(float x, float y) {
 }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new OmegabsorptionAction(1, false, false, false, magicNumber, block));
+        addToBot(new OmegabsorptionAction(1, false, false, false, magicNumber, 2));
         //addToBot(new VFXAction(vfx(p.drawX, p.drawY)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
@@ -132,11 +129,11 @@ private AbstractGameEffect vfx(float x, float y) {
 // Upgraded stats.
 @Override
     public void upgrade() {
-                if (!upgraded) {
-                upgradeName();
-                upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-                upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
-                initializeDescription();
-                }
+            if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
+            initializeDescription();
             }
         }
+    }

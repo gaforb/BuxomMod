@@ -64,7 +64,6 @@ public class BovineForm extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
             new ApplyPowerAction(p, p, new CommonPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LactatingPower(p, p, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MilkPower(p, p, magicNumber), magicNumber));
     }
 
     //Upgraded stats.
