@@ -54,7 +54,10 @@ public class NakedPower extends AbstractPower implements CloneablePowerInterface
     public float modifyBlock(float blockAmount) {
         return blockAmount * 0.0F;
     }
-    public void onVictory() {this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));}
+    public void onVictory() {
+        BuxomMod.braManager.changeNaked(false);
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+    }
 
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power instanceof CommonPower) {

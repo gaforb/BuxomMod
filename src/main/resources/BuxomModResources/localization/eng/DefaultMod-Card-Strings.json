@@ -9,7 +9,7 @@
   },
   "BuxomMod:PopPopPop": {
     "NAME": "Pop, Pop, Pop!",
-    "DESCRIPTION": "Draw !M! cards. NL Add !BuxomMod:SecondMagic! *Afterswell to your draw pile."
+    "DESCRIPTION": "Draw !BuxomMod:SecondMagic! cards. NL Add !M! *Afterswell to your draw pile."
   },
   "BuxomMod:BouncyExercise": {
     "NAME": "Bouncy Exercise",
@@ -339,7 +339,7 @@
   },
   "BuxomMod:OmegaThorns": {
     "NAME": "Omega Thorns",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns. NL Gain !M! additional Thorns for every !BuxomMod:SecondMagic! buxommod:Buxom you have."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns. NL Gain 1 additional Thorns for every !BuxomMod:SecondMagic! buxommod:Buxom you have."
   },
   "BuxomMod:SilentCosplay": {
     "NAME": "Silent Cosplay",

@@ -3,6 +3,7 @@ package BuxomMod.cards;
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.BraPower;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static BuxomMod.BuxomMod.*;
 
+@AutoAdd.Ignore
 public class BraBreaker extends AbstractDynamicCard {
 
     /*

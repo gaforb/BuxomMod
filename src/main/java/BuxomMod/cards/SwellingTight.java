@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -43,6 +44,8 @@ public class SwellingTight extends AbstractDynamicCard {
 public static final String ID = BuxomMod.makeID(SwellingTight.class.getSimpleName());
 public static final String IMG = makeCardPath("Straining.png");// "public static final String IMG = makeCardPath("${NAME}.png");
 // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
+private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
 
 // /TEXT DECLARATION/
@@ -90,7 +93,7 @@ public SwellingTight() { // public ${NAME}() - This one and the one right under 
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new CommonPower(p, p, 3), 3));
-        AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p,3));
+        AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p,-3));
         if (!braManager.broken) {
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
         }
@@ -103,6 +106,7 @@ public SwellingTight() { // public ${NAME}() - This one and the one right under 
                 if (!upgraded) {
                 upgradeName();
                 upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+                this.rawDescription = UPGRADE_DESCRIPTION;
                 initializeDescription();
                 }
             }

@@ -72,7 +72,7 @@ public OmegaThorns() { // public ${NAME}() - This one and the one right under th
     defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
     }
 
-public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    /*public boolean canUse(AbstractPlayer p, AbstractMonster m) {
     boolean canUse = super.canUse(p, m);
     if (!canUse) {
         return false;
@@ -83,7 +83,7 @@ public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return true;
     }
     return false;
-}
+}*/
 
 
 // Actions the card should do.
@@ -96,7 +96,7 @@ public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         for (b = getPwrAmt(p, CommonPower.POWER_ID); b >= defaultSecondMagicNumber; b -= defaultSecondMagicNumber) {
             logger.info("b: " + b + ", secondmagic: " + defaultSecondMagicNumber);
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                    new ThornsPower(p, magicNumber), magicNumber));
+                    new ThornsPower(p, 1), 1));
         }
     }
 
