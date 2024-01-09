@@ -235,8 +235,8 @@ public class BraPanel extends ClickableUIElement {
                     sb,
                     FontHelper.panelNameFont,
                     braTitle,
-                    hb.cX * Settings.scale,
-                        (hb.y + 36.0F) * Settings.scale,
+                    hb.cX,
+                        hb.y + 36.0F* Settings.scale,
                         braColor);
                 /*FontHelper.renderFontLeftTopAligned(
                     sb,
@@ -246,7 +246,7 @@ public class BraPanel extends ClickableUIElement {
                     Settings.HEIGHT - Y_POS * Settings.scale,
                     braColor);*/
                 if (renderTip == true) {
-                    TipHelper.queuePowerTips(hb.x + hb.width + 16F, hb.y, this.tips);
+                    TipHelper.queuePowerTips(hb.x + hb.width + 16F * Settings.scale, hb.y, this.tips);
                 }
                 /*float halfWidth;
                 float halfHeight;

@@ -35,7 +35,7 @@
   },
   "BuxomMod:BovineForm": {
     "NAME": "Bovine Form",
-    "DESCRIPTION": "Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL Gain !M! buxommod:Lactating. NL Gain !M! buxommod:Milk."
+    "DESCRIPTION": "Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL Gain !M! buxommod:Lactating."
   },
   "BuxomMod:DefaultAttackWithVariable": {
     "NAME": "Special Strike",

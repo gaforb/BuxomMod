@@ -81,10 +81,11 @@ public class DebugInfoPanel extends ClickableUIElement {
                     sb,
                     FontHelper.cardDescFont_N,
                     "RealDisplaySize: " + ((TheBuxom)AbstractDungeon.player).realDisplaySize +
-                            "\n TargetDisplaySize: " + ((TheBuxom)AbstractDungeon.player).targetDisplaySize +
-                            "\n AdjustedDisplaySize: " + ((TheBuxom)AbstractDungeon.player).adjustedDisplaySize +
-                            "\n GetPwrAmt: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) +
-                            "\n CurrRange: " + ((TheBuxom)AbstractDungeon.player).currRange,
+                            "\nTargetDisplaySize: " + ((TheBuxom)AbstractDungeon.player).targetDisplaySize +
+                            "\nAdjustedDisplaySize: " + ((TheBuxom)AbstractDungeon.player).adjustedDisplaySize +
+                            "\nGetPwrAmt: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) +
+                            "\nCurrRange: " + ((TheBuxom)AbstractDungeon.player).currRange +
+                            "\nSettings.scale: " + Settings.scale,
                     hb.x * Settings.scale,
                         (hb.cY) * Settings.scale,
                         Color.WHITE);

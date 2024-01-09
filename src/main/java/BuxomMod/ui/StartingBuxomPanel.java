@@ -76,16 +76,16 @@ public class StartingBuxomPanel extends ClickableUIElement {
 
             if (show) {
                 sb.setColor(Color.WHITE);
-                sb.draw(image, hb.x+6F, hb.y+6F);
+                sb.draw(image, hb.x+6F* Settings.scale, hb.y+6F* Settings.scale);
                 FontHelper.renderFontRightAligned(
                     sb,
                     FontHelper.panelNameFont,
                     buxomNumber,
-                    hb.x * Settings.scale,
-                        (hb.cY) * Settings.scale,
+                    hb.x,
+                        hb.cY,
                         STARTING_BUXOM_PURPLE);
                 if (renderTip == true) {
-                    TipHelper.queuePowerTips(hb.x + hb.width + 16F, hb.y, this.tips);
+                    TipHelper.queuePowerTips(hb.x + hb.width + 16F * Settings.scale, hb.y, this.tips);
                 }
                 /*float halfWidth;
                 float halfHeight;
