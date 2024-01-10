@@ -1,6 +1,7 @@
 BuxomMod\BuxomManager.class
 BuxomMod\cards\BovineForm.class
 BuxomMod\cards\ToplessStatus.class
+BuxomMod\events\FoundOutEvent.class
 BuxomMod\powers\SmotherPower$Trigger.class
 BuxomMod\actions\GrowAction.class
 BuxomMod\cards\DefaultCommonAttack.class
@@ -25,6 +26,7 @@ BuxomMod\variables\DefaultSecondMagicNumber.class
 BuxomMod\cards\OmegaDuplication.class
 BuxomMod\powers\ReliefPower.class
 BuxomMod\cards\OmegaForce.class
+BuxomMod\events\FoundOutEvent$1.class
 BuxomMod\relics\CowRelic.class
 BuxomMod\powers\BigBouncePower.class
 BuxomMod\cards\BrokenBraK.class
@@ -46,6 +48,7 @@ BuxomMod\cards\OmegaContagion.class
 BuxomMod\cards\ChibiOneTwo.class
 BuxomMod\ui\DebugInfoPanel.class
 BuxomMod\cards\PanicLactation.class
+BuxomMod\relics\MCupRelic.class
 BuxomMod\powers\ExposedPower.class
 BuxomMod\cards\WardrobeMalfunction.class
 BuxomMod\cards\OmegaArc.class
@@ -88,6 +91,7 @@ BuxomMod\BuxomMod$1.class
 BuxomMod\cards\MCupBra.class
 BuxomMod\cards\old\ChibiAttraction.class
 BuxomMod\cards\ChaosDunk.class
+BuxomMod\events\FoundOutEvent$Choice.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\cards\ButtonHazard.class
 BuxomMod\BuxomMod$2.class

@@ -1,23 +1,18 @@
 package BuxomMod.relics;
 
-import BuxomMod.actions.BraSelectAction;
+import BuxomMod.BuxomMod;
 import BuxomMod.actions.ModifyCapacityAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
+import BuxomMod.powers.CommonPower;
+import BuxomMod.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import BuxomMod.BuxomMod;
-import BuxomMod.powers.CommonPower;
-import BuxomMod.cards.ToplessStatus;
-import BuxomMod.util.TextureLoader;
 
 import static BuxomMod.BuxomMod.makeRelicOutlinePath;
 import static BuxomMod.BuxomMod.makeRelicPath;
 
-public class DwarfBoobsRelic extends CustomRelic {
+public class MCupRelic extends CustomRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -26,13 +21,13 @@ public class DwarfBoobsRelic extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = BuxomMod.makeID("DwarfBoobsRelic");
+    public static final String ID = BuxomMod.makeID("MCupRelic");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("DwarfBoobsRelic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("DwarfBoobsRelic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("MCupRelic.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("MCupRelic.png"));
 
-    public DwarfBoobsRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.MAGICAL);
+    public MCupRelic() {
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     // Flash at the start of Battle.
@@ -40,7 +35,8 @@ public class DwarfBoobsRelic extends CustomRelic {
     public void atBattleStart() {
         flash();
         int c = AbstractDungeon.player.masterDeck.size();
-        addToBot(new ModifyCapacityAction(AbstractDungeon.player, c/4));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, c/4), c/4));
+        addToBot(new ModifyCapacityAction(AbstractDungeon.player, c/2));
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

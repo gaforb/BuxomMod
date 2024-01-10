@@ -1,6 +1,7 @@
 package BuxomMod;
 
 import BuxomMod.events.ChibiEvent;
+import BuxomMod.events.FoundOutEvent;
 import BuxomMod.patches.CustomTags;
 import BuxomMod.potions.CapacityPotion;
 import BuxomMod.potions.DragonMilkPotion;
@@ -429,6 +430,12 @@ public class BuxomMod implements
         // Add the event
         BaseMod.addEvent(eventParams);
 
+        eventParams = new AddEventParams.Builder(FoundOutEvent.ID, FoundOutEvent.class) // for this specific event
+                .playerClass(TheBuxom.Enums.THE_BUXOM) // Character specific event
+                .create();
+
+        BaseMod.addEvent(eventParams);
+
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
     }
@@ -471,6 +478,7 @@ public class BuxomMod implements
         //BaseMod.addRelicToCustomPool(new WashboardRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new DwarfBoobsRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new CowRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new MCupRelic(), TheBuxom.Enums.COLOR_PINK);
         //BaseMod.addRelicToCustomPool(new NakedRelic(), TheBuxom.Enums.COLOR_PINK);
 
         // This adds a relic to the Shared pool. Every character can find this relic.

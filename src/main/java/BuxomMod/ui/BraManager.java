@@ -95,6 +95,7 @@ public class BraManager {
         braPanel.breakVfx();
         maxBounce -= brokenBouncePenalty;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BraBrokenPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExposedPower(AbstractDungeon.player, AbstractDungeon.player, -1), -1));
         straining = false;
         broken = true;
     }
