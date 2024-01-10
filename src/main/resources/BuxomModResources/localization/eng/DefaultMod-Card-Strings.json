@@ -318,7 +318,7 @@
   },
   "BuxomMod:OmegaBonk": {
     "NAME": "Omega Bonk",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Shuffle !M! *Bounce{!M!|>1=s} into your draw pile."
+    "DESCRIPTION": "{@@}Deal damage equal to your buxommod:Buxom. NL Gain *Bounce equal to your buxommod:Buxom."
   },
   "BuxomMod:HeavyDutyBra": {
     "NAME": "Heavy-Duty Bra",

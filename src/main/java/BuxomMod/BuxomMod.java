@@ -801,7 +801,7 @@ public class BuxomMod implements
             braPanel.render(spriteBatch, AbstractDungeon.player, braPanel.hbTextColor);
             startingBuxomPanel.render(spriteBatch, AbstractDungeon.player, startingBuxomPanel.hbTextColor);
             bounceMaxPanel.render(spriteBatch, AbstractDungeon.player, bounceMaxPanel.hbTextColor);
-            debugInfoPanel.render(spriteBatch, AbstractDungeon.player, debugInfoPanel.hbTextColor);
+            //debugInfoPanel.render(spriteBatch, AbstractDungeon.player, debugInfoPanel.hbTextColor);
         }
     }
 

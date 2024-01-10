@@ -3,12 +3,10 @@ package BuxomMod.cards;
 import BuxomMod.BuxomMod;
 import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.characters.TheBuxom;
+import BuxomMod.powers.BouncePower;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -92,10 +90,11 @@ public class OmegaBonk extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int bdiv = getPwrAmt(p, CommonPower.POWER_ID);
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                new DamageAction(m, new DamageInfo(p, bdiv, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new BuxomStatus(), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new BouncePower(p, p, bdiv), bdiv));
     }
 
     //Upgraded stats.
