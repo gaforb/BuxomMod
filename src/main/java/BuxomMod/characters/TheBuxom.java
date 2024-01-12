@@ -74,8 +74,8 @@ public class TheBuxom extends CustomPlayer {
     // =============== BASE STATS =================
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 80;
-    public static final int MAX_HP = 80;
+    public static final int STARTING_HP = 75;
+    public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -181,9 +181,9 @@ public class TheBuxom extends CustomPlayer {
 
     //animations
     public float scalerate = 0.025F;
-    public float threshhold1 = 10;
-    public float threshhold2 = 20;
-    public float threshhold3 = 30;
+    public float threshhold1 = 11;
+    public float threshhold2 = 21;
+    public float threshhold3 = 31;
     public float animTime = 60F;
     public float animTimer = 60F;
     public float messageTimer = 60F;
@@ -748,7 +748,7 @@ public class TheBuxom extends CustomPlayer {
     // Ascension 14 or higher. (ironclad loses 5, defect and silent lose 4 hp respectively)
     @Override
     public int getAscensionMaxHPLoss() {
-        return 0;
+        return 4;
     }
 
     // Should return the card color enum to be associated with your character.
@@ -779,7 +779,7 @@ public class TheBuxom extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new BouncyExercise();
     }
 
     // The class name as it appears next to your player name in-game

@@ -104,14 +104,16 @@ public class BuxomMod implements
     private static String modID;
 
     // Mod-settings settings. This is if you want an on/off savable button
-    public static Properties TheDefaultDefaultSettings = new Properties();
-    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    public static Properties TheBuxomSettings = new Properties();
+    public static final String EXPOSE_ON_BRA_BREAK = "exposeOnBraBreak";
+    public static boolean exposeOnBraBreak = false; // The boolean we'll be setting on/off (true/false)
+    public static final String MAX_CAPACITY_LIMIT = "maxCapacityLimit";
+    public static boolean maxCapacityLimit = false; // The boolean we'll be setting on/off (true/false)
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "Default Mod";
-    private static final String AUTHOR = "Gremious"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
+    private static final String MODNAME = "The Buxom Mod";
+    private static final String AUTHOR = "BuxomDev"; // Used Ko-Fi Name - feel free to change.
+    private static final String DESCRIPTION = "A plucky, bouncy girl is here to challenge the spire. Manage her breast size to seize victory!";
 
     // =============== INPUT TEXTURE LOCATION =================
 
@@ -265,12 +267,14 @@ public class BuxomMod implements
         logger.info("Adding mod settings");
         // This loads the mod settings.
         // The actual mod Button is added below in receivePostInitialize()
-        TheDefaultDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "FALSE"); // This is the default setting. It's actually set...
+        TheBuxomSettings.setProperty(EXPOSE_ON_BRA_BREAK, "FALSE");
+        TheBuxomSettings.setProperty(MAX_CAPACITY_LIMIT, "FALSE");// This is the default setting. It's actually set...
         try {
-            SpireConfig config = new SpireConfig("defaultMod", "TheDefaultConfig", TheDefaultDefaultSettings); // ...right here
+            SpireConfig config = new SpireConfig("buxomMod", "theBuxomConfig", TheBuxomSettings); // ...right here
             // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
             config.load(); // Load the setting and set the boolean to equal it
-            enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
+            exposeOnBraBreak = config.getBool(EXPOSE_ON_BRA_BREAK);
+            maxCapacityLimit = config.getBool(MAX_CAPACITY_LIMIT);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -362,25 +366,44 @@ public class BuxomMod implements
         ModPanel settingsPanel = new ModPanel();
 
         // Create the on/off button:
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("This is the text which goes next to the checkbox.",
+        ModLabeledToggleButton exposeOnBraBreakButton = new ModLabeledToggleButton("Apply Exposed whenever you break your bra",
                 350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
-                enablePlaceholder, // Boolean it uses
+                exposeOnBraBreak, // Boolean it uses
                 settingsPanel, // The mod panel in which this button will be in
                 (label) -> {}, // thing??????? idk
                 (button) -> { // The actual button:
 
-            enablePlaceholder = button.enabled; // The boolean true/false will be whether the button is enabled or not
+            exposeOnBraBreak = button.enabled; // The boolean true/false will be whether the button is enabled or not
             try {
                 // And based on that boolean, set the settings and save them
-                SpireConfig config = new SpireConfig("defaultMod", "TheDefaultConfig", TheDefaultDefaultSettings);
-                config.setBool(ENABLE_PLACEHOLDER_SETTINGS, enablePlaceholder);
+                SpireConfig config = new SpireConfig("defaultMod", "TheDefaultConfig", TheBuxomSettings);
+                config.setBool(EXPOSE_ON_BRA_BREAK, exposeOnBraBreak);
                 config.save();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
 
-        settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
+        ModLabeledToggleButton maxCapacityLimitButton = new ModLabeledToggleButton("Limit maximum bra capacity to 30.",
+                350.0f, 650.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                exposeOnBraBreak, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+
+                    exposeOnBraBreak = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig("defaultMod", "TheDefaultConfig", TheBuxomSettings);
+                        config.setBool(EXPOSE_ON_BRA_BREAK, exposeOnBraBreak);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+
+        settingsPanel.addUIElement(exposeOnBraBreakButton); // Add the button to the settings panel. Button is a go.
+        settingsPanel.addUIElement(maxCapacityLimitButton);
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         buxomPanel = new BuxomPanel();
