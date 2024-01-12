@@ -386,16 +386,16 @@ public class BuxomMod implements
 
         ModLabeledToggleButton maxCapacityLimitButton = new ModLabeledToggleButton("Limit maximum bra capacity to 30.",
                 350.0f, 650.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
-                exposeOnBraBreak, // Boolean it uses
+                maxCapacityLimit, // Boolean it uses
                 settingsPanel, // The mod panel in which this button will be in
                 (label) -> {}, // thing??????? idk
                 (button) -> { // The actual button:
 
-                    exposeOnBraBreak = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    maxCapacityLimit = button.enabled; // The boolean true/false will be whether the button is enabled or not
                     try {
                         // And based on that boolean, set the settings and save them
                         SpireConfig config = new SpireConfig("defaultMod", "TheDefaultConfig", TheBuxomSettings);
-                        config.setBool(EXPOSE_ON_BRA_BREAK, exposeOnBraBreak);
+                        config.setBool(MAX_CAPACITY_LIMIT, maxCapacityLimit);
                         config.save();
                     } catch (Exception e) {
                         e.printStackTrace();

@@ -181,9 +181,9 @@ public class TheBuxom extends CustomPlayer {
 
     //animations
     public float scalerate = 0.025F;
-    public float threshhold1 = 11;
-    public float threshhold2 = 21;
-    public float threshhold3 = 31;
+    public float threshhold1 = 10;
+    public float threshhold2 = 20;
+    public float threshhold3 = 30;
     public float animTime = 60F;
     public float animTimer = 60F;
     public float messageTimer = 60F;
