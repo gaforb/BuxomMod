@@ -39,8 +39,8 @@ public class DwarfBoobsRelic extends CustomRelic {
     private boolean triggered = false;
     public void atBattleStart() {
         flash();
-        int c = AbstractDungeon.player.masterDeck.size();
-        addToBot(new ModifyCapacityAction(AbstractDungeon.player, c/4));
+        int c = AbstractDungeon.player.masterDeck.size()/2;
+        addToBot(new ModifyCapacityAction(AbstractDungeon.player, c/2));
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

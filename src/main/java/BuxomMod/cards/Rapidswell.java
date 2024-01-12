@@ -4,6 +4,7 @@ import BuxomMod.BuxomMod;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -76,9 +77,12 @@ public class Rapidswell extends AbstractDynamicCard {
 
     public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
 
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+    public void triggerOnEndOfPlayerTurn() {
+        if (this.isEthereal){
+            addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                    new CommonPower(AbstractDungeon.player, AbstractDungeon.player, magicNumber), magicNumber));
+        }
     }
 
     // Upgraded stats.

@@ -55,7 +55,7 @@ public class InducedLactation extends AbstractDynamicCard {
         baseMagicNumber = magicNumber = MAGIC;
     }
     public boolean freeToPlay() {
-        if (AbstractDungeon.isPlayerInDungeon()) {
+        if (CardCrawlGame.isInARun()) {
             if (AbstractDungeon.player.hasPower(ExposedPower.POWER_ID) && !braManager.embarrassingList.contains(this.uuid)) {
                 return true;
             }

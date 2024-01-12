@@ -14,5 +14,9 @@
 "BuxomMod:PermaGrowthPotion": {
         "NAME": "Perma-Growth Potion",
         "DESCRIPTIONS": ["Increase your starting #yBuxom by #b", "."]
+},
+"BuxomMod:ExposePotion": {
+        "NAME": "Expose Potion",
+        "DESCRIPTIONS": ["#yExpose. Draw #b", " card and gain #b", " cards and gain #b" ," #yEnergy."]
 }
 }

@@ -28,7 +28,7 @@ public class CreateStatusCardAction extends AbstractGameAction {
     
     @Override
     public void update() {
-        logger.info("CardToMake: " + this.cardToMake + ", Amount: " + this.amount + ", Group: " + this.group);
+        logger.info("CardToMake: " + this.cardToMake + ", Amount: " + this.amount + ", Group: " + this.group.type);
         if (cardToMake instanceof BuxomStatus) {
             if (AbstractDungeon.player.hasPower(BigBouncePower.POWER_ID)) {
                 logger.info("has big bounce power");
@@ -36,18 +36,19 @@ public class CreateStatusCardAction extends AbstractGameAction {
             }
             else {logger.info("doesn't have big bounce power");}
         }
-        if (group == AbstractDungeon.player.discardPile) {
+        if (group.type == CardGroup.CardGroupType.DISCARD_PILE) {
             logger.info("creating in discard pile");
             addToBot(new MakeTempCardInDiscardAction(cardToMake, amount));
         }
-        else if (group == AbstractDungeon.player.drawPile) {
+        else if (group.type == CardGroup.CardGroupType.DRAW_PILE) {
             logger.info("creating in draw pile");
             addToBot(new MakeTempCardInDrawPileAction(cardToMake, amount, true, true));
         }
-        else if (group == AbstractDungeon.player.hand) {
+        else if (group.type == CardGroup.CardGroupType.HAND) {
             logger.info("creating in hand");
             addToBot(new MakeTempCardInHandAction(cardToMake, amount));
         }
+        else {addToBot(new MakeTempCardInDiscardAction(cardToMake, amount));}
         isDone = true;
     }
 }

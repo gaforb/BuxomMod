@@ -2,6 +2,7 @@ package BuxomMod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -76,9 +77,12 @@ public class AftershockStatus extends AbstractDynamicCard {
 
     public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
 
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+    public void triggerOnEndOfPlayerTurn() {
+        if (this.isEthereal){
+            addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                    new CommonPower(AbstractDungeon.player, AbstractDungeon.player, magicNumber), magicNumber));
+        }
     }
 
     // Upgraded stats.

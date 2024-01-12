@@ -3,9 +3,7 @@ package BuxomMod;
 import BuxomMod.events.ChibiEvent;
 import BuxomMod.events.FoundOutEvent;
 import BuxomMod.patches.CustomTags;
-import BuxomMod.potions.CapacityPotion;
-import BuxomMod.potions.DragonMilkPotion;
-import BuxomMod.potions.PermaGrowthPotion;
+import BuxomMod.potions.*;
 import BuxomMod.powers.BraBrokenPower;
 import BuxomMod.powers.BraPower;
 import BuxomMod.powers.MilkPower;
@@ -133,6 +131,7 @@ public class BuxomMod implements
     public static final Color CHIBI_POTION_HYBRID = CardHelper.getColor(58.0f, 172.0f, 255.0f);
     public static final Color PERMA_POTION_LIQUID = CardHelper.getColor(67.0f, 16.0f, 64.0f);
     public static final Color PERMA_POTION_HYBRID = CardHelper.getColor(164.0f, 23.0f, 157.0f);
+    public static final Color EXPOSE_POTION_LIQUID = CardHelper.getColor(255.0f, 160.0f, 160.0f);
 
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
@@ -454,6 +453,8 @@ public class BuxomMod implements
         BaseMod.addPotion(DragonMilkPotion.class, DRAGON_MILK_POTION_LIQUID, DRAGON_MILK_POTION_HYBRID, null, DragonMilkPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
         //BaseMod.addPotion(ChibiPotion.class, CHIBI_POTION_LIQUID, CHIBI_POTION_HYBRID, null, ChibiPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
         BaseMod.addPotion(PermaGrowthPotion.class, PERMA_POTION_LIQUID, PERMA_POTION_HYBRID, null, PermaGrowthPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
+        BaseMod.addPotion(MilkPotion.class, Color.WHITE, Color.WHITE, null, MilkPotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
+        BaseMod.addPotion(ExposePotion.class, EXPOSE_POTION_LIQUID, EXPOSE_POTION_LIQUID, null, ExposePotion.POTION_ID, TheBuxom.Enums.THE_BUXOM);
 
         logger.info("Done editing potions");
     }
@@ -479,6 +480,8 @@ public class BuxomMod implements
         BaseMod.addRelicToCustomPool(new DwarfBoobsRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new CowRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new MCupRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new OmegaThreadRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new LotionRelic(), TheBuxom.Enums.COLOR_PINK);
         //BaseMod.addRelicToCustomPool(new NakedRelic(), TheBuxom.Enums.COLOR_PINK);
 
         // This adds a relic to the Shared pool. Every character can find this relic.

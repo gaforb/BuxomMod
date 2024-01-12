@@ -1,11 +1,12 @@
 package BuxomMod.potions;
 
 import BuxomMod.BuxomMod;
-import BuxomMod.powers.CommonPower;
-import BuxomMod.powers.LactatingPower;
+import BuxomMod.powers.ExposedPower;
+import BuxomMod.powers.MilkPower;
 import basemod.abstracts.CustomPotion;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,23 +15,23 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class DragonMilkPotion extends CustomPotion {
+public class ExposePotion extends CustomPotion {
 
-    public static final String POTION_ID = BuxomMod.makeID("DragonMilkPotion");
+    public static final String POTION_ID = BuxomMod.makeID("ExposePotion");
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
-    public DragonMilkPotion() {
+    public ExposePotion() {
         // The bottle shape and inside is determined by potion size and color. The actual colors are the main DefaultMod.java
-        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.BOTTLE, PotionColor.SMOKE);
+        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.BOLT, PotionColor.SMOKE);
         
         // Potency is the damage/magic number equivalent of potions.
         potency = getPotency();
         
         // Initialize the Description
-        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1] + potency + DESCRIPTIONS[3];
         
        // Do you throw this potion at an enemy or do you just consume it.
         isThrown = false;
@@ -57,7 +58,10 @@ public class DragonMilkPotion extends CustomPotion {
     public void use(AbstractCreature target) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             target = AbstractDungeon.player;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, target, new LactatingPower(target, target, potency), potency));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                    new ExposedPower(AbstractDungeon.player, AbstractDungeon.player, -1), -1));
+            addToBot(new GainEnergyAction(potency));
+            addToBot(new DrawCardAction(potency));
             BuxomMod.logger.info("potency " + getPotency());
         }
         // If you are in combat, gain strength and the "lose strength at the end of your turn" power, equal to the potency of this potion.
@@ -65,18 +69,19 @@ public class DragonMilkPotion extends CustomPotion {
     
     @Override
     public AbstractPotion makeCopy() {
-        return new DragonMilkPotion();
+        return new ExposePotion();
     }
 
     // This is your potency.
     @Override
     public int getPotency(final int potency) {
-        return 6;
+        return 1;
     }
 
     public void upgradePotion()
     {
-      potency += 2;
+      potency += 1;
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[2] + potency + DESCRIPTIONS[3];
       tips.clear();
       tips.add(new PowerTip(name, description));
     }

@@ -138,7 +138,7 @@
   },
   "BuxomMod:Phew": {
     "NAME": "Phew!",
-    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL If BuxomMod:Exposed, remove BuxomMod:Exposed. NL Gain !B! Block."
+    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL If BuxomMod:Exposed, remove BuxomMod:Exposed. NL Gain !BuxomMod:SecondMagic! Block at the end of your turn."
   },
   "BuxomMod:TCupBra": {
     "NAME": "T-Cup Bra",
@@ -293,7 +293,7 @@
   },
   "BuxomMod:BraCloset": {
     "NAME": "Bra Closet",
-    "DESCRIPTION": "{@@}Gain !M! buxommod:Capacity. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust.",
+    "DESCRIPTION": "{@@}Gain !M! buxommod:Capacity. NL BuxomMod:Repair your bra. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "{@@}Innate. NL Gain !M! buxommod:Capacity. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust."
   },
   "BuxomMod:LactatingStatus": {
@@ -347,7 +347,7 @@
   },
   "BuxomMod:ShivChibi": {
     "NAME": "Shiv Chibi",
-    "DESCRIPTION": "Bouncy. NL Deal !D! damage. NL Apply !M! Weak. NL Exhaust."
+    "DESCRIPTION": "BuxomMod:Bouncy. NL Deal !D! damage. NL Apply !M! Weak. NL Exhaust."
   },
   "BuxomMod:OmegaRunes": {
     "NAME": "Omega Runes",

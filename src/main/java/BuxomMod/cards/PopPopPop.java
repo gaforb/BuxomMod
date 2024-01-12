@@ -89,7 +89,7 @@ public class PopPopPop extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeDefaultSecondMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

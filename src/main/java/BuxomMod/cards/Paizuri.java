@@ -65,7 +65,7 @@ public class Paizuri extends AbstractDynamicCard {
     }*/
 
     public boolean freeToPlay() {
-        if (AbstractDungeon.isPlayerInDungeon()) {
+        if (CardCrawlGame.isInARun()) {
             if (AbstractDungeon.player.hasPower(ExposedPower.POWER_ID) && !braManager.embarrassingList.contains(this.uuid)) {
                 return true;
             }

@@ -2,6 +2,8 @@ package BuxomMod.powers;
 
 import BuxomMod.BuxomMod;
 import BuxomMod.characters.TheBuxom;
+import BuxomMod.relics.BuxomRelic;
+import BuxomMod.relics.LotionRelic;
 import BuxomMod.relics.NakedRelic;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
@@ -11,11 +13,13 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import static BuxomMod.BuxomMod.braManager;
 import static BuxomMod.BuxomMod.makeID;
@@ -59,6 +63,11 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
     public void onInitialApplication() {
         CardCrawlGame.sound.play(makeID(BuxomMod.makeID("SUDDEN_GASP")));
         addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
+        for (AbstractRelic i : AbstractDungeon.player.relics) {
+            if (i instanceof BuxomRelic) {
+                ((BuxomRelic)i).onExpose();
+            }
+        }
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
@@ -70,7 +79,9 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         }
     }
     public int onPlayerGainedBlock(int blockAmount) {
-
+        if (blockAmount == 0) {
+            BuxomMod.logger.info("Exposed: BlockAmount 0 detected! BlockAmount: " + blockAmount);
+        }
         return blockAmount;
     }
 

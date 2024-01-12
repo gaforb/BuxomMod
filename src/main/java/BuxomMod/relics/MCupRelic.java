@@ -36,7 +36,7 @@ public class MCupRelic extends CustomRelic {
         flash();
         int c = AbstractDungeon.player.masterDeck.size();
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, c/4), c/4));
-        addToBot(new ModifyCapacityAction(AbstractDungeon.player, c/2));
+        addToBot(new ModifyCapacityAction(AbstractDungeon.player, (c/3)*2));
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

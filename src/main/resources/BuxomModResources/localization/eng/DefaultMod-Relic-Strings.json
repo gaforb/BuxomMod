@@ -42,7 +42,7 @@
     "NAME": "J-Cup Bra",
     "FLAVOR": "Prone to larger breasts than humans, Lehmana's dwarven J-cups are not as noteworthy as you'd think.",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b1 #yCapacity for every #b4 cards in your Deck."
+      "At the start of combat, gain #b1 #yCapacity for every #b2 cards in your Deck."
     ]
   },
   "BuxomMod:WashboardRelic": {
@@ -63,7 +63,21 @@
     "NAME": "M-Cup Bra",
     "FLAVOR": "While controllable to an extent, long-term growth is the inevitable price of using one's breasts as a magic focus.",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b1 #yBuxom for every #b4 cards in your Deck, and #b1 #yCapacity for every #b2."
+      "At the start of combat, gain #b1 #yBuxom for every #b4 cards in your Deck, and #b2 #yCapacity for every #b3."
+    ]
+  },
+  "BuxomMod:LotionRelic": {
+    "NAME": "Frenetic Lotion",
+    "FLAVOR": "The breasts conduct magic best when bare, and this lotion excites it even further.",
+    "DESCRIPTIONS": [
+      "The first time you #yExpose each turn, gain [E]."
+    ]
+  },
+  "BuxomMod:OmegaThreadRelic": {
+    "NAME": "Omega Thread",
+    "FLAVOR": "Magical thread for sewing up bras.",
+    "DESCRIPTIONS": [
+      "When you gain more than #b5 #yBuxom in a turn, gain #b5 #yCapacity."
     ]
   }
 }
