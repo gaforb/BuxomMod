@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.CreateStatusCardAction;
 import BuxomMod.actions.ModifyCapacityAction;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.ui.BraManager;
@@ -42,9 +43,9 @@ public class BouncyExercise extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 10;
     private static final int MAGIC = 3;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     // /STAT DECLARATION/
 
@@ -53,6 +54,7 @@ public class BouncyExercise extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
+        this.cardsToPreview = new BigBounceStatus();
     }
 
     /*public void applyPowers() {
@@ -89,8 +91,8 @@ public class BouncyExercise extends AbstractDynamicCard {
             }
     }*/
     // Actions the card should do.
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+
+    /*public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
         new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
         AbstractGameAction.AttackEffect.BLUNT_LIGHT));
@@ -99,6 +101,12 @@ public class BouncyExercise extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         AbstractDungeon.actionManager.addToBottom(new ModifyCapacityAction(p, magicNumber));
+    }*/
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new CreateStatusCardAction(p.hand, new BigBounceStatus(), 1));
     }
 
     //Upgraded stats.

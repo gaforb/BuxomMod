@@ -5,10 +5,12 @@ import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.BraBrokenPower;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.ExposedPower;
+import BuxomMod.relics.BuxomRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -87,14 +89,25 @@ public class BraManager {
                     new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                             new ExposedPower(AbstractDungeon.player, AbstractDungeon.player, -1), -1));
         }
+        for (AbstractRelic i : AbstractDungeon.player.relics) {
+            if (i instanceof BuxomRelic) {
+                ((BuxomRelic)i).onGrow(growthAmount);
+            }
+        }
     }
     public void onShrink(int shrinkAmount) {
         ((TheBuxom)AbstractDungeon.player).beginShrink(shrinkAmount);
+        for (AbstractRelic i : AbstractDungeon.player.relics) {
+            if (i instanceof BuxomRelic) {
+                ((BuxomRelic)i).onShrink(shrinkAmount);
+            }
+        }
     }
     public void braBreak() {
         braPanel.breakVfx();
         maxBounce -= brokenBouncePenalty;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BraBrokenPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExposedPower(AbstractDungeon.player, AbstractDungeon.player, -1), -1));
         straining = false;
         broken = true;
     }

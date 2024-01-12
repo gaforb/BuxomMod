@@ -13,6 +13,7 @@ import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.ConvertHelper;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
@@ -30,7 +31,12 @@ public class GrowCommand extends ConsoleCommand {
         if (tokens.length != 2) {
             cmdBuxomHelp();
         } else {
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, amount), amount));
+            if (amount >= 0) {
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, amount), amount));
+            } else {
+                amount = Math.abs(amount);
+                AbstractDungeon.actionManager.addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, amount), amount));
+            }
         }
     }
 

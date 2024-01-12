@@ -33,6 +33,7 @@ public class JCupRelic extends CustomRelic {
     // Flash at the start of Battle.
 
     public void atBattleStart() {
+
         flash();
         CardCrawlGame.sound.playV(BuxomMod.makeID("GASP"), 0.5F);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));

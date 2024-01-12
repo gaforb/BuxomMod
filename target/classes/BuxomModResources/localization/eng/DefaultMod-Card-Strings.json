@@ -9,11 +9,11 @@
   },
   "BuxomMod:PopPopPop": {
     "NAME": "Pop, Pop, Pop!",
-    "DESCRIPTION": "Draw !M! cards. NL Add !BuxomMod:SecondMagic! *Afterswell to your draw pile."
+    "DESCRIPTION": "Draw !BuxomMod:SecondMagic! cards. NL Add !M! *Afterswell to your draw pile."
   },
   "BuxomMod:BouncyExercise": {
     "NAME": "Bouncy Exercise",
-    "DESCRIPTION": "Deal !D! damage, and again if you gained BuxomMod:Buxom this turn. NL Gain !M! BuxomMod:Capacity."
+    "DESCRIPTION": "Deal !D! damage. NL Add a *Big *Bounce into your hand."
   },
   "BuxomMod:ExpansiveWall": {
     "NAME": "Expansive Wall",
@@ -59,7 +59,7 @@
   },
   "BuxomMod:Omegabsorption": {
     "NAME": "Omegabsorption",
-    "DESCRIPTION": "{@@}Exhaust a card. NL Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL If it was a *Status card, draw !M! card{!M!|>1=s}. Otherwise, lose 2 BuxomMod:Capacity."
+    "DESCRIPTION": "{@@}Exhaust a card. NL Gain !BuxomMod:SecondMagic! buxommod:Buxom. NL Draw !M! card{!M!|>1=s}. NL If you exhausted a *Status card, gain [E]."
   },
   "BuxomMod:KCupBra": {
     "NAME": "K-Cup Bra",
@@ -138,7 +138,7 @@
   },
   "BuxomMod:Phew": {
     "NAME": "Phew!",
-    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL If BuxomMod:Exposed, remove BuxomMod:Exposed. NL Gain !B! Block."
+    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL If BuxomMod:Exposed, remove BuxomMod:Exposed. NL Gain !BuxomMod:SecondMagic! Block at the end of your turn."
   },
   "BuxomMod:TCupBra": {
     "NAME": "T-Cup Bra",
@@ -195,7 +195,7 @@
   },
   "BuxomMod:BigBounceStatus": {
     "NAME": "Big Bounce",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, deal damage to a random enemy equal to half your Buxom."
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, a random enemy loses HP equal to half your Buxom."
   },
   "BuxomMod:OmegaBurst": {
     "NAME": "Omega Burst",
@@ -293,7 +293,7 @@
   },
   "BuxomMod:BraCloset": {
     "NAME": "Bra Closet",
-    "DESCRIPTION": "{@@}Gain !M! buxommod:Capacity. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust.",
+    "DESCRIPTION": "{@@}Gain !M! buxommod:Capacity. NL BuxomMod:Repair your bra. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "{@@}Innate. NL Gain !M! buxommod:Capacity. NL Draw !BuxomMod:SecondMagic! card{!M!|>1=s}. NL Exhaust."
   },
   "BuxomMod:LactatingStatus": {
@@ -318,7 +318,7 @@
   },
   "BuxomMod:OmegaBonk": {
     "NAME": "Omega Bonk",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Shuffle !M! *Bounce{!M!|>1=s} into your draw pile."
+    "DESCRIPTION": "{@@}Deal damage equal to your buxommod:Buxom. NL Gain *Bounce equal to your buxommod:Buxom."
   },
   "BuxomMod:HeavyDutyBra": {
     "NAME": "Heavy-Duty Bra",
@@ -339,7 +339,7 @@
   },
   "BuxomMod:OmegaThorns": {
     "NAME": "Omega Thorns",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns. NL Gain !M! additional Thorns for every !BuxomMod:SecondMagic! buxommod:Buxom you have."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns. NL Gain 1 additional Thorns for every !BuxomMod:SecondMagic! buxommod:Buxom you have."
   },
   "BuxomMod:SilentCosplay": {
     "NAME": "Silent Cosplay",
@@ -347,7 +347,7 @@
   },
   "BuxomMod:ShivChibi": {
     "NAME": "Shiv Chibi",
-    "DESCRIPTION": "Bouncy. NL Deal !D! damage. NL Apply !M! Weak. NL Exhaust."
+    "DESCRIPTION": "BuxomMod:Bouncy. NL Deal !D! damage. NL Apply !M! Weak. NL Exhaust."
   },
   "BuxomMod:OmegaRunes": {
     "NAME": "Omega Runes",

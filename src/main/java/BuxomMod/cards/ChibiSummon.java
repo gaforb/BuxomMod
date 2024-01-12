@@ -47,6 +47,8 @@ public class ChibiSummon extends AbstractDynamicCard {
     private static final int COST = 0;
     private static final int MAGIC = 4;
     private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int SECOND_MAGIC = 6;
+    private static final int UPGRADE_PLUS_SECOND_MAGIC = 2;
     private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
@@ -57,6 +59,7 @@ public class ChibiSummon extends AbstractDynamicCard {
 
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = SECOND_MAGIC;
         block = baseBlock = BLOCK;
 
     }
@@ -84,7 +87,7 @@ public class ChibiSummon extends AbstractDynamicCard {
                     new ReducePowerAction(p, p, p.getPower("BuxomMod:CommonPower"), magicNumber));
         }
         this.addToBot(new GainBlockAction(p, p, this.block));
-        this.addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, this.block), this.block));
+        this.addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, defaultSecondMagicNumber), defaultSecondMagicNumber));
     }
 
     //Upgraded stats.
@@ -93,6 +96,7 @@ public class ChibiSummon extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_SECOND_MAGIC);
             initializeDescription();
         }
     }

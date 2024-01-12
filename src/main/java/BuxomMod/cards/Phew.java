@@ -1,7 +1,9 @@
 package BuxomMod.cards;
 
 import BuxomMod.powers.CommonPower;
+import BuxomMod.powers.EOTBlockPower;
 import BuxomMod.powers.ExposedPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -52,9 +54,9 @@ public class Phew extends AbstractDynamicCard {
 
     private static final int COST = 1;  // COST = ${COST}
     private static final int MAGIC = 4;    // DAMAGE = ${DAMAGE}
-    private static final int BLOCK = 10;    // DAMAGE = ${DAMAGE}
+    private static final int SECOND_MAGIC = 10;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 2;
-    private static final int UPGRADE_PLUS_BLOCK = 2;// UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_SECOND_MAGIC = 2;// UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
@@ -62,7 +64,7 @@ public class Phew extends AbstractDynamicCard {
     public Phew() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        baseBlock = BLOCK;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
         this.isInnate = false;
     }
     /*public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -102,7 +104,7 @@ public class Phew extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(
                     new RemoveSpecificPowerAction(p, p, p.getPower("BuxomMod:ExposedPower")));
         }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        addToBot(new ApplyPowerAction(p, p, new EOTBlockPower(p, p, defaultSecondMagicNumber)));
     }
 
     // Upgraded stats.
@@ -110,7 +112,7 @@ public class Phew extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_SECOND_MAGIC);
             initializeDescription();
         }
     }

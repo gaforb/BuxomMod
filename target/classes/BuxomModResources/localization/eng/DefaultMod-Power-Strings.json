@@ -82,5 +82,12 @@
 "BuxomMod:InvoluntaryLactationPower": {
         "NAME": "Panic Lactation",
         "DESCRIPTIONS": ["When you play a #yStrike or #yDefend, gain #b", " #yMilk."]
+},
+"BuxomMod:EOTBlockPower": {
+        "NAME": "End-of-Turn Block",
+        "DESCRIPTIONS": [
+                "Gain #b",
+                " #yBlock at the end of your turn."
+        ]
 }
 }

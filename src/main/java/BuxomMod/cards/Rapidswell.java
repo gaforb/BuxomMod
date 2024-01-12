@@ -77,10 +77,9 @@ public class Rapidswell extends AbstractDynamicCard {
 
     public void triggerWhenDrawn() {addToBot((AbstractGameAction)new SetDontTriggerAction(this, false));}
 
-    @Override
     public void triggerOnEndOfPlayerTurn() {
         if (this.isEthereal){
-            addToTop((AbstractGameAction)new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+            addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                     new CommonPower(AbstractDungeon.player, AbstractDungeon.player, magicNumber), magicNumber));
         }
