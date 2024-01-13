@@ -85,7 +85,7 @@ public class BraManager {
         ((TheBuxom)AbstractDungeon.player).beginGrowth(growthAmount);
         BuxomMod.logger.info("Times gained this turn: " + buxomCounterThisTurn);
         BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
-        if (BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) > 30 && !(AbstractDungeon.player.hasPower(ExposedPower.POWER_ID))) {
+        if (BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) >= 31 && !(AbstractDungeon.player.hasPower(ExposedPower.POWER_ID))) {
             BuxomMod.logger.info("Buxom: " + BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Over 30 Buxom! Exposing!");
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,

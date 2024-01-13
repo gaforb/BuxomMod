@@ -125,7 +125,7 @@ public class CommonPower extends TwoAmountPower implements CloneablePowerInterfa
 
     public void onInitialApplication() {
         braManager.onGrow(this.amount);
-        if (this.amount >= 30) {
+        if (this.amount >= 31) {
             addToBot(new ApplyPowerAction(owner, owner, new ExposedPower(owner, owner, -1), -1));
         }
     }

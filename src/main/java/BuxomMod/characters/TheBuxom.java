@@ -181,9 +181,9 @@ public class TheBuxom extends CustomPlayer {
 
     //animations
     public float scalerate = 0.025F;
-    public float threshhold1 = 10;
-    public float threshhold2 = 20;
-    public float threshhold3 = 30;
+    public float threshhold1 = 11;
+    public float threshhold2 = 21;
+    public float threshhold3 = 31;
     public float animTime = 60F;
     public float animTimer = 60F;
     public float messageTimer = 60F;
@@ -487,6 +487,16 @@ public class TheBuxom extends CustomPlayer {
         targetDisplaySize = getPwrAmt(this, CommonPower.POWER_ID) + amount;
         logger.info("getpwramt: " + getPwrAmt(this, CommonPower.POWER_ID));
         logger.info("BeginGrowth, target display size: " + targetDisplaySize);
+        float growthAmount = amount;
+        float increment = 8;                    //do growth in spurts this big
+        while (growthAmount > 2 && increment > 1) {                        //while spurts are still worth doing
+            if (growthAmount >= increment) {              //if there's more growth than one spurt,
+                sizeQueue.add(new GrowthEvent(animTime, increment)); //grow by one spurt
+                growthAmount -= increment;                //then reduce the remaining amount by one spurt
+            }  else { increment -= increment/2; }   //otherwise halve the spurt size
+        }                                           //loop exits when spurts are smaller than the amount
+        sizeQueue.add(new GrowthEvent(animTime, growthAmount)); //do the rest of the amount
+        /*
         if (amount <= 5) {
             sizeQueue.add(new GrowthEvent(animTime, amount));
         } else {
@@ -495,6 +505,7 @@ public class TheBuxom extends CustomPlayer {
             sizeQueue.add(new GrowthEvent(animTime, perEvent));
             sizeQueue.add(new GrowthEvent(animTime, perEvent));
         }
+        */
         /*logger.info("growthqueue size: " + growthQueue.size());
         logger.info("Animate growth for " + animTime + " frames");
         logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
@@ -522,7 +533,7 @@ public class TheBuxom extends CustomPlayer {
     }
     public void adjustDisplaySize() {
         adjustedDisplaySize = realDisplaySize;
-        while (adjustedDisplaySize >= 10) {
+        while (adjustedDisplaySize >= threshhold1) {
             if (adjustedDisplaySize >= threshhold3) {
                 adjustedDisplaySize -= threshhold3;
                 break;
