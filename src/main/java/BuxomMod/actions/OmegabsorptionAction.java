@@ -51,7 +51,7 @@ public class OmegabsorptionAction extends AbstractGameAction {
             }
 
             int i;
-            if (!this.anyNumber && this.p.hand.size() <= this.amount) {
+            if (!this.anyNumber && this.p.hand.size() == this.amount) {
                 logger.info("!this.anyNumber && this.p.hand.size() <= this.amount");
                 this.amount = this.p.hand.size();
                 numExhausted = this.amount;

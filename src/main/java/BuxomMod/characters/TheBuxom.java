@@ -203,14 +203,23 @@ public class TheBuxom extends CustomPlayer {
     public Attachment chestExposed = skeleton.getAttachment(String.valueOf(chestSlot), "chest_ex");
     public Animation lastAnim;
     public ArrayList<AbstractSizeEvent> sizeQueue = new ArrayList<AbstractSizeEvent>();
+    public Bone boobN = this.skeleton.findBone(boobBoneNID);
+    public Bone boobF = this.skeleton.findBone(boobBoneFID);
 
-    public static AbstractGameEffect growVfx(float x, float y) {
-        return new VfxBuilder(TextureLoader.getTexture(STARTING_BUXOM_ICON), 0.3f)
-                .useAdditiveBlending()
-                .setX(x)
-                .setY(y)
-                .fadeOut(0.3f)
-                .build();
+    public float getBoobNXPosition() {
+        return this.boobN.getWorldX() + this.skeleton.getX();
+    }
+
+    public float getBoobNYPosition() {
+        return this.boobN.getWorldY() + this.skeleton.getY();
+    }
+
+    public float getBoobFXPosition() {
+        return this.boobF.getWorldX() + this.skeleton.getX();
+    }
+
+    public float getBoobFYPosition() {
+        return this.boobF.getWorldY() + this.skeleton.getY();
     }
 
     public Skeleton getSkeleton() {
@@ -257,7 +266,7 @@ public class TheBuxom extends CustomPlayer {
     }
 
     public void resetIdle() {
-        if (this.state.getCurrent(1).getAnimation().getName() == null) {
+        if (this.state.getCurrent(1) == null) {
             AnimationState.TrackEntry e = this.state.setAnimation(1, size1animName, true);
         }
     }
@@ -488,12 +497,12 @@ public class TheBuxom extends CustomPlayer {
         logger.info("getpwramt: " + getPwrAmt(this, CommonPower.POWER_ID));
         logger.info("BeginGrowth, target display size: " + targetDisplaySize);
         if (amount <= 5) {
-            sizeQueue.add(new GrowthEvent(animTime, amount));
+            sizeQueue.add(new GrowthEvent(animTime, amount, this));
         } else {
             float perEvent = amount / 3;
-            sizeQueue.add(new GrowthEvent(animTime, perEvent));
-            sizeQueue.add(new GrowthEvent(animTime, perEvent));
-            sizeQueue.add(new GrowthEvent(animTime, perEvent));
+            sizeQueue.add(new GrowthEvent(animTime, perEvent, this));
+            sizeQueue.add(new GrowthEvent(animTime, perEvent, this));
+            sizeQueue.add(new GrowthEvent(animTime, perEvent, this));
         }
         /*logger.info("growthqueue size: " + growthQueue.size());
         logger.info("Animate growth for " + animTime + " frames");
@@ -502,7 +511,7 @@ public class TheBuxom extends CustomPlayer {
     }
     public void beginShrink(float amount) {
         logger.info("BeginShrink, target display size: " +targetDisplaySize);
-        sizeQueue.add(new ShrinkEvent(animTime, amount));
+        sizeQueue.add(new ShrinkEvent(animTime, amount, this));
         logger.info("growthqueue size: " + sizeQueue.size());
         /*logger.info("Animate growth for " + animTime + " frames");
         logger.info("realDisplaySize (" + realDisplaySize + ") < targetDisplaySize (" + targetDisplaySize + ")");
@@ -604,8 +613,6 @@ public class TheBuxom extends CustomPlayer {
 
     public void updateScale(float scaler) {
         resetIdle();
-        Bone boobN = getSkeleton().findBone(boobBoneNID);
-        Bone boobF = getSkeleton().findBone(boobBoneFID);
         Float addScale = scaler*scalerate + 1F;
         boobN.setScale(addScale);
         boobF.setScale(addScale);
@@ -779,7 +786,7 @@ public class TheBuxom extends CustomPlayer {
     //Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DefaultCommonAttack();
+        return new BouncyExercise();
     }
 
     // The class name as it appears next to your player name in-game

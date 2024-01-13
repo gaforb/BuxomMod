@@ -1,7 +1,7 @@
 {
 "BuxomMod:CommonPower": {
         "NAME": "Buxom",
-        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn. If your #yBuxom exceeds #b30, gain #yExposed."]
+        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn. If your #yBuxom is #b30 or higher, gain #yExposed."]
 },
 "BuxomMod:KCupPower": {
         "NAME": "K-Cup Bra",
@@ -81,7 +81,7 @@
 },
 "BuxomMod:InvoluntaryLactationPower": {
         "NAME": "Panic Lactation",
-        "DESCRIPTIONS": ["When you play a #yStrike or #yDefend, gain #b", " #yMilk."]
+        "DESCRIPTIONS": ["When you play a #yCommon card, gain #b", " #yMilk."]
 },
 "BuxomMod:EOTBlockPower": {
         "NAME": "End-of-Turn Block",

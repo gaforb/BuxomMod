@@ -85,7 +85,14 @@ public class DebugInfoPanel extends ClickableUIElement {
                             "\nAdjustedDisplaySize: " + ((TheBuxom)AbstractDungeon.player).adjustedDisplaySize +
                             "\nGetPwrAmt: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) +
                             "\nCurrRange: " + ((TheBuxom)AbstractDungeon.player).currRange +
-                            "\nSettings.scale: " + Settings.scale,
+                            "\nBoobF WorldX: " + ((TheBuxom)AbstractDungeon.player).boobF.getWorldX() +
+                            "\nBoobF WorldY: " + ((TheBuxom)AbstractDungeon.player).boobF.getWorldY() +
+                            "\nBoobN WorldX: " + ((TheBuxom)AbstractDungeon.player).boobN.getWorldX() +
+                            "\nBoobN WorldY: " + ((TheBuxom)AbstractDungeon.player).boobN.getWorldY() +
+                            "\nGetBoobFXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobFXPosition() +
+                            "\nGetBoobFXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobFYPosition() +
+                            "\nGetBoobNXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobNXPosition() +
+                            "\nGetBoobNYPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobNYPosition(),
                     hb.x * Settings.scale,
                         (hb.cY) * Settings.scale,
                         Color.WHITE);
