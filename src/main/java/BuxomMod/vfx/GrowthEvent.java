@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import static BuxomMod.BuxomMod.logger;
 
 public class GrowthEvent extends AbstractSizeEvent{
-    public GrowthEvent(Float timer, float howMuch){
-        super(timer, howMuch);
+    public GrowthEvent(Float timer, float howMuch, AbstractPlayer owner){
+        super(timer, howMuch, owner);
         this.timer = timer;
         this.timerStart = timer;
         this.howMuch = howMuch;
@@ -29,6 +29,8 @@ public class GrowthEvent extends AbstractSizeEvent{
     public void apply() {
         if (!initiated) {
             initiate();
+            AbstractDungeon.effectsQueue.add(growVfxF(timer/60F));
+            AbstractDungeon.effectsQueue.add(growVfxN(timer/60F));
         }
         float rate = 0F;
         if (timer > 0F) {

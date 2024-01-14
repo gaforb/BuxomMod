@@ -70,7 +70,7 @@
     "NAME": "Frenetic Lotion",
     "FLAVOR": "The breasts conduct magic best when bare, and this lotion excites it even further.",
     "DESCRIPTIONS": [
-      "The first time you #yExpose each turn, gain [E]."
+      "The first time you #yExpose each turn, gain #b1 #yEnergy."
     ]
   },
   "BuxomMod:OmegaThreadRelic": {

@@ -2,13 +2,14 @@ package BuxomMod.vfx;
 
 import BuxomMod.characters.TheBuxom;
 import com.badlogic.gdx.math.Interpolation;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static BuxomMod.BuxomMod.logger;
 
 public class ShrinkEvent extends AbstractSizeEvent {
-    public ShrinkEvent(Float timer, float howMuch){
-        super(timer, howMuch);
+    public ShrinkEvent(Float timer, float howMuch, AbstractPlayer owner){
+        super(timer, howMuch, owner);
         this.timer = timer;
         this.timerStart = timer;
         this.howMuch = howMuch;

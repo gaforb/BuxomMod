@@ -59,7 +59,7 @@ public class FoundOutEvent extends AbstractImageEvent {
         healAmt = (int) ((float) AbstractDungeon.player.maxHealth * HEAL_PERCENTAGE);
 
         // The first dialogue options available to us.
-        imageEventText.setDialogOption(OPTIONS[0]); // Inspiration - Gain a Random Starting Relic
+        imageEventText.setDialogOption(OPTIONS[0] + healAmt + OPTIONS[1]); // Inspiration - Gain a Random Starting Relic
         imageEventText.setDialogOption(OPTIONS[2] + healthdamage + OPTIONS[3]);
         pickCard = false;
     }

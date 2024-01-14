@@ -318,7 +318,8 @@
   },
   "BuxomMod:OmegaBonk": {
     "NAME": "Omega Bonk",
-    "DESCRIPTION": "{@@}Deal damage equal to your buxommod:Buxom. NL Gain *Bounce equal to your buxommod:Buxom."
+    "DESCRIPTION": "{@@}Deal damage equal to your buxommod:Buxom. NL Gain *Bounce equal to your buxommod:Buxom.",
+    "UPGRADE_DESCRIPTION": "{@@}Deal damage equal to your buxommod:Buxom. NL Gain *Bounce equal to half your buxommod:Buxom."
   },
   "BuxomMod:HeavyDutyBra": {
     "NAME": "Heavy-Duty Bra",

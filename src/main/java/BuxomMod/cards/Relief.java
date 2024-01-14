@@ -80,7 +80,6 @@ public class Relief extends AbstractDynamicCard {
             upgradeName();
             upgradeBaseCost(1);
             rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }
