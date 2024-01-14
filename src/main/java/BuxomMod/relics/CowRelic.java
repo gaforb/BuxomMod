@@ -2,6 +2,7 @@ package BuxomMod.relics;
 
 import BuxomMod.BuxomMod;
 import BuxomMod.actions.BraSelectAction;
+import BuxomMod.actions.IncreaseStartingBuxomAction;
 import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.LactatingPower;
 import BuxomMod.powers.MilkPower;
@@ -35,7 +36,7 @@ public class CowRelic extends CustomRelic {
     private boolean triggered = false;
 
     public void onEquip(){
-        braManager.permaSize += 2;
+        addToBot(new IncreaseStartingBuxomAction(AbstractDungeon.player, 2));
     }
     public void atBattleStart() {
         flash();

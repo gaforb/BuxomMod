@@ -1,5 +1,6 @@
 package BuxomMod.relics;
 
+import BuxomMod.actions.IncreaseStartingBuxomAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
@@ -34,7 +35,7 @@ public class NakedRelic extends CustomRelic {
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster++;
         braManager.changeNaked(true);
-        braManager.permaSize += 5;
+        addToBot(new IncreaseStartingBuxomAction(AbstractDungeon.player, 5));
     }
     public void atBattleStart() {
         flash();

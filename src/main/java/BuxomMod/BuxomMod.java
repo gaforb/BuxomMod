@@ -177,6 +177,7 @@ public class BuxomMod implements
     public static final String BUXOM_BAR_EFFECT = "BuxomModResources/images/ui/buxomBarVfx.png";
     public static final String STARTING_BUXOM_ICON = "BuxomModResources/images/ui/buxom42.png";
     public static final String MAX_BOUNCE_ICON = "BuxomModResources/images/ui/bounce42.png";
+    public static final String GROW_VFX = "BuxomModResources/images/ui/growVfx.png";
 
 
     // =============== MAKE IMAGE PATHS =================
@@ -482,6 +483,7 @@ public class BuxomMod implements
         BaseMod.addRelicToCustomPool(new MCupRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new OmegaThreadRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new LotionRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new SilkRelic(), TheBuxom.Enums.COLOR_PINK);
         //BaseMod.addRelicToCustomPool(new NakedRelic(), TheBuxom.Enums.COLOR_PINK);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
@@ -761,6 +763,24 @@ public class BuxomMod implements
             }
         }
 
+        return retVal;
+    }
+    public static CardGroup specialGetCardsOfType(CardGroup group, AbstractCard.CardType cardType, boolean not) {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        Iterator var3 = group.group.iterator();
+
+        while(var3.hasNext()) {
+            AbstractCard card = (AbstractCard)var3.next();
+            if (not == false) {
+                if (getType(card) == cardType) {
+                    retVal.addToBottom(card);
+                }
+            } else {
+                if (getType(card) != cardType) {
+                    retVal.addToBottom(card);
+                }
+            }
+        }
         return retVal;
     }
 

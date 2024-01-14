@@ -1,6 +1,7 @@
 package BuxomMod.powers;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.IncreaseStartingBuxomAction;
 import BuxomMod.cards.BrokenBraWhiteBikini;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
@@ -87,7 +88,7 @@ public class WhiteBikiniCupPower extends AbstractPower implements CloneablePower
 
     public void onVictory() {
         if (!braManager.broken) {
-            braManager.permaSize += 2;
+            AbstractDungeon.actionManager.addToBottom(new IncreaseStartingBuxomAction(AbstractDungeon.player, 2));
         }
     }
 

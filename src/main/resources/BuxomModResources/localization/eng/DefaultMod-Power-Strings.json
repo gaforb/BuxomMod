@@ -89,5 +89,13 @@
                 "Gain #b",
                 " #yBlock at the end of your turn."
         ]
+},
+"BuxomMod:OmegaRecallPower": {
+        "NAME": "Omega Recall",
+        "DESCRIPTIONS": [
+                "At the start of your turn, draw #b",
+                " non-[#EFC851]Status[] card(s). If you have more than #b3 Status cards in your hand, draw #b",
+                " additional non-[#EFC851]Status[] card(s)."
+        ]
 }
 }

@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ExposeAction;
 import BuxomMod.blockMods.ChibiBlock;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.orbs.DeviousChibi;
@@ -62,7 +63,7 @@ public class ChibiOffering extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
+        addToBot(new ExposeAction(p));
         addToBot(new ApplyPowerAction(p, p, new MilkPower(p, p, magicNumber), magicNumber));
     }
 

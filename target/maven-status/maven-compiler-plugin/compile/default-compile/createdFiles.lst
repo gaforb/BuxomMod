@@ -5,9 +5,11 @@ BuxomMod\events\FoundOutEvent.class
 BuxomMod\actions\ChibiCommandAction.class
 BuxomMod\cards\OmegaRunes.class
 BuxomMod\powers\CommonPower.class
+BuxomMod\relics\SilkRelic.class
 BuxomMod\relics\BottledPlaceholderRelic.class
 BuxomMod\actions\ShrinkAction.class
 BuxomMod\cards\ChargedChibi.class
+BuxomMod\cards\OmegaRecall.class
 BuxomMod\variables\DefaultSecondMagicNumber.class
 BuxomMod\cards\OmegaDuplication.class
 BuxomMod\powers\ReliefPower.class
@@ -23,6 +25,7 @@ BuxomMod\cards\OmegaContagion.class
 BuxomMod\cards\ChibiOneTwo.class
 BuxomMod\ui\DebugInfoPanel.class
 BuxomMod\cards\PanicLactation.class
+BuxomMod\actions\OmegaRecallAction.class
 BuxomMod\powers\ExposedPower.class
 BuxomMod\cards\WardrobeMalfunction.class
 BuxomMod\cards\ChibiCommand.class
@@ -95,6 +98,7 @@ BuxomMod\powers\BraBreakerPower.class
 BuxomMod\cards\Rapidswell.class
 BuxomMod\powers\BouncePower.class
 BuxomMod\cards\SwellingTight.class
+BuxomMod\actions\IncreaseStartingBuxomAction.class
 BuxomMod\cards\BrokenBraT.class
 BuxomMod\powers\SmotherPower$Trigger.class
 BuxomMod\actions\GrowAction.class
@@ -158,6 +162,7 @@ BuxomMod\variables\MilkCostVariable.class
 BuxomMod\cards\ExpansiveWall.class
 BuxomMod\relics\JCupRelic.class
 BuxomMod\cards\BigBounceStatus.class
+BuxomMod\powers\OmegaRecallPower.class
 BuxomMod\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 BuxomMod\cards\InducedLactation.class
 BuxomMod\orbs\DeviousChibi.class
@@ -182,6 +187,7 @@ BuxomMod\cards\Embarrassment.class
 BuxomMod\cards\MeasurementTime.class
 BuxomMod\potions\DragonMilkPotion.class
 BuxomMod\cards\OmegaBeatdown.class
+BuxomMod\actions\ExposeAction.class
 BuxomMod\cards\HungryDwarf.class
 BuxomMod\vfx\AbstractSizeEvent.class
 BuxomMod\cards\Submission.class

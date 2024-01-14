@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ExposeAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.ExposedPower;
 import BuxomMod.powers.MilkPower;
@@ -56,7 +57,7 @@ public class SilentCosplay extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
+        addToBot(new ExposeAction(p));
         addToBot(new MakeTempCardInHandAction(new ShivChibi(), magicNumber));
         addToBot(new MakeTempCardInDrawPileAction(new ShivChibi(), 1, true, true));
     }

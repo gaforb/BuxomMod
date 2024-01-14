@@ -3,15 +3,13 @@ package BuxomMod.vfx;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.util.TextureLoader;
 import basemod.helpers.VfxBuilder;
-import com.badlogic.gdx.math.Interpolation;
 import com.esotericsoftware.spine.Animation;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-import static BuxomMod.BuxomMod.STARTING_BUXOM_ICON;
-import static BuxomMod.BuxomMod.logger;
+import static BuxomMod.BuxomMod.*;
 
 public abstract class AbstractSizeEvent {
     public AbstractPlayer owner;
@@ -52,18 +50,18 @@ public abstract class AbstractSizeEvent {
                 .build();
     }
     public AbstractGameEffect growVfxF(float duration) {
-        return new VfxBuilder(TextureLoader.getTexture(STARTING_BUXOM_ICON), duration)
+        return new VfxBuilder(TextureLoader.getTexture(GROW_VFX), duration)
                 .useAdditiveBlending()
-                .setX(((TheBuxom)this.owner).getBoobFXPosition())
-                .setY(((TheBuxom)this.owner).getBoobFYPosition())
+                .setX(((TheBuxom)this.owner).getBoobFDXPosition() + 10F)
+                .setY(((TheBuxom)this.owner).getBoobFDYPosition() + 10F)
                 .fadeOut(duration)
                 .build();
     }
     public AbstractGameEffect growVfxN(float duration) {
-        return new VfxBuilder(TextureLoader.getTexture(STARTING_BUXOM_ICON), duration)
+        return new VfxBuilder(TextureLoader.getTexture(GROW_VFX), duration)
                 .useAdditiveBlending()
-                .setX(((TheBuxom)this.owner).getBoobNXPosition())
-                .setY(((TheBuxom)this.owner).getBoobNYPosition())
+                .setX(((TheBuxom)this.owner).getBoobNDXPosition() + 10F)
+                .setY(((TheBuxom)this.owner).getBoobNDYPosition() + 10F)
                 .fadeOut(duration)
                 .build();
     }

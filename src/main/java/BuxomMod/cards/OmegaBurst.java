@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ExposeAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.ExposedPower;
 import BuxomMod.powers.NakedPower;
@@ -64,7 +65,7 @@ public class OmegaBurst extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ScryAction(20));
         addToBot(new DrawCardAction(2));
-        addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
+        addToBot(new ExposeAction(p));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p,
                         new NakedPower(p, p, magicNumber), magicNumber));

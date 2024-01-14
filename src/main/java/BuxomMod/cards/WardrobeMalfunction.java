@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ExposeAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.ExposedPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -51,7 +52,7 @@ public class WardrobeMalfunction extends AbstractDynamicCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ExposedPower(p, p, -1), -1));
+        addToBot(new ExposeAction(p));
         addToBot(new ApplyPowerAction(p, p, new VigorPower(p, defaultSecondMagicNumber), defaultSecondMagicNumber));
         addToBot(new DrawCardAction(p, magicNumber));
     }

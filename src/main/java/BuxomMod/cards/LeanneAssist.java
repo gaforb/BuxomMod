@@ -1,5 +1,6 @@
 package BuxomMod.cards;
 
+import BuxomMod.actions.ModifyCapacityAction;
 import BuxomMod.actions.RepairBraAction;
 import BuxomMod.powers.CommonPower;
 import basemod.abstracts.CustomCard;
@@ -60,12 +61,15 @@ public class LeanneAssist extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int MAGIC = 4;
+    private static final int UPGRADE_MAGIC = 2;
 
     public LeanneAssist() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
         this.isMultiDamage = true;
     }
 
@@ -75,6 +79,7 @@ public class LeanneAssist extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
                         AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new ModifyCapacityAction(p, magicNumber));
         addToBot(new RepairBraAction());
     }
 
@@ -84,6 +89,7 @@ public class LeanneAssist extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

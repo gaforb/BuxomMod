@@ -1,7 +1,7 @@
 {
 "BuxomMod:CommonPower": {
         "NAME": "Buxom",
-        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn. If your #yBuxom exceeds #b30, gain #yExposed."]
+        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn. If your #yBuxom is #b30 or higher, gain #yExposed."]
 },
 "BuxomMod:KCupPower": {
         "NAME": "K-Cup Bra",
@@ -81,13 +81,21 @@
 },
 "BuxomMod:InvoluntaryLactationPower": {
         "NAME": "Panic Lactation",
-        "DESCRIPTIONS": ["When you play a #yStrike or #yDefend, gain #b", " #yMilk."]
+        "DESCRIPTIONS": ["When you play a #yCommon card, gain #b", " #yMilk."]
 },
 "BuxomMod:EOTBlockPower": {
         "NAME": "End-of-Turn Block",
         "DESCRIPTIONS": [
                 "Gain #b",
                 " #yBlock at the end of your turn."
+        ]
+},
+"BuxomMod:OmegaRecallPower": {
+        "NAME": "Omega Recall",
+        "DESCRIPTIONS": [
+                "At the start of your turn, draw #b",
+                " non-[#EFC851]Status[] card(s). If you have more than #b3 Status cards in your hand, draw #b",
+                " additional non-[#EFC851]Status[] card(s)."
         ]
 }
 }

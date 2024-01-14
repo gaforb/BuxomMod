@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static BuxomMod.BuxomMod.makeCardPath;
 
@@ -40,7 +41,7 @@ public class Embarrassment extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int MAGIC = 4;
+    private static final int MAGIC = 2;
     private static final int UPGRADE_MAGIC = 2;
     private static final int SECOND_MAGIC = 2;
     private static final int UPGRADE_SECOND_MAGIC = 2;
@@ -60,7 +61,7 @@ public class Embarrassment extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CommonPower(p, p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EmbarrassmentPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
     }
 

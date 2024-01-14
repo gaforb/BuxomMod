@@ -91,7 +91,7 @@
   },
   "BuxomMod:LeanneAssist": {
     "NAME": "Leanne Assist",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL BuxomMod:Repair your bra."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! buxommod:Capacity. NL BuxomMod:Repair your bra."
   },
   "BuxomMod:Relief": {
     "NAME": "Relief",
@@ -235,7 +235,7 @@
   },
   "BuxomMod:Embarrassment": {
     "NAME": "Embarrassment",
-    "DESCRIPTION": "{@@}Gain !M! buxommod:Buxom. NL Whenever you buxommod:Expose, gain !BuxomMod:SecondMagic! Strength."
+    "DESCRIPTION": "{@@}Gain !M! Strength. NL Whenever you buxommod:Expose, gain !BuxomMod:SecondMagic! Strength."
   },
   "BuxomMod:Flee": {
     "NAME": "Flee",
@@ -361,6 +361,11 @@
   "BuxomMod:LactatingSkill": {
     "NAME": "Lactating",
     "DESCRIPTION": "BuxomMod:Bouncy. NL Unplayable. NL When drawn, gain !M! BuxomMod:Milk."
+  },
+  "BuxomMod:OmegaRecall": {
+    "NAME": "Omega Recall",
+    "DESCRIPTION": "{@@}At the start of your turn, draw !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand has more than 3 or more *Status cards in it, draw !M! additional non-[#EFC851]Status[] card{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "{@@}Innate. NL At the start of your turn, draw !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand has more than 3 or more *Status cards in it, draw !M! additional non-[#EFC851]Status[] card{!M!|>1=s}."
   }
 }
 

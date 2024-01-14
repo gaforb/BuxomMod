@@ -79,5 +79,12 @@
     "DESCRIPTIONS": [
       "When you gain more than #b5 #yBuxom in a turn, gain #b5 #yCapacity."
     ]
+  },
+  "BuxomMod:SilkRelic": {
+    "NAME": "Alluring Silk",
+    "FLAVOR": "Aids in Lehmana's magic, but does little for her self-consciousness.",
+    "DESCRIPTIONS": [
+      "The first time you #yExpose each combat, don't lose #yBlock."
+    ]
   }
 }

@@ -5,6 +5,7 @@ import BuxomMod.characters.TheBuxom;
 import BuxomMod.relics.BuxomRelic;
 import BuxomMod.relics.LotionRelic;
 import BuxomMod.relics.NakedRelic;
+import BuxomMod.relics.SilkRelic;
 import BuxomMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -43,7 +44,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
+        this.amount = -1;
         this.source = source;
 
         type = PowerType.BUFF;
@@ -60,15 +61,7 @@ public class ExposedPower extends AbstractPower implements CloneablePowerInterfa
         description = DESCRIPTIONS[0] + Math.round(INTERCEPT*100) + DESCRIPTIONS[1] + (Math.round(MULTIPLIER * 100)) + DESCRIPTIONS[2] + Math.round((100 * (INTERCEPT + MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID)))) + DESCRIPTIONS[3];
     }
 
-    public void onInitialApplication() {
-        CardCrawlGame.sound.play(makeID(BuxomMod.makeID("SUDDEN_GASP")));
-        addToBot(new LoseBlockAction(owner, owner, owner.currentBlock));
-        for (AbstractRelic i : AbstractDungeon.player.relics) {
-            if (i instanceof BuxomRelic) {
-                ((BuxomRelic)i).onExpose();
-            }
-        }
-    }
+    public void onInitialApplication() {}
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         return type == DamageInfo.DamageType.NORMAL ? damage * (1F + INTERCEPT + (MULTIPLIER * BuxomMod.getPwrAmt(owner, CommonPower.POWER_ID))) : damage;

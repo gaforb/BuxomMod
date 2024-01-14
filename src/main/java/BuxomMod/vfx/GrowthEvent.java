@@ -29,17 +29,17 @@ public class GrowthEvent extends AbstractSizeEvent{
     public void apply() {
         if (!initiated) {
             initiate();
-            AbstractDungeon.effectsQueue.add(growVfxF(timer/60F));
-            AbstractDungeon.effectsQueue.add(growVfxN(timer/60F));
+            //AbstractDungeon.effectsQueue.add(growVfxF(timer/60F));
+            //AbstractDungeon.effectsQueue.add(growVfxN(timer/60F));
         }
         float rate = 0F;
         if (timer > 0F) {
             timer -= 1F;
             rate = (Interpolation.exp5.apply(animStart, animTarget, (timerStart-timer)/timerStart));
-            /*logger.info("Rate: " + rate);
+            logger.info("Rate: " + rate);
             logger.info("animStart: " + animStart);
             logger.info("animTarget: " + animTarget);
-            logger.info("a: " + (timerStart-timer)/timer);*/
+            logger.info("a: " + (timerStart-timer)/timer);
             ((TheBuxom)AbstractDungeon.player).realDisplaySize = rate;
             if (rate > animStart) {
                 ((TheBuxom)AbstractDungeon.player).adjustDisplaySize();

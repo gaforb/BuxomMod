@@ -89,7 +89,9 @@ public class TheBuxom extends CustomPlayer {
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
     public static String boobBoneNID = "boobn";
+    public static String boobBoneNDID = "boobnd";
     public static String boobBoneFID = "boobf";
+    public static String boobBoneFDID = "boobfd";
     public static String atlasURL = "BuxomModResources/images/char/character/LehmanaSprite9.atlas";
     public static String skeletonURL = "BuxomModResources/images/char/character/LehmanaSprite9.json";
     public static final String size1animName = "idle";
@@ -205,21 +207,23 @@ public class TheBuxom extends CustomPlayer {
     public ArrayList<AbstractSizeEvent> sizeQueue = new ArrayList<AbstractSizeEvent>();
     public Bone boobN = this.skeleton.findBone(boobBoneNID);
     public Bone boobF = this.skeleton.findBone(boobBoneFID);
+    public Bone boobND = this.skeleton.findBone(boobBoneNDID);
+    public Bone boobFD = this.skeleton.findBone(boobBoneFDID);
 
-    public float getBoobNXPosition() {
-        return this.boobN.getWorldX() + this.skeleton.getX();
+    public float getBoobNDXPosition() {
+        return getSkeleton().findBone(boobBoneNDID).getWorldX() + skeleton.getX();
     }
 
-    public float getBoobNYPosition() {
-        return this.boobN.getWorldY() + this.skeleton.getY();
+    public float getBoobNDYPosition() {
+        return getSkeleton().findBone(boobBoneNDID).getWorldY() + skeleton.getY();
     }
 
-    public float getBoobFXPosition() {
-        return this.boobF.getWorldX() + this.skeleton.getX();
+    public float getBoobFDXPosition() {
+        return getSkeleton().findBone(boobBoneFDID).getWorldX() + skeleton.getX();
     }
 
-    public float getBoobFYPosition() {
-        return this.boobF.getWorldY() + this.skeleton.getY();
+    public float getBoobFDYPosition() {
+        return getSkeleton().findBone(boobBoneFDID).getWorldY() + skeleton.getY();
     }
 
     public Skeleton getSkeleton() {
@@ -485,7 +489,7 @@ public class TheBuxom extends CustomPlayer {
         }
     }*/
     private AbstractGameEffect vfx(float x, float y) {
-        return new VfxBuilder(TextureLoader.getTexture("BuxomModResources/images/vfx/expand_effect.png"), 1.0f)
+        return new VfxBuilder(TextureLoader.getTexture(GROW_VFX), 1.0f)
                 .setX(x)
                 .setY(y)
                 .playSoundAt(0.35f, BuxomMod.makeID("HEARTBEAT"))
@@ -614,6 +618,8 @@ public class TheBuxom extends CustomPlayer {
     public void updateScale(float scaler) {
         resetIdle();
         Float addScale = scaler*scalerate + 1F;
+        Bone boobN = this.skeleton.findBone(boobBoneNID);
+        Bone boobF = this.skeleton.findBone(boobBoneFID);
         boobN.setScale(addScale);
         boobF.setScale(addScale);
 

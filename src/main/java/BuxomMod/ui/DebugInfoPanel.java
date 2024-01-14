@@ -18,6 +18,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import java.util.ArrayList;
 
 import static BuxomMod.BuxomMod.*;
+import static BuxomMod.characters.TheBuxom.boobBoneFID;
+import static BuxomMod.characters.TheBuxom.boobBoneNID;
 
 public class DebugInfoPanel extends ClickableUIElement {
     public float hb_x = 35F * Settings.scale;
@@ -85,14 +87,14 @@ public class DebugInfoPanel extends ClickableUIElement {
                             "\nAdjustedDisplaySize: " + ((TheBuxom)AbstractDungeon.player).adjustedDisplaySize +
                             "\nGetPwrAmt: " + getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) +
                             "\nCurrRange: " + ((TheBuxom)AbstractDungeon.player).currRange +
-                            "\nBoobF WorldX: " + ((TheBuxom)AbstractDungeon.player).boobF.getWorldX() +
-                            "\nBoobF WorldY: " + ((TheBuxom)AbstractDungeon.player).boobF.getWorldY() +
-                            "\nBoobN WorldX: " + ((TheBuxom)AbstractDungeon.player).boobN.getWorldX() +
+                            "\nBoobF WorldX: " + ((TheBuxom) AbstractDungeon.player).getSkeleton().findBone(boobBoneFID).getWorldX() +
+                            "\nBoobF WorldY: " + ((TheBuxom) AbstractDungeon.player).getSkeleton().findBone(boobBoneFID).getWorldY() +
+                            "\nBoobN WorldX: " + ((TheBuxom) AbstractDungeon.player).getSkeleton().findBone(boobBoneNID).getWorldX() +
                             "\nBoobN WorldY: " + ((TheBuxom)AbstractDungeon.player).boobN.getWorldY() +
-                            "\nGetBoobFXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobFXPosition() +
-                            "\nGetBoobFXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobFYPosition() +
-                            "\nGetBoobNXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobNXPosition() +
-                            "\nGetBoobNYPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobNYPosition(),
+                            "\nGetBoobFXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobFDXPosition() +
+                            "\nGetBoobFXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobFDYPosition() +
+                            "\nGetBoobNXPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobNDXPosition() +
+                            "\nGetBoobNYPosition: " + ((TheBuxom)AbstractDungeon.player).getBoobNDYPosition(),
                     hb.x * Settings.scale,
                         (hb.cY) * Settings.scale,
                         Color.WHITE);
