@@ -4,6 +4,7 @@ import BuxomMod.BuxomMod;
 import BuxomMod.powers.CommonPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -64,7 +65,7 @@ public class BigBounceStatus extends AbstractDynamicCard {
     public BigBounceStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.exhaust = true;
+        this.exhaust = false; //we have to exhaust manually in the use action to avoid triggering spoon
     }
 
     // Actions the card should do.
@@ -74,6 +75,7 @@ public class BigBounceStatus extends AbstractDynamicCard {
         bdiv /= 2;
         if (this.dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, bdiv, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }
 
