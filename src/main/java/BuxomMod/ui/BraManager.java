@@ -25,6 +25,7 @@ public class BraManager {
     public int buxomGainedThisTurn;
     public int minCapacity;
     public int maxCapacity;
+    public int maxTotalCapacity;
     public int maxBounce;
     public int brokenBouncePenalty;
     public int buffAmount;
@@ -64,6 +65,7 @@ public class BraManager {
         buxomCounterThisTurn = 0;
         buxomGainedThisTurn = 0;
         maxCapacity = 6;
+        maxTotalCapacity = 30;
         broken = false;
         straining = false;
         maxBounce = 8;
@@ -83,7 +85,7 @@ public class BraManager {
         ((TheBuxom)AbstractDungeon.player).beginGrowth(growthAmount);
         BuxomMod.logger.info("Times gained this turn: " + buxomCounterThisTurn);
         BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
-        if (BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) >= 30 && !(AbstractDungeon.player.hasPower(ExposedPower.POWER_ID))) {
+        if (BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) >= 31 && !(AbstractDungeon.player.hasPower(ExposedPower.POWER_ID))) {
             BuxomMod.logger.info("Buxom: " + BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Over 30 Buxom! Exposing!");
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
@@ -107,7 +109,9 @@ public class BraManager {
         braPanel.breakVfx();
         maxBounce -= brokenBouncePenalty;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BraBrokenPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExposedPower(AbstractDungeon.player, AbstractDungeon.player, -1), -1));
+        if (exposeOnBraBreak) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ExposedPower(AbstractDungeon.player, AbstractDungeon.player, -1), -1));
+        }
         straining = false;
         broken = true;
     }
