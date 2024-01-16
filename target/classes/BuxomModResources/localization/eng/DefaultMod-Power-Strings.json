@@ -1,7 +1,7 @@
 {
 "BuxomMod:CommonPower": {
         "NAME": "Buxom",
-        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn. If your #yBuxom is #b30 or higher, gain #yExposed."]
+        "DESCRIPTIONS": ["Breast size increased. Generate this many Bounce stacks each turn. If your #yBuxom exceeds #b30, gain #yExposed."]
 },
 "BuxomMod:KCupPower": {
         "NAME": "K-Cup Bra",
@@ -45,7 +45,7 @@
 },
 "BuxomMod:BigBouncePower": {
         "NAME": "Big Bounce",
-        "DESCRIPTIONS": ["Generate a #yBounce with every #b10 Bounce stacks instead, and change them to #yBig #yBounces."]
+        "DESCRIPTIONS": ["Generate #yBig #yBounce instead of #yBounce status cards."]
 },
 "BuxomMod:NakedPower": {
         "NAME": "Naked",
@@ -53,11 +53,11 @@
 },
 "BuxomMod:BouncePower": {
         "NAME": "Bounce",
-        "DESCRIPTIONS": ["For every 8 stacks, generate a #yBounce status card."]
+        "DESCRIPTIONS": ["Each time you exceed your maximum Bounce stacks, generate a #yBounce status card."]
 },
 "BuxomMod:WhiteBikiniCupPower": {
         "NAME": "White Bikini",
-        "DESCRIPTIONS": ["#yBra. Whenever you gain #yBuxom, gain #b", " #yMilk."]
+        "DESCRIPTIONS": ["Gain this much #yMilk at the end of your turn. If you bra is intact, gain 2 #yBuxom permanently at the end of combat."]
 },
 "BuxomMod:ExposedPower": {
         "NAME": "Exposed",
@@ -65,7 +65,7 @@
 },
 "BuxomMod:EmbarrassmentPower": {
         "NAME": "Embarrassed",
-        "DESCRIPTIONS": ["Whenever you #yExpose, gain #yStrength."]
+        "DESCRIPTIONS": ["Whenever you #yExpose, gain this much #yStrength."]
 },
 "BuxomMod:SurprisePower": {
         "NAME": "Surprise!",
@@ -86,8 +86,7 @@
 "BuxomMod:EOTBlockPower": {
         "NAME": "End-of-Turn Block",
         "DESCRIPTIONS": [
-                "Gain #b",
-                " #yBlock at the end of your turn."
+                "Gain this much #yBlock at the end of your turn."
         ]
 },
 "BuxomMod:OmegaRecallPower": {

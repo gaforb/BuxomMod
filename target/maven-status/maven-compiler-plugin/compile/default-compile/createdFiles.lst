@@ -170,6 +170,7 @@ BuxomMod\ui\BounceMaxPanel.class
 BuxomMod\util\IDCheckDontTouchPls.class
 BuxomMod\cards\ChibiOffering.class
 BuxomMod\cards\Flee.class
+BuxomMod\actions\SetCapacityAction.class
 BuxomMod\variables\CapacityUpperVariable.class
 BuxomMod\variables\BuxomHalfDamageVariable.class
 BuxomMod\cards\MassiveGrowth.class

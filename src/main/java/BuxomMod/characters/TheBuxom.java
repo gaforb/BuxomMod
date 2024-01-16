@@ -504,11 +504,11 @@ public class TheBuxom extends CustomPlayer {
         float increment = 8;                    //do growth in spurts this big
         while (growthAmount > 2 && increment > 1) {                        //while spurts are still worth doing
             if (growthAmount >= increment) {              //if there's more growth than one spurt,
-                sizeQueue.add(new GrowthEvent(animTime, increment)); //grow by one spurt
+                sizeQueue.add(new GrowthEvent(animTime, increment, this)); //grow by one spurt
                 growthAmount -= increment;                //then reduce the remaining amount by one spurt
             }  else { increment -= increment/2; }   //otherwise halve the spurt size
         }                                           //loop exits when spurts are smaller than the amount
-        sizeQueue.add(new GrowthEvent(animTime, growthAmount)); //do the rest of the amount
+        sizeQueue.add(new GrowthEvent(animTime, growthAmount, this)); //do the rest of the amount
         /*
         if (amount <= 5) {
             sizeQueue.add(new GrowthEvent(animTime, amount, this));

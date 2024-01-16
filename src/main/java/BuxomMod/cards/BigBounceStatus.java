@@ -65,7 +65,8 @@ public class BigBounceStatus extends AbstractDynamicCard {
     public BigBounceStatus() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        this.exhaust = false; //we have to exhaust manually in the use action to avoid triggering spoon
+        this.exhaust = true; //we have to exhaust manually in the use action to avoid triggering spoon
+        this.isEthereal = true;
     }
 
     // Actions the card should do.
@@ -75,7 +76,7 @@ public class BigBounceStatus extends AbstractDynamicCard {
         bdiv /= 2;
         if (this.dontTriggerOnUseCard) {
             AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, bdiv, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
-            addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+            addToBot(new ExhaustSpecificCardAction(this, p.hand));
         }
     }
 

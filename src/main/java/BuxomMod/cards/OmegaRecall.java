@@ -74,6 +74,7 @@ public class OmegaRecall extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             this.isInnate = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -60,8 +60,9 @@ public class OmegaFumes extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = VULNERABLE;
-        damage = baseDamage = DAMAGE;
+        baseDamage = DAMAGE;
         this.exhaust = true;
+        this.isMultiDamage = true;
         this.cardsToPreview = new AftershockStatus();
     }
 

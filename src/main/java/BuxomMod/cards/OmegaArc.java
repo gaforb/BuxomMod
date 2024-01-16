@@ -39,7 +39,7 @@ public class OmegaArc extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 5;
     private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_DMG = 2;
 

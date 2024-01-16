@@ -41,14 +41,14 @@ public class OmegaRecallAction extends AbstractGameAction {
             logger.info("getting non-status cards in draw pile: " + nonStatusCardsDrawPile);
             if (nonStatusCardsDrawPile.size() > 0) {
                 logger.info("top card: " + nonStatusCardsDrawPile.getTopCard());
-                nonStatusCardsDrawPile.moveToHand(nonStatusCardsDrawPile.getTopCard());
+                AbstractDungeon.player.drawPile.moveToHand(nonStatusCardsDrawPile.getTopCard());
             }
         }
         if (BuxomMod.specialGetCardsOfType(AbstractDungeon.player.hand, AbstractCard.CardType.STATUS).size() >= 3) {
             BuxomMod.logger.info("3 or more status cards in hand");
             if (nonStatusCardsDrawPile.size() > 0) {
                 logger.info("top card: " + nonStatusCardsDrawPile.getTopCard());
-                nonStatusCardsDrawPile.moveToHand(nonStatusCardsDrawPile.getTopCard());
+                AbstractDungeon.player.drawPile.moveToHand(nonStatusCardsDrawPile.getTopCard());
             }
         }
         this.isDone = true;

@@ -63,7 +63,7 @@ public class OmegaDeflection extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new ArtifactPower(p, magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new AftershockStatus(), 2));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new AftershockStatus(), 2));
     }
 
     // Upgraded stats.

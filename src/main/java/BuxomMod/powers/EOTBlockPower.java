@@ -21,7 +21,7 @@ import static BuxomMod.BuxomMod.makePowerPath;
 public class EOTBlockPower extends TwoAmountPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = BuxomMod.makeID("MilkPower");
+    public static final String POWER_ID = BuxomMod.makeID("EOTBlockPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -57,11 +57,8 @@ public class EOTBlockPower extends TwoAmountPower implements CloneablePowerInter
 
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        }   else if (amount > 1) {
-            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        }
+        super.updateDescription();
+        this.description = DESCRIPTIONS[0];
     }
 
     public AbstractPower makeCopy() {
