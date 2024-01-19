@@ -1,11 +1,37 @@
 {
-  "BuxomMod:BuxomPanel": {
-    "NAME": "罩杯米娜版",
-    "BUXOM": "罩杯: ",
-    "BOUNCE": ["弹力: ", " / "],
+  "BuxomMod:BraPanel": {
+    "NAME": ["文胸"],
     "TEXT": [
-      "增加胸部尺寸。 在回合结束时生成 #yBounce #yStacks at end of turn.",
-      "For every #b8 #yBounce stacks, generate a #yBounce status card."
-    ]
+      "你文胸的罩杯（胸部）容量。 如果你的 #y罩杯 超过了 #y罩杯上限 ,你会感到开始 #p“紧”张。 如果你在 #p“紧”张 时获得 #y罩杯 ，你的文胸会破损, 并且你的最大 #p弹力 上限会减少。"
+    ],
+    "TEXT_DICT": {
+      "Name": "文胸",
+      "Straining": "“紧”张！",
+      "Broken": "破损！"
     }
+  },
+  "BuxomMod:BraBroken": {
+    "NAME": ["文胸"],
+    "TEXT": [
+      "胸部露……露出来了！"
+    ]
+  },
+  "BuxomMod:StartingBuxomPanel": {
+    "NAME": ["初始罩杯"],
+    "TEXT": ["初始罩杯",
+      "战斗开始时获得相应层数的罩杯。"
+    ]
+  },
+  "BuxomMod:BounceMaxPanel": {
+    "NAME": ["最大弹力"],
+    "TEXT": ["最大弹力",
+      "你每拥有等于最大弹力数量的 #p弹力 。 如果你的 #y文胸 破裂，最大弹力会减少。"
+    ]
+  },
+  "BuxomMod:NoAttackIntent": {
+    "NAME": ["无攻击意图"],
+    "TEXT": [
+      "敌人现在没打算干我！"
+    ]
+  }
 }

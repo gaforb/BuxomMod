@@ -6,16 +6,19 @@
       "Buxom",
       "buxom"
     ],
-    "DESCRIPTION": "你乳房的大小。在回合结束时生成乳摇层数。"
+    "DESCRIPTION": "你乳房的大小。在回合结束时生成相等的乳摇层数。"
   },
   {
-    "PROPER_NAME": "罩杯尺码",
+    "PROPER_NAME": "文胸",
     "NAMES": [
-      "罩杯尺码",
       "Capacity",
-      "capacity"
+      "capacity",
+      "文胸容量",
+      "文胸",
+      "Bra",
+      "bra"
     ],
-    "DESCRIPTION": "当你的 #y罩杯 在文胸的 #y罩杯尺码 的范围和范围内时，文胸会提供奖励并防止 #y暴露 的负面效果。 如果在回合结束时你的 #y罩杯 超过了#y罩杯尺码 ，罩杯会损坏并生成一张状态牌。"
+    "DESCRIPTION": "保持的你的 #y文胸 完好，以使用某些卡牌。 如果你的文胸破损，你的最大 #p弹力 上限将会减少。"
   },
   {
     "PROPER_NAME": "Multiword Keyword",
@@ -73,12 +76,12 @@
       "Milk",
       "milk"
     ],
-    "DESCRIPTION": "在回合结束后转换为 #y临时生命值 。 NL 可以被 #b小妖精 和卡牌来触发效果。"
+    "DESCRIPTION": "在回合结束后转换为 #y临时生命值 。"
   },
   {
-    "PROPER_NAME": "挤奶",
+    "PROPER_NAME": "榨乳",
     "NAMES": [
-      "挤奶",
+      "榨乳",
       "Milking",
       "milking"
     ],
@@ -93,7 +96,7 @@
       "Expose",
       "expose"
     ],
-    "DESCRIPTION": "失去所有 #y格挡 无法获得 #y格挡 ，但从 #y 敏捷 获得的除外。每拥有一层 #y罩杯 ，你的攻击额外造成 #b3% 的伤害。该效果会持续一回合，但当你的 #y罩杯 超过 #y30 层时， #y暴露 的效果会持续保留。"
+    "DESCRIPTION": "失去所有 #y格挡 无法获得从卡牌获得 #y格挡 ，但从 #y 敏捷 获得的除外。每拥有一层 #y罩杯 ，你的攻击额外造成 #b40% + #b1% 你所拥有 #y罩杯 的伤害。该效果会持续一回合，但当你的 #y罩杯 超过 #y30 层时， #y暴露 的效果会持续保留。"
   },
   {
     "PROPER_NAME": "活力",
@@ -103,5 +106,50 @@
       "vigor"
     ],
     "DESCRIPTION": "增加下一张打出的 #y攻击牌 的伤害。"
+     },
+    {
+      "PROPER_NAME": "弹力",
+      "NAMES": [
+        "弹力",
+        "Bouncy",
+        "bouncy"
+      ],
+      "DESCRIPTION": "该卡牌同时被视为 #y乳摇 卡。 不可被于遗物：医药箱消耗，但可以被丢弃。"
+    },
+    {
+      "PROPER_NAME": "解剖学",
+      "NAMES": [
+        "解剖学",
+        "Anatomical",
+        "anatomical"
+      ],
+      "DESCRIPTION": "对拥有乳房的敌人效果翻倍。 ( #p神秘术士 ， #p盗贼 ， #p强盗 ， #p拜蛇术士 ， #p收藏家 ) NL #b50% 概率对可能有乳房的敌人效果翻倍。( #p第一勇士 ， #p觉醒者 ， #p被拣选者 ， #p地精首领 )"
+    },
+    {
+      "PROPER_NAME": "膨！",
+      "NAMES": [
+        "膨！",
+        "Rapidswell",
+        "rapidswell"
+      ],
+      "DESCRIPTION": " #b状态 卡  提供 #b3 #y罩杯 并在回合结束时消耗。"
+    },
+  {
+    "PROPER_NAME": "修复",
+    "NAMES": [
+      "修复",
+      "Repair",
+      "repair"
+    ],
+    "DESCRIPTION": "从 #r破损 状态中修复你的文胸。"
+  },
+  {
+    "PROPER_NAME": "羞耻",
+    "NAMES": [
+      "羞耻",
+      "Embarrassing",
+      "embarrassing"
+    ],
+    "DESCRIPTION": "当你处于 #y羞耻 状态时，每回合可以免费使用一次。"
   }
 ]

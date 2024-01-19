@@ -1,6 +1,7 @@
 package BuxomMod.ui;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ExposeAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.BraBrokenPower;
 import BuxomMod.powers.CommonPower;
@@ -85,11 +86,9 @@ public class BraManager {
         ((TheBuxom)AbstractDungeon.player).beginGrowth(growthAmount);
         BuxomMod.logger.info("Times gained this turn: " + buxomCounterThisTurn);
         BuxomMod.logger.info("Amount gained this turn: " + buxomGainedThisTurn);
-        if (BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) >= 31 && !(AbstractDungeon.player.hasPower(ExposedPower.POWER_ID))) {
+        if (BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + growthAmount >= 31 && !(AbstractDungeon.player.hasPower(ExposedPower.POWER_ID))) {
             BuxomMod.logger.info("Buxom: " + BuxomMod.getPwrAmt(AbstractDungeon.player, CommonPower.POWER_ID) + ". Over 30 Buxom! Exposing!");
-            AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                            new ExposedPower(AbstractDungeon.player, AbstractDungeon.player, -1), -1));
+            AbstractDungeon.actionManager.addToBottom(new ExposeAction(AbstractDungeon.player));
         }
         for (AbstractRelic i : AbstractDungeon.player.relics) {
             if (i instanceof BuxomRelic) {
