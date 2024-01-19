@@ -1,11 +1,11 @@
 {
-"BuxomMod:FlatteningPotion": {
-        "NAME": "钢板药水",
-        "DESCRIPTIONS": ["将你的罩杯变成 #b1 。"]
+"BuxomMod:CapacityPotion": {
+         "NAME": "罩杯修理液",
+        "DESCRIPTIONS": ["增加 #b", " 点 #y文胸容量 。 #y修复 你的 #y文胸 。"]
 },
 "BuxomMod:DragonMilkPotion": {
         "NAME": "龙奶",
-        "DESCRIPTIONS": ["获得 #b", " 层 #y沁乳 。"]
+        "DESCRIPTIONS": ["获得 #b", " #y泌乳 。"]
 },
 "BuxomMod:ChibiPotion": {
         "NAME": "小妖精召唤瓶",
@@ -14,5 +14,13 @@
 "BuxomMod:PermaGrowthPotion": {
         "NAME": "丰胸药水",
         "DESCRIPTIONS": ["将你的初始 #y罩杯 增加 #b2 。"]
+},
+"BuxomMod:MilkPotion": {
+        "NAME": "奶瓶",
+        "DESCRIPTIONS": ["获得 #b", " 点 #y母乳 。"]
+        },
+"BuxomMod:ExposePotion": {
+        "NAME": "露出狂药水",
+        "DESCRIPTIONS": ["#y暴露 。 抽 #b", " 张卡并获得 #b" ," #y能量 。"]
 }
 }

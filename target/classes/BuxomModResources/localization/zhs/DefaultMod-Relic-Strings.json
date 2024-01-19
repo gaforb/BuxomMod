@@ -31,18 +31,18 @@
       "选择一张要瓶装的卡牌，花费 "
     ]
   },
-  "BuxomMod:ToplessArtifact": {
+  "BuxomMod:NakedRelic": {
     "NAME": "坦露的诅咒",
-    "FLAVOR": "你的胸罩会魔法般地从你的胸前消失————“让我们敞开心扉。”",
+    "FLAVOR": "你的任何试图遮住你乳房的东西会魔法般地从你的胸前消失————“让我们敞开心扉。”",
     "DESCRIPTIONS": [
-      "每回合开始时获得 [E] 。 每场战斗开始时获得 #b5 点额外的 buxommod:罩杯。 你穿的任何胸罩都会立刻使胸罩破损。。"
+      "每回合开始时获得 [E] 。 捡起时永久获得 #b5 点 buxommod:罩杯 ，永久 #y暴露 。如果你将 #y暴露 获得 [E]。"
     ]
   },
   "BuxomMod:DwarfBoobsRelic": {
-    "NAME": "矮人胸部",
-    "FLAVOR": "与人类相比, 金蕾娜的 J罩杯并不是那么引人注目。",
+    "NAME": "J罩杯",
+    "FLAVOR": "与人类相比, 矮人金蕾娜的 J罩杯并不是那么引人注目。",
     "DESCRIPTIONS": [
-      "每场战斗开始时获得等同于你初始罩杯的 #y罩杯 。"
+      "在战斗开始时，你卡组每有 #b2 张牌，获得 #b1 #y罩杯容量 。"
     ]
   },
   "BuxomMod:WashboardRelic": {
@@ -56,7 +56,35 @@
     "NAME": "奶牛玩偶",
     "FLAVOR": "一位同样丰满的朋友！",
     "DESCRIPTIONS": [
-      "每场战斗开始时, 获得 #b3 层泌乳和 #b1 层罩杯。"
+      "拾取时，永久获得 #b2 #y罩杯 。在战斗开始时，获得 #b4 泌乳。"
     ]
-  }
+      },
+      "BuxomMod:MCupRelic": {
+        "NAME": "M罩杯文胸",
+        "FLAVOR": "乳房魔法是有代价的，虽然一定程度上可控，但你胸前的负担仍然会不断增长。",
+        "DESCRIPTIONS": [
+          "在战斗开始时，你卡组中每有 #b4 张牌获得 #b1 #y罩杯 ，每有 #b3 张牌，获得2点 #y文胸容量 。"
+        ]
+      },
+      "BuxomMod:LotionRelic": {
+        "NAME": "狂飙乳液",
+        "FLAVOR": "把乳房露出来，更利于魔力在乳房中传导，这种来自于乳液狂飙之人的乳液更能激发其潜力。",
+        "DESCRIPTIONS": [
+          "每回合你第一次 #y暴露 时，获得 #b1 #y能量 。"
+        ]
+      },
+      "BuxomMod:OmegaThreadRelic": {
+        "NAME": "欧米伽之线",
+        "FLAVOR": "用于缝制文胸的魔法线。",
+        "DESCRIPTIONS": [
+          "当你在一回合内获得 #b5 #y罩杯 时， 获得 #b5 #y文胸容量 。"
+        ]
+      },
+      "BuxomMod:SilkRelic": {
+        "NAME": "妖媚丝绸",
+        "FLAVOR": "这对金蕾娜的魔法很有帮助，不过这也会让她在社死的道路上越走越远。",
+        "DESCRIPTIONS": [
+          "每场战斗中你第一次 #y暴露 时，不会失去 #y格挡 。"
+        ]
+      }
 }

@@ -163,8 +163,7 @@
   },
   "BuxomMod:SteadyLactation": {
     "NAME": "Steady Lactation",
-    "DESCRIPTION": "Add 2 buxommod:Rapidswell to your draw pile. NL Add *Lactating to your draw pile. NL Gain !M! BuxomMod:Milk. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "If you have less than 11 BuxomMod:Buxom, gain BuxomMod:Buxom up to 11. NL Gain !M! BuxomMod:Lactating. NL Gain !M! BuxomMod:Milk."
+    "DESCRIPTION": "Add 2 buxommod:Rapidswell to your draw pile. NL Add *Lactating to your draw pile. NL Gain !M! BuxomMod:Milk. NL Exhaust."
   },
   "BuxomMod:Paizuri": {
     "NAME": "Paizuri",

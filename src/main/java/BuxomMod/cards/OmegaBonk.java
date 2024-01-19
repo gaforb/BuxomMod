@@ -94,12 +94,12 @@ public class OmegaBonk extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int bdiv = getPwrAmt(p, CommonPower.POWER_ID);
-        if (upgraded) {
-            bdiv /= 2;
-        }
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, bdiv, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        if (upgraded) {
+            bdiv /= 2;
+        }
         addToBot(new ApplyPowerAction(p, p, new BouncePower(p, p, bdiv), bdiv));
     }
 
