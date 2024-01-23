@@ -22,16 +22,16 @@
     ]
   },
   "BuxomMod:BottledPlaceholderRelic": {
-    "NAME": "Bottled Placeholder",
-    "FLAVOR": "What is this?",
+    "NAME": "병 속의 안내자",
+    "FLAVOR": "이게 뭔가요?",
     "DESCRIPTIONS": [
-      "Choose a card. Whenever you take play any card, draw the chosen card.",
-      "Whenever you play a card, draw ",
-      ".",
-      "Select a card to bottle for "
+      "카드를 선택합니다. 아무 카드를 사용할 때마다, 선택한 카드를 뽑습니다.",
+      "카드를 사용할 때마다",
+      " 카드를 뽑습니다.",
+      "병에 넣을 카드를 선택하세요 "
     ]
   },
-  "BuxomMod:ToplessArtifact": {
+  "BuxomMod:NakedRelic": {
     "NAME": "상의탈의의 저주",
     "FLAVOR": "당신의 거대한 가슴은 가리려는 모든 시도를 마법적으로 빠져나갑니다.",
     "DESCRIPTIONS": [
@@ -39,24 +39,52 @@
     ]
   },
   "BuxomMod:DwarfBoobsRelic": {
-    "NAME": "드워프 젖통",
+    "NAME": "J-컵 브라",
     "FLAVOR": "인간들보다 더 큰 가슴이지만, 레마나의 J-컵은 당신이 생각하는것 만큼 주목할만 하지 않습니다.",
     "DESCRIPTIONS": [
-      "전투 시작 시 #y풍만함을 얻습니다."
+      "전투 시작 시, 덱 안에 있는 카드 #b2 장마다 #y수용량을 #b1 얻습니다."
     ]
   },
   "BuxomMod:WashboardRelic": {
     "NAME": "빨래판",
     "FLAVOR": "당신의 뽑을 카드 더미가 상태이상 카드로 채워져 있을 때를 위해.",
     "DESCRIPTIONS": [
-      "전투 당 한 번, #b우클릭 하여 #y풍만함을 10 잃습니다."
+      "전투 당 한 번, 이 유물을 #b우클릭 하여 #y풍만함을 10 잃습니다."
     ]
   },
   "BuxomMod:CowRelic": {
     "NAME": "소 인형",
     "FLAVOR": "친구입니다!",
     "DESCRIPTIONS": [
-      "전투 시작 시, 착유 #b3 과 풍만함 #b1 을 얻습니다."
+      "전투 시작 시, 착유 #b4 과 풍만함 #b2 을 얻습니다."
+	]
+  },
+  "BuxomMod:MCupRelic": {
+    "NAME": "M-컵 브라",
+    "FLAVOR": "어느 정도는 제어할 수 있지만, 가슴을 마법의 원동력으로 사용하는 것의 대가는 오랜-시간의 팽창입니다.",
+    "DESCRIPTIONS": [
+      "전투 시작 시, 덱 안에 있는 카드 #b4장마다 #b1 #y풍만함을, #b3장마다 #b2 #y수용량을 얻습니다."
+    ]
+  },
+  "BuxomMod:LotionRelic": {
+    "NAME": "광란의 로션",
+    "FLAVOR": "가슴은 벌거벗을 때 마법 전도가 가장 잘 되며, 이 로션은 그것을 더욱 흥분시킵니다.",
+    "DESCRIPTIONS": [
+      "턴당 한 번, #y노출될 때마다 #b1 #y에너지를 얻습니다."
+    ]
+  },
+  "BuxomMod:OmegaThreadRelic": {
+    "NAME": "오메가 실",
+    "FLAVOR": "브라를 꿰매는 마법의 실입니다.",
+    "DESCRIPTIONS": [
+      "한 턴에 #b5 이상의 #y풍만함을 얻을 때, #b5 #y수용량을 얻습니다."
+    ]
+  },
+  "BuxomMod:SilkRelic": {
+    "NAME": "매혹적인 실크",
+    "FLAVOR": "레마나의 마법에는 도움이 되지만 그녀의 자의식에는 별로 도움이 되지 않습니다.",
+    "DESCRIPTIONS": [
+      "전투당 한 번, 처음으로 #y노출될 때 #y방어도를 잃지 않습니다."
     ]
   }
-}
+  }

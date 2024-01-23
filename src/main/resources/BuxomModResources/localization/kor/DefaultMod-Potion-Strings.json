@@ -1,7 +1,7 @@
 {
-"BuxomMod:FlatteningPotion": {
-        "NAME": "빈유화 포션",
-        "DESCRIPTIONS": ["풍만함을 #b", "1 로 감소시킵니다."]
+"BuxomMod:CapacityPotion": {
+        "NAME": "수용량 포션",
+        "DESCRIPTIONS": ["#y당신의 수용량을 #b", "만큼 증가시킵니다. #y브라를 #y수리합니다."]
 },
 "BuxomMod:DragonMilkPotion": {
         "NAME": "용의 우유 포션",
@@ -14,5 +14,13 @@
 "BuxomMod:PermaGrowthPotion": {
         "NAME": "영구-성장 포션",
         "DESCRIPTIONS": ["시작 #y풍만함을 #b", " 증가시킵니다."]
+},
+"BuxomMod:MilkPotion": {
+        "NAME": "모유 포션",
+        "DESCRIPTIONS": ["#y모유를 #b", " 얻습니다."]
+},
+"BuxomMod:ExposePotion": {
+        "NAME": "노출 포션",
+        "DESCRIPTIONS": ["#y노출합니다. 카드를 #b", " 장 뽑고 #y에너지를 #b" ," 얻습니다."]
 }
 }

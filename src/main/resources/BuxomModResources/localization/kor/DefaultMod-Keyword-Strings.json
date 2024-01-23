@@ -13,14 +13,18 @@
     ],
     "DESCRIPTION": "가슴 크기를 증가시킵니다. 턴이 끝날 때 흔들림을 얻습니다."
   },
-  {
-    "PROPER_NAME": "수용량",
+    {
+    "PROPER_NAME": "브라",
     "NAMES": [
-	  "수용량",
-      "Capacity",
-      "capacity"
+      "수용량",
+      "수용량이",
+	  "수용량을",
+      "브라",
+      "브라는",
+	  "브라를",
+	  "브라가"
     ],
-    "DESCRIPTION": "#y풍만함이 이 구간 이내에 있는 한 브라는 이로운 효과를 제공하며 #y노출의 해로운 효과를 방지합니다. NL 만약 #y풍만함이 이 구간을 초과할 경우, 브라는 부서지며 상태이상 카드를 생성합니다. NL 만약 이미 너무 작은 브라를 착용한다면, NL 브라는 턴 종료 시 잘 맞지 않을 경우엔 망가집니다."
+    "DESCRIPTION": "#y브라를 온전히 유지하면 특정 카드를 활성화할 수 있습니다. #y브라가 부서진다면, #p출렁임 최대치가 감소합니다."
   },
   {
     "PROPER_NAME": "Multiword Keyword",
@@ -105,6 +109,7 @@
 	  "노출할",
 	  "노출하며",
 	  "노출됨에",
+	  "노출을",
       "Exposed",
       "exposed",
       "Expose",
@@ -121,5 +126,51 @@
       "vigor"
     ],
     "DESCRIPTION": "다음 #y공격 이 추가 피해를 줍니다."
+  },
+    {
+    "PROPER_NAME": "출렁임",
+    "NAMES": [
+	  "출렁임",
+      "Bouncy",
+      "bouncy"
+    ],
+    "DESCRIPTION": "상태이상 카드로도 취급됩니다. 구급상자로 소멸 시킬 수 없습니다."
+  },
+  {
+    "PROPER_NAME": "해부학",
+    "NAMES": [
+	  "해부학",
+      "Anatomical",
+      "anatomical"
+    ],
+    "DESCRIPTION": "가슴이 있는 적에게 효과가 두 배가 됩니다. #p(신비로운 존재, #p강도, #p약탈자, #p렙토맨서, #p수집가) NL #b가슴이 있을지도 모르는 적에게 효과가 두 배일 확률 50%. #p(챔피언, #p각성한 자, #p선택된 자, #p그렘린 리더)"
+  },
+  {
+    "PROPER_NAME": "급속팽창",
+    "NAMES": [
+	  "급속팽창",
+	  "급속팽창을",
+      "Rapidswell",
+      "rapidswell"
+    ],
+    "DESCRIPTION": "상태이상 카드로, #b3 #y풍만함을 제공하며, 턴이 끝날 때 소멸합니다."
+  },
+  {
+    "PROPER_NAME": "수리",
+    "NAMES": [
+	  "수리합니다",
+      "Repair",
+      "repair"
+    ],
+    "DESCRIPTION": "브라를 #r부서짐 상태이상으로부터 수리합니다."
+  },
+  {
+    "PROPER_NAME": "당황",
+    "NAMES": [
+	  "당황",
+      "Embarrassing",
+      "embarrassing"
+    ],
+    "DESCRIPTION": "노출 상태라면, 다음 카드를 비용 없이 낼 수 있습니다."
   }
 ]
