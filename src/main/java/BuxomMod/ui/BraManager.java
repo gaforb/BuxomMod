@@ -9,6 +9,7 @@ import BuxomMod.powers.ExposedPower;
 import BuxomMod.relics.BuxomRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -30,6 +31,8 @@ public class BraManager {
     public int maxBounce;
     public int brokenBouncePenalty;
     public int buffAmount;
+    public int permaCapacity;
+    public int permaCapacityStart;
     public int permaSize;
     public int permaSizeStart;
     public ArrayList<UUID> embarrassingList = new ArrayList<>();
@@ -41,6 +44,32 @@ public class BraManager {
     public int getPermaSize() {
         return permaSize;
     }
+    public int getPermaCapacity() {
+        return permaCapacity;
+    }
+
+    public int getTotalPermaSize() {
+        int total = getPermaSize();
+        for (AbstractRelic i : AbstractDungeon.player.relics) {
+            if (i instanceof BuxomRelic) {
+                total += ((BuxomRelic)i).startingBuxomMod;
+            }
+        }
+        return total;
+    }
+    public int getTotalPermaCapacity() {
+        int total = getPermaCapacity();
+        for (AbstractRelic i : AbstractDungeon.player.relics) {
+            if (i instanceof BuxomRelic) {
+                total += ((BuxomRelic)i).startingCapacityMod;
+            }
+        }
+        return total;
+    }
+
+    public void setPermaCapacity(int permaCapacity) {
+        this.permaCapacity = permaCapacity;
+    }
     public void onInitialApplication() {
         if (AbstractDungeon.player.hasRelic("BuxomMod:NakedRelic")) {
             growToBreak();
@@ -51,6 +80,8 @@ public class BraManager {
         if (!CardCrawlGame.loadingSave) {
             permaSizeStart = 3;
             permaSize = permaSizeStart;
+            permaCapacityStart = 6;
+            permaCapacity = permaCapacityStart;
         }
         broken = false;
         straining = false;
@@ -65,13 +96,13 @@ public class BraManager {
     public void onStartCombat() {
         buxomCounterThisTurn = 0;
         buxomGainedThisTurn = 0;
-        maxCapacity = 6;
+        maxCapacity = getTotalPermaCapacity();
         maxTotalCapacity = 30;
         broken = false;
         straining = false;
         maxBounce = 8;
         brokenBouncePenalty = 3;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, permaSize), permaSize));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, getTotalPermaSize()), getTotalPermaSize()));
         if (((TheBuxom)AbstractDungeon.player).naked == true) {
             AbstractDungeon.actionManager.addToBottom(
                     new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
@@ -135,8 +166,7 @@ public class BraManager {
         if (naked) {
             ((TheBuxom)AbstractDungeon.player).naked = true;
             AbstractDungeon.actionManager.addToBottom(
-                    new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                            new ExposedPower(AbstractDungeon.player, AbstractDungeon.player, -1), -1));
+                    new ExposeAction(AbstractDungeon.player));
         }
         else {
             ((TheBuxom)AbstractDungeon.player).naked = false;

@@ -51,6 +51,7 @@ BuxomMod\vfx\GrowthEvent.class
 BuxomMod\events\FoundOutEvent$Choice.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\BuxomMod$2.class
+BuxomMod\BuxomMod$3.class
 BuxomMod\cards\OmegaLibrary.class
 BuxomMod\actions\UncommonPowerAction.class
 BuxomMod\cards\LactatingSkill.class
@@ -123,7 +124,6 @@ BuxomMod\cards\BrokenBraWhiteBikini.class
 BuxomMod\powers\WhiteBikiniCupPower.class
 BuxomMod\cards\BraBreaker.class
 BuxomMod\ui\BuxomBar.class
-BuxomMod\actions\BraSelectAction.class
 BuxomMod\actions\ModifyCapacityAction.class
 BuxomMod\relics\MCupRelic.class
 BuxomMod\cards\OmegaArc.class
@@ -168,6 +168,7 @@ BuxomMod\cards\InducedLactation.class
 BuxomMod\orbs\DeviousChibi.class
 BuxomMod\ui\BounceMaxPanel.class
 BuxomMod\util\IDCheckDontTouchPls.class
+BuxomMod\ui\StartingCapacityPanel.class
 BuxomMod\cards\ChibiOffering.class
 BuxomMod\cards\Flee.class
 BuxomMod\actions\SetCapacityAction.class
@@ -183,6 +184,7 @@ BuxomMod\powers\MCupPower.class
 BuxomMod\orbs\AttackChibi.class
 BuxomMod\cards\OmegaShock.class
 BuxomMod\cards\BouncyExerciseOld.class
+BuxomMod\ui\StartingCapacityPanel$StartingBuxomPanelHitboxListener.class
 BuxomMod\relics\PlaceholderRelic.class
 BuxomMod\cards\Embarrassment.class
 BuxomMod\cards\MeasurementTime.class

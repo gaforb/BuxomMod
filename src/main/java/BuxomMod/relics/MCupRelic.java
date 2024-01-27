@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import static BuxomMod.BuxomMod.makeRelicOutlinePath;
 import static BuxomMod.BuxomMod.makeRelicPath;
 
-public class MCupRelic extends CustomRelic {
+public class MCupRelic extends BuxomRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -34,9 +34,16 @@ public class MCupRelic extends CustomRelic {
     private boolean triggered = false;
     public void atBattleStart() {
         flash();
-        int c = AbstractDungeon.player.masterDeck.size();
+        /*int c = AbstractDungeon.player.masterDeck.size();
         addToBot(new ModifyCapacityAction(AbstractDungeon.player, (c/3)*2));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, c/4), c/4));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CommonPower(AbstractDungeon.player, AbstractDungeon.player, c/4), c/4));*/
+    }
+
+    public void update(){
+        super.update();
+        int c = AbstractDungeon.player.masterDeck.size();
+        startingBuxomMod = (c/4);
+        startingCapacityMod = (c/3)*2;
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

@@ -673,6 +673,7 @@ public class TheBuxom extends CustomPlayer {
         braPanel.update(this);
         bounceMaxPanel.update(this);
         debugInfoPanel.update(this);
+        startingCapacityPanel.update(this);
         //logger.info("update: " + getSkeleton().findSlot(boobsSlotName).getAttachment().getName());
         braManager.strainCheck();
     }

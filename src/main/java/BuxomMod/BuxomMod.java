@@ -120,6 +120,7 @@ public class BuxomMod implements
     // Colors (RGB)
     public static final Color BOUNCE_GREEN = CardHelper.getColor(194.0f, 237.0f, 172.0f);
     public static final Color STARTING_BUXOM_PURPLE = CardHelper.getColor(218.0f, 172.0f, 237.0f);
+    public static final Color STARTING_CAPACITY_BLUE = CardHelper.getColor(89.0f, 139.0f, 211.0f);
     // Character Color
     public static final Color BUXOM_PINK = CardHelper.getColor(215.0f, 119.0f, 157.0f);
 
@@ -178,6 +179,7 @@ public class BuxomMod implements
     public static final String BREAK_EFFECT = "BuxomModResources/images/vfx/break_effect.png";
     public static final String BUXOM_BAR_EFFECT = "BuxomModResources/images/ui/buxomBarVfx.png";
     public static final String STARTING_BUXOM_ICON = "BuxomModResources/images/ui/buxom42.png";
+    public static final String STARTING_CAPACITY_ICON = "BuxomModResources/images/ui/capacity42.png";
     public static final String MAX_BOUNCE_ICON = "BuxomModResources/images/ui/bounce42.png";
     public static final String GROW_VFX = "BuxomModResources/images/ui/growVfx.png";
 
@@ -217,6 +219,7 @@ public class BuxomMod implements
     public static StartingBuxomPanel startingBuxomPanel;
     public static BounceMaxPanel bounceMaxPanel;
     public static DebugInfoPanel debugInfoPanel;
+    public static StartingCapacityPanel startingCapacityPanel;
 
     // =============== SUBSCRIBE, CREATE THE COLOR_PINK, INITIALIZE =================
 
@@ -413,6 +416,7 @@ public class BuxomMod implements
         startingBuxomPanel = new StartingBuxomPanel(TextureLoader.getTexture(STARTING_BUXOM_ICON));
         bounceMaxPanel = new BounceMaxPanel(TextureLoader.getTexture(MAX_BOUNCE_ICON));
         debugInfoPanel = new DebugInfoPanel(TextureLoader.getTexture(MAX_BOUNCE_ICON));
+        startingCapacityPanel = new StartingCapacityPanel(TextureLoader.getTexture(STARTING_CAPACITY_ICON));
 
         BaseMod.addSaveField(makeID("StartingBuxom"), new CustomSavable<Integer>() {
             @Override
@@ -427,6 +431,22 @@ public class BuxomMod implements
             public void onLoad(Integer i) {
                 if (braManager != null && AbstractDungeon.player instanceof TheBuxom) {
                     braManager.setPermaSize(i);
+                }
+            }
+        });
+        BaseMod.addSaveField(makeID("StartingCapacity"), new CustomSavable<Integer>() {
+            @Override
+            public Integer onSave() {
+                if (AbstractDungeon.player instanceof TheBuxom) {
+                    return braManager.getPermaCapacity();
+                }
+                return 0;
+            }
+
+            @Override
+            public void onLoad(Integer i) {
+                if (braManager != null && AbstractDungeon.player instanceof TheBuxom) {
+                    braManager.setPermaCapacity(i);
                 }
             }
         });
@@ -847,6 +867,7 @@ public class BuxomMod implements
             braPanel.render(spriteBatch, AbstractDungeon.player, braPanel.hbTextColor);
             startingBuxomPanel.render(spriteBatch, AbstractDungeon.player, startingBuxomPanel.hbTextColor);
             bounceMaxPanel.render(spriteBatch, AbstractDungeon.player, bounceMaxPanel.hbTextColor);
+            startingCapacityPanel.render(spriteBatch, AbstractDungeon.player, startingCapacityPanel.hbTextColor);
             //debugInfoPanel.render(spriteBatch, AbstractDungeon.player, debugInfoPanel.hbTextColor);
         }
     }

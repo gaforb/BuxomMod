@@ -1,23 +1,16 @@
 package BuxomMod.relics;
 
-import BuxomMod.actions.BraSelectAction;
 import BuxomMod.actions.ModifyCapacityAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import BuxomMod.BuxomMod;
-import BuxomMod.powers.CommonPower;
-import BuxomMod.cards.ToplessStatus;
 import BuxomMod.util.TextureLoader;
 
 import static BuxomMod.BuxomMod.makeRelicOutlinePath;
 import static BuxomMod.BuxomMod.makeRelicPath;
 
-public class DwarfBoobsRelic extends CustomRelic {
+public class DwarfBoobsRelic extends BuxomRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -39,8 +32,14 @@ public class DwarfBoobsRelic extends CustomRelic {
     private boolean triggered = false;
     public void atBattleStart() {
         flash();
-        int c = AbstractDungeon.player.masterDeck.size()/2;
-        addToBot(new ModifyCapacityAction(AbstractDungeon.player, c/2));
+        /*int c = AbstractDungeon.player.masterDeck.size()/2;
+        addToBot(new ModifyCapacityAction(AbstractDungeon.player, c/2));*/
+    }
+
+    public void update(){
+        super.update();
+        int c = AbstractDungeon.player.masterDeck.size();
+        startingCapacityMod = (c/4);
     }
 
     /*public void onReceivePower(AbstractPower power, AbstractCreature target) {

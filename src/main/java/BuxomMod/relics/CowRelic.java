@@ -1,11 +1,7 @@
 package BuxomMod.relics;
 
 import BuxomMod.BuxomMod;
-import BuxomMod.actions.BraSelectAction;
-import BuxomMod.actions.IncreaseStartingBuxomAction;
-import BuxomMod.powers.CommonPower;
 import BuxomMod.powers.LactatingPower;
-import BuxomMod.powers.MilkPower;
 import BuxomMod.util.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
@@ -14,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static BuxomMod.BuxomMod.*;
 
-public class CowRelic extends CustomRelic {
+public class CowRelic extends BuxomRelic {
 
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
@@ -30,13 +26,15 @@ public class CowRelic extends CustomRelic {
 
     public CowRelic() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
+        this.startingBuxomMod = 2;
     }
 
     // Flash at the start of Battle.
     private boolean triggered = false;
 
     public void onEquip(){
-        addToBot(new IncreaseStartingBuxomAction(AbstractDungeon.player, 2));
+        braManager.permaSize += 2;
+
     }
     public void atBattleStart() {
         flash();

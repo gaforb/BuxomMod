@@ -1,6 +1,5 @@
 package BuxomMod.ui;
 
-import BuxomMod.BuxomMod;
 import BuxomMod.util.TextureLoader;
 import basemod.ClickableUIElement;
 import com.badlogic.gdx.graphics.Color;
@@ -18,9 +17,9 @@ import java.util.ArrayList;
 
 import static BuxomMod.BuxomMod.*;
 
-public class StartingBuxomPanel extends ClickableUIElement {
+public class StartingCapacityPanel extends ClickableUIElement {
     public float hb_x = 80F * Settings.scale;
-    public float hb_y = 220F * Settings.scale;
+    public float hb_y = 158F * Settings.scale;
     public float hb_w = 48F * Settings.scale;
     public float hb_h = 48F * Settings.scale;
     public Hitbox hb = new Hitbox(this.hb_x, this.hb_y, this.hb_w, this.hb_h);
@@ -36,9 +35,9 @@ public class StartingBuxomPanel extends ClickableUIElement {
     private float hbShowTimer = 0.0F;
     private String buxomNumber = "";
 
-    public StartingBuxomPanel(Texture image) {
+    public StartingCapacityPanel(Texture image) {
         super(image);
-        this.image = TextureLoader.getTexture(STARTING_BUXOM_ICON);
+        this.image = TextureLoader.getTexture(STARTING_CAPACITY_ICON);
         this.tips.add(new PowerTip(NAME, DESCRIPTION));
         this.hitbox = hb;
         setClickable(false);
@@ -61,7 +60,7 @@ public class StartingBuxomPanel extends ClickableUIElement {
         if (this.hitbox.hovered && InputHelper.justClickedLeft && this.isClickable()) {
             this.onClick();
         }
-        buxomNumber = String.valueOf(braManager.getTotalPermaSize());
+        buxomNumber = String.valueOf(braManager.getTotalPermaCapacity());
         if (AbstractDungeon.getCurrRoom() != null
                 && AbstractDungeon.getCurrRoom() != null
                 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
@@ -83,7 +82,7 @@ public class StartingBuxomPanel extends ClickableUIElement {
                     buxomNumber,
                     hb.x,
                         hb.cY,
-                        STARTING_BUXOM_PURPLE);
+                        STARTING_CAPACITY_BLUE);
                 if (renderTip == true) {
                     TipHelper.queuePowerTips(hb.x + hb.width + 16F * Settings.scale, hb.y, this.tips);
                 }
