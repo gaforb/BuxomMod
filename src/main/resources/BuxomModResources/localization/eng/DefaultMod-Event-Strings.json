@@ -52,5 +52,19 @@
       "[Leave]",
       "Option [7] [Leave ]"
     ]
+  },
+  "BuxomMod:ThiefEvent": {
+    "NAME": "Thieves!",
+    "DESCRIPTIONS": [
+      "As you venture on, you fail to notice a pair of ~thieves~ trailing you. As soon as you pause for a breather, they suddenly @yank@ @off@ @your@ @shirt!@ NL NL Cackling, they manage to rip off your pants and underwear even as you struggle, then go dashing into the dark. NL One of them has your #gclothes, and the other carries a fat pack of #yill-gotten #ygains. NL NL You find your feet and chase after them!",
+      "You need your clothes back @NOW@! Thinking quickly, you send a swarm of #rangry #rchibis after them. NL Moments later, some @panicked@ @yelling@ echoes down the corridor. Eventually, the chibis return with your possessions intact. NL NL Phew! As you pull your cotton t-shirt back on, you wonder how much it would really go for on the black market.",
+      "You stumble after them, hands full of naked breast. Unfortunately, you're ~woefully~ out of shape, and quickly lose them in the dark. NL NL As you make your way down the corridor, panting and clutching your privates, you find only the backpack snagged on a broken railing. It's full of #yprecious #yloot, but what do you do ~NOW?~ NL You cover yourself as best you can and head back the way you came."
+    ],
+    "OPTIONS": [
+      "[Summon Chibis] #rLose #r",
+      ".",
+      "[Run After Them] #gObtain #ga #grare #gRelic. #pFight #pyour #pnext #pcombat #pnaked.",
+      "[Leave]"
+    ]
   }
 }

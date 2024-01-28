@@ -98,6 +98,7 @@ BuxomMod\cards\DefaultCommonSkill.class
 BuxomMod\powers\BraBreakerPower.class
 BuxomMod\cards\Rapidswell.class
 BuxomMod\powers\BouncePower.class
+BuxomMod\relics\TempNakedRelic.class
 BuxomMod\cards\SwellingTight.class
 BuxomMod\actions\IncreaseStartingBuxomAction.class
 BuxomMod\cards\BrokenBraT.class
@@ -139,6 +140,7 @@ BuxomMod\cards\Smother.class
 BuxomMod\powers\BraBrokenPower.class
 BuxomMod\powers\RarePower.class
 BuxomMod\events\ChibiEvent.class
+BuxomMod\events\ThievesEvent.class
 BuxomMod\cards\PopPopPop.class
 BuxomMod\blockMods\ChibiBlock.class
 BuxomMod\cards\OmegaDeflection.class
@@ -147,6 +149,7 @@ BuxomMod\BuxomMod$1.class
 BuxomMod\cards\MCupBra.class
 BuxomMod\cards\old\ChibiAttraction.class
 BuxomMod\cards\ChaosDunk.class
+BuxomMod\events\ThievesEvent$Choice.class
 BuxomMod\relics\BuxomRelic.class
 BuxomMod\cards\ButtonHazard.class
 BuxomMod\ui\BuxomPanel.class
@@ -168,6 +171,7 @@ BuxomMod\cards\InducedLactation.class
 BuxomMod\orbs\DeviousChibi.class
 BuxomMod\ui\BounceMaxPanel.class
 BuxomMod\util\IDCheckDontTouchPls.class
+BuxomMod\cards\OmegaMisfire.class
 BuxomMod\ui\StartingCapacityPanel.class
 BuxomMod\cards\ChibiOffering.class
 BuxomMod\cards\Flee.class

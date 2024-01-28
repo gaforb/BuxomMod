@@ -86,5 +86,12 @@
     "DESCRIPTIONS": [
       "The first time you #yExpose each combat, don't lose #yBlock."
     ]
+  },
+  "BuxomMod:TempNakedRelic": {
+    "NAME": "Naked!",
+    "FLAVOR": "It's awfully hard to fight while covering your nipples...",
+    "DESCRIPTIONS": [
+      "Permanently #yExposed during the next combat."
+    ]
   }
 }

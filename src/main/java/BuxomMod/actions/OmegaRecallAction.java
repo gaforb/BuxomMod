@@ -20,10 +20,12 @@ import static BuxomMod.BuxomMod.makeID;
 public class OmegaRecallAction extends AbstractGameAction {
     private AbstractPlayer p;
     private int amt;
+    private boolean drawTwice;
 
-    public OmegaRecallAction(final AbstractPlayer p, int amount) {
+    public OmegaRecallAction(final AbstractPlayer p, int amount, boolean drawTwice) {
         this.p = p;
         this.amt = amount;
+        this.drawTwice = drawTwice;
     }
 
     /*At the start of your turn, draw 1 non-status card. If you have 3 or more status cards in hand, draw an additional non-status card.
@@ -33,6 +35,7 @@ public class OmegaRecallAction extends AbstractGameAction {
     If cards in hand, check for status
     If more than X status cards, draw an additional card from the list
      */
+
     
     @Override
     public void update() {
@@ -44,7 +47,7 @@ public class OmegaRecallAction extends AbstractGameAction {
                 AbstractDungeon.player.drawPile.moveToHand(nonStatusCardsDrawPile.getTopCard());
             }
         }
-        if (BuxomMod.specialGetCardsOfType(AbstractDungeon.player.hand, AbstractCard.CardType.STATUS).size() >= 3) {
+        if (BuxomMod.specialGetCardsOfType(AbstractDungeon.player.hand, AbstractCard.CardType.STATUS).size() >= 3 && this.drawTwice) {
             BuxomMod.logger.info("3 or more status cards in hand");
             if (nonStatusCardsDrawPile.size() > 0) {
                 logger.info("top card: " + nonStatusCardsDrawPile.getTopCard());

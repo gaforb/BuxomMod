@@ -2,6 +2,7 @@ package BuxomMod;
 
 import BuxomMod.events.ChibiEvent;
 import BuxomMod.events.FoundOutEvent;
+import BuxomMod.events.ThievesEvent;
 import BuxomMod.patches.CustomTags;
 import BuxomMod.potions.*;
 import BuxomMod.powers.BraBrokenPower;
@@ -474,6 +475,11 @@ public class BuxomMod implements
         BaseMod.addEvent(eventParams);
 
         eventParams = new AddEventParams.Builder(FoundOutEvent.ID, FoundOutEvent.class) // for this specific event
+                .playerClass(TheBuxom.Enums.THE_BUXOM) // Character specific event
+                .create();
+
+        BaseMod.addEvent(eventParams);
+        eventParams = new AddEventParams.Builder(ThievesEvent.ID, ThievesEvent.class) // for this specific event
                 .playerClass(TheBuxom.Enums.THE_BUXOM) // Character specific event
                 .create();
 

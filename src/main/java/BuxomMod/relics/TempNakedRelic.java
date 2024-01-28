@@ -20,7 +20,7 @@ public class TempNakedRelic extends CustomRelic {
      */
 
     // ID, images, text.
-    public static final String ID = BuxomMod.makeID("NakedRelic");
+    public static final String ID = BuxomMod.makeID("TempNakedRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ToplessArtifact.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ToplessArtifact.png"));
@@ -46,7 +46,8 @@ public class TempNakedRelic extends CustomRelic {
             this.usedUp();
         }
     }
-    public void onUnequip() {
+    public void usedUp(){
+        super.usedUp();
         braManager.changeNaked(false);
     }
 

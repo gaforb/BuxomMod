@@ -363,8 +363,13 @@
   },
   "BuxomMod:OmegaRecall": {
     "NAME": "Omega Recall",
-    "DESCRIPTION": "{@@}At the start of your turn, draw !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand has more than 3 or more *Status cards in it, draw !M! additional non-[#EFC851]Status[] card{!M!|>1=s}.",
-    "UPGRADE_DESCRIPTION": "{@@}Innate. NL At the start of your turn, draw !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand has more than 3 or more *Status cards in it, draw !M! additional non-[#EFC851]Status[] card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}At the start of your turn, draw the top !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand 3 or more *Status cards in it, draw the top !M! additional non-[#EFC851]Status[] card{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "{@@}Innate. NL At the start of your turn, draw !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand has 3 or more *Status cards in it, draw !M! the top additional non-[#EFC851]Status[] card{!M!|>1=s}."
+  },
+  "BuxomMod:OmegaMisfire": {
+    "NAME": "Omega Misfire",
+    "DESCRIPTION": "{@@}Retain. NL BuxomMod:Expose. NL Draw !M! non-Status card{!M!|>1=s}. NL If this card is retained twice, play it at the start of your next turn.",
+    "UPGRADE_DESCRIPTION": "{@@}Retain. NL BuxomMod:Expose. NL Draw the top !M! non-Status card{!M!|>1=s} from your draw pile. NL If this card is retained twice, play it at the start of your next turn."
   }
 }
 

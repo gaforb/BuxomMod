@@ -36,8 +36,8 @@ public class BraCloset extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC = 8;
     private static final int UPGRADE_PLUS_MAGIC = 3;
-    private static final int SECOND_MAGIC = 2;
-    private static final int UPGRADE_SECOND_MAGIC = 1;
+    private static final int SECOND_MAGIC = 3;
+    private static final int UPGRADE_SECOND_MAGIC = 2;
 
     // /STAT DECLARATION/
 

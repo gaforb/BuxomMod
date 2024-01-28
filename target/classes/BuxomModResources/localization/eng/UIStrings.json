@@ -19,7 +19,7 @@
   "BuxomMod:StartingBuxomPanel": {
     "NAME": ["Starting Buxom"],
     "TEXT": ["Starting Buxom",
-      "Gain this much Buxom at the start of each combat."
+      "Gain this much #yBuxom at the start of each combat."
     ]
   },
   "BuxomMod:BounceMaxPanel": {
@@ -32,6 +32,12 @@
     "NAME": ["No Attack Intent"],
     "TEXT": [
       "Enemy doesn't intend to attack!"
+    ]
+  },
+  "BuxomMod:StartingCapacityPanel": {
+    "NAME": ["Starting Capacity"],
+    "TEXT": ["Starting Capacity",
+      "Start each combat with this much #yCapacity."
     ]
   }
 }

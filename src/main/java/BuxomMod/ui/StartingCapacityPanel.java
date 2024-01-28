@@ -25,7 +25,7 @@ public class StartingCapacityPanel extends ClickableUIElement {
     public Hitbox hb = new Hitbox(this.hb_x, this.hb_y, this.hb_w, this.hb_h);
     public Color hbTextColor = new Color(1.0F, 1.0F, 1.0F, 1.0F);
 
-    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(makeID("StartingBuxomPanel")).TEXT;
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(makeID("StartingCapacityPanel")).TEXT;
     public static final String NAME = TEXT[0];
     public static final String DESCRIPTION = TEXT[1];
     public ArrayList<PowerTip> tips = new ArrayList();

@@ -55,7 +55,7 @@ public class OmegaRecallPower extends TwoAmountPower implements CloneablePowerIn
     }
 
     public void atStartOfTurnPostDraw() {
-        addToBot(new OmegaRecallAction(AbstractDungeon.player, amount));
+        addToBot(new OmegaRecallAction(AbstractDungeon.player, amount, true));
     }
 
     @Override
