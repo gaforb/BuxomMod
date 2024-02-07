@@ -1,6 +1,7 @@
 package BuxomMod.cards;
 
 import BuxomMod.BuxomMod;
+import BuxomMod.actions.ExposeAction;
 import BuxomMod.characters.TheBuxom;
 import BuxomMod.powers.ExposedPower;
 import BuxomMod.powers.SurprisePower;
@@ -50,10 +51,13 @@ public class Surprise extends AbstractDynamicCard {
         this.exhaust = true;
     }
 
-    @Override
+    /*@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new SurprisePower(p, p, -1), -1));
+    }*/
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ExposeAction(p));
     }
 
     //Upgraded stats.
@@ -61,7 +65,7 @@ public class Surprise extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            this.exhaust = false;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

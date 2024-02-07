@@ -35,6 +35,8 @@ public class MeasurementTime extends AbstractDynamicCard {
     private static final int COST = 2;
     private static final int MAGIC = 12;
     private static final int UPGRADE_PLUS_MAGIC = 4;
+    private static final int SECOND_MAGIC = 4;
+    private static final int UPGRADE_SECOND_MAGIC = -1;
 
     // /STAT DECLARATION/
 
@@ -42,6 +44,7 @@ public class MeasurementTime extends AbstractDynamicCard {
     public MeasurementTime() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
     }
 
     // Actions the card should do.
@@ -54,7 +57,7 @@ public class MeasurementTime extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new MeasurementPower(p, p, magicNumber), magicNumber));
+                new MeasurementPower(p, p, magicNumber, defaultSecondMagicNumber), magicNumber));
         }
 
     // Upgraded stats.
@@ -62,7 +65,7 @@ public class MeasurementTime extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeDefaultSecondMagicNumber(UPGRADE_SECOND_MAGIC);
             initializeDescription();
         }
     }

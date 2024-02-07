@@ -15,7 +15,7 @@ public class GrowthEvent extends AbstractSizeEvent{
         this.timerStart = timer;
         this.howMuch = howMuch;
         logger.info("New growth event");
-        logger.info("Timer: " +timer);
+        logger.info("Timer: " + timer);
         logger.info("Timerstart: " + timerStart);
         logger.info("HowMuch: " + howMuch);
     }

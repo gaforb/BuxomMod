@@ -48,11 +48,11 @@ public class OmegaFumes extends AbstractDynamicCard {
 
     private static final int COST = 1;
 
-    private static final int VULNERABLE = 1;
+    private static final int VULNERABLE = 2;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
 
-    private static final int DAMAGE = 9;
-    private static final int UPGRADE_PLUS_DAMAGE = 2;
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DAMAGE = 4;
 
     // /STAT DECLARATION/
 

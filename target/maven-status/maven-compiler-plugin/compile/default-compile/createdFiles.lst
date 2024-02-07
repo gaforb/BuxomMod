@@ -9,6 +9,7 @@ BuxomMod\relics\SilkRelic.class
 BuxomMod\relics\BottledPlaceholderRelic.class
 BuxomMod\actions\ShrinkAction.class
 BuxomMod\cards\ChargedChibi.class
+BuxomMod\cards\IroncladCosplay.class
 BuxomMod\cards\OmegaRecall.class
 BuxomMod\variables\DefaultSecondMagicNumber.class
 BuxomMod\cards\OmegaDuplication.class
@@ -24,6 +25,7 @@ BuxomMod\vfx\ExpandEffect.class
 BuxomMod\cards\OmegaContagion.class
 BuxomMod\cards\ChibiOneTwo.class
 BuxomMod\ui\DebugInfoPanel.class
+BuxomMod\relics\BlessedBraRelic.class
 BuxomMod\cards\PanicLactation.class
 BuxomMod\actions\OmegaRecallAction.class
 BuxomMod\powers\ExposedPower.class
@@ -40,6 +42,8 @@ BuxomMod\cards\OmegaFumes.class
 BuxomMod\cards\SteadyLactation.class
 BuxomMod\ui\BraPanel.class
 BuxomMod\variables\BuxomDamageVariable.class
+BuxomMod\vfx\PauseEvent.class
+BuxomMod\events\BrothelEvent.class
 BuxomMod\relics\LotionRelic.class
 BuxomMod\cards\BouncyBlock.class
 BuxomMod\cards\ShivChibi.class
@@ -49,6 +53,7 @@ BuxomMod\powers\MilkPower.class
 BuxomMod\cards\WhiteBikiniBra.class
 BuxomMod\vfx\GrowthEvent.class
 BuxomMod\events\FoundOutEvent$Choice.class
+BuxomMod\events\BrothelEvent$Choice.class
 BuxomMod\relics\DefaultClickableRelic.class
 BuxomMod\BuxomMod$2.class
 BuxomMod\BuxomMod$3.class
@@ -110,6 +115,7 @@ BuxomMod\cards\FeelItOut.class
 BuxomMod\powers\KCupPower_old.class
 BuxomMod\variables\DefaultCustomVariable.class
 BuxomMod\actions\FeelItOutAction.class
+BuxomMod\actions\IroncladCosplayAction.class
 BuxomMod\cards\OmegaThorns.class
 BuxomMod\ui\StartingBuxomPanel.class
 BuxomMod\events\IdentityCrisisEvent.class
@@ -164,6 +170,7 @@ BuxomMod\cards\OmegaFlare.class
 BuxomMod\variables\MilkCostVariable.class
 BuxomMod\cards\ExpansiveWall.class
 BuxomMod\relics\JCupRelic.class
+BuxomMod\relics\InsigniaRelic.class
 BuxomMod\cards\BigBounceStatus.class
 BuxomMod\powers\OmegaRecallPower.class
 BuxomMod\patches\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
@@ -185,6 +192,7 @@ BuxomMod\cards\BouncingLactation.class
 BuxomMod\relics\PlaceholderRelic2.class
 BuxomMod\patches\CustomTags.class
 BuxomMod\powers\MCupPower.class
+BuxomMod\cards\HonestApology.class
 BuxomMod\orbs\AttackChibi.class
 BuxomMod\cards\OmegaShock.class
 BuxomMod\cards\BouncyExerciseOld.class
@@ -205,6 +213,7 @@ BuxomMod\cards\OmegaBonk.class
 BuxomMod\relics\WashboardRelic.class
 BuxomMod\actions\OmegabsorptionAction.class
 BuxomMod\cards\OmegaCurse.class
+BuxomMod\cards\MessyPaizuri.class
 BuxomMod\events\ToplessEvent.class
 BuxomMod\cards\QuiteEnough.class
 BuxomMod\relics\NakedRelic.class

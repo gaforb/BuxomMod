@@ -82,12 +82,12 @@ public class PermaGrowthPotion extends CustomPotion {
     // This is your potency.
     @Override
     public int getPotency(final int potency) {
-        return 3;
+        return 4;
     }
 
     public void upgradePotion()
     {
-      potency += 3;
+      potency += 4;
       tips.clear();
       tips.add(new PowerTip(name, description));
     }

@@ -61,8 +61,8 @@ public class LeanneAssist extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 9;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DMG = 5;
     private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC = 2;
 

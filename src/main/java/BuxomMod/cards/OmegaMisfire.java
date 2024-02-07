@@ -44,6 +44,7 @@ public class OmegaMisfire extends AbstractDynamicCard {
     public OmegaMisfire() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        this.selfRetain = true;
     }
 
     public void onRetained() {

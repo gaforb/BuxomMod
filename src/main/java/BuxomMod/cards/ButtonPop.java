@@ -64,11 +64,11 @@ public class ButtonPop extends AbstractDynamicCard {
     public static final CardColor COLOR = TheBuxom.Enums.COLOR_PINK;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
-    private static final int MAGIC = 1;
+    private static final int DAMAGE = 10;
+    private static final int MAGIC = 2;
     private static final int SECOND_MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     // Hey want a second damage/magic/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and TheDefault.variable.DefaultCustomVariable

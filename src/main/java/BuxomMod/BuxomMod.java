@@ -533,6 +533,8 @@ public class BuxomMod implements
         BaseMod.addRelicToCustomPool(new OmegaThreadRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new LotionRelic(), TheBuxom.Enums.COLOR_PINK);
         BaseMod.addRelicToCustomPool(new SilkRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new BlessedBraRelic(), TheBuxom.Enums.COLOR_PINK);
+        BaseMod.addRelicToCustomPool(new InsigniaRelic(), TheBuxom.Enums.COLOR_PINK);
         //BaseMod.addRelicToCustomPool(new NakedRelic(), TheBuxom.Enums.COLOR_PINK);
 
         // This adds a relic to the Shared pool. Every character can find this relic.

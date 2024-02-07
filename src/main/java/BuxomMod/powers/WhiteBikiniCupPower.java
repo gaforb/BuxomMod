@@ -88,7 +88,7 @@ public class WhiteBikiniCupPower extends AbstractPower implements CloneablePower
 
     public void onVictory() {
         if (!braManager.broken) {
-            braManager.permaSize += 2;
+            braManager.permaSize += 1;
         }
     }
 

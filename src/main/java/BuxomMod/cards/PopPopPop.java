@@ -68,8 +68,8 @@ public class PopPopPop extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new CommonPower(p, p, 1), 1));
         }*/
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, defaultSecondMagicNumber));
-        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.drawPile, new AftershockStatus(), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.hand, new AftershockStatus(), defaultSecondMagicNumber));
 
         /*
         Hey do you see this "amount" and "stackAmount" up here^ (press ctrl+p inside the parentheses to see parameters)
@@ -89,7 +89,7 @@ public class PopPopPop extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDefaultSecondMagicNumber(UPGRADE_MAGIC);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

@@ -93,5 +93,19 @@
     "DESCRIPTIONS": [
       "Permanently #yExposed during the next combat."
     ]
+  },
+  "BuxomMod:InsigniaRelic": {
+    "NAME": "Brothel Insignia",
+    "FLAVOR": "The foreboding metal is warm to the touch, and makes your nipples oddly tender.",
+    "DESCRIPTIONS": [
+      "Gain #b3 #yBuxom permanently when #yResting at a rest site."
+    ]
+  },
+  "BuxomMod:BlessedBraRelic": {
+    "NAME": "Blessed Bra",
+    "FLAVOR": "This bra remains comfortable no matter how much it's stretched.",
+    "DESCRIPTIONS": [
+      "Gain #b4 #yCapacity permanently when #yResting at a rest site."
+    ]
   }
 }

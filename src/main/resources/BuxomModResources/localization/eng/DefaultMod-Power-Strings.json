@@ -17,7 +17,7 @@
 },
 "BuxomMod:ButtonHazardPower": {
         "NAME": "Button Hazard",
-        "DESCRIPTIONS": ["Deal #b", " to a random enemy whenever you gain Buxom."]
+        "DESCRIPTIONS": ["Deal #b", " to a random enemy whenever you gain Buxom. When you #yExpose, damage ALL enemies."]
 },
 "BuxomMod:ReliefPower": {
         "NAME": "Relief",
@@ -25,7 +25,7 @@
 },
 "BuxomMod:MeasurementPower": {
         "NAME": "Measurement Time",
-        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases by #b4 each time your buxommod:Buxom increases."]
+        "DESCRIPTIONS": ["At the end of your turn, gain #b", " Block. NL Decreases by #b", " each time your buxommod:Buxom increases."]
 },
 "BuxomMod:ShockPower": {
         "NAME": "Omega Shock",

@@ -77,7 +77,7 @@ public class FoundOutEvent extends AbstractImageEvent {
                         this.imageEventText.updateDialogOption(0, OPTIONS[6]); // 1. Change the first button to the [Leave] button
                         this.imageEventText.clearRemainingOptions(); // 2. and remove all others
                         AbstractDungeon.player.heal(this.healAmt);
-                        braManager.permaSize += 1;
+                        braManager.permaSize += 2;
                         screenNum = 1; // Screen set the screen number to 1. Once we exit the switch (i) statement,
                         // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions
                         // (in our case, that's the final screen, but you can chain as many as you want like that)

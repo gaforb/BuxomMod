@@ -9,7 +9,7 @@
   },
   "BuxomMod:PopPopPop": {
     "NAME": "Pop, Pop, Pop!",
-    "DESCRIPTION": "Draw !BuxomMod:SecondMagic! cards. NL Add !M! *Afterswell to your draw pile."
+    "DESCRIPTION": "Draw !M! cards. NL Add !BuxomMod:SecondMagic! *Afterswell to your hand."
   },
   "BuxomMod:BouncyExercise": {
     "NAME": "Bouncy Exercise",
@@ -79,7 +79,7 @@
   },
   "BuxomMod:ChibiSummon": {
     "NAME": "Chibi Summon",
-    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL Gain !B! Block. NL Gain !B! Block next turn."
+    "DESCRIPTION": "Lose !M! BuxomMod:Buxom. NL Gain !B! Block. NL Gain !BuxomMod:SecondMagic! Block next turn."
   },
   "BuxomMod:ButtonPop": {
     "NAME": "Button Pop",
@@ -87,7 +87,7 @@
   },
   "BuxomMod:ButtonHazard": {
     "NAME": "Button Hazard",
-    "DESCRIPTION": "Deal !M! damage to a random enemy whenever you gain BuxomMod:Buxom. NL BuxomMod:Milking 2: Deal !BuxomMod:SecondMagic! additional damage."
+    "DESCRIPTION": "Deal !M! damage to a random enemy whenever you gain BuxomMod:Buxom. NL When you BuxomMod:Expose, damage ALL enemies."
   },
   "BuxomMod:LeanneAssist": {
     "NAME": "Leanne Assist",
@@ -108,7 +108,7 @@
   },
   "BuxomMod:Library": {
     "NAME": "Omega Library",
-    "DESCRIPTION": "Scry !M!. NL Gain !B! Block. NL Add buxommod:Rapidswell to your discard pile."
+    "DESCRIPTION": "Scry !M!. NL Gain !B! Block."
   },
   "BuxomMod:OmegaLibrary": {
     "NAME": "OMEGA Library",
@@ -116,7 +116,7 @@
   },
   "BuxomMod:MeasurementTime": {
     "NAME": "Measurement Time",
-    "DESCRIPTION": "At the end of your turn, gain !M! Block. NL Decreases by 4 each time your BuxomMod:Buxom increases."
+    "DESCRIPTION": "At the end of your turn, gain !M! Block. NL Decreases by !BuxomMod:SecondMagic! each time your BuxomMod:Buxom increases."
   },
   "BuxomMod:OmegaArc": {
     "NAME": "Omega Arc",
@@ -222,7 +222,7 @@
   },
   "BuxomMod:WhiteBikiniBra": {
     "NAME": "White Bikini",
-    "DESCRIPTION": "Gain !M! BuxomMod:Milk at the start of your turn. NL At the end of combat, if your BuxomMod:Bra is intact, gain 2 BuxomMod:Buxom permanently."
+    "DESCRIPTION": "Gain !M! BuxomMod:Milk at the start of your turn. NL At the end of combat, if your BuxomMod:Bra is intact, gain 1 BuxomMod:Buxom permanently."
   },
   "BuxomMod:BrokenBraWhiteBikini": {
     "NAME": "Broken White Bikini",
@@ -246,8 +246,8 @@
   },
   "BuxomMod:Surprise": {
     "NAME": "Surprise!",
-    "DESCRIPTION": "Retain. NL Next turn, buxommod:Expose and gain [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. Next turn, buxommod:Expose and gain [E] [E]. NL Exhaust."
+    "DESCRIPTION": "Retain. NL buxommod:Expose. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL buxommod:Expose."
   },
   "BuxomMod:HungryDwarf": {
     "NAME": "Hungry Dwarf",
@@ -363,13 +363,28 @@
   },
   "BuxomMod:OmegaRecall": {
     "NAME": "Omega Recall",
-    "DESCRIPTION": "{@@}At the start of your turn, draw the top !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand 3 or more *Status cards in it, draw the top !M! additional non-[#EFC851]Status[] card{!M!|>1=s}.",
-    "UPGRADE_DESCRIPTION": "{@@}Innate. NL At the start of your turn, draw !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand has 3 or more *Status cards in it, draw !M! the top additional non-[#EFC851]Status[] card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}At the start of your turn, draw !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand 3 or more *Status cards in it, draw !M! more non-[#EFC851]Status[] card{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "{@@}Innate. NL At the start of your turn, draw !M! non-[#EFC851]Status[] card{!M!|>1=s}. NL If your hand 3 or more *Status cards in it, draw !M! more non-[#EFC851]Status[] card{!M!|>1=s}."
   },
   "BuxomMod:OmegaMisfire": {
     "NAME": "Omega Misfire",
     "DESCRIPTION": "{@@}Retain. NL BuxomMod:Expose. NL Draw !M! non-Status card{!M!|>1=s}. NL If this card is retained twice, play it at the start of your next turn.",
-    "UPGRADE_DESCRIPTION": "{@@}Retain. NL BuxomMod:Expose. NL Draw the top !M! non-Status card{!M!|>1=s} from your draw pile. NL If this card is retained twice, play it at the start of your next turn."
+    "UPGRADE_DESCRIPTION": "{@@}Retain. NL BuxomMod:Expose. NL Draw !M! non-Status card{!M!|>1=s}. NL If this card is retained twice, play it at the start of your next turn."
+  },
+  "BuxomMod:MessyPaizuri": {
+    "NAME": "Messy Paizuri",
+    "DESCRIPTION": "{@@}BuxomMod:Embarrassing. NL BuxomMod:Expose. NL Enemy loses Strength equal to your BuxomMod:Buxom this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "{@@}BuxomMod:Embarrassing. NL Retain. NL BuxomMod:Expose. NL Enemy loses Strength equal to your BuxomMod:Buxom this turn. NL Exhaust."
+  },
+  "BuxomMod:HonestApology": {
+    "NAME": "Honest Apology",
+    "DESCRIPTION": "{@@}Gain !B! Block for each enemy in combat. NL Draw !M! card{!M!|>1=s}.",
+    "UPGRADE_DESCRIPTION": "{@@}Innate. NL Gain !B! Block for each enemy in combat. NL Draw !M! card{!M!|>1=s}."
+  },
+  "BuxomMod:IroncladCosplay": {
+    "NAME": "Ironclad Cosplay",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Exhaust up to 3 cards. NL Apply 1 Vulnerable for each card exhausted.",
+    "UPGRADE_DESCRIPTION": "{@@}Deal !D! damage. NL Exhaust up to 3 cards. NL Apply 1 Vulnerable for each card exhausted."
   }
 }
 

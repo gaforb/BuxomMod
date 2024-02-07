@@ -50,7 +50,7 @@ public class ButtonHazard extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 
-    private static final int MAGIC = 3;    // DAMAGE = ${DAMAGE}
+    private static final int MAGIC = 4;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 2;
     private static final int MILKBONUS = 2;
     private static final int MILKCOST = 2;
@@ -69,10 +69,6 @@ public class ButtonHazard extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (BuxomMod.payMilkCost(AbstractDungeon.player, MILKCOST)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                    new ButtonHazardPower(p, p, defaultBaseSecondMagicNumber), defaultBaseSecondMagicNumber));
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new ButtonHazardPower(p, p, magicNumber), magicNumber));
     }

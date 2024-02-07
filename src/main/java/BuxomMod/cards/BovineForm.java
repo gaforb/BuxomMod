@@ -71,7 +71,8 @@ public class BovineForm extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            //upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

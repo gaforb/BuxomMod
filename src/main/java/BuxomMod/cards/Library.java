@@ -40,7 +40,7 @@ public class Library extends AbstractDynamicCard {
     private static final int COST = 1;
     private static final int MAGIC = 3;
     private static final int UPGRADE_PLUS_MAGIC = 1;
-    private static final int BLOCK = 6;
+    private static final int BLOCK = 8;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
     // /STAT DECLARATION/
@@ -50,7 +50,6 @@ public class Library extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         baseBlock = block = BLOCK;
-        this.cardsToPreview = new Rapidswell();
     }
 
     // Actions the card should do.
@@ -63,7 +62,6 @@ public class Library extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ScryAction(magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new CreateStatusCardAction(p.discardPile, new Rapidswell(), 1));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 
